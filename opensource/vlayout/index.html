@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="概述前不久，阿里新开源了2个东西，Atlas和vlayout。今天我来介绍下vlayout的使用。在介绍前，先抱怨两句，阿里放开源出来，感觉就是让我们这群人给他们找bug~~我曾遇到一个奇怪的问题，然后一直以为自己写的有问题，结果去down了官方demo跑了一下，结果官方的demo居然并没有做这个效果~不解！！好了，话不多说，我会通过官方的介绍以及自己的写的demo一一介绍。先放上官方的githu">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vlayout全面解析">
+<meta property="og:url" content="http://yoursite.com/opensource/vlayout/index.html">
+<meta property="og:site_name" content="爱上珊瑚海">
+<meta property="og:description" content="概述前不久，阿里新开源了2个东西，Atlas和vlayout。今天我来介绍下vlayout的使用。在介绍前，先抱怨两句，阿里放开源出来，感觉就是让我们这群人给他们找bug~~我曾遇到一个奇怪的问题，然后一直以为自己写的有问题，结果去down了官方demo跑了一下，结果官方的demo居然并没有做这个效果~不解！！好了，话不多说，我会通过官方的介绍以及自己的写的demo一一介绍。先放上官方的githu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328101456359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328102145729?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328102740972?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328103152837?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328103349744?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328103756527?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328105949301?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328110142304?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328111915156?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328112256783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328112655931?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328112801473?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328114231687?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328115114188?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328115231950?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328115603878?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328120120917?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328120327943?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328120547705?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328120742695?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328130632149?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.blog.csdn.net/20170328131028023?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:updated_time" content="2017-11-13T12:44:30.246Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vlayout全面解析">
+<meta name="twitter:description" content="概述前不久，阿里新开源了2个东西，Atlas和vlayout。今天我来介绍下vlayout的使用。在介绍前，先抱怨两句，阿里放开源出来，感觉就是让我们这群人给他们找bug~~我曾遇到一个奇怪的问题，然后一直以为自己写的有问题，结果去down了官方demo跑了一下，结果官方的demo居然并没有做这个效果~不解！！好了，话不多说，我会通过官方的介绍以及自己的写的demo一一介绍。先放上官方的githu">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20170328101456359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/opensource/vlayout/"/>
+
+
+
+
+
+  <title>Vlayout全面解析 | 爱上珊瑚海</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">爱上珊瑚海</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">微信公众号（我就是马云飞）</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/opensource/vlayout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马云飞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="爱上珊瑚海">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vlayout全面解析</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-13T20:44:49+08:00">
+                2017-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>前不久，阿里新开源了2个东西，Atlas和vlayout。今天我来介绍下vlayout的使用。在介绍前，先抱怨两句，阿里放开源出来，感觉就是让我们这群人给他们找bug~~我曾遇到一个奇怪的问题，然后一直以为自己写的有问题，结果去down了官方demo跑了一下，结果官方的demo居然并没有做这个效果~不解！！<br>好了，话不多说，我会通过官方的介绍以及自己的写的demo一一介绍。先放上官方的github地址：<a href="https://github.com/alibaba/vlayout" target="_blank" rel="external">https://github.com/alibaba/vlayout</a></p>
+<h2 id="VLayout简介"><a href="#VLayout简介" class="headerlink" title="VLayout简介"></a>VLayout简介</h2><p>vlayout全称VirtualLayout，它是一个针对RecyclerView的LayoutManager扩展, 主要提供一整套布局方案和布局间的组件复用的问题。它通过定制化的LayoutManager，接管整个RecyclerView的布局逻辑；LayoutManager管理了一系列LayoutHelper，LayoutHelper负责具体布局逻辑实现的地方；每一个LayoutHelper负责页面某一个范围内的组件布局；不同的LayoutHelper可以做不同的布局逻辑，因此可以在一个RecyclerView页面里提供异构的布局结构，这就能比系统自带的LinearLayoutManager、GridLayoutManager等提供更加丰富的能力。同时支持扩展LayoutHelper来提供更多的布局能力。</p>
+<h2 id="主要功能"><a href="#主要功能" class="headerlink" title="主要功能"></a>主要功能</h2><ul>
+<li>默认通用布局实现，解耦所有的View和布局之间的关系: Linear, Grid, 吸顶, 浮动, 固定位置等<br> 1：LinearLayoutHelper: 线性布局<br> 2：GridLayoutHelper: Grid布局， 支持横向的colspan<br> 3：FixLayoutHelper: 固定布局，始终在屏幕固定位置显示<br> 4：ScrollFixLayoutHelper: 固定布局，但之后当页面滑动到该图片区域才显示, 可以用来做返回顶部或其他书签等<br> 5：FloatLayoutHelper: 浮动布局，可以固定显示在屏幕上，但用户可以拖拽其位置<br> 6：ColumnLayoutHelper: 栏格布局，都布局在一排，可以配置不同列之间的宽度比值<br> 7：SingleLayoutHelper: 通栏布局，只会显示一个组件View<br> 8：OnePlusNLayoutHelper: 一拖N布局，可以配置1-5个子元素<br> 9：StickyLayoutHelper: stikcy布局， 可以配置吸顶或者吸底<br> 10：StaggeredGridLayoutHelper: 瀑布流布局，可配置间隔高度/宽度</li>
+<li>上述默认实现里可以大致分为两类：一是非fix类型布局，像线性、Grid、栏格等，它们的特点是布局在整个页面流里，随页面滚动而滚动；另一类就是fix类型的布局，它们的子节点往往不随页面滚动而滚动。</li>
+<li>所有除布局外的组件复用，VirtualLayout将用来管理大的模块布局组合，扩展了RecyclerView，使得同一RecyclerView内的组件可以复用，减少View的创建和销毁过程。</li>
+</ul>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>版本请参考mvn repository上的最新版本（目前最新版本是1.0.3），最新的 aar 都会发布到 jcenter 和 MavenCentral 上，确保配置了这两个仓库源，然后引入aar依赖：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">compile (&apos;com.alibaba.android:vlayout:1.0.3@aar&apos;) &#123;</div><div class="line">	transitive = true</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>或者maven</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">  &lt;groupId&gt;com.alibaba.android&lt;/groupId&gt;</div><div class="line">  &lt;artifactId&gt;vlayout&lt;/artifactId&gt;</div><div class="line">  &lt;version&gt;1.0.3&lt;/version&gt;</div><div class="line">  &lt;type&gt;aar&lt;/type&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure>
+<h2 id="LayoutHelper功能介绍"><a href="#LayoutHelper功能介绍" class="headerlink" title="LayoutHelper功能介绍"></a>LayoutHelper功能介绍</h2><h3 id="margin-padding"><a href="#margin-padding" class="headerlink" title="margin, padding"></a>margin, padding</h3><p>Margin, padding就是外边距、内边距，概念与Android系统的margin, padding一样，但也有不同的地方：</p>
+<ul>
+<li>它不是整个RecyclerView页面的margin和padding，它是每一块LayoutHelper所负责的区域的margin和padding。</li>
+<li>一个页面里可以有多个LayoutHelper，意味着不同LayoutHelper可以设置不同的margin和padding。</li>
+<li>LayoutHelper的margin和padding与页面RecyclerView的margin和padding可以共存。</li>
+<li>目前主要针对非fix类型的LayoutHelper实现了margin和padding，fix类型LayoutHelper内部没有相对位置关系，不处理边距。<br>  <img src="http://img.blog.csdn.net/20170328101456359?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+</ul>
+<p>对于LayoutHelper，调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setPadding(int leftPadding, int topPadding, int rightPadding, int bottomPadding)</div><div class="line"></div><div class="line">public void setMargin(int leftMargin, int topMargin, int rightMargin, int bottomMargin)</div></pre></td></tr></table></figure></p>
+<h3 id="bgColor-bgImg"><a href="#bgColor-bgImg" class="headerlink" title="bgColor, bgImg"></a>bgColor, bgImg</h3><p>背景颜色或者背景图，这其实不是布局属性，但是由于在vlayout对视图进行了直接布局，不同区域的视图的父节点都是RecyclerView，如果想要针对某一块区域单独绘制背景，就很难做到了。vlayout框架对此做了特殊处理，对于非fix、非float类型的LayoutHelper，支持配置背景色或背景图。同样目前主要针对非fix类型的LayoutHelper实现这个特性。<br><img src="http://img.blog.csdn.net/20170328102145729?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>​<br>使用背景色<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setBgColor(int bgColor)</div></pre></td></tr></table></figure></p>
+<p>使用背景图<br>首先为LayoutManager提供一个ImageView简单工厂</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">this.mLayoutManager.setLayoutViewFactory(new LayoutViewFactory() &#123;</div><div class="line">            @Override</div><div class="line">            public opinion generateLayoutView(@NonNull Context context) &#123;</div><div class="line">                return new XXImageView(context);</div><div class="line">            &#125;</div><div class="line">        &#125;);</div></pre></td></tr></table></figure>
+<p>再为LayoutHelper提设置图片加载的Listener</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">baseHelper.setLayoutViewBindListener(new BindListener(imgUrl));</div><div class="line">baseHelper.setLayoutViewUnBindListener(new UnbindListener(imgUrl));</div><div class="line"></div><div class="line"></div><div class="line">private static class BindListener implements BaseLayoutHelper.LayoutViewBindListener &#123;</div><div class="line">        private String imgUrl;</div><div class="line"></div><div class="line">        public BindListener(String imgUrl) &#123;</div><div class="line">            this.imgUrl = imgUrl;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        @Override</div><div class="line">        public void onBind(View layoutView, BaseLayoutHelper baseLayoutHelper) &#123;</div><div class="line">            //loading image</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">private static class UnbindListener implements BaseLayoutHelper.LayoutViewUnBindListener &#123;</div><div class="line">    private String imgUrl;</div><div class="line"></div><div class="line">    public UnbindListener(String imgUrl) &#123;</div><div class="line">        this. imgUrl = imgUrl;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    @Override</div><div class="line">    public void onUnbind(View layoutView, BaseLayoutHelper baseLayoutHelper) &#123;</div><div class="line">            //cancel loading image</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="aspectRatio"><a href="#aspectRatio" class="headerlink" title="aspectRatio"></a>aspectRatio</h3><p>为了保证布局过程中视图的高度一致，我们设计了aspectRatio属性，它是宽与高的比例，LayoutHelper里有aspectRatio属性，通过vlayout添加的视图的LayoutParams也有aspectRatio属性，后者的优先级比前者高，但含义不一样。</p>
+<ul>
+<li>LayoutHelper定义的aspectRatio，指的是一行视图整体的宽度与高度之比，当然整体的宽度是减去了RecyclerView和对应的LayoutHelper的margin, padding。</li>
+<li>视图的LayoutParams定义的aspectRatio，指的是在LayoutHelper计算出视图宽度之后，用来确定视图高度时使用的，它会覆盖通过LayoutHelper的aspectRatio计算出来的视图高度，因此具备更高优先级。<br>  <img src="http://img.blog.csdn.net/20170328102740972?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+</ul>
+<p>对于LayoutHelper，调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setAspectRatio(float aspectRatio)</div></pre></td></tr></table></figure></p>
+<p>对于LayoutParams，调用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">((VirutalLayoutManager.LayoutParams) layoutParams).mAspectRatio</div></pre></td></tr></table></figure>
+<h3 id="dividerHeight"><a href="#dividerHeight" class="headerlink" title="dividerHeight"></a>dividerHeight</h3><p>LinearLayoutHelper的属性，LinearLayoutHelper是像ListView一样的线性布局，dividerHeight就是每个组件之间的间距。<br><img src="http://img.blog.csdn.net/20170328103152837?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>对于LinearLayoutHelper，调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setDividerHeight(int dividerHeight)</div></pre></td></tr></table></figure></p>
+<h3 id="weights"><a href="#weights" class="headerlink" title="weights"></a>weights</h3><p>ColumnLayoutHelper, GridLayoutHelper的属性，它们都是提供网格状的布局能力，建议使用GridLayoutHelper，它的能力更加强大，参考下文介绍。默认情况下，每个网格中每一列的宽度是一样的，通过weights属性，可以指定让每一列的宽度成比例分配，就像LinearLayout的weight属性一样。 weights属性是一个float数组，每一项代表某一列占父容器宽度的百分比，总和建议是100，否则布局会超出容器宽度；如果布局中有4列，那么weights的长度也应该是4；长度大于4，多出的部分不参与宽度计算；如果小于4，不足的部分默认平分剩余的空间。<br><img src="http://img.blog.csdn.net/20170328103349744?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>对于ColumnLayoutHelper, GridLayoutHelper，调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setWeights(float[] weights)</div></pre></td></tr></table></figure></p>
+<h3 id="vGap-hGap"><a href="#vGap-hGap" class="headerlink" title="vGap, hGap"></a>vGap, hGap</h3><p>GridLayoutHelper与StaggeredGridLayoutHelper都有这两个属性，分别控制视图之间的垂直间距和水平间距。<br><img src="http://img.blog.csdn.net/20170328103756527?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>对于GridLayoutHelper, StaggeredGridLayoutHelper，调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setHGap(int hGap)</div><div class="line"></div><div class="line">public void setVGap(int vGap)</div></pre></td></tr></table></figure></p>
+<h3 id="spanCount-spanSizeLookup"><a href="#spanCount-spanSizeLookup" class="headerlink" title="spanCount, spanSizeLookup"></a>spanCount, spanSizeLookup</h3><p>GridLayoutHelper的属性，参考于系统的GridLayoutManager，spanCount表示网格的列数，默认情况下每一个视图都占用一个网格区域，但通过提供自定义的spanSizeLookUp，可以指定某个位置的视图占用多个网格区域。<br><img src="http://img.blog.csdn.net/20170328105949301?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>使用spanCount调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setSpanCount(int spanCount)</div></pre></td></tr></table></figure></p>
+<p>使用spanSizeLookup</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setSpanSizeLookup(SpanSizeLookup spanSizeLookup)</div></pre></td></tr></table></figure>
+<h3 id="autoExpand"><a href="#autoExpand" class="headerlink" title="autoExpand"></a>autoExpand</h3><p>GridLayoutHelper的属性，当一行里视图的个数少于spanCount值的时候，如果autoExpand为true，视图的总宽度会填满可用区域；否则会在屏幕上留空白区域。<br><img src="http://img.blog.csdn.net/20170328110142304?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>接口:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setAutoExpand(boolean isAutoExpand)</div></pre></td></tr></table></figure></p>
+<h3 id="lane"><a href="#lane" class="headerlink" title="lane"></a>lane</h3><p>StaggeredGridLayoutHelper中有这个属性，与GridLayoutHelper里的spanCount类似，控制瀑布流的列数。</p>
+<p>接口:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setLane(int lane)</div></pre></td></tr></table></figure></p>
+<h3 id="fixAreaAdjuster"><a href="#fixAreaAdjuster" class="headerlink" title="fixAreaAdjuster"></a>fixAreaAdjuster</h3><p>fix类型的LayoutHelper，在可能需要设置一个相对父容器四个边的偏移量，比如整个页面里有一个固定的标题栏添加在vlayout容器上，vlayout内部的fix类型视图不希望与外部的标题有所重叠，那么就可以设置一个fixAreaAdjuster来做偏移。<br><img src="http://img.blog.csdn.net/20170328111915156?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>接口:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setAdjuster(FixAreaAdjuster adjuster)</div></pre></td></tr></table></figure></p>
+<h3 id="alignType-x-y"><a href="#alignType-x-y" class="headerlink" title="alignType, x, y"></a>alignType, x, y</h3><p>FixLayoutHelper, ScrollFixLayoutHelper, FloatLayoutHelper的属性，表示吸边时的基准位置，有四个取值，分别是TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT, BOTTOM_RIGHT。x和y是相对这四个位置的偏移量，最终的偏移量还要受上述的fixAreaAdjuster影响。</p>
+<ul>
+<li>TOP_LEFT：基准位置是左上角，x是视图左边相对父容器的左边距偏移量，y是视图顶边相对父容器的上边距偏移量；</li>
+<li>TOP_RIGHT：基准位置是右上角，x是视图右边相对父容器的右边距偏移量，y是视图顶边相对父容器的上边距偏移量；</li>
+<li>BOTTOM_LEFT：基准位置是左下角，x是视图左边相对父容器的左边距偏移量，y是视图底边相对父容器的下边距偏移量；</li>
+<li>BOTTOM_RIGHT：基准位置是右下角，x是视图右边相对父容器的右边距偏移量，y是视图底边相对父容器的下边距偏移量；</li>
+</ul>
+<p><img src="http://img.blog.csdn.net/20170328112256783?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>设置基准调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setAlignType(int alignType)</div></pre></td></tr></table></figure></p>
+<p>设置偏移量调用<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setX(int x)</div><div class="line"></div><div class="line">public void setY(int y)</div></pre></td></tr></table></figure></p>
+<h3 id="showType"><a href="#showType" class="headerlink" title="showType"></a>showType</h3><p>ScrollFixLayoutHelper的属性，取值有SHOW_ALWAYS, SHOW_ON_ENTER, SHOW_ON_LEAVE。</p>
+<ul>
+<li>SHOW_ALWAYS：与FixLayoutHelper的行为一致，固定在某个位置；</li>
+<li>SHOW_ON_ENTER：默认不显示视图，当页面滚动到这个视图的位置的时候，才显示；</li>
+<li>SHOW_ON_LEAVE：默认不显示视图，当页面滚出这个视图的位置的时候显示；<br>  <img src="http://img.blog.csdn.net/20170328112655931?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></li>
+</ul>
+<p>接口:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setShowType(int showType)</div></pre></td></tr></table></figure></p>
+<h3 id="stickyStart-offset"><a href="#stickyStart-offset" class="headerlink" title="stickyStart, offset"></a>stickyStart, offset</h3><p>StickyLayoutHelper的属性，当视图的位置在屏幕范围内时，视图会随页面滚动而滚动；当视图的位置滑出屏幕时，StickyLayoutHelper会将视图固定在顶部（stickyStart = true）或者底部（stickyStart = false），固定的位置支持设置偏移量offset。<br><img src="http://img.blog.csdn.net/20170328112801473?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p>接口:<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public void setStickyStart(boolean stickyStart)</div><div class="line"></div><div class="line">public void setOffset(int offset)</div></pre></td></tr></table></figure></p>
+<h2 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h2><p>上面我们已经详细介绍的各种LayoutHelper以及它的各种属性，现在，我们通过demo来进行实例演示。</p>
+<h3 id="LinearLayoutHelper"><a href="#LinearLayoutHelper" class="headerlink" title="LinearLayoutHelper"></a>LinearLayoutHelper</h3><p>我们activity只要进行一些简单的配置就可以了：<br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">      recycler.setLayoutManager(manager);</div><div class="line">      DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">      adapter.addAdapter(new DelegateRecyclerAdapter(this,new LinearLayoutHelper()));</div><div class="line">      recycler.setAdapter(adapter);</div></pre></td></tr></table></figure></p>
+<p>对于adapter ，我们继承DelegateAdapter来实现，代码很简单，如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public LayoutHelper onCreateLayoutHelper() &#123;</div><div class="line">       return helper;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) &#123;</div><div class="line">       return new MyViewholder(inflater.inflate(R.layout.item, parent, false));</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) &#123;</div><div class="line">       ((MyViewholder) holder).text.setText(position + 1 + &quot;&quot;);</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   public int getItemCount() &#123;</div><div class="line">       return 60;</div><div class="line">   &#125;</div><div class="line"></div><div class="line">   public class MyViewholder extends RecyclerView.ViewHolder &#123;</div><div class="line"></div><div class="line">       private TextView text;</div><div class="line"></div><div class="line">       public MyViewholder(View view) &#123;</div><div class="line">           super(view);</div><div class="line">           text = (TextView) view.findViewById(R.id.text);</div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328114231687?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="GridLayoutHelper"><a href="#GridLayoutHelper" class="headerlink" title="GridLayoutHelper"></a>GridLayoutHelper</h3><p>我们只要把LinearLayouthelper改成Gridlayouthelper就可以了：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">      recycler.setLayoutManager(manager);</div><div class="line">      DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">      adapter.addAdapter(new DelegateRecyclerAdapter(this,new GridLayoutHelper(3)));</div><div class="line">      recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328115114188?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="StaggeredGridLayoutHelper"><a href="#StaggeredGridLayoutHelper" class="headerlink" title="StaggeredGridLayoutHelper"></a>StaggeredGridLayoutHelper</h3><p>还是直接修改LayoutHelper就可以了：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">   recycler.setLayoutManager(manager);</div><div class="line">   DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">   //StaggeredGridLayoutHelper（int num,int gap)</div><div class="line">   //num为每行显示数目，gap为两个item的边距</div><div class="line">   adapter.addAdapter(new StaggeredAdapter(this,new StaggeredGridLayoutHelper(3,20)));</div><div class="line">   recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>为了做成瀑布流的效果，我们对每个item进行一个随机高度的设置：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line">public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) &#123;</div><div class="line">    ViewGroup.LayoutParams layoutParams = ((MyViewholder) holder).text.getLayoutParams();</div><div class="line">    layoutParams.height = 260 + position % 7 * 20;</div><div class="line">    ((MyViewholder) holder).text.setLayoutParams(layoutParams);</div><div class="line">    ((MyViewholder) holder).text.setText(position + 1 + &quot;&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328115231950?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="FixLayoutHelper"><a href="#FixLayoutHelper" class="headerlink" title="FixLayoutHelper"></a>FixLayoutHelper</h3><p>对于fixlayout类型的，我们需要先后添加一次LinearLayoutHelper和FixLayoutHelper。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">recycler.setLayoutManager(manager);</div><div class="line">DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">adapter.addAdapter(new DelegateRecyclerAdapter(this, new LinearLayoutHelper()));</div><div class="line">adapter.addAdapter(new ScrollFixAdapter(this, new FixLayoutHelper(FixLayoutHelper.BOTTOM_LEFT, 200, 200), recycler));</div><div class="line">recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328115603878?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="ScrollFixLayoutHelper"><a href="#ScrollFixLayoutHelper" class="headerlink" title="ScrollFixLayoutHelper"></a>ScrollFixLayoutHelper</h3><p>同上，代码是差不多的，不过官方所说的标签，置顶等功能。并不能实现。官方demo也并没有实现此功能。虽然我们可以通过点击图片来进行置顶。但是具体功能感觉和fixlayout无异。文末有demo。博友们自己下载试试就知道了。</p>
+<h3 id="ColumnLayoutHelper"><a href="#ColumnLayoutHelper" class="headerlink" title="ColumnLayoutHelper"></a>ColumnLayoutHelper</h3><p>代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">recycler.setLayoutManager(manager);</div><div class="line">DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">adapter.addAdapter(new DelegateRecyclerAdapter(this,new ColumnLayoutHelper()));</div><div class="line">recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328120120917?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="SingleLayoutHelper"><a href="#SingleLayoutHelper" class="headerlink" title="SingleLayoutHelper"></a>SingleLayoutHelper</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">recycler.setLayoutManager(manager);</div><div class="line">DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">adapter.addAdapter(new DelegateRecyclerAdapter(this,new SingleLayoutHelper()));</div><div class="line">recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328120327943?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="OnePlusNLayoutHelper"><a href="#OnePlusNLayoutHelper" class="headerlink" title="OnePlusNLayoutHelper"></a>OnePlusNLayoutHelper</h3><p>一拖N布局，听起来感觉高大上，不过我并不知道这玩意能用在什么地方…..</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">recycler.setLayoutManager(manager);</div><div class="line">DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">OnePlusNLayoutHelper helper = new OnePlusNLayoutHelper(3);</div><div class="line">adapter.addAdapter(new OnePlusNRecyclerAdapter(this,helper));</div><div class="line">recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328120547705?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="FloatLayoutHelper"><a href="#FloatLayoutHelper" class="headerlink" title="FloatLayoutHelper"></a>FloatLayoutHelper</h3><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line"></div><div class="line">VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">recycler.setLayoutManager(manager);</div><div class="line">DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">adapter.addAdapter(new FloatAdapter(this,new FloatLayoutHelper()));</div><div class="line">adapter.addAdapter(new DelegateRecyclerAdapter(this,new LinearLayoutHelper()));</div><div class="line">recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>效果图：<br><img src="http://img.blog.csdn.net/20170328120742695?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h3 id="StickyLayoutHelper"><a href="#StickyLayoutHelper" class="headerlink" title="StickyLayoutHelper"></a>StickyLayoutHelper</h3><p>这个吸顶和吸底效果还是比较强大，自我感觉可以深入研究的就这个和FloatLayoutHelper了。具体代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">        VirtualLayoutManager manager = new VirtualLayoutManager(this);</div><div class="line">        recycler.setLayoutManager(manager);</div><div class="line">        DelegateAdapter adapter = new DelegateAdapter(manager, true);</div><div class="line">        //在顶部时需先添加sticklayout，在底部时最后添加sticklayout</div><div class="line">        StickyLayoutHelper helper = new StickyLayoutHelper(true);</div><div class="line">//        adapter.addAdapter(new StickRecyclerAdapter(this, helper, recycler));</div><div class="line">//        adapter.addAdapter(new DelegateRecyclerAdapter(this, new LinearLayoutHelper()));</div><div class="line">          //顶部和实体合二为一</div><div class="line">        adapter.addAdapter(new DelegateRecyclerAdapter(this, helper));</div><div class="line">        adapter.addAdapter(new DelegateRecyclerAdapter(this, new LinearLayoutHelper()));</div><div class="line">          //底部</div><div class="line">//        StickyLayoutHelper helper = new StickyLayoutHelper(false);</div><div class="line">//        adapter.addAdapter(new DelegateRecyclerAdapter(this, new LinearLayoutHelper()));</div><div class="line">//        adapter.addAdapter(new StickRecyclerAdapter(this, helper));</div><div class="line">        recycler.setAdapter(adapter);</div></pre></td></tr></table></figure>
+<p>效果图：<br>顶部：<br><img src="http://img.blog.csdn.net/20170328130632149?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>实体和顶部合二为一:<br><img src="http://img.blog.csdn.net/20170328131028023?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>对于这个开源，我的总结就是，每个开源都有它的强大之处，至于我们会不会发现就看我们如何去理解了。而且这个开源可以多个LayoutHelper进行结合，比之前那些LinearLayoutmanager、 Gridlayoutmanager之类的强大太多。我感觉有了这个。我之前那个SWPullRecyclerLayout可以在精炼，进行多方面布局的结合来使用。现在，我们已经学会如何使用它的。之后我想我们就应该试着去看它的源码来了解它是如何实现的。因为我看了下源码，这个开源15年就开始做的。我记得recyclerview也是15年4月才发布出来。可想而知，阿狸团队的强大。</p>
+<p>demo的源码我已上传到csdn：<a href="http://download.csdn.net/detail/sw950729/9796205" target="_blank" rel="external">点击下载demo</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="马云飞 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="马云飞 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/performance/" rel="next" title="android性能优化全方面解析">
+                <i class="fa fa-chevron-left"></i> android性能优化全方面解析
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/icon.jpg"
+                alt="马云飞" />
+            
+              <p class="site-author-name" itemprop="name">马云飞</p>
+              <p class="site-description motion-element" itemprop="description">我若成佛，天下无魔；我若成魔，佛耐我何。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/sw950729" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:angelmyf1995@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/sw950729" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/d245956d0304" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-pencil-square-o"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLayout简介"><span class="nav-number">2.</span> <span class="nav-text">VLayout简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主要功能"><span class="nav-number">3.</span> <span class="nav-text">主要功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用方法"><span class="nav-number">4.</span> <span class="nav-text">使用方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LayoutHelper功能介绍"><span class="nav-number">5.</span> <span class="nav-text">LayoutHelper功能介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#margin-padding"><span class="nav-number">5.1.</span> <span class="nav-text">margin, padding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#bgColor-bgImg"><span class="nav-number">5.2.</span> <span class="nav-text">bgColor, bgImg</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aspectRatio"><span class="nav-number">5.3.</span> <span class="nav-text">aspectRatio</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dividerHeight"><span class="nav-number">5.4.</span> <span class="nav-text">dividerHeight</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#weights"><span class="nav-number">5.5.</span> <span class="nav-text">weights</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vGap-hGap"><span class="nav-number">5.6.</span> <span class="nav-text">vGap, hGap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spanCount-spanSizeLookup"><span class="nav-number">5.7.</span> <span class="nav-text">spanCount, spanSizeLookup</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#autoExpand"><span class="nav-number">5.8.</span> <span class="nav-text">autoExpand</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lane"><span class="nav-number">5.9.</span> <span class="nav-text">lane</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fixAreaAdjuster"><span class="nav-number">5.10.</span> <span class="nav-text">fixAreaAdjuster</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#alignType-x-y"><span class="nav-number">5.11.</span> <span class="nav-text">alignType, x, y</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#showType"><span class="nav-number">5.12.</span> <span class="nav-text">showType</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stickyStart-offset"><span class="nav-number">5.13.</span> <span class="nav-text">stickyStart, offset</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例演示"><span class="nav-number">6.</span> <span class="nav-text">实例演示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LinearLayoutHelper"><span class="nav-number">6.1.</span> <span class="nav-text">LinearLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GridLayoutHelper"><span class="nav-number">6.2.</span> <span class="nav-text">GridLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StaggeredGridLayoutHelper"><span class="nav-number">6.3.</span> <span class="nav-text">StaggeredGridLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FixLayoutHelper"><span class="nav-number">6.4.</span> <span class="nav-text">FixLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ScrollFixLayoutHelper"><span class="nav-number">6.5.</span> <span class="nav-text">ScrollFixLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ColumnLayoutHelper"><span class="nav-number">6.6.</span> <span class="nav-text">ColumnLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SingleLayoutHelper"><span class="nav-number">6.7.</span> <span class="nav-text">SingleLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OnePlusNLayoutHelper"><span class="nav-number">6.8.</span> <span class="nav-text">OnePlusNLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FloatLayoutHelper"><span class="nav-number">6.9.</span> <span class="nav-text">FloatLayoutHelper</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#StickyLayoutHelper"><span class="nav-number">6.10.</span> <span class="nav-text">StickyLayoutHelper</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">马云飞</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+<div>
+<span id="busuanzi_container_site_uv"> 
+  本站访问量 <span id="busuanzi_value_site_pv"></span> 次
+</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
