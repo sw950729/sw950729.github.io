@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="概述建造者模式又称Builder模式，它是一步步创建一个复杂的对象然后进行构建。可以精准的控制对象的构造过程。此模式是将构建复杂对象的过程与它的部件解耦，使得构建过程和部件的表示隔离开来。 一个对象有很多复杂的信息，比如人，有身高，体重，性别，姓名，年龄等等。如何将这些信息给组合起来，然后形成这个对象。比如男生很多，20岁的男生也很多。这个信息组成的过程很漫长。对于这种情况，构建过程中对外部影藏了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="建造者模式">
+<meta property="og:url" content="http://yoursite.com/design_mode/建造者模式/index.html">
+<meta property="og:site_name" content="我就是马云飞">
+<meta property="og:description" content="概述建造者模式又称Builder模式，它是一步步创建一个复杂的对象然后进行构建。可以精准的控制对象的构造过程。此模式是将构建复杂对象的过程与它的部件解耦，使得构建过程和部件的表示隔离开来。 一个对象有很多复杂的信息，比如人，有身高，体重，性别，姓名，年龄等等。如何将这些信息给组合起来，然后形成这个对象。比如男生很多，20岁的男生也很多。这个信息组成的过程很漫长。对于这种情况，构建过程中对外部影藏了">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2020-06-04T16:14:44.435Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="建造者模式">
+<meta name="twitter:description" content="概述建造者模式又称Builder模式，它是一步步创建一个复杂的对象然后进行构建。可以精准的控制对象的构造过程。此模式是将构建复杂对象的过程与它的部件解耦，使得构建过程和部件的表示隔离开来。 一个对象有很多复杂的信息，比如人，有身高，体重，性别，姓名，年龄等等。如何将这些信息给组合起来，然后形成这个对象。比如男生很多，20岁的男生也很多。这个信息组成的过程很漫长。对于这种情况，构建过程中对外部影藏了">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/design_mode/建造者模式/"/>
+
+
+
+
+
+  <title>建造者模式 | 我就是马云飞</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我就是马云飞</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">微信公众号（我就是马云飞）</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/建造者模式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马云飞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我就是马云飞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">建造者模式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>建造者模式又称Builder模式，它是一步步创建一个复杂的对象然后进行构建。可以精准的控制对象的构造过程。此模式是将构建复杂对象的过程与它的部件解耦，使得构建过程和部件的表示隔离开来。</p>
+<p>一个对象有很多复杂的信息，比如人，有身高，体重，性别，姓名，年龄等等。如何将这些信息给组合起来，然后形成这个对象。比如男生很多，20岁的男生也很多。这个信息组成的过程很漫长。对于这种情况，构建过程中对外部影藏了具体如何实现的，使得组成过程中可以自由扩展，也就降低了两者的耦合度。</p>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>1、相同的方法，不同的执行顺序，产生的结果不一样。</p>
+<p>2、多个信息可以组装到一个对象中，但是产品的运行结果又不相同。</p>
+<p>3、当初始化一个对象特别复杂的时候，且一些对象是有默认值的情况。</p>
+<p>4、需要生成的对象内部属性本身相互依赖。</p>
+<p>主要解决在软件系统中，有时候面临着”一个复杂对象”的创建工作，其通常由各个部分的子对象用一定的算法构成；由于需求的变化，这个复杂对象的各个部分经常面临着剧烈的变化，但是将它们组合在一起的算法却相对稳定。</p>
+<h3 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h3><h4 id="android内部使用的builder模式"><a href="#android内部使用的builder模式" class="headerlink" title="android内部使用的builder模式"></a>android内部使用的builder模式</h4><p>这边上一个最常使用的例子，dialog：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="keyword">private</span>   <span class="keyword">void</span>  <span class="title">showDialog</span><span class="params">(Context context)</span> </span>&#123;  </div><div class="line">        AlertDialog.Builder builder =  <span class="keyword">new</span>  AlertDialog.Builder(context);  </div><div class="line">        builder.setIcon(R.drawable.icon).setTitle( <span class="string">"Title"</span> ).setMessage( <span class="string">"Message"</span> ).setPositiveButton( <span class="string">"Button1"</span> ,  </div><div class="line">                 <span class="keyword">new</span>  DialogInterface.OnClickListener() &#123;  </div><div class="line">                     <span class="function"><span class="keyword">public</span>   <span class="keyword">void</span>  <span class="title">onClick</span><span class="params">(DialogInterface dialog,  <span class="keyword">int</span>  whichButton)</span> </span>&#123;  </div><div class="line">                        setTitle( <span class="string">"点击了对话框上的Button1"</span> );  </div><div class="line">                    &#125;  </div><div class="line">                &#125;).setNeutralButton( <span class="string">"Button2"</span> ,  </div><div class="line">                 <span class="keyword">new</span>  DialogInterface.OnClickListener() &#123;  </div><div class="line">                     <span class="function"><span class="keyword">public</span>   <span class="keyword">void</span>  <span class="title">onClick</span><span class="params">(DialogInterface dialog,  <span class="keyword">int</span>  whichButton)</span> </span>&#123;  </div><div class="line">                        setTitle( <span class="string">"点击了对话框上的Button2"</span> );  </div><div class="line">                    &#125;  </div><div class="line">                &#125;).setNegativeButton( <span class="string">"Button3"</span> ,  </div><div class="line">                 <span class="keyword">new</span>  DialogInterface.OnClickListener() &#123;  </div><div class="line">                     <span class="function"><span class="keyword">public</span>   <span class="keyword">void</span>  <span class="title">onClick</span><span class="params">(DialogInterface dialog,  <span class="keyword">int</span>  whichButton)</span> </span>&#123;  </div><div class="line">                        setTitle( <span class="string">"点击了对话框上的Button3"</span> );  </div><div class="line">                    &#125;  </div><div class="line">                &#125;);  </div><div class="line">        builder.create().show();  <span class="comment">// 构建AlertDialog， 并且显示</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>上述代码中，builder可以设置dialog的icon，title，message，button等信息。在调用create方法时，我们会将这些信息参数保存在dialog的AlertController中。这边源码的具体实现我们就不分析了。最后调用show方法将这个dialog显示出来。</p>
+<h4 id="自己撸一个builder模式"><a href="#自己撸一个builder模式" class="headerlink" title="自己撸一个builder模式"></a>自己撸一个builder模式</h4><figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"></div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> Set <span class="title">set</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Set();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">overload</span><span class="params">(Set set)</span> </span>&#123;</div><div class="line">        set.textView.setText(set.age+<span class="string">":"</span>+set.name+<span class="string">":"</span>+set.value+<span class="string">"."</span>);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Set</span> </span>&#123;</div><div class="line">        <span class="keyword">private</span> <span class="keyword">int</span> age=<span class="string">"18"</span>;</div><div class="line">        <span class="keyword">private</span> String name=<span class="string">"我就是马云飞"</span>;</div><div class="line">        <span class="keyword">private</span> String value=<span class="string">"男"</span>;</div><div class="line">        <span class="keyword">private</span> TextView textView;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> Set <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.age = age;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> Set <span class="title">setName</span><span class="params">(String name)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.name = name;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> Set <span class="title">setValue</span><span class="params">(String value)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.value = value;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> Set <span class="title">setTextView</span><span class="params">(TextView textView)</span> </span>&#123;</div><div class="line">            <span class="keyword">this</span>.textView = textView;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">this</span>;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">over</span><span class="params">()</span> </span>&#123;</div><div class="line">            overload(<span class="keyword">this</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在Test这个类通过返回一个Set对象。Set方法中，每个返回本类实例的对象。最后通过over方法来调用Test的overload方法完成设置。<br>调用方法：    </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">test=<span class="keyword">new</span> Test();</div><div class="line">test.set().setAge(<span class="number">18</span>).setName(<span class="string">"张三"</span>).setValue(<span class="string">"男"</span>).setTextView(text).over();</div></pre></td></tr></table></figure>
+<p>输出结果：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">18：张三：男</div></pre></td></tr></table></figure>
+<p>如果我们什么属性都没设置，那么输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">18：我就是马云飞：男</div></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Builder模式在开发过程中也是比较常用的，比如目前比较流程的rxjava。比较常用的形式就是通过链式调用，让代码看起来通俗易懂。</p>
+<p>优点：</p>
+<ul>
+<li>良好的封装性，容易扩展。</li>
+<li>可以控制内部的细节风险。</li>
+</ul>
+<p>缺点：</p>
+<ul>
+<li>必须要有共同点，使用受限。</li>
+<li>内部复杂时，容易产生多余的builder对象。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="马云飞 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="马云飞 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/design_mode/抽象工厂模式/" rel="next" title="抽象工厂模式">
+                <i class="fa fa-chevron-left"></i> 抽象工厂模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/design_mode/工厂模式/" rel="prev" title="工厂模式">
+                工厂模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/icon.jpg"
+                alt="马云飞" />
+            
+              <p class="site-author-name" itemprop="name">马云飞</p>
+              <p class="site-description motion-element" itemprop="description">我若成佛，天下无魔；我若成魔，佛耐我何。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/sw950729" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:angelmyf1995@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/sw950729" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/d245956d0304" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-pencil-square-o"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用场景"><span class="nav-number">2.</span> <span class="nav-text">使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体实现"><span class="nav-number">3.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#android内部使用的builder模式"><span class="nav-number">3.1.</span> <span class="nav-text">android内部使用的builder模式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自己撸一个builder模式"><span class="nav-number">3.2.</span> <span class="nav-text">自己撸一个builder模式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">马云飞</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+<div>
+<span id="busuanzi_container_site_uv"> 
+  本站访问量 <span id="busuanzi_value_site_pv"></span> 次
+</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="红黑树和平衡二叉树的思想是类似的，都是在插入过程中对二叉排序树进行调整，从而提升性能，它的增删改查均可以在O(lg n)内完成。 定义红黑树是一棵二叉排序树。且满足以下特点：  节点是红色或黑色。  根节点是黑色。  每个叶子节点都是黑色的空节点（NIL节点）。  每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)。  从任一节点到其每个叶子的所有路径都包含相">
+<meta property="og:type" content="article">
+<meta property="og:title" content="红黑树">
+<meta property="og:url" content="http://yoursite.com/data_structure/红黑树/index.html">
+<meta property="og:site_name" content="我就是马云飞">
+<meta property="og:description" content="红黑树和平衡二叉树的思想是类似的，都是在插入过程中对二叉排序树进行调整，从而提升性能，它的增删改查均可以在O(lg n)内完成。 定义红黑树是一棵二叉排序树。且满足以下特点：  节点是红色或黑色。  根节点是黑色。  每个叶子节点都是黑色的空节点（NIL节点）。  每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)。  从任一节点到其每个叶子的所有路径都包含相">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234313694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/202006042343549.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234426203.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234604991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234653898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234726279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234801183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234831311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234913248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234945664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235026982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235106297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235140766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235214237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235250905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235321982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235351319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060423542296.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235451208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235525247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235609567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060423563965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235709284.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235738345.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235833460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060423590063.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235928699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604235957745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000037707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060500011633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000144385.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060500022268.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000305280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000338313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000410994.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000440111.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000513512.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000548232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000620842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000651129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000719213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000752525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000827894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000900335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605000930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605001000461.png">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605001037305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200605001108965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-06-04T16:11:18.692Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="红黑树">
+<meta name="twitter:description" content="红黑树和平衡二叉树的思想是类似的，都是在插入过程中对二叉排序树进行调整，从而提升性能，它的增删改查均可以在O(lg n)内完成。 定义红黑树是一棵二叉排序树。且满足以下特点：  节点是红色或黑色。  根节点是黑色。  每个叶子节点都是黑色的空节点（NIL节点）。  每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)。  从任一节点到其每个叶子的所有路径都包含相">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200604234313694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/data_structure/红黑树/"/>
+
+
+
+
+
+  <title>红黑树 | 我就是马云飞</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">我就是马云飞</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">微信公众号（我就是马云飞）</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/红黑树/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="马云飞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我就是马云飞">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">红黑树</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
+                2020-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>红黑树和平衡二叉树的思想是类似的，都是在插入过程中对二叉排序树进行调整，从而提升性能，它的增删改查均可以在O(lg n)内完成。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>红黑树是一棵二叉排序树。且满足以下特点：</p>
+<ul>
+<li><p>节点是红色或黑色。</p>
+</li>
+<li><p>根节点是黑色。</p>
+</li>
+<li><p>每个叶子节点都是黑色的空节点（NIL节点）。</p>
+</li>
+<li><p>每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)。</p>
+</li>
+<li><p>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。</p>
+</li>
+</ul>
+<p>下图就是一棵简单的红黑树示例：<br><img src="https://img-blog.csdnimg.cn/20200604234313694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>示例中每个结点最后都是一个NIL结点，它是黑色的，不过我们画图时通常会省略它。所以下文以及后续文章中绘制时都会省略NIL结点，大家记得还有它就可以。</p>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>红黑树的插入与删除和AVL树类似，也是每插入一个结点，都检查是否破坏了树的结构，然后进行调整。红黑树每个结点插入时默认都为红色，这样做可以降低黑高，也可以减少调整的次数。</p>
+<h3 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h3><p>红黑树的概念理解起来较为复杂，我们以一个简单的示例，看看如何构造一棵红黑树。</p>
+<p>现有数组int[] a = {1, 10, 9, 2, 3, 8, 7, 4, 5, 6};我们要将其变为一棵红黑树。</p>
+<p>首先插入1，此时树是空的，1就是根结点，根结点是黑色的：<br><img src="https://img-blog.csdnimg.cn/202006042343549.png" alt=""><br>然后插入元素10，此时依然符合规则，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234426203.png" alt=""><br>当插入元素9时，这时是需要调整的第一种情况，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234604991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>红黑树规则4中强调不能有两个相邻的红色结点，所以此时我们需要对其进行调整。调整的原则有多个相关因素，这里的情况是，父结点10是其祖父结点1（父结点的父结点）的右孩子，当前结点9是其父结点10的左孩子，且没有叔叔结点（父结点的兄弟结点），此时需要进行两次旋转，第一次，以父结点10右旋：<br><img src="https://img-blog.csdnimg.cn/20200604234653898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后将父结点（此时是9）染为黑色，祖父结点1染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604234726279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后以祖父结点1左旋：<br><img src="https://img-blog.csdnimg.cn/20200604234801183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步，插入元素2，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234831311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时情况与上一步类似，区别在于父结点1是祖父结点9的左孩子，当前结点2是父结点的右孩子，且叔叔结点10是红色的。这时需要先将叔叔结点10染为黑色，再进行下一步操作，具体做法是将父结点1和叔叔结点10染为黑色，祖父结点9染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604234913248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>由于结点9是根节点，必须为黑色，将它染为黑色即可：<br><img src="https://img-blog.csdnimg.cn/20200604234945664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步，插入元素3，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235026982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这和我们之前插入元素10的情况一模一样，需要将父结点2染为黑色，祖父结点1染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235106297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后左旋：<br><img src="https://img-blog.csdnimg.cn/20200604235140766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步，插入元素8，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235214237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
+<p>此时和插入元素2有些类似，区别在于父结点3是右孩子，当前结点8也是右孩子，这时也需要先将叔叔结点1染为黑色，具体操作是先将1和3染为黑色，再将祖父结点2染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235250905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时树已经平衡了，不需要再进行其他操作了，现在插入元素7，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235321982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这时和之前插入元素9时一模一样了，先将7和8右旋，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235351319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后将7染为黑色，3染为红色，再进行左旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/2020060423542296.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步要插入的元素是4，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235451208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这里和插入元素2是类似的，先将3和8染为黑色，7染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235525247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>但此时2和7相邻且颜色均为红色，我们需要对它们继续进行调整。这时情况变为了父结点2为红色，叔叔结点10为黑色，且2为左孩子，7为右孩子，这时需要以2左旋。这时左旋与之前不同的地方在于结点7旋转完成后将有三个孩子，结果类似于下图：<br><img src="https://img-blog.csdnimg.cn/20200604235609567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这种情况处理起来也很简单，只需要把7原来的左孩子3，变成2的右孩子即可，结果如下：<br><img src="https://img-blog.csdnimg.cn/2020060423563965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后再把2的父结点7染为黑色，祖父结点9染为红色。结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604235709284.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时又需要右旋了，我们要以9右旋，右旋完成后7又有三个孩子，这种情况和上述是对称的，我们把7原有的右孩子8，变成9的左孩子即可，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235738345.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一个要插入的元素是5，插入后如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235833460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>有了上述一些操作，处理5变得十分简单，将3染为红色，4染为黑色，然后左旋，结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/2020060423590063.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>最后插入元素6，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235928699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>又是叔叔结点3为红色的情况，这种情况我们处理过多次了，首先将3和5染为黑色，4染为红色，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235957745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
+<p>此时问题向上传递到了元素4，我们看2、4、7、9的颜色和位置关系，这种情况我们也处理过，先将2和9染为黑色，7染为红色，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605000037707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>最后7是根结点，染为黑色即可，最终结果如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060500011633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>可以看到，在插入元素时，叔叔结点是主要影响因素，待插入结点与父结点的关系决定了是否需要多次旋转。可以总结为以下几种情况：  </p>
+<ul>
+<li><p>如果父结点是黑色，插入即可，无需调整。  </p>
+</li>
+<li><p>如果叔叔结点是红色，就把父结点和叔叔结点都转为黑色，祖父结点转为红色，将不平衡向上传递。  </p>
+</li>
+<li><p>如果叔叔结点是黑色或者没有叔叔结点，就看父结点和待插入结点的关系。如果待插入结点和父结点的关系，与父结点与祖父结点的关系一致，比如待插入结点是父结点的左孩子，父结点也是祖父结点的左孩子，就无需多次旋转。否则就先通过相应的旋转将其关系变为一致。  </p>
+</li>
+</ul>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><p>要从一棵红黑树中删除一个元素，主要分为三种情况。  </p>
+<h4 id="待删除元素没有孩子"><a href="#待删除元素没有孩子" class="headerlink" title="待删除元素没有孩子"></a>待删除元素没有孩子</h4><p>没有孩子指的是没有值不为NIL的孩子。这种情况下，如果删除的元素是红色的，可以直接删除，如果删除的元素是黑色的，就需要进行调整了。</p>
+<p>例如我们从下图中删除元素1：<br><img src="https://img-blog.csdnimg.cn/20200605000144385.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>删除元素1后，2的左孩子为NIL，这条支路上的黑色结点数就比其他支路少了，所以需要进行调整。  </p>
+<p>这时，我们的关注点从叔叔结点转到兄弟结点，也就是结点4，此时4是红色的，就把它染为黑色，把父结点2染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060500022268.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后以2左旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605000305280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时兄弟结点为3，且它没有红色的孩子，这时只需要把它染为红色，父结点2染为黑色即可。结果如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000338313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
+<h4 id="待删除元素有一个孩子"><a href="#待删除元素有一个孩子" class="headerlink" title="待删除元素有一个孩子"></a>待删除元素有一个孩子</h4><p>这应该是删除操作中最简单的一种情况了，根据红黑树的定义，我们可以推测，如果一个元素仅有一个孩子，那么这个元素一定是黑色的，而且其孩子是红色的。  </p>
+<p>假设我们有一个红色节点，它是树中的某一个节点，且仅有一个孩子，那么根据红色节点不能相邻的条件，它的孩子一定是黑色的，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000410994.png" alt="">  </p>
+<p>但这个子树的黑高却不再平衡了（注意每个节点的叶节点都是一个NIL节点），因此红色节点不可能只有一个孩子。  </p>
+<p>而若是一个黑色节点仅有一个孩子，如果其孩子是黑色的，同样会打破黑高的平衡，所以其孩子只能是红色的，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000440111.png" alt=""><br>只有这一种情况符合红黑树的定义，这时要删除这个元素，只需要使用其孩子代替它，仅代替值而不代替颜色即可，上图的情况删除完后变为：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200605000513512.png" alt=""><br>可以看到，树的黑高并没有发生变化，因此也不需要进行调整。  </p>
+<h4 id="待删除元素有两个孩子"><a href="#待删除元素有两个孩子" class="headerlink" title="待删除元素有两个孩子"></a>待删除元素有两个孩子</h4><p>我们在讨论二叉排序树时说过，如果删除一个有两个孩子的元素，可以使用它的前驱或者后继结点代替它。因为它的前驱或者后继结点最多只会有一个孩子，所以这种情况可以转为情况1或情况2处理。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>删除元素最复杂的是情况1，这主要由其兄弟结点以及兄弟结点的孩子颜色共同决定。这里简要做下总结。</p>
+<p>我们以N代表当前待删除节点，以P代表父结点，以S代表兄弟结点，以SL代表兄弟结点的左孩子，SR代表兄弟结点的右孩子，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000548232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>根据红黑树定义，这种情况下S要么有红色的子结点，要么只有NIL结点，以下对S有黑色结点的情况均表示NIL  </p>
+<p>主要有以下几种：</p>
+<p>1、S是红色，P一定是黑色，S也不会有红色的孩子，如下：<br><img src="https://img-blog.csdnimg.cn/20200605000620842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时把P和S颜色变换，再左旋，如下：<br><img src="https://img-blog.csdnimg.cn/20200605000651129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这样变换后，N支路上的黑色结点并没有增加，所以依然少一个。  </p>
+<p>2、P，S以及S的全部孩子都是黑色<br>无论S有几个孩子，或者没有孩子，只要不是红色都是这种情况，此时情况如下：<br><img src="https://img-blog.csdnimg.cn/20200605000719213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>我们把S染为红色，这样一来，N和S两个支路都少了一个黑色结点，所以可以把问题向父结点转移，通过递归解决。染色后如下：<br><img src="https://img-blog.csdnimg.cn/20200605000752525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
+<p>3、P为红（S一定为黑），S的孩子都为黑<br>这种情况最为简单，只需要把P和S颜色交换即可。这样N支路多了一个黑色元素，而S支路没有减少，所以达到了平衡。<br><img src="https://img-blog.csdnimg.cn/20200605000827894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200605000900335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
+<p>4、P任意色，S为黑，N是P的左孩子，S的右孩子SR为红，S的左孩子任意<br>如下所示<br><img src="https://img-blog.csdnimg.cn/20200605000930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时将S改为P的颜色，SR和P改为黑色，然后左旋，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200605001000461.png" alt=""><br>可以发现，此时N支路多了一个黑色结点，而其余支路均没有收到影响，所以调整完毕。  </p>
+<p>5、P任意色，S为黑，N是P的左孩子，S的左孩子SL为红，S的右孩子SR为黑，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605001037305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时变换S和SL的颜色，然后右旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605001108965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这时，所有分支的黑色结点数均没有改变，但情况5转为了情况4，再进行一次操作即可。  </p>
+<p>还有一些情况与上述是对称的，我们进行相应的转换即可。  </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>红黑树的操作比较复杂，插入元素可能需要多次变色与旋转，删除也是。这些操作的目的都是为了保证红黑树的结构不被破坏。这些复杂的插入与删除操作希望大家可以亲手尝试一下，以加深理解。  </p>
+<p>红黑树是JDK中TreeMap、TreeSet的底层数据结构，在JDK1.8中HashMap也用到了红黑树，所以掌握它对我们后续的分析十分重要。  </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="马云飞 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="马云飞 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/data_structure/二叉排序树/" rel="next" title="二叉排序树">
+                <i class="fa fa-chevron-left"></i> 二叉排序树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/design_mode/享元模式/" rel="prev" title="享元模式">
+                享元模式 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/icon.jpg"
+                alt="马云飞" />
+            
+              <p class="site-author-name" itemprop="name">马云飞</p>
+              <p class="site-description motion-element" itemprop="description">我若成佛，天下无魔；我若成魔，佛耐我何。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/sw950729" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:angelmyf1995@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://blog.csdn.net/sw950729" target="_blank" title="CSDN">
+                    
+                      <i class="fa fa-fw fa-codiepie"></i>CSDN</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com/u/d245956d0304" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-pencil-square-o"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现原理"><span class="nav-number">2.</span> <span class="nav-text">实现原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入元素"><span class="nav-number">3.</span> <span class="nav-text">插入元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除元素"><span class="nav-number">4.</span> <span class="nav-text">删除元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#待删除元素没有孩子"><span class="nav-number">4.1.</span> <span class="nav-text">待删除元素没有孩子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#待删除元素有一个孩子"><span class="nav-number">4.2.</span> <span class="nav-text">待删除元素有一个孩子</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#待删除元素有两个孩子"><span class="nav-number">4.3.</span> <span class="nav-text">待删除元素有两个孩子</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">马云飞</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+<div>
+<span id="busuanzi_container_site_uv"> 
+  本站访问量 <span id="busuanzi_value_site_pv"></span> 次
+</span>
+</div>
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i> 访问人数
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i> 访问总量
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>
