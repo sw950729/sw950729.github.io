@@ -373,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/适配器模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/算法复杂度/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -392,7 +392,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/适配器模式/" itemprop="url">适配器模式</a></h1>
+                <a class="post-title-link" href="/data_structure/算法复杂度/" itemprop="url">算法复杂度</a></h1>
         
 
         <div class="post-meta">
@@ -444,11 +444,12 @@
       
         
           
-          概述适配器模式中开发中可以说是使用率最高的设计模式了。在listview、recyclerview中都需要使用适配器模式，并且在开发中遇到最多的问题也往往是在adapter中。这种模式涉及到一个单一的类，该类负责加入独立的或不兼容的接口功能。举个真实的例子，读卡器是作为内存卡和笔记本之间的适配器。您
+          算法复杂度分为时间复杂度和空间复杂度。其作用：时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。
+时间复杂度一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数f(n)，进而分析f(n)随n的变化情况并确定T(n)的数量级。这里用”O”来表示数量级，给
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/适配器模式/#more" rel="contents">
+            <a class="btn" href="/data_structure/算法复杂度/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -499,7 +500,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/解释器模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/红黑树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -518,7 +519,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/解释器模式/" itemprop="url">解释器模式</a></h1>
+                <a class="post-title-link" href="/data_structure/红黑树/" itemprop="url">红黑树</a></h1>
         
 
         <div class="post-meta">
@@ -570,13 +571,20 @@
       
         
           
-          概述解释器模式一般来说，我们用的比较少，它提供了一种解释语言的语法或者表达式的方式，比如说1+2，我们可以通过解释器模式告诉你这是一个加法。
-使用场景
-如果一种特定类型的问题发生的频率足够高，那么可能就值得将该问题的各个实例表述为一个简单语言中的句子。这样就可以构建一个解释器，该解释器通过解释这些句
+          红黑树和平衡二叉树的思想是类似的，都是在插入过程中对二叉排序树进行调整，从而提升性能，它的增删改查均可以在O(lg n)内完成。
+定义红黑树是一棵二叉排序树。且满足以下特点：
+
+节点是红色或黑色。
+
+根节点是黑色。
+
+每个叶子节点都是黑色的空节点（NIL节点）。
+
+每个红色节点的两个子节点都是黑色。
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/解释器模式/#more" rel="contents">
+            <a class="btn" href="/data_structure/红黑树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -627,7 +635,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/访问者模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/二叉排序树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -646,7 +654,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/访问者模式/" itemprop="url">访问者模式</a></h1>
+                <a class="post-title-link" href="/data_structure/二叉排序树/" itemprop="url">二叉排序树</a></h1>
         
 
         <div class="post-meta">
@@ -698,11 +706,12 @@
       
         
           
-          概述访问者模式是一种将数据结构和数据操作分离的设计模式，它是设计模式中最复杂的一个，一般来说，它的使用概率并不高，但当你真当使用它时，你就真的需要它了。元素的执行算法可以随着访问者改变而改变。这种类型的设计模式属于行为型模式。根据模式，元素对象已接受访问者对象，这样访问者对象就可以处理元素对象上的操
+          解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。
+二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/访问者模式/#more" rel="contents">
+            <a class="btn" href="/data_structure/二叉排序树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -753,7 +762,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/责任链模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/哈希表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -772,7 +781,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/责任链模式/" itemprop="url">责任链模式</a></h1>
+                <a class="post-title-link" href="/data_structure/哈希表/" itemprop="url">哈希表</a></h1>
         
 
         <div class="post-meta">
@@ -824,17 +833,12 @@
       
         
           
-          概述责任链模式，顾名思义，它是一个链式模型，这种模式给予请求的类型，对请求的发送者和接收者进行解耦。对于这种结构，每个节点可以拆分在链接，所以，这种模式有着较好的灵活性。
-使用场景
-多个对象处理同一个请求
-在请求处理者不明确的情况下向多个对象中的一个提交一个请求。
-需要动态指定一组对象处理请求。
-
-
+          无论是数组还是链表，其对数据的查询表现都比较无力，要想知道一个元素是否在数组或链表中，只能从前向后挨个对比。在后续将会分析的二叉排序树中，还会将数据排序以进行二分查找，将时间复杂度从O(n)降低到O(lg n)。
+出现这个问题的根源在于，我们没有办法直接根据一个元素找到它存储的位置，那有没有办法消除
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/责任链模式/#more" rel="contents">
+            <a class="btn" href="/data_structure/哈希表/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -885,7 +889,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/迭代器模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/平衡二叉树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -904,7 +908,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/迭代器模式/" itemprop="url">迭代器模式</a></h1>
+                <a class="post-title-link" href="/data_structure/平衡二叉树/" itemprop="url">平衡二叉树</a></h1>
         
 
         <div class="post-meta">
@@ -956,17 +960,12 @@
       
         
           
-          概述迭代器模式又称游标模式，是行为性模式之一。这种模式用于顺序访问集合对象的元素，不需要知道集合对象的底层表示。
-使用场景
-访问一个聚合对象的内容而无须暴露它的内部表示。
-需要为聚合对象提供多种遍历方式。
-为遍历不同的聚合结构提供一个统一的接口。
-
-具体实现我们将创建一个叙述导航方法的 Iterat
+          二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。
+定义平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/迭代器模式/#more" rel="contents">
+            <a class="btn" href="/data_structure/平衡二叉树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1017,7 +1016,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/装饰模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/数组与链表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1036,7 +1035,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/装饰模式/" itemprop="url">装饰模式</a></h1>
+                <a class="post-title-link" href="/data_structure/数组与链表/" itemprop="url">树组与链表</a></h1>
         
 
         <div class="post-meta">
@@ -1088,16 +1087,15 @@
       
         
           
-          概述装饰模式也称包装模式，其使用一种对客户端透明的方式来动态扩展对象，同时它也是继承关系的一种替代方式之一。举个例子：孙悟空有 72 变，当他变成”庙宇”后，他的根本还是一只猴子，但是他又有了庙宇的功能。
-使用场景
-扩展一个类的功能。 
-动态增加功能，动态撤销。
+          数组在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  
+  
+正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：
 
-具体实现//Component 英
+创建一个数组，必须声明其长度，以在内存中寻找合
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/装饰模式/#more" rel="contents">
+            <a class="btn" href="/data_structure/数组与链表/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1148,7 +1146,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/观察者模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/树与二叉树/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1167,7 +1165,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/观察者模式/" itemprop="url">观察者模式</a></h1>
+                <a class="post-title-link" href="/data_structure/树与二叉树/" itemprop="url">树与二叉树</a></h1>
         
 
         <div class="post-meta">
@@ -1219,13 +1217,15 @@
       
         
           
-          概述观察者模式是一个使用频率非常高的设计模式。不过这个模式的一个重要作用就是解耦，将被观察者和观察者解耦，使得他们的依赖性变小，甚至做到毫无依赖。它是一种定义对象间一对多的依赖关系。当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。
-使用场景
-关联行为场景，需要注意的是，关联是可
+          数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。
+树的定义树是N的节点的有限集。N=0时称为空树，在一个非空树中：  
+
+有且只有一个根（）节点。
+当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/观察者模式/#more" rel="contents">
+            <a class="btn" href="/data_structure/树与二叉树/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1276,7 +1276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/桥接模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/android/activity/launchmode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1295,7 +1295,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/桥接模式/" itemprop="url">桥接模式</a></h1>
+                <a class="post-title-link" href="/android/activity/launchmode/" itemprop="url">Activity的启动模式</a></h1>
         
 
         <div class="post-meta">
@@ -1347,13 +1347,12 @@
       
         
           
-          概述桥接模式是把抽象化和实现化进行解耦，使二者可以独立变化。这种模式涉及到一个作为桥接的接口，使得实体类的功能独立于接口实现类。这两种类型的类可被结构化改变而互不影响。
-使用场景
-如果一个系统需要在构件的抽象化角色和具体化角色之间增加更多的灵活性，避免在两个层次之间建立静态的继承联系，通过桥接模式可
+          概述上篇我稍微介绍了关于activity的生命周期的知识点，今天我们来谈一下activity的启动模式，这也是一个面试常客。下面容我慢慢道来。
+什么情况下会用到启动模式？举个简单的例子，来推送通知之后，我们点击推送跳转页面，如果我们一次来了10个推送，那么我们会先后打开10个页面。但是这10个页面是
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/桥接模式/#more" rel="contents">
+            <a class="btn" href="/android/activity/launchmode/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1404,7 +1403,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/模块模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/android/activity/lifecycle/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1423,7 +1422,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/模块模式/" itemprop="url">模块模式</a></h1>
+                <a class="post-title-link" href="/android/activity/lifecycle/" itemprop="url">Activity生命周期详解</a></h1>
         
 
         <div class="post-meta">
@@ -1475,15 +1474,11 @@
       
         
           
-          概述在模板模式中，一个抽象类公开定义了执行它的方法的方式/模板。它的子类可以按需要重写方法实现，但调用将以抽象类中定义的方式进行。这种类型的设计模式属于行为型模式。
-使用场景
-多个子类有公共方法，并且逻辑基本相同时。
-重要的、复杂的方法，可以考虑作为模板方法。
-重构时，模板模式一般是最常用的，把相同
+          Activity是什么？Activity是用户和应用程序交互的界面，用户可以在Activity上进行点击、滚动、触摸等操作。一般来说，一个应用是由多个Activity组成，首次进入的Activity称为主Activity。至于如何判断一个Activity是不是主Activity。本篇文章我们先不讨论
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/模块模式/#more" rel="contents">
+            <a class="btn" href="/android/activity/lifecycle/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1525,7 +1520,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1575,7 +1570,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

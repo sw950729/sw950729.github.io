@@ -242,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/状态模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/android/window_manager/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -261,7 +261,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/状态模式/" itemprop="url">状态模式</a></h1>
+                <a class="post-title-link" href="/android/window_manager/" itemprop="url">如何理解Window和WindowManager</a></h1>
         
 
         <div class="post-meta">
@@ -273,8 +273,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-13T21:17:45+08:00">
+                2018-08-13
               </time>
             
 
@@ -313,12 +313,11 @@
       
         
           
-          概述在状态模式中，类的行为是基于它的状态改变的。这种类型的设计模式属于行为型模式。状态模式是把所有的行为包装在不同的状态对象中，意在是让一个对象在其内部改变的时候，他的行为也跟着改变。
-使用场景1、行为随状态改变而改变的场景。2、代码中包含大量的条件语句，比如if-else和switch-case，
+          概述Window表示一个窗口，但在日常开发中我们接触的不多。我们常见的如Toast和PopWindow都是属于Window。Window是一个抽象类，而Window的具体实现类是PhoneWindow。如果我们需要创建一个Window，只需要通过WindowManager去实现。而它的具体实现是在W
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/状态模式/#more" rel="contents">
+            <a class="btn" href="/android/window_manager/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -369,7 +368,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/策略模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/android/context/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -388,7 +387,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/策略模式/" itemprop="url">策略模式</a></h1>
+                <a class="post-title-link" href="/android/context/" itemprop="url">什么是context？</a></h1>
         
 
         <div class="post-meta">
@@ -400,8 +399,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-23T21:03:27+08:00">
+                2018-07-23
               </time>
             
 
@@ -440,13 +439,12 @@
       
         
           
-          概述策略模式在我们日常开发中也是经常遇见的。比如实现某一个功能有多种算法或者策略。我们根据具体情况去实现它。例如：排序算法，我们可以使用插入、冒泡、快排等等。
-针对这种情况，我们一般将多个策略写在一个工具类中去方便调用。我们需要A策略就是调用A方法，需要B策略就调用B方法。
-如果将这些算法或者策略抽
+          Context基本概念先看一下Context源码，代码如下：  
+/** * Interface to global information about an application environment.  This is * an abstract class whose implementa
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/策略模式/#more" rel="contents">
+            <a class="btn" href="/android/context/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -497,7 +495,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/组合模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/android/thread_pool/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -516,7 +514,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/组合模式/" itemprop="url">组合模式</a></h1>
+                <a class="post-title-link" href="/android/thread_pool/" itemprop="url">Android的线程和线程池</a></h1>
         
 
         <div class="post-meta">
@@ -528,8 +526,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-18T21:09:51+08:00">
+                2018-07-18
               </time>
             
 
@@ -568,13 +566,11 @@
       
         
           
-          概述组合模式又叫部分整体模式，是用于把一组相似的对象当作一个单一的对象。组合模式依据树形结构来组合对象，用来表示部分以及整体层次。这种类型的设计模式属于结构型模式，它创建了对象组的树形结构。
-这种模式创建了一个包含自己对象组的类。该类提供了修改相同对象组的方式。
-使用场景部分、整体场景，如树形菜单，
+          概述线程中Android中是很重要的一个概念。从用途上来说，线程分为主线程和子线程。主线程主要用于界面上的交互，而子线程主要用于一些耗时操作。除了thread之外，在Android中可以扮演线程角色的还有很多。例如Asnyctask、IntentService以及handlerthread。对于as
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/组合模式/#more" rel="contents">
+            <a class="btn" href="/android/thread_pool/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -625,7 +621,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/备忘录模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/android/handler/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -644,7 +640,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/备忘录模式/" itemprop="url">备忘录模式</a></h1>
+                <a class="post-title-link" href="/android/handler/" itemprop="url">Android的消息机制</a></h1>
         
 
         <div class="post-meta">
@@ -656,8 +652,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-16T20:57:45+08:00">
+                2018-07-16
               </time>
             
 
@@ -696,14 +692,12 @@
       
         
           
-          概述备忘录模式是一种行为模式，该模式用于保存当前对象，并且在之后可以再次恢复到此状态。这有点像我们平时说的“后悔药”。备忘录模式实现的方式需要保证被保存的对象不能被对象从外部访问，目的是为了保护好被保存的这些对象的状态的完整性以及内部实现不像外暴露。
-使用场景
-需要保存/恢复数据的相关状态场景。 
-
+          概述说到Android的消息机制，我们肯定会想到Handler。是的，Android的消息机制主要是指Handler的运行机制以及Handler所附带的MessageQueue和Looper的工作过程。当我们工作的时候我们只要接触到Handler就可以了。
+Android的消息机制主要是指handl
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/备忘录模式/#more" rel="contents">
+            <a class="btn" href="/android/handler/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -754,7 +748,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/外观模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/java/hashmap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -773,7 +767,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/外观模式/" itemprop="url">外观模式</a></h1>
+                <a class="post-title-link" href="/java/hashmap/" itemprop="url">Hashmap源码分析</a></h1>
         
 
         <div class="post-meta">
@@ -785,8 +779,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T20:57:52+08:00">
+                2018-07-12
               </time>
             
 
@@ -825,17 +819,12 @@
       
         
           
-          概述外观模式中开发过程中使用率非常高。它向现有的系统添加一个接口，来隐藏系统的复杂性。这种模式涉及到一个单一的类，该类提供了客户端请求的简化方法和对现有系统类方法的委托调用。
-使用场景
-为复杂的模块或子系统提供外界访问的模块。 
-子系统相对独立。 
-预防低水平人员带来的风险。
-
-具体实现public
+          概述hashmap应该是集合中较复杂的一个类。最早出现在1.2中，在1.8中加入了红黑树，所以1.8的改动很大。hashmap允许null值和null键，底层是通过散列算法实现的。并且hashmap不是线程安全的。  
+源码分析成员变量//默认的初始化数组大小为16static final int 
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/外观模式/#more" rel="contents">
+            <a class="btn" href="/java/hashmap/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -886,7 +875,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/工厂模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/java/treemap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -905,7 +894,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/工厂模式/" itemprop="url">工厂模式</a></h1>
+                <a class="post-title-link" href="/java/treemap/" itemprop="url">TreeMap源码分析</a></h1>
         
 
         <div class="post-meta">
@@ -917,8 +906,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T23:31:26+08:00">
+                2018-07-05
               </time>
             
 
@@ -957,12 +946,12 @@
       
         
           
-          概述工厂模式在我们平常开发中应用比较广泛，或许你不知道，但你已经使用了很多次了。我们明确地计划不同条件下创建不同实例时，就会使用到工厂模式。工厂模式分为简单工厂模式和抽象工厂模式。这边我们先说简单的工厂模式。
-使用场景在任何需要生成复杂的对象的地方，都可以使用工厂模式。复杂对象适合使用工厂模式。而直
+          概述TreeMap是红黑树的java实现，红黑树能保证增、删、查等基本操作的时间复杂度为O(lgN)。首先我们来看一张TreeMap的继承体系图：  
+还是比较直观的，这里来简单说一下继承体系中不常见的接口NavigableMap和SortedMap，这两个接口见名知意。先说NavigableMap
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/工厂模式/#more" rel="contents">
+            <a class="btn" href="/java/treemap/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1013,7 +1002,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/建造者模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/java/linkedlist/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1032,7 +1021,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/建造者模式/" itemprop="url">建造者模式</a></h1>
+                <a class="post-title-link" href="/java/linkedlist/" itemprop="url">LinkedList源码分析</a></h1>
         
 
         <div class="post-meta">
@@ -1044,8 +1033,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T20:56:55+08:00">
+                2018-07-05
               </time>
             
 
@@ -1084,12 +1073,13 @@
       
         
           
-          概述建造者模式又称Builder模式，它是一步步创建一个复杂的对象然后进行构建。可以精准的控制对象的构造过程。此模式是将构建复杂对象的过程与它的部件解耦，使得构建过程和部件的表示隔离开来。
-一个对象有很多复杂的信息，比如人，有身高，体重，性别，姓名，年龄等等。如何将这些信息给组合起来，然后形成这个对
+          概述LinkedList弥补了ArrayList增删较慢的问题，但在查找方面又逊色于ArrayList，所以在使用时需要根据场景灵活选择。对于这两个频繁使用的集合类，掌握它们的源码并正确使用，可以让我们的代码更高效。
+
+LinkedList 是一个继承于AbstractSequentialList的
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/建造者模式/#more" rel="contents">
+            <a class="btn" href="/java/linkedlist/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1140,7 +1130,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/抽象工厂模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/java/arraylist/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1159,7 +1149,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/抽象工厂模式/" itemprop="url">抽象工厂模式</a></h1>
+                <a class="post-title-link" href="/java/arraylist/" itemprop="url">ArrayList源码分析</a></h1>
         
 
         <div class="post-meta">
@@ -1171,8 +1161,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T20:53:55+08:00">
+                2018-07-05
               </time>
             
 
@@ -1211,12 +1201,17 @@
       
         
           
-          概述前面我们已经说到了工厂模式，现在我们扯扯抽象工厂模式。从字母意思理解下，工厂也就是会生产指定的产品。那么抽象工厂就意味着生产出来的产品不是指定的。往简单点说，抽象工厂就是为创建一组相关或者相互依赖的对象提供一个接口，而不需要指明他们的具体类。
-使用场景一个产品族有相同的约束时可以使用抽象工厂模式
+          概述ArrayList是日常开发中使用最频繁的集合类。首先这边简单介绍一下ArrayList：  
+
+ArrayList是通过动态数组去实现的
+ArrayList并不是线程安全的
+实现了RandomAccess接口，可以通过下标序号进行快速访问
+实现了Cloneable接口，能被克隆
+实现了Seri
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/抽象工厂模式/#more" rel="contents">
+            <a class="btn" href="/java/arraylist/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1267,7 +1262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/代理模式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/performance/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1286,7 +1281,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/代理模式/" itemprop="url">代理模式</a></h1>
+                <a class="post-title-link" href="/performance/" itemprop="url">android性能优化全方面解析</a></h1>
         
 
         <div class="post-meta">
@@ -1298,8 +1293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-03T20:38:44+08:00">
+                2017-11-03
               </time>
             
 
@@ -1338,11 +1333,11 @@
       
         
           
-          概述代理模式也称为委托模式，这种模式在开发和生活中都很常见，比如猪八戒去找高翠兰结果是孙悟空变的，可以这样理解：把高翠兰的外貌抽象出来，高翠兰本人和孙悟空都实现了这个接口，猪八戒访问高翠兰的时候看不出来这个是孙悟空，所以说孙悟空是高翠兰代理类。 还有让同学，同事带饭也是一种代理。总而言之，代理模式几
+          目的公司的新需求终于解决完了，离测试和发布还有段时间，第一次体验了下没需求没bug的感觉，真是舒爽~然后翻了翻有什么可以学的。无意翻到了Android后期发展的五大趋势。一、性能优化。二、高级UI。三、JNI/NDK开发。四、架构师。五、RN开发。这也许将会是我的进阶趋势。早已知道在瓶颈期的我，似乎
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/代理模式/#more" rel="contents">
+            <a class="btn" href="/performance/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1393,7 +1388,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/design_mode/六大设计原则/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/android/view/viewgroup-event/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -1412,7 +1407,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/design_mode/六大设计原则/" itemprop="url">六大设计原则</a></h1>
+                <a class="post-title-link" href="/android/view/viewgroup-event/" itemprop="url">ViewGroup的源码解读</a></h1>
         
 
         <div class="post-meta">
@@ -1424,8 +1419,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-28T21:41:54+08:00">
+                2017-10-28
               </time>
             
 
@@ -1464,12 +1459,13 @@
       
         
           
-          概述设计模式是一套被反复使用、多数人知晓的、经过分类编目的、代码设计经验的总结。使用设计模式是为了可重用代码、让代码更容易被他人理解、保证代码可靠性。 毫无疑问，设计模式于己于他人于系统都是多赢的；设计模式使代码编制真正工程化；设计模式是软件工程的基石脉络，如同大厦的结构一样。
-而设计原则则是设计模
+          我们之前刚刚分析完事件传递机制和view的源码，如果没有看过的，建议看完View的事件拦截机制浅析以及View的事件源码解析。这次我们来分析下viewgroup的。
+可能有人会想，怎么又是源码分析，肯定又是一大通。其实没你想的那么复杂。仔细分析一波就行了。
+解读ViewGroup我们都知道，一个事件
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/design_mode/六大设计原则/#more" rel="contents">
+            <a class="btn" href="/android/view/viewgroup-event/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1511,7 +1507,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1561,7 +1557,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">46</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
