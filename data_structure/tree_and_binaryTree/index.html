@@ -79,38 +79,26 @@
 
 
 
-<meta name="description" content="二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。 定义平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，且左子树和右子树的深度之差的绝对值不超过1。我们将二叉树上结点的左子树深度减去右子树深度的值称为平衡">
+<meta name="description" content="数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。 树的定义树是N的节点的有限集。N&#x3D;0时称为空树，在一个非空树中：    有且只有一个根（）节点。  当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。  下图就是一个树： 节点分类树的结点包含一个数据元素及若干指向其子">
 <meta property="og:type" content="article">
-<meta property="og:title" content="平衡二叉树">
-<meta property="og:url" content="http://yoursite.com/data_structure/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:title" content="树与二叉树">
+<meta property="og:url" content="http://yoursite.com/data_structure/tree_and_binaryTree/index.html">
 <meta property="og:site_name" content="我就是马云飞">
-<meta property="og:description" content="二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。 定义平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，且左子树和右子树的深度之差的绝对值不超过1。我们将二叉树上结点的左子树深度减去右子树深度的值称为平衡">
+<meta property="og:description" content="数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。 树的定义树是N的节点的有限集。N&#x3D;0时称为空树，在一个非空树中：    有且只有一个根（）节点。  当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。  下图就是一个树： 节点分类树的结点包含一个数据元素及若干指向其子">
 <meta property="og:locale">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232909854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232947478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233021566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233056990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2020060423312969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233205675.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233236547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233309434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233350415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233422864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233451438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233540770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233612956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233645958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233715778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233755596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233825578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233910376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604233942312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604234013915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-06-04T13:19:01.745Z">
-<meta property="article:modified_time" content="2020-06-04T15:40:25.448Z">
+<meta property="article:modified_time" content="2020-06-04T15:27:06.707Z">
 <meta property="article:author" content="马云飞">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200604232909854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
 
 
 
@@ -140,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/data_structure/平衡二叉树/"/>
+  <link rel="canonical" href="http://yoursite.com/data_structure/tree_and_binaryTree/"/>
 
 
 
 
 
-  <title>平衡二叉树 | 我就是马云飞</title>
+  <title>树与二叉树 | 我就是马云飞</title>
   
 
 
@@ -297,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/tree_and_binaryTree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -314,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">平衡二叉树</h1>
+          <h1 class="post-title" itemprop="name headline">树与二叉树</h1>
         
 
         <div class="post-meta">
@@ -346,11 +334,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
-            </span>
-          
 
           
 
@@ -369,49 +352,27 @@
       
 
       
-        <p>二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，且左子树和右子树的深度之差的绝对值不超过1。我们将二叉树上结点的左子树深度减去右子树深度的值称为平衡因子BF (Balance Factor)，那么平衡二叉树上所有结点的平衡因子只可能是-1、0和1。</p>
-<p>如下图就不是一棵AVL树，因为结点18的左子树高度为2，右子树高度为0，高度差大于1。<br><img src="https://img-blog.csdnimg.cn/20200604232909854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>但通过一定的步骤调整之后，可以将其转为一棵平衡二叉树，如下图：<br><img src="https://img-blog.csdnimg.cn/20200604232947478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>平衡二叉树构建的基本思想就是在构建二叉排序树的过程中，每当插入一个结点时，先检查是否因插入而破坏了树的平衡性，若是，则找出最小不平衡子树。在保持二叉排序树特性的前提下，调整最小不平衡子树中各结点之间的链接关系，进行相应的旋转，使之成为新的平衡子树。最小不平衡子树是指距离插入结点最近的，且平衡因子的绝对值大于1 的结点为根的子树。</p>
-<p>下面通过一个实例，了解平衡二叉树的构建过程。</p>
-<p>假如我们要将数组int[] a = {3, 2, 1, 4, 5, 6, 7, 10, 9, 8}构建成一棵二叉排序树，如果直接按照二叉排序树的定义，会得到下面的结果：<br><img src="https://img-blog.csdnimg.cn/20200604233021566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>这样的结果对查找是十分不利的，树的高度达到了8，而且大多数只有一个孩子。所以我们需要一些操作，将它变成一棵AVL树。</p>
-<p>首先，插入元素3和2时，没有什么影响，此时3的平衡因子为1，2的平衡因子为0，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604233056990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在，要把1插入树中，这时结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/2020060423312969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>此时3的平衡因子为2了，不再符合平衡二叉树的规则。此时，整棵树就是最小不平衡子树，我们将其右旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233205675.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>再插入4，也不会影响平衡，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233236547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>此时，插入元素5，以3为根结点的子树成为了最小不平衡子树，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233309434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在要对其进行左旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233350415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在继续插入元素6，此时以2为根结点的右子树为最小不平衡子树，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233422864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>这时再次需要对其进行左旋，这次旋转后要将4的左孩子变为2的右孩子，以满足二叉排序树的定义，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233451438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>再插入7时，情况和之前有些类似了，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233540770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>左旋后结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233612956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在，继续插入10，此时无需调整，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233645958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>下一步，插入元素9，此时结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233715778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>按照之前的经验，这时我们应该进行左旋了，但是左旋之后9将变为10的右孩子，这会不符合二叉排序树的定义。和之前不同的是，7和10的平衡因子符号相反，这是造成这一结果的原因。这种情况下，要先以10为根节点右旋，再进行左旋，结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233755596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233825578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>最后插入元素8，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233910376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>此时情况和上述类似，6是最小不平衡子树的根结点，9和6的平衡因子符号相反，所以先以9为根结点右旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233942312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>然后再以6左旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604234013915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>可以看到，此树的高度仅为4，与之前的8相差很多，性能自然也好很多。</p>
-<p>平衡二叉树的删除操作与插入类似，这里将不再介绍。大家可以自己思考如何最高效地删除元素，可以分叶结点、仅有一个子结点和有两个子结点三种情况考虑，这里还用到了递归的思想。</p>
-<p>接下来我们将介绍另一种实现方式，红黑树。</p>
+        <p>数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。</p>
+<h3 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h3><p>树是N的节点的有限集。N=0时称为空树，在一个非空树中：  </p>
+<ul>
+<li>有且只有一个根（）节点。</li>
+<li> 当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。</li>
+</ul>
+<p>下图就是一个树：<br><img src="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>树的结点包含一个数据元素及若干指向其子树的分支。结点拥有的子树数称为结点的度(Degree) 。度为0的结点称为叶结点(Leaf) 或终端结点；度不为0 的结点称为非终端结点或分支结点。除根结点之外，分支结点也称为内部结点。树的度是树内各结点的度的最大值。</p>
+<p>如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。<br><img src="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h3><p>结点的子树的根称为该结点的孩子(Child)，相应地，该结点称为孩子的双亲(Parent)。同一个双亲的孩子之间互称兄弟(Sibling)。结点的祖先是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的子孙。  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>结点的层次(LeveI)从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度(Depth)或高度 。<br><img src="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="有序树与无序树"><a href="#有序树与无序树" class="headerlink" title="有序树与无序树"></a>有序树与无序树</h3><p>如果将树中结点的各子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树。</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是n(n ≥ 0) 个结点的有限集合，该集合或者为空集(称为空二叉树)，或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。<br>下图就是一个二叉树，二叉树就是每个节点的度≤2的树。<br><img src="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p>二叉树遍历是指从根节点出发，按照某种顺序依次访问二叉树的所有节点，使得每个节点被访问一次且只能被访问一次。二叉树遍历分为前序遍历，中序遍历以及后续遍历。</p>
+<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树， 再前序遍历右子树。</p>
+<p>如下图所示，遍历结果为：ABDGHCEIF。<br><img src="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>规则是若树为空，则空操作返回，否则从根结点开始(注意并不是先访问根结点) ，中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树。</p>
+<p>如下图所示，遍历结果为：GDHBAEICF。<br><img src="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>规则是若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
+<p>如下图所示，遍历结果为：GHDBIEFCA。<br><img src="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
 
       
     </div>
@@ -465,8 +426,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/data_structure/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8/" rel="next" title="树组与链表">
-                <i class="fa fa-chevron-left"></i> 树组与链表
+              <a href="/android/activity/launchmode/" rel="next" title="Activity的启动模式">
+                <i class="fa fa-chevron-left"></i> Activity的启动模式
               </a>
             
           </div>
@@ -475,7 +436,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/data_structure/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="prev" title="哈希表">
+              <a href="/data_structure/hash_table/" rel="prev" title="哈希表">
                 哈希表 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -623,7 +584,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86"><span class="nav-number">2.</span> <span class="nav-text">实现原理</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">树的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">节点分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.</span> <span class="nav-text">节点间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">深度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%A0%91%E4%B8%8E%E6%97%A0%E5%BA%8F%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">有序树与无序树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">6.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="nav-number">7.</span> <span class="nav-text">二叉树遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.1.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.</span> <span class="nav-text">后序遍历</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -681,8 +642,6 @@
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       人
     </span>
-  
-
   
 </div>
 

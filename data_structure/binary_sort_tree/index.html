@@ -79,26 +79,21 @@
 
 
 
-<meta name="description" content="数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。 树的定义树是N的节点的有限集。N&#x3D;0时称为空树，在一个非空树中：    有且只有一个根（）节点。 当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。  下图就是一个树： 节点分类树的结点包含一个数据元素及若干指向其子树">
+<meta name="description" content="解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。 二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数低一些，但可以通过AVL树、红黑树等增加稳定性。 HashMap在JDK1.8的实现中，就结合了哈希">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树与二叉树">
-<meta property="og:url" content="http://yoursite.com/data_structure/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/index.html">
+<meta property="og:title" content="二叉排序树">
+<meta property="og:url" content="http://yoursite.com/data_structure/binary_sort_tree/index.html">
 <meta property="og:site_name" content="我就是马云飞">
-<meta property="og:description" content="数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。 树的定义树是N的节点的有限集。N&#x3D;0时称为空树，在一个非空树中：    有且只有一个根（）节点。 当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。  下图就是一个树： 节点分类树的结点包含一个数据元素及若干指向其子树">
+<meta property="og:description" content="解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。 二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数低一些，但可以通过AVL树、红黑树等增加稳定性。 HashMap在JDK1.8的实现中，就结合了哈希">
 <meta property="og:locale">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604231633327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
 <meta property="article:published_time" content="2020-06-04T13:19:01.745Z">
-<meta property="article:modified_time" content="2020-06-04T15:27:06.707Z">
+<meta property="article:modified_time" content="2020-06-04T15:16:47.003Z">
 <meta property="article:author" content="马云飞">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
 
 
 
@@ -128,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/data_structure/树与二叉树/"/>
+  <link rel="canonical" href="http://yoursite.com/data_structure/binary_sort_tree/"/>
 
 
 
 
 
-  <title>树与二叉树 | 我就是马云飞</title>
+  <title>二叉排序树 | 我就是马云飞</title>
   
 
 
@@ -285,7 +280,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/binary_sort_tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -302,7 +297,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">树与二叉树</h1>
+          <h1 class="post-title" itemprop="name headline">二叉排序树</h1>
         
 
         <div class="post-meta">
@@ -334,11 +329,6 @@
           
 
           
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i> 浏览
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
-            </span>
-          
 
           
 
@@ -357,27 +347,34 @@
       
 
       
-        <p>数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。</p>
-<h3 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h3><p>树是N的节点的有限集。N=0时称为空树，在一个非空树中：  </p>
+        <p>解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。</p>
+<p>二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数低一些，但可以通过AVL树、红黑树等增加稳定性。</p>
+<p>HashMap在JDK1.8的实现中，就结合了哈希表的高效和红黑树的稳定，我们之后会详细分析其实现。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>二叉排序树(Binary Sort Tree)，又称为二叉查找树。它或者是一棵空树，或者是具有下列性质的二叉树：</p>
 <ul>
-<li>有且只有一个根（）节点。</li>
-<li>当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。</li>
+<li><p>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值</p>
+</li>
+<li><p>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值</p>
+</li>
+<li><p>它的左、右子树也分别为二叉排序树</p>
+</li>
 </ul>
-<p>下图就是一个树：<br><img src="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>树的结点包含一个数据元素及若干指向其子树的分支。结点拥有的子树数称为结点的度(Degree) 。度为0的结点称为叶结点(Leaf) 或终端结点；度不为0 的结点称为非终端结点或分支结点。除根结点之外，分支结点也称为内部结点。树的度是树内各结点的度的最大值。</p>
-<p>如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。<br><img src="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h3><p>结点的子树的根称为该结点的孩子(Child)，相应地，该结点称为孩子的双亲(Parent)。同一个双亲的孩子之间互称兄弟(Sibling)。结点的祖先是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的子孙。  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>结点的层次(LeveI)从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度(Depth)或高度 。<br><img src="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="有序树与无序树"><a href="#有序树与无序树" class="headerlink" title="有序树与无序树"></a>有序树与无序树</h3><p>如果将树中结点的各子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树。</p>
-<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是n(n ≥ 0) 个结点的有限集合，该集合或者为空集(称为空二叉树)，或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。<br>下图就是一个二叉树，二叉树就是每个节点的度≤2的树。<br><img src="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p>二叉树遍历是指从根节点出发，按照某种顺序依次访问二叉树的所有节点，使得每个节点被访问一次且只能被访问一次。二叉树遍历分为前序遍历，中序遍历以及后续遍历。</p>
-<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树， 再前序遍历右子树。</p>
-<p>如下图所示，遍历结果为：ABDGHCEIF。<br><img src="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>规则是若树为空，则空操作返回，否则从根结点开始(注意并不是先访问根结点) ，中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树。</p>
-<p>如下图所示，遍历结果为：GDHBAEICF。<br><img src="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>规则是若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
-<p>如下图所示，遍历结果为：GHDBIEFCA。<br><img src="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>如下就是一棵简单的二叉排序树：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>当对这棵树进行中序遍历时，其结果将按照从小到大排序。</p>
+<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>二叉排序树的查找时间复杂度为O(lg n)，查找使用二分法。要在上图中找到元素37，只需要四次操作即可。</p>
+<p>首先，找到根元素22，37比22大，所以淘汰左子树，再找到35，淘汰左子树，再找到41，进入左子树，得到37。可以看到其速度比挨个对比高了很多。</p>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>二叉排序树的插入操作和查询类似，也需要通过二分法进行查找，找到合适的位置再插入元素，所以其插入速度相比链表较慢。</p>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>从二叉排序树中删除一个元素主要分为三种情况。</p>
+<p>例如要从下面这个二叉排序树中删除一个元素：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<ul>
+<li><p>删除的元素是叶结点，这时可以直接删除它。比如要删除值为1的元素，删除它对树没有任何影响。</p>
+</li>
+<li><p>删除的元素仅有左孩子或者仅有右孩子时，直接让其孩子顶替它即可。比如要删除元素35，只需要用41顶替它即可。</p>
+</li>
+<li><p>删除的元素既有左孩子又有右孩子，这时删除它相对复杂。一种好的方式是找到它的前驱或者后继来代替它。比如要删除元素9，就用6或者13代替它即可。</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>一棵普通的二叉排序树也会出现不平衡问题，如果插入的数据都在树的一侧，就会使得树的深度迅速增大，每次二分查找可以排除的数据很少，从而查询速度严重下降，比如下方这棵树：<br><img src="https://img-blog.csdnimg.cn/20200604231633327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>要查找值为2的元素，使用二分法和使用链表速度差不多。</p>
+<p>为了解决这种问题，就需要在元素插入时即进行修正，后续介绍的AVL树和红黑树就是两种不同的解决方案。</p>
 
       
     </div>
@@ -431,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/android/activity/launchmode/" rel="next" title="Activity的启动模式">
-                <i class="fa fa-chevron-left"></i> Activity的启动模式
+              <a href="/data_structure/balanced_binary_tree/" rel="next" title="平衡二叉树">
+                <i class="fa fa-chevron-left"></i> 平衡二叉树
               </a>
             
           </div>
@@ -441,7 +438,7 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/data_structure/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8/" rel="prev" title="树组与链表">
+              <a href="/data_structure/arrays_and_stack/" rel="prev" title="树组与链表">
                 树组与链表 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -589,7 +586,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">树的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E5%88%86%E7%B1%BB"><span class="nav-number">2.</span> <span class="nav-text">节点分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8A%82%E7%82%B9%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">3.</span> <span class="nav-text">节点间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B1%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">深度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%BA%8F%E6%A0%91%E4%B8%8E%E6%97%A0%E5%BA%8F%E6%A0%91"><span class="nav-number">5.</span> <span class="nav-text">有序树与无序树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91"><span class="nav-number">6.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E9%81%8D%E5%8E%86"><span class="nav-number">7.</span> <span class="nav-text">二叉树遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.1.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8E%E5%BA%8F%E9%81%8D%E5%8E%86"><span class="nav-number">7.3.</span> <span class="nav-text">后序遍历</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-number">1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">查询操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">插入操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">删除操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98"><span class="nav-number">5.</span> <span class="nav-text">问题</span></a></li></ol></div>
             
 
           </div>
@@ -647,8 +644,6 @@
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       人
     </span>
-  
-
   
 </div>
 

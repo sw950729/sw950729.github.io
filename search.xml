@@ -1,184 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>二叉排序树</title>
-    <url>/data_structure/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/</url>
-    <content><![CDATA[<p>解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。</p>
-<p>二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数低一些，但可以通过AVL树、红黑树等增加稳定性。</p>
-<p>HashMap在JDK1.8的实现中，就结合了哈希表的高效和红黑树的稳定，我们之后会详细分析其实现。</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>二叉排序树(Binary Sort Tree)，又称为二叉查找树。它或者是一棵空树，或者是具有下列性质的二叉树：</p>
-<ul>
-<li><p>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值</p>
-</li>
-<li><p>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值</p>
-</li>
-<li><p>它的左、右子树也分别为二叉排序树</p>
-</li>
-</ul>
-<p>如下就是一棵简单的二叉排序树：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>当对这棵树进行中序遍历时，其结果将按照从小到大排序。</p>
-<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>二叉排序树的查找时间复杂度为O(lg n)，查找使用二分法。要在上图中找到元素37，只需要四次操作即可。</p>
-<p>首先，找到根元素22，37比22大，所以淘汰左子树，再找到35，淘汰左子树，再找到41，进入左子树，得到37。可以看到其速度比挨个对比高了很多。</p>
-<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>二叉排序树的插入操作和查询类似，也需要通过二分法进行查找，找到合适的位置再插入元素，所以其插入速度相比链表较慢。</p>
-<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>从二叉排序树中删除一个元素主要分为三种情况。</p>
-<p>例如要从下面这个二叉排序树中删除一个元素：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<ul>
-<li><p>删除的元素是叶结点，这时可以直接删除它。比如要删除值为1的元素，删除它对树没有任何影响。</p>
-</li>
-<li><p>删除的元素仅有左孩子或者仅有右孩子时，直接让其孩子顶替它即可。比如要删除元素35，只需要用41顶替它即可。</p>
-</li>
-<li><p>删除的元素既有左孩子又有右孩子，这时删除它相对复杂。一种好的方式是找到它的前驱或者后继来代替它。比如要删除元素9，就用6或者13代替它即可。</p>
-</li>
-</ul>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>一棵普通的二叉排序树也会出现不平衡问题，如果插入的数据都在树的一侧，就会使得树的深度迅速增大，每次二分查找可以排除的数据很少，从而查询速度严重下降，比如下方这棵树：<br><img src="https://img-blog.csdnimg.cn/20200604231633327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>要查找值为2的元素，使用二分法和使用链表速度差不多。</p>
-<p>为了解决这种问题，就需要在元素插入时即进行修正，后续介绍的AVL树和红黑树就是两种不同的解决方案。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>哈希表</title>
-    <url>/data_structure/%E5%93%88%E5%B8%8C%E8%A1%A8/</url>
-    <content><![CDATA[<p>无论是数组还是链表，其对数据的查询表现都比较无力，要想知道一个元素是否在数组或链表中，只能从前向后挨个对比。在后续将会分析的二叉排序树中，还会将数据排序以进行二分查找，将时间复杂度从O(n)降低到O(lg n)。</p>
-<p>出现这个问题的根源在于，我们没有办法直接根据一个元素找到它存储的位置，那有没有办法消除这个对比的过程呢？哈希表就是解决查询问题的一种方案。</p>
-<h3 id="什么是哈希表"><a href="#什么是哈希表" class="headerlink" title="什么是哈希表"></a>什么是哈希表</h3><p>通俗来讲，哈希表是通过关键字key来获取数据的一种数据结构。它把关键字映射成表中的位置来获取元素，这种映射称为hash函数。</p>
-<p>因为不同的key类型不一样，可能是int，可能是string…但内存地址不会以这些对象也寻址，它会通过hash算法将其转换成int从而完成数据的存储。hash函数需要保证的是对于相同的key，其计算结果总是相同的。  </p>
-<p>这个过程类似查字典，如果要查一个字，我们不会从第一页到最后一页挨着看，这将需要很长的时间，而是根据其发音先在拼音表中找到对应的页数，直接定位到对应的页即可。当然，由于有许多发音一致的汉字，所以我们可能依然需要逐个对比，但这复杂度就小太多了。</p>
-<p>哈希表的过程就和上述例子一样，我们通过key经过hash算法直接定位其位置。然而类似于许多发音一致的，也就是有许多的key通过hash定位的结果是一样，那么这就是hash碰撞。  </p>
-<h3 id="如何解决hash碰撞"><a href="#如何解决hash碰撞" class="headerlink" title="如何解决hash碰撞"></a>如何解决hash碰撞</h3><p>目前比较通用的方法就是使用数组加链表去处理，先看一张图<br><img src="https://img-blog.csdnimg.cn/202006042317255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>然后举个简单的例子：<br>hashmap是数组和链表的结合，它拥有这两种特性。怎么说呢？举个例子，一个学校有不同年级，不同年级有不同班级，不同班级有不同的学生。hashmap里面包含了一个数组，entry包装对象，而entry里面包含了k，v，next。</p>
-<p>对next有似曾相识的感觉？打个比方。用年级对应k，班级对应v。而同一个年级，同一个班级，有不同的学生，对于这个学生，就是通过next来查询的。在后续文章中我们会对其进行详尽的分析。</p>
-<h3 id="哈希表的优缺点"><a href="#哈希表的优缺点" class="headerlink" title="哈希表的优缺点"></a>哈希表的优缺点</h3><p>哈希表是一种优化存储的思想，具体存储元素的依然是其他的数据结构。设计良好的哈希表，能同时兼备数组和链表的优点，它能在插入和查找时都具备良好的性能。然而设计不好的哈希表，有可能会出现较多的哈希碰撞，导致链表过长，从而哈希表会更像一个链表。还有当数据量很大时，为防止链表过长，就需要对数组进行扩容，这时就涉及到了数组的拷贝，其对性能的影响也很严重，所以需要提前对可能的情况有良好的预测，才能真正发挥哈希表的优势。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>平衡二叉树</title>
-    <url>/data_structure/%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
-    <content><![CDATA[<p>二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，且左子树和右子树的深度之差的绝对值不超过1。我们将二叉树上结点的左子树深度减去右子树深度的值称为平衡因子BF (Balance Factor)，那么平衡二叉树上所有结点的平衡因子只可能是-1、0和1。</p>
-<p>如下图就不是一棵AVL树，因为结点18的左子树高度为2，右子树高度为0，高度差大于1。<br><img src="https://img-blog.csdnimg.cn/20200604232909854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>但通过一定的步骤调整之后，可以将其转为一棵平衡二叉树，如下图：<br><img src="https://img-blog.csdnimg.cn/20200604232947478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>平衡二叉树构建的基本思想就是在构建二叉排序树的过程中，每当插入一个结点时，先检查是否因插入而破坏了树的平衡性，若是，则找出最小不平衡子树。在保持二叉排序树特性的前提下，调整最小不平衡子树中各结点之间的链接关系，进行相应的旋转，使之成为新的平衡子树。最小不平衡子树是指距离插入结点最近的，且平衡因子的绝对值大于1 的结点为根的子树。</p>
-<p>下面通过一个实例，了解平衡二叉树的构建过程。</p>
-<p>假如我们要将数组int[] a = {3, 2, 1, 4, 5, 6, 7, 10, 9, 8}构建成一棵二叉排序树，如果直接按照二叉排序树的定义，会得到下面的结果：<br><img src="https://img-blog.csdnimg.cn/20200604233021566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>这样的结果对查找是十分不利的，树的高度达到了8，而且大多数只有一个孩子。所以我们需要一些操作，将它变成一棵AVL树。</p>
-<p>首先，插入元素3和2时，没有什么影响，此时3的平衡因子为1，2的平衡因子为0，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604233056990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在，要把1插入树中，这时结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/2020060423312969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>此时3的平衡因子为2了，不再符合平衡二叉树的规则。此时，整棵树就是最小不平衡子树，我们将其右旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233205675.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>再插入4，也不会影响平衡，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233236547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>此时，插入元素5，以3为根结点的子树成为了最小不平衡子树，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233309434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在要对其进行左旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233350415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在继续插入元素6，此时以2为根结点的右子树为最小不平衡子树，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233422864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>这时再次需要对其进行左旋，这次旋转后要将4的左孩子变为2的右孩子，以满足二叉排序树的定义，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233451438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>再插入7时，情况和之前有些类似了，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233540770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>左旋后结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233612956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>现在，继续插入10，此时无需调整，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233645958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>下一步，插入元素9，此时结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233715778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>按照之前的经验，这时我们应该进行左旋了，但是左旋之后9将变为10的右孩子，这会不符合二叉排序树的定义。和之前不同的是，7和10的平衡因子符号相反，这是造成这一结果的原因。这种情况下，要先以10为根节点右旋，再进行左旋，结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233755596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233825578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>最后插入元素8，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233910376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>此时情况和上述类似，6是最小不平衡子树的根结点，9和6的平衡因子符号相反，所以先以9为根结点右旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233942312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>然后再以6左旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604234013915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""></p>
-<p>可以看到，此树的高度仅为4，与之前的8相差很多，性能自然也好很多。</p>
-<p>平衡二叉树的删除操作与插入类似，这里将不再介绍。大家可以自己思考如何最高效地删除元素，可以分叶结点、仅有一个子结点和有两个子结点三种情况考虑，这里还用到了递归的思想。</p>
-<p>接下来我们将介绍另一种实现方式，红黑树。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>树组与链表</title>
-    <url>/data_structure/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604231852160.png" alt="image">  </p>
-<p>正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：</p>
-<ul>
-<li><p>创建一个数组，必须声明其长度，以在内存中寻找合适的一段连续存储单元。这也意味着数组的大小是固定的，我们无法动态调整其大小。</p>
-</li>
-<li><p>想要获取数组中第i个元素，其时间复杂度是O(1)，因为可以根据其地址直接找到它。同理修改也是。</p>
-</li>
-<li><p>数组对查询表现一般，要想查找一个元素，需要遍历，时间复杂度为O(n)。</p>
-</li>
-<li><p>因为地址连续，想要在数组中插入一个元素是复杂的，因为从插入位置起，后边的所有元素都需要向后移动一位。同理删除也是，只是移动方向为向前。并且，当数组存满时，就无法继续插入了。</p>
-</li>
-<li><p>因为数组要占据一整块内存，有可能产生许多的碎片，也可能因为找不到合适的内存块，而导致存储失败。</p>
-</li>
-</ul>
-<p>总结起来就是：数组大小固定，查找迅速，增删复杂，需要完整的内存块，容易产生碎片。</p>
-<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060423192923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>分析这种结构，我们可以得出以下几个结论：</p>
-<ul>
-<li><p>声明一个链表时，不需要知道其长度，也不需要连续的内存块，所以其大小可以动态调整。</p>
-</li>
-<li><p>链表的每个元素都分为数据域和指针域，前者是实际存储的数据，后者则指向下一个元素的地址。和数组相比，每个元素需要占用的内存更大了。</p>
-</li>
-<li><p>要获取链表的第 i 个元素变得复杂，因为其地址存放在它上一个元素的指针域里，所以只能从第一个元素起，进行 i 次操作。同理修改也是。</p>
-</li>
-<li><p>链表对查询表现也一般，需要遍历，时间复杂度为O(n)。</p>
-</li>
-<li><p>增加与删除一个元素更方便了，因为没有对内存地址的限制，我们只需要在对应节点合理处理下指针域的值，就可以把一个元素插入链表或者从链表删除。</p>
-</li>
-<li><p>链表对内存的要求很小，只要能够存储下一个数据元素的内存块都可以使用，因此不会造成碎片化。</p>
-</li>
-</ul>
-<p>总结起来就是：大小可以动态调整，增删迅速，查找较慢，数据元素所占内存略多，不需要整块内存块，不会造成碎片化。</p>
-<h3 id="数组与链表的选择"><a href="#数组与链表的选择" class="headerlink" title="数组与链表的选择"></a>数组与链表的选择</h3><p>通过以上分析，数组和链表对我们影响最大的几点区别在于：</p>
-<ul>
-<li>数组按位置查找迅速，链表增删方便</li>
-<li>数组是固定大小，链表可以随时扩充与缩减</li>
-<li>链表每个元素占据内存略多于数组</li>
-<li>数组和链表在查询方面表现都比较一般，耗时较长  </li>
-</ul>
-<p>数组就像身上编了号站成一排的人，要找第10个人很容易，根据人身上的编号很快就能找到。但插入、删除慢，要望某个位置插入或删除一个人时，后面的人身上的编号都要变。当然，加入或删除的人始终末尾的也快。<br>链表就像手牵着手站成一圈的人，要找第10个人不容易，必须从第一个人一个个数过去。但插入、删除快。插入时只要解开两个人的手，并重新牵上新加进来的人的手就可以。删除一样的道理。  </p>
-<p>在数据量很小，内容基本固定时，我们选择何种数据结构的影响并不大。但当数据量较大时，如果我们需要对数据进行频繁的插入删除，我们应该选择链表，如果我们需要频繁的获取某个位置的元素，我们应该选择数组。数组与链表并没有明确的优劣之分，根据不同的使用场景进行不同的选择，才是这两种结构使用的最佳方式。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>树与二叉树</title>
-    <url>/data_structure/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
-    <content><![CDATA[<p>数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。</p>
-<h3 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h3><p>树是N的节点的有限集。N=0时称为空树，在一个非空树中：  </p>
-<ul>
-<li>有且只有一个根（）节点。</li>
-<li>当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。</li>
-</ul>
-<p>下图就是一个树：<br><img src="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>树的结点包含一个数据元素及若干指向其子树的分支。结点拥有的子树数称为结点的度(Degree) 。度为0的结点称为叶结点(Leaf) 或终端结点；度不为0 的结点称为非终端结点或分支结点。除根结点之外，分支结点也称为内部结点。树的度是树内各结点的度的最大值。</p>
-<p>如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。<br><img src="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h3><p>结点的子树的根称为该结点的孩子(Child)，相应地，该结点称为孩子的双亲(Parent)。同一个双亲的孩子之间互称兄弟(Sibling)。结点的祖先是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的子孙。  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>结点的层次(LeveI)从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度(Depth)或高度 。<br><img src="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="有序树与无序树"><a href="#有序树与无序树" class="headerlink" title="有序树与无序树"></a>有序树与无序树</h3><p>如果将树中结点的各子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树。</p>
-<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是n(n ≥ 0) 个结点的有限集合，该集合或者为空集(称为空二叉树)，或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。<br>下图就是一个二叉树，二叉树就是每个节点的度≤2的树。<br><img src="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p>二叉树遍历是指从根节点出发，按照某种顺序依次访问二叉树的所有节点，使得每个节点被访问一次且只能被访问一次。二叉树遍历分为前序遍历，中序遍历以及后续遍历。</p>
-<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树， 再前序遍历右子树。</p>
-<p>如下图所示，遍历结果为：ABDGHCEIF。<br><img src="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>规则是若树为空，则空操作返回，否则从根结点开始(注意并不是先访问根结点) ，中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树。</p>
-<p>如下图所示，遍历结果为：GDHBAEICF。<br><img src="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>规则是若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
-<p>如下图所示，遍历结果为：GHDBIEFCA。<br><img src="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>算法复杂度</title>
-    <url>/data_structure/%E7%AE%97%E6%B3%95%E5%A4%8D%E6%9D%82%E5%BA%A6/</url>
-    <content><![CDATA[<p>算法复杂度分为时间复杂度和空间复杂度。其作用：时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。</p>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数f(n)，进而分析f(n)随n的变化情况并确定T(n)的数量级。这里用”O”来表示数量级，给出算法的时间复杂度。 T(n)=O(f(n));<br>它表示随着问题规模的n的增大，算法的执行时间的增长率和f(n)的增长率相同，这称作算法的渐进时间复杂度，简称时间复杂度。而我们一般讨论的是最坏时间复杂度，这样做的原因是：最坏情况下的时间复杂度是算法在任何输入实例上运行时间的上界，分析最坏的情况以估算算法指向时间的一个上界。</p>
-<p>时间复杂度的分析方法：<br>1、时间复杂度就是函数中基本操作所执行的次数<br>2、一般默认的是最坏时间复杂度，即分析最坏情况下所能执行的次数<br>3、忽略掉常数项<br>4、关注运行时间的增长趋势，关注函数式中增长最快的表达式，忽略系数<br>5、计算时间复杂度是估算随着n的增长函数执行次数的增长趋势<br>6、递归算法的时间复杂度为：递归总次数 * 每次递归中基本操作所执行的次数  </p>
-<p>常用的时间复杂度有以下七种，算法时间复杂度依次增加：O(1)常数型、O(log2 n)对数型、O(n)线性型、O(nlog2n)二维型、O(n^2^)平方型、O(n^3^)立方型、O(2^n^)指数型.</p>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>算法的空间复杂度并不是计算实际占用的空间，而是计算整个算法的辅助空间单元的个数，与问题的规模没有关系。算法的空间复杂度S(n)定义为该算法所耗费空间的数量级。<br>S(n)=O(f(n))  若算法执行时所需要的辅助空间相对于输入数据量n而言是一个常数，则称这个算法的辅助空间为O(1);<br>递归算法的空间复杂度：递归深度N*每次递归所要的辅助空间，如果每次递归所需的辅助空间是常数，则递归的空间复杂度是 O(N).</p>
-]]></content>
-  </entry>
-  <entry>
     <title>LinkedList源码分析</title>
     <url>/java/linkedlist/</url>
     <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>LinkedList弥补了ArrayList增删较慢的问题，但在查找方面又逊色于ArrayList，所以在使用时需要根据场景灵活选择。对于这两个频繁使用的集合类，掌握它们的源码并正确使用，可以让我们的代码更高效。</p>
@@ -578,55 +400,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>如何在工作中快速成长？致工程师的十条建议。</title>
-    <url>/soft_skills/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E5%BF%AB%E9%80%9F%E6%88%90%E9%95%BF%EF%BC%9F%E8%87%B4%E5%B7%A5%E7%A8%8B%E5%B8%88%E7%9A%84%E5%8D%81%E6%9D%A1%E5%BB%BA%E8%AE%AE%E3%80%82/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>本文是我最近刚看完的一本《阿里工程师的自我修养》书中的部分内容，我做了简单的梳理。侵删。</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20191009113257423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="思考脑与反射脑"><a href="#思考脑与反射脑" class="headerlink" title="思考脑与反射脑"></a>思考脑与反射脑</h3><p>简单介绍下什么是思考脑和反射脑。思考脑管理性，反射脑管直觉，存储脑管记忆，直觉依赖习惯，用直觉做出反应，快速，但未必正确;思考脑管理性，理性依赖逻辑，缓慢，但更加正确。</p>
-<p>有科学家通过研究，发现一个人一天的行为中，5%是非习惯性的，用思考脑的逻辑驱动，95%是习惯性的，用反射脑的直觉驱动，决定我们一生的，永远是95%的反射脑(习惯)，而不是5%的思考脑(逻辑)。回想自己的一天，大部分的判断和观点是不是都是靠直觉，靠习惯的，什么情况下才会用思考脑?是不是一个人的时候用思考脑比较多，而在多人对话场景中要快只能靠直觉和反射，而给别人好与不好的印象往往是在对话场景中建立起来的，可想而知，反射出来的观点或行为对我们而言是多么重要。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113421668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="习以为常"><a href="#习以为常" class="headerlink" title="习以为常"></a>习以为常</h3><p>把95%中的低质量习惯反射，训练成逻辑后的高质量习惯反射需要有很多的时间保障。但对于处理互联网时代的我们，我们对电子设备的依赖程度已经达到了形影不离的地步。甚至上厕所的那几分钟，也是形影不离。对习惯的认知，关键在于换种说法:“把改变玩手机的习惯，用另外一句话来替代，把学习变成习以为常的生活方式”。<br>谁都知道替换可以改变，但为什么这么难?其实关键在于这个意识点能不能变成触发性响应，也就是说当某个触发条件产生的时候，改变的意识能不能弹出来警告自己。</p>
-<p>先对习惯的产生机制要有所了解，习惯并非凭空产生，他有前因后果，前因是前一件事情结束(触发条件)，后果是前一件事情结束后的行为带来的一些额外奖励。比如晚上下班回家洗完澡这件事情结束后，肯定会开始下一件我们最习惯的事情，比如盯手机看剧或者刷八卦，当这件最习惯的事情结束后，大脑会产生精神上的及时享受，内容很丰富、很精彩。短期看是享受，长期看是灾难，因为对未来帮助意义不大，但是却消耗了我们大把时间。而且看剧或者刷八卦带来的信息积累只能称的上是饭后谈资，或者有些根本没机会谈。</p>
-<p>了解习惯产生的机制后，改变习惯就变得很简单，每次在触发条件发生时，弹出一道选择题，选择做无效事情，还是学习？多次以这种方式不断强化自己做对选择题。久而久之，正确的行为被训练得多了，就成为顺其自然的习惯了。所以改变习惯，就是在触发条件发生时，让自己做对选择题，打破旧有习惯回路，建立新的习惯回路。相信这句话“精英之所以精英，是不间断的正向行为习惯的驱使”。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113432838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="时间管理：三八理论"><a href="#时间管理：三八理论" class="headerlink" title="时间管理：三八理论"></a>时间管理：三八理论</h3><p>时间管理三八理论:每个人每天有公平的24个小时，第1个八小时用于睡觉、第2个八小时用于工作、第3个八小时用于自由支配，但人与人的差距主要是由第3个八小时决定的，第3个8小时用于消费、交易还是投资有着非常大的人生差别。以下班空闲时间为例解释消费、交易、投资从而理解人生差异的不同:</p>
-<p>下班空闲时间，用于消费，比如刷新闻，刷抖音，刷朋友圈，产生及时享受，没产生成长，钱还是那些钱，职位还是原来职位;</p>
-<p>下班空闲时间，用于交易，接个外快，赚点辛苦钱，产生金钱，没产生成长，钱没多多少，职位却还是原来职位;</p>
-<p>下班空闲时间，用于投资，以终为始，相信“慢慢来，成长最快”的认知，持续不断投入多维领域的学习，沉淀能力，获得成长，从成长中获得金钱，名誉的升级;</p>
-<p>看完时间的消费、交易、投资的解释，在看《习以为常》中做选择题的重要性，做对选择题其实就是投资，投资自己的成长，投资自己的学习，人生的不同不就是因为投资自己而变得不一样吗？但是投资需要时间，时间怎么来?<br>“找到不被打扰的时间”。只有找到了不被打扰的时间用于投资自己的成长才能发生复利效应。如果想从工作中省点时间，想从周末挤点时间用于学习，这叫成长的断崖，我相信不能持续，学习必须是每日的必修课，必须是日拱一卒，持之以恒，有不断的输入，也有不断的输出，持续地沉淀，在关键时刻输出解决问题能力，从而获得能力认可。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113454188.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="注意力"><a href="#注意力" class="headerlink" title="注意力"></a>注意力</h3><p>先来解个疑惑:“为什么看电影注意力特别好，做正事注意力集中不了”。<br>首先我们要接受这个现实，医学上把这叫作注意力缺失症，基本所有人都有这种毛病，因为做正事比较枯燥、困难，让人不舒服，集中不了注意力，逃避很正常!<br>其次找到改善方法，通常可以这么做，给自己准备一个笔记本，边读边思考，顺带把重要的观点记录下来，开始会觉得很困难，但是慢慢坚持下来你会发现，思考会越来越深入，注意力集中时间越来越长。<br>注意力和时间管理的认知一旦结合，我们可以兴奋地这么说:“在不被打扰的时间里，用好注意力投资在自己成长上，我们的人生会不一样，在未来会遇到更好的自己”。</p>
-<h3 id="执行力"><a href="#执行力" class="headerlink" title="执行力"></a>执行力</h3><p><img src="https://img-blog.csdnimg.cn/2019100911350491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>提升执行力，首先让自己成为投资者，投资自己的成长，投资在正确的事情上，此时去认知执行力才有意义，我对执行力的认知:“想明白，然后一步一步做下去”，如果想不明白，根本谈不上执行力。同时提升执行力的时候，还需要自律，通过自律让执行力得到持续，要相信持续投资自己的成长，可以实现“慢慢来，成长最快”的复利效果。</p>
-<h3 id="贵人"><a href="#贵人" class="headerlink" title="贵人"></a>贵人</h3><p>很多时候我们会觉得身边缺少贵人，或者有贵人但离自己太远。产生这种认知离不开4个方面:</p>
-<ul>
-<li><p>一是，自己不自信，不相信自己能够影响他人，导致缺乏主动沟通，长期沟通，沟通的延续性和习惯没有建立。</p>
-</li>
-<li><p>二是，自己心态问题，自己的心态若是不够积极正向，没有贵人敢进入你的思维空间，因为价值观不匹配，很难形成认知共识。</p>
-</li>
-<li><p>三是，职场原因，很多时候可能你的老板就是你的贵人，但是因为职场，因为上下级，碍于面子，碍于工作，不敢多交流，多请教。</p>
-</li>
-<li><p>四是，贵人来了又走了，有贵人帮你改变，帮你进步，但是自己不努力，抱着过去做事的心态和方法在职场上浪迹天涯，进步不明显，否定了他作为贵人的价值和意义。</p>
-</li>
-</ul>
-<p>如果恰好有这么一位贵人，应该懂得珍惜，珍惜的主要方式是用成长回报他，因为你的成长在未来可以帮助他。同时在平时需要建立有效沟通，首先让贵人真正地了解你，在确定贵人能够帮助你，影响你时，你应该大胆去承担一些有挑战的事情，哪怕遇到委屈，遇到压力，遇到失败，要相信此时的你才是真实的你，你的天花板，你的瓶颈就在于此，借助贵人助你提升能力，下次同样的事情来临时，自己就能够得心应手，这种能力的锻炼机会非常少，和阿里经常说的借事修人非常匹配，事情失败了没关系，但人要成，人的能力要提升。<br><img src="https://img-blog.csdnimg.cn/20191009113514341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="会议"><a href="#会议" class="headerlink" title="会议"></a>会议</h3><p>会多不一定是坏事，反而可能成为你训练思考，训练总结归纳，训练逻辑表达的地方。<br>而且用什么样的身份参与会议，或者在过程中角色如何切换，也是非常重要。我一般用3种角色参加:</p>
-<p>作为参与者，认真聆听，快速提炼自己想表达的逻辑，然后参与讨论。</p>
-<p>作为聆听者，仔细聆听，认真输入，在脑中组织思路，组织逻辑。</p>
-<p>作为中断者，发现有些会议真的没有继续的必要了，出于好意，提示会议的重心或者结束会议。<br><img src="https://img-blog.csdnimg.cn/20191009113530117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="跳出舒适区"><a href="#跳出舒适区" class="headerlink" title="跳出舒适区"></a>跳出舒适区</h3><p>心理学家把我们可能面对的学习内容分成了三个区，分别是舒适区、学习区和恐慌区。舒适区太容易，待太久了，总想跳出去看看。恐慌区太难，太难带来恐惧，就像梁宁在产品思维中讲同理心时，恐惧会产生束缚也会产生动力，就看安全边界有没有被侵犯，如果无法战胜挑战，恐惧就产生了束缚，退回到舒适区。</p>
-<p>所以跳出舒适区，不是说跳到恐慌区，而是跳到两者之间的学习区，在学习区中达到困难和能力的平衡状态，引用米哈里·契克森米哈赖在《心流:最优体验心里学》这本书提到的:要想在工作中达到心流状态，这项工作的挑战和你的技能必须形成平衡，如果工作的挑战大大低于你的技能，你会觉得工作很无聊。如果工作的挑战大大超出你的技能，你会感到焦虑。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113539437.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="职业规划"><a href="#职业规划" class="headerlink" title="职业规划"></a>职业规划</h3><p>职业规划不是某个岗位，某个角色，而是工作能力的提升。针对自己岗位需要的能力，职场需要的能力，然后用专家思维，多维视角重点突破3-4项能力，抱着120%的努力拿到结果，甚至是超出期望的结果，事情成了，能力也就被认可了，所谓的角色，岗位只是顺其自然的结果。<br><img src="https://img-blog.csdnimg.cn/20191009113546898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="时间换空间"><a href="#时间换空间" class="headerlink" title="时间换空间"></a>时间换空间</h3><p>所谓时间换空间，就是让我们无法看清未来是什么样子的时候，把注意力聚焦在当下，做成长该做的事。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113555901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>所谓直觉反射，就是通过大量的逻辑反复训练，提升自己的直觉准确性，从狭窄的5%进入广阔的95%;<br>所谓以习为常，就是在触发条件发生进入下一个行为前，做对选择题;<br>所谓时间管理，就是找到不被打扰的时间用于投资自己;<br>所谓注意力，就是专注在目标事务上，直到产生期望结果;<br>所谓执行力，就是让自己先想明白，然后一步一步走下去;<br>所谓贵人，就是能够持续陪你一起输出高质量内容的人;<br>所谓会议，就是模拟机器学习思路，通过参与讨论获得正反馈来验证自己的观点;<br>所谓跳出舒适区，就是先跳出，然后进入学习区，平衡挑战和能力达到心流的体验;<br>所谓职业规划，就是提升工作需要的能力;<br>所谓时间换空间，就是慢慢来，持之以恒，成长最快。</p>
-<p>更多文章请关注我的公众号：码农职场<br><img src="https://img-blog.csdnimg.cn/20191009113626957.png" alt="在这里插入图片描述"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>TreeMap源码分析</title>
     <url>/java/treemap/</url>
     <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>TreeMap是红黑树的java实现，红黑树能保证增、删、查等基本操作的时间复杂度为O(lgN)。<br>首先我们来看一张TreeMap的继承体系图：  </p>
@@ -825,64 +598,6 @@
 <p>而在handleHide方法中，它会将当前窗口给移除掉：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><div class="line"><span class="keyword">if</span> (mView.getParent() != <span class="keyword">null</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (localLOGV) Log.v(TAG, <span class="string">"REMOVE! "</span> + mView + <span class="string">" in "</span> + <span class="keyword">this</span>);</div><div class="line">        mWM.removeViewImmediate(mView);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>任何 View 都是附属在一个Window上面的，Window表示一个窗口的概念，也是一个抽象的概念，Window 并不是实际存在的，它是以View的形式存在的。WindowManager 是外界也就是我们访问Window的入口，Window的具体实现位于WindowManagerService 中，WindowManagerService 和 WindowManager 的交互是一个 IPC 过程。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>红黑树</title>
-    <url>/data_structure/%E7%BA%A2%E9%BB%91%E6%A0%91/</url>
-    <content><![CDATA[<p>红黑树和平衡二叉树的思想是类似的，都是在插入过程中对二叉排序树进行调整，从而提升性能，它的增删改查均可以在O(lg n)内完成。</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>红黑树是一棵二叉排序树。且满足以下特点：</p>
-<ul>
-<li><p>节点是红色或黑色。</p>
-</li>
-<li><p>根节点是黑色。</p>
-</li>
-<li><p>每个叶子节点都是黑色的空节点（NIL节点）。</p>
-</li>
-<li><p>每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)。</p>
-</li>
-<li><p>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。</p>
-</li>
-</ul>
-<p>下图就是一棵简单的红黑树示例：<br><img src="https://img-blog.csdnimg.cn/20200604234313694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>示例中每个结点最后都是一个NIL结点，它是黑色的，不过我们画图时通常会省略它。所以下文以及后续文章中绘制时都会省略NIL结点，大家记得还有它就可以。</p>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>红黑树的插入与删除和AVL树类似，也是每插入一个结点，都检查是否破坏了树的结构，然后进行调整。红黑树每个结点插入时默认都为红色，这样做可以降低黑高，也可以减少调整的次数。</p>
-<h3 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h3><p>红黑树的概念理解起来较为复杂，我们以一个简单的示例，看看如何构造一棵红黑树。</p>
-<p>现有数组int[] a = {1, 10, 9, 2, 3, 8, 7, 4, 5, 6};我们要将其变为一棵红黑树。</p>
-<p>首先插入1，此时树是空的，1就是根结点，根结点是黑色的：<br><img src="https://img-blog.csdnimg.cn/202006042343549.png" alt=""><br>然后插入元素10，此时依然符合规则，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234426203.png" alt=""><br>当插入元素9时，这时是需要调整的第一种情况，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234604991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>红黑树规则4中强调不能有两个相邻的红色结点，所以此时我们需要对其进行调整。调整的原则有多个相关因素，这里的情况是，父结点10是其祖父结点1（父结点的父结点）的右孩子，当前结点9是其父结点10的左孩子，且没有叔叔结点（父结点的兄弟结点），此时需要进行两次旋转，第一次，以父结点10右旋：<br><img src="https://img-blog.csdnimg.cn/20200604234653898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后将父结点（此时是9）染为黑色，祖父结点1染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604234726279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后以祖父结点1左旋：<br><img src="https://img-blog.csdnimg.cn/20200604234801183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步，插入元素2，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234831311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时情况与上一步类似，区别在于父结点1是祖父结点9的左孩子，当前结点2是父结点的右孩子，且叔叔结点10是红色的。这时需要先将叔叔结点10染为黑色，再进行下一步操作，具体做法是将父结点1和叔叔结点10染为黑色，祖父结点9染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604234913248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>由于结点9是根节点，必须为黑色，将它染为黑色即可：<br><img src="https://img-blog.csdnimg.cn/20200604234945664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步，插入元素3，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235026982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这和我们之前插入元素10的情况一模一样，需要将父结点2染为黑色，祖父结点1染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235106297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后左旋：<br><img src="https://img-blog.csdnimg.cn/20200604235140766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步，插入元素8，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235214237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
-<p>此时和插入元素2有些类似，区别在于父结点3是右孩子，当前结点8也是右孩子，这时也需要先将叔叔结点1染为黑色，具体操作是先将1和3染为黑色，再将祖父结点2染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235250905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时树已经平衡了，不需要再进行其他操作了，现在插入元素7，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235321982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这时和之前插入元素9时一模一样了，先将7和8右旋，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235351319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后将7染为黑色，3染为红色，再进行左旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/2020060423542296.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一步要插入的元素是4，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235451208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这里和插入元素2是类似的，先将3和8染为黑色，7染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235525247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>但此时2和7相邻且颜色均为红色，我们需要对它们继续进行调整。这时情况变为了父结点2为红色，叔叔结点10为黑色，且2为左孩子，7为右孩子，这时需要以2左旋。这时左旋与之前不同的地方在于结点7旋转完成后将有三个孩子，结果类似于下图：<br><img src="https://img-blog.csdnimg.cn/20200604235609567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这种情况处理起来也很简单，只需要把7原来的左孩子3，变成2的右孩子即可，结果如下：<br><img src="https://img-blog.csdnimg.cn/2020060423563965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后再把2的父结点7染为黑色，祖父结点9染为红色。结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604235709284.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时又需要右旋了，我们要以9右旋，右旋完成后7又有三个孩子，这种情况和上述是对称的，我们把7原有的右孩子8，变成9的左孩子即可，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235738345.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>下一个要插入的元素是5，插入后如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235833460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>有了上述一些操作，处理5变得十分简单，将3染为红色，4染为黑色，然后左旋，结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/2020060423590063.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>最后插入元素6，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235928699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>又是叔叔结点3为红色的情况，这种情况我们处理过多次了，首先将3和5染为黑色，4染为红色，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235957745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
-<p>此时问题向上传递到了元素4，我们看2、4、7、9的颜色和位置关系，这种情况我们也处理过，先将2和9染为黑色，7染为红色，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605000037707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>最后7是根结点，染为黑色即可，最终结果如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060500011633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>可以看到，在插入元素时，叔叔结点是主要影响因素，待插入结点与父结点的关系决定了是否需要多次旋转。可以总结为以下几种情况：  </p>
-<ul>
-<li><p>如果父结点是黑色，插入即可，无需调整。  </p>
-</li>
-<li><p>如果叔叔结点是红色，就把父结点和叔叔结点都转为黑色，祖父结点转为红色，将不平衡向上传递。  </p>
-</li>
-<li><p>如果叔叔结点是黑色或者没有叔叔结点，就看父结点和待插入结点的关系。如果待插入结点和父结点的关系，与父结点与祖父结点的关系一致，比如待插入结点是父结点的左孩子，父结点也是祖父结点的左孩子，就无需多次旋转。否则就先通过相应的旋转将其关系变为一致。  </p>
-</li>
-</ul>
-<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><p>要从一棵红黑树中删除一个元素，主要分为三种情况。  </p>
-<h4 id="待删除元素没有孩子"><a href="#待删除元素没有孩子" class="headerlink" title="待删除元素没有孩子"></a>待删除元素没有孩子</h4><p>没有孩子指的是没有值不为NIL的孩子。这种情况下，如果删除的元素是红色的，可以直接删除，如果删除的元素是黑色的，就需要进行调整了。</p>
-<p>例如我们从下图中删除元素1：<br><img src="https://img-blog.csdnimg.cn/20200605000144385.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>删除元素1后，2的左孩子为NIL，这条支路上的黑色结点数就比其他支路少了，所以需要进行调整。  </p>
-<p>这时，我们的关注点从叔叔结点转到兄弟结点，也就是结点4，此时4是红色的，就把它染为黑色，把父结点2染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060500022268.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>然后以2左旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605000305280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时兄弟结点为3，且它没有红色的孩子，这时只需要把它染为红色，父结点2染为黑色即可。结果如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000338313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
-<h4 id="待删除元素有一个孩子"><a href="#待删除元素有一个孩子" class="headerlink" title="待删除元素有一个孩子"></a>待删除元素有一个孩子</h4><p>这应该是删除操作中最简单的一种情况了，根据红黑树的定义，我们可以推测，如果一个元素仅有一个孩子，那么这个元素一定是黑色的，而且其孩子是红色的。  </p>
-<p>假设我们有一个红色节点，它是树中的某一个节点，且仅有一个孩子，那么根据红色节点不能相邻的条件，它的孩子一定是黑色的，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000410994.png" alt="">  </p>
-<p>但这个子树的黑高却不再平衡了（注意每个节点的叶节点都是一个NIL节点），因此红色节点不可能只有一个孩子。  </p>
-<p>而若是一个黑色节点仅有一个孩子，如果其孩子是黑色的，同样会打破黑高的平衡，所以其孩子只能是红色的，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000440111.png" alt=""><br>只有这一种情况符合红黑树的定义，这时要删除这个元素，只需要使用其孩子代替它，仅代替值而不代替颜色即可，上图的情况删除完后变为：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200605000513512.png" alt=""><br>可以看到，树的黑高并没有发生变化，因此也不需要进行调整。  </p>
-<h4 id="待删除元素有两个孩子"><a href="#待删除元素有两个孩子" class="headerlink" title="待删除元素有两个孩子"></a>待删除元素有两个孩子</h4><p>我们在讨论二叉排序树时说过，如果删除一个有两个孩子的元素，可以使用它的前驱或者后继结点代替它。因为它的前驱或者后继结点最多只会有一个孩子，所以这种情况可以转为情况1或情况2处理。</p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>删除元素最复杂的是情况1，这主要由其兄弟结点以及兄弟结点的孩子颜色共同决定。这里简要做下总结。</p>
-<p>我们以N代表当前待删除节点，以P代表父结点，以S代表兄弟结点，以SL代表兄弟结点的左孩子，SR代表兄弟结点的右孩子，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000548232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>根据红黑树定义，这种情况下S要么有红色的子结点，要么只有NIL结点，以下对S有黑色结点的情况均表示NIL  </p>
-<p>主要有以下几种：</p>
-<p>1、S是红色，P一定是黑色，S也不会有红色的孩子，如下：<br><img src="https://img-blog.csdnimg.cn/20200605000620842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时把P和S颜色变换，再左旋，如下：<br><img src="https://img-blog.csdnimg.cn/20200605000651129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这样变换后，N支路上的黑色结点并没有增加，所以依然少一个。  </p>
-<p>2、P，S以及S的全部孩子都是黑色<br>无论S有几个孩子，或者没有孩子，只要不是红色都是这种情况，此时情况如下：<br><img src="https://img-blog.csdnimg.cn/20200605000719213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>我们把S染为红色，这样一来，N和S两个支路都少了一个黑色结点，所以可以把问题向父结点转移，通过递归解决。染色后如下：<br><img src="https://img-blog.csdnimg.cn/20200605000752525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
-<p>3、P为红（S一定为黑），S的孩子都为黑<br>这种情况最为简单，只需要把P和S颜色交换即可。这样N支路多了一个黑色元素，而S支路没有减少，所以达到了平衡。<br><img src="https://img-blog.csdnimg.cn/20200605000827894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br><img src="https://img-blog.csdnimg.cn/20200605000900335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="">  </p>
-<p>4、P任意色，S为黑，N是P的左孩子，S的右孩子SR为红，S的左孩子任意<br>如下所示<br><img src="https://img-blog.csdnimg.cn/20200605000930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时将S改为P的颜色，SR和P改为黑色，然后左旋，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200605001000461.png" alt=""><br>可以发现，此时N支路多了一个黑色结点，而其余支路均没有收到影响，所以调整完毕。  </p>
-<p>5、P任意色，S为黑，N是P的左孩子，S的左孩子SL为红，S的右孩子SR为黑，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605001037305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>此时变换S和SL的颜色，然后右旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605001108965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt=""><br>这时，所有分支的黑色结点数均没有改变，但情况5转为了情况4，再进行一次操作即可。  </p>
-<p>还有一些情况与上述是对称的，我们进行相应的转换即可。  </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>红黑树的操作比较复杂，插入元素可能需要多次变色与旋转，删除也是。这些操作的目的都是为了保证红黑树的结构不被破坏。这些复杂的插入与删除操作希望大家可以亲手尝试一下，以加深理解。  </p>
-<p>红黑树是JDK中TreeMap、TreeSet的底层数据结构，在JDK1.8中HashMap也用到了红黑树，所以掌握它对我们后续的分析十分重要。  </p>
 ]]></content>
   </entry>
   <entry>
@@ -1392,8 +1107,186 @@
 ]]></content>
   </entry>
   <entry>
+    <title>算法复杂度</title>
+    <url>/data_structure/algorithmic_complexity/</url>
+    <content><![CDATA[<p>算法复杂度分为时间复杂度和空间复杂度。其作用：时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数f(n)，进而分析f(n)随n的变化情况并确定T(n)的数量级。这里用”O”来表示数量级，给出算法的时间复杂度。 T(n)=O(f(n));<br>它表示随着问题规模的n的增大，算法的执行时间的增长率和f(n)的增长率相同，这称作算法的渐进时间复杂度，简称时间复杂度。而我们一般讨论的是最坏时间复杂度，这样做的原因是：最坏情况下的时间复杂度是算法在任何输入实例上运行时间的上界，分析最坏的情况以估算算法指向时间的一个上界。</p>
+<p>时间复杂度的分析方法：<br>1、时间复杂度就是函数中基本操作所执行的次数<br>2、一般默认的是最坏时间复杂度，即分析最坏情况下所能执行的次数<br>3、忽略掉常数项<br>4、关注运行时间的增长趋势，关注函数式中增长最快的表达式，忽略系数<br>5、计算时间复杂度是估算随着n的增长函数执行次数的增长趋势<br>6、递归算法的时间复杂度为：递归总次数 * 每次递归中基本操作所执行的次数  </p>
+<p>常用的时间复杂度有以下七种，算法时间复杂度依次增加：O(1)常数型、O(log2 n)对数型、O(n)线性型、O(nlog2n)二维型、O(n^2^)平方型、O(n^3^)立方型、O(2^n^)指数型.</p>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>算法的空间复杂度并不是计算实际占用的空间，而是计算整个算法的辅助空间单元的个数，与问题的规模没有关系。算法的空间复杂度S(n)定义为该算法所耗费空间的数量级。<br>S(n)=O(f(n))  若算法执行时所需要的辅助空间相对于输入数据量n而言是一个常数，则称这个算法的辅助空间为O(1);<br>递归算法的空间复杂度：递归深度N*每次递归所要的辅助空间，如果每次递归所需的辅助空间是常数，则递归的空间复杂度是 O(N).</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>树组与链表</title>
+    <url>/data_structure/arrays_and_stack/</url>
+    <content><![CDATA[<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604231852160.png" alt="image">  </p>
+<p>正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：</p>
+<ul>
+<li><p>创建一个数组，必须声明其长度，以在内存中寻找合适的一段连续存储单元。这也意味着数组的大小是固定的，我们无法动态调整其大小。</p>
+</li>
+<li><p>想要获取数组中第i个元素，其时间复杂度是O(1)，因为可以根据其地址直接找到它。同理修改也是。</p>
+</li>
+<li><p>数组对查询表现一般，要想查找一个元素，需要遍历，时间复杂度为O(n)。</p>
+</li>
+<li><p>因为地址连续，想要在数组中插入一个元素是复杂的，因为从插入位置起，后边的所有元素都需要向后移动一位。同理删除也是，只是移动方向为向前。并且，当数组存满时，就无法继续插入了。</p>
+</li>
+<li><p>因为数组要占据一整块内存，有可能产生许多的碎片，也可能因为找不到合适的内存块，而导致存储失败。</p>
+</li>
+</ul>
+<p>总结起来就是：数组大小固定，查找迅速，增删复杂，需要完整的内存块，容易产生碎片。</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060423192923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>分析这种结构，我们可以得出以下几个结论：</p>
+<ul>
+<li><p>声明一个链表时，不需要知道其长度，也不需要连续的内存块，所以其大小可以动态调整。</p>
+</li>
+<li><p>链表的每个元素都分为数据域和指针域，前者是实际存储的数据，后者则指向下一个元素的地址。和数组相比，每个元素需要占用的内存更大了。</p>
+</li>
+<li><p>要获取链表的第 i 个元素变得复杂，因为其地址存放在它上一个元素的指针域里，所以只能从第一个元素起，进行 i 次操作。同理修改也是。</p>
+</li>
+<li><p>链表对查询表现也一般，需要遍历，时间复杂度为O(n)。</p>
+</li>
+<li><p>增加与删除一个元素更方便了，因为没有对内存地址的限制，我们只需要在对应节点合理处理下指针域的值，就可以把一个元素插入链表或者从链表删除。</p>
+</li>
+<li><p>链表对内存的要求很小，只要能够存储下一个数据元素的内存块都可以使用，因此不会造成碎片化。</p>
+</li>
+</ul>
+<p>总结起来就是：大小可以动态调整，增删迅速，查找较慢，数据元素所占内存略多，不需要整块内存块，不会造成碎片化。</p>
+<h3 id="数组与链表的选择"><a href="#数组与链表的选择" class="headerlink" title="数组与链表的选择"></a>数组与链表的选择</h3><p>通过以上分析，数组和链表对我们影响最大的几点区别在于：</p>
+<ul>
+<li>数组按位置查找迅速，链表增删方便</li>
+<li>数组是固定大小，链表可以随时扩充与缩减</li>
+<li>链表每个元素占据内存略多于数组</li>
+<li>数组和链表在查询方面表现都比较一般，耗时较长  </li>
+</ul>
+<p>数组就像身上编了号站成一排的人，要找第10个人很容易，根据人身上的编号很快就能找到。但插入、删除慢，要望某个位置插入或删除一个人时，后面的人身上的编号都要变。当然，加入或删除的人始终末尾的也快。<br>链表就像手牵着手站成一圈的人，要找第10个人不容易，必须从第一个人一个个数过去。但插入、删除快。插入时只要解开两个人的手，并重新牵上新加进来的人的手就可以。删除一样的道理。  </p>
+<p>在数据量很小，内容基本固定时，我们选择何种数据结构的影响并不大。但当数据量较大时，如果我们需要对数据进行频繁的插入删除，我们应该选择链表，如果我们需要频繁的获取某个位置的元素，我们应该选择数组。数组与链表并没有明确的优劣之分，根据不同的使用场景进行不同的选择，才是这两种结构使用的最佳方式。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>二叉排序树</title>
+    <url>/data_structure/binary_sort_tree/</url>
+    <content><![CDATA[<p>解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。</p>
+<p>二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数低一些，但可以通过AVL树、红黑树等增加稳定性。</p>
+<p>HashMap在JDK1.8的实现中，就结合了哈希表的高效和红黑树的稳定，我们之后会详细分析其实现。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>二叉排序树(Binary Sort Tree)，又称为二叉查找树。它或者是一棵空树，或者是具有下列性质的二叉树：</p>
+<ul>
+<li><p>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值</p>
+</li>
+<li><p>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值</p>
+</li>
+<li><p>它的左、右子树也分别为二叉排序树</p>
+</li>
+</ul>
+<p>如下就是一棵简单的二叉排序树：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>当对这棵树进行中序遍历时，其结果将按照从小到大排序。</p>
+<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>二叉排序树的查找时间复杂度为O(lg n)，查找使用二分法。要在上图中找到元素37，只需要四次操作即可。</p>
+<p>首先，找到根元素22，37比22大，所以淘汰左子树，再找到35，淘汰左子树，再找到41，进入左子树，得到37。可以看到其速度比挨个对比高了很多。</p>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>二叉排序树的插入操作和查询类似，也需要通过二分法进行查找，找到合适的位置再插入元素，所以其插入速度相比链表较慢。</p>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>从二叉排序树中删除一个元素主要分为三种情况。</p>
+<p>例如要从下面这个二叉排序树中删除一个元素：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<ul>
+<li><p>删除的元素是叶结点，这时可以直接删除它。比如要删除值为1的元素，删除它对树没有任何影响。</p>
+</li>
+<li><p>删除的元素仅有左孩子或者仅有右孩子时，直接让其孩子顶替它即可。比如要删除元素35，只需要用41顶替它即可。</p>
+</li>
+<li><p>删除的元素既有左孩子又有右孩子，这时删除它相对复杂。一种好的方式是找到它的前驱或者后继来代替它。比如要删除元素9，就用6或者13代替它即可。</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>一棵普通的二叉排序树也会出现不平衡问题，如果插入的数据都在树的一侧，就会使得树的深度迅速增大，每次二分查找可以排除的数据很少，从而查询速度严重下降，比如下方这棵树：<br><img src="https://img-blog.csdnimg.cn/20200604231633327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>要查找值为2的元素，使用二分法和使用链表速度差不多。</p>
+<p>为了解决这种问题，就需要在元素插入时即进行修正，后续介绍的AVL树和红黑树就是两种不同的解决方案。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>平衡二叉树</title>
+    <url>/data_structure/balanced_binary_tree/</url>
+    <content><![CDATA[<p>二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，且左子树和右子树的深度之差的绝对值不超过1。我们将二叉树上结点的左子树深度减去右子树深度的值称为平衡因子BF (Balance Factor)，那么平衡二叉树上所有结点的平衡因子只可能是-1、0和1。</p>
+<p>如下图就不是一棵AVL树，因为结点18的左子树高度为2，右子树高度为0，高度差大于1。<br><img src="https://img-blog.csdnimg.cn/20200604232909854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>但通过一定的步骤调整之后，可以将其转为一棵平衡二叉树，如下图：<br><img src="https://img-blog.csdnimg.cn/20200604232947478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>平衡二叉树构建的基本思想就是在构建二叉排序树的过程中，每当插入一个结点时，先检查是否因插入而破坏了树的平衡性，若是，则找出最小不平衡子树。在保持二叉排序树特性的前提下，调整最小不平衡子树中各结点之间的链接关系，进行相应的旋转，使之成为新的平衡子树。最小不平衡子树是指距离插入结点最近的，且平衡因子的绝对值大于1 的结点为根的子树。</p>
+<p>下面通过一个实例，了解平衡二叉树的构建过程。</p>
+<p>假如我们要将数组int[] a = {3, 2, 1, 4, 5, 6, 7, 10, 9, 8}构建成一棵二叉排序树，如果直接按照二叉排序树的定义，会得到下面的结果：<br><img src="https://img-blog.csdnimg.cn/20200604233021566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>这样的结果对查找是十分不利的，树的高度达到了8，而且大多数只有一个孩子。所以我们需要一些操作，将它变成一棵AVL树。</p>
+<p>首先，插入元素3和2时，没有什么影响，此时3的平衡因子为1，2的平衡因子为0，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604233056990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在，要把1插入树中，这时结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/2020060423312969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>此时3的平衡因子为2了，不再符合平衡二叉树的规则。此时，整棵树就是最小不平衡子树，我们将其右旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233205675.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>再插入4，也不会影响平衡，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233236547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>此时，插入元素5，以3为根结点的子树成为了最小不平衡子树，如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233309434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在要对其进行左旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233350415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在继续插入元素6，此时以2为根结点的右子树为最小不平衡子树，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233422864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>这时再次需要对其进行左旋，这次旋转后要将4的左孩子变为2的右孩子，以满足二叉排序树的定义，如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233451438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>再插入7时，情况和之前有些类似了，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233540770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>左旋后结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233612956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在，继续插入10，此时无需调整，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233645958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>下一步，插入元素9，此时结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233715778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>按照之前的经验，这时我们应该进行左旋了，但是左旋之后9将变为10的右孩子，这会不符合二叉排序树的定义。和之前不同的是，7和10的平衡因子符号相反，这是造成这一结果的原因。这种情况下，要先以10为根节点右旋，再进行左旋，结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233755596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233825578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>最后插入元素8，如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233910376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>此时情况和上述类似，6是最小不平衡子树的根结点，9和6的平衡因子符号相反，所以先以9为根结点右旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233942312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>然后再以6左旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604234013915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>可以看到，此树的高度仅为4，与之前的8相差很多，性能自然也好很多。</p>
+<p>平衡二叉树的删除操作与插入类似，这里将不再介绍。大家可以自己思考如何最高效地删除元素，可以分叶结点、仅有一个子结点和有两个子结点三种情况考虑，这里还用到了递归的思想。</p>
+<p>接下来我们将介绍另一种实现方式，红黑树。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>哈希表</title>
+    <url>/data_structure/hash_table/</url>
+    <content><![CDATA[<p>无论是数组还是链表，其对数据的查询表现都比较无力，要想知道一个元素是否在数组或链表中，只能从前向后挨个对比。在后续将会分析的二叉排序树中，还会将数据排序以进行二分查找，将时间复杂度从O(n)降低到O(lg n)。</p>
+<p>出现这个问题的根源在于，我们没有办法直接根据一个元素找到它存储的位置，那有没有办法消除这个对比的过程呢？哈希表就是解决查询问题的一种方案。</p>
+<h3 id="什么是哈希表"><a href="#什么是哈希表" class="headerlink" title="什么是哈希表"></a>什么是哈希表</h3><p>通俗来讲，哈希表是通过关键字key来获取数据的一种数据结构。它把关键字映射成表中的位置来获取元素，这种映射称为hash函数。</p>
+<p>因为不同的key类型不一样，可能是int，可能是string…但内存地址不会以这些对象也寻址，它会通过hash算法将其转换成int从而完成数据的存储。hash函数需要保证的是对于相同的key，其计算结果总是相同的。  </p>
+<p>这个过程类似查字典，如果要查一个字，我们不会从第一页到最后一页挨着看，这将需要很长的时间，而是根据其发音先在拼音表中找到对应的页数，直接定位到对应的页即可。当然，由于有许多发音一致的汉字，所以我们可能依然需要逐个对比，但这复杂度就小太多了。</p>
+<p>哈希表的过程就和上述例子一样，我们通过key经过hash算法直接定位其位置。然而类似于许多发音一致的，也就是有许多的key通过hash定位的结果是一样，那么这就是hash碰撞。  </p>
+<h3 id="如何解决hash碰撞"><a href="#如何解决hash碰撞" class="headerlink" title="如何解决hash碰撞"></a>如何解决hash碰撞</h3><p>目前比较通用的方法就是使用数组加链表去处理，先看一张图<br><img src="https://img-blog.csdnimg.cn/202006042317255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>然后举个简单的例子：<br>hashmap是数组和链表的结合，它拥有这两种特性。怎么说呢？举个例子，一个学校有不同年级，不同年级有不同班级，不同班级有不同的学生。hashmap里面包含了一个数组，entry包装对象，而entry里面包含了k，v，next。</p>
+<p>对next有似曾相识的感觉？打个比方。用年级对应k，班级对应v。而同一个年级，同一个班级，有不同的学生，对于这个学生，就是通过next来查询的。在后续文章中我们会对其进行详尽的分析。</p>
+<h3 id="哈希表的优缺点"><a href="#哈希表的优缺点" class="headerlink" title="哈希表的优缺点"></a>哈希表的优缺点</h3><p>哈希表是一种优化存储的思想，具体存储元素的依然是其他的数据结构。设计良好的哈希表，能同时兼备数组和链表的优点，它能在插入和查找时都具备良好的性能。然而设计不好的哈希表，有可能会出现较多的哈希碰撞，导致链表过长，从而哈希表会更像一个链表。还有当数据量很大时，为防止链表过长，就需要对数组进行扩容，这时就涉及到了数组的拷贝，其对性能的影响也很严重，所以需要提前对可能的情况有良好的预测，才能真正发挥哈希表的优势。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>树与二叉树</title>
+    <url>/data_structure/tree_and_binaryTree/</url>
+    <content><![CDATA[<p>数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。</p>
+<h3 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h3><p>树是N的节点的有限集。N=0时称为空树，在一个非空树中：  </p>
+<ul>
+<li>有且只有一个根（）节点。</li>
+<li> 当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。</li>
+</ul>
+<p>下图就是一个树：<br><img src="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>树的结点包含一个数据元素及若干指向其子树的分支。结点拥有的子树数称为结点的度(Degree) 。度为0的结点称为叶结点(Leaf) 或终端结点；度不为0 的结点称为非终端结点或分支结点。除根结点之外，分支结点也称为内部结点。树的度是树内各结点的度的最大值。</p>
+<p>如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。<br><img src="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h3><p>结点的子树的根称为该结点的孩子(Child)，相应地，该结点称为孩子的双亲(Parent)。同一个双亲的孩子之间互称兄弟(Sibling)。结点的祖先是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的子孙。  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>结点的层次(LeveI)从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度(Depth)或高度 。<br><img src="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="有序树与无序树"><a href="#有序树与无序树" class="headerlink" title="有序树与无序树"></a>有序树与无序树</h3><p>如果将树中结点的各子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树。</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是n(n ≥ 0) 个结点的有限集合，该集合或者为空集(称为空二叉树)，或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。<br>下图就是一个二叉树，二叉树就是每个节点的度≤2的树。<br><img src="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p>二叉树遍历是指从根节点出发，按照某种顺序依次访问二叉树的所有节点，使得每个节点被访问一次且只能被访问一次。二叉树遍历分为前序遍历，中序遍历以及后续遍历。</p>
+<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树， 再前序遍历右子树。</p>
+<p>如下图所示，遍历结果为：ABDGHCEIF。<br><img src="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>规则是若树为空，则空操作返回，否则从根结点开始(注意并不是先访问根结点) ，中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树。</p>
+<p>如下图所示，遍历结果为：GDHBAEICF。<br><img src="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>规则是若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
+<p>如下图所示，遍历结果为：GHDBIEFCA。<br><img src="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>程序运行时，内存是如何分配的？</title>
-    <url>/jvm/%E7%A8%8B%E5%BA%8F%E8%BF%90%E8%A1%8C%E6%97%B6%EF%BC%8C%E5%86%85%E5%AD%98%E6%98%AF%E5%A6%82%E4%BD%95%E5%88%86%E9%85%8D%E7%9A%84%EF%BC%9F/</url>
+    <url>/jvm/memory_allocation/</url>
     <content><![CDATA[<h3 id="Jvm中的内存划分"><a href="#Jvm中的内存划分" class="headerlink" title="Jvm中的内存划分"></a>Jvm中的内存划分</h3><p>JVM 中的内存可以划分为若干个不同的数据区域，主要分为：<strong>程序计数器、虚拟机栈、本地方法栈、堆、方法区</strong>。  </p>
 <h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>java本身是多线程的，当某一线程被CPU挂起后，需要记录程序执行的位置，这个时候就需要用到程序计数器。方便CPU重新执行此线程时，知道从哪行指令开始执行。这就是程序计数器的作用。</p>
 <p>注意：<br>1、在JVM中，对于程序计数器没有规定任何OutOfMemoryError的情况。<br>2、线程私有的，每条线程内部都有一个私有程序计数器。它的生命周期随着线程的创建而创建，随着线程的结束而死亡。<br>3、当一个线程正在执行一个Java方法的时候，这个计数器记录的是正在执行的虚拟机字节码指令的地址。如果正在执行的是Native方法，这个计数器值则为空（Undefined）。</p>
@@ -1404,6 +1297,113 @@
 <h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区（Method Area）也是JVM规范里规定的一块运行时数据区。方法区主要是存储已经被 JVM 加载的类信息（版本、字段、方法、接口）、常量、静态变量、即时编译器编译后的代码和数据。该区域同堆一样，也是被各个线程共享的内存区域。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>JVM 的运行时内存结构中一共有两个“栈”和一个“堆”，分别是：Java虚拟机栈和本地方法栈，以及“GC堆”和方法区。除此之外还有一个程序计数器，但是我们开发者几乎不会用到这一部分。JVM内存中只有堆和方法区是线程共享的数据区域，其它区域都是线程私有的。并且程序计数器是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError 情况的区域。</p>
 <h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>拉勾教育 - Android 工程师进阶34讲 </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>如何在工作中快速成长？致工程师的十条建议。</title>
+    <url>/soft_skills/business_tips/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+<p>本文是我最近刚看完的一本《阿里工程师的自我修养》书中的部分内容，我做了简单的梳理。侵删。</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/20191009113257423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="思考脑与反射脑"><a href="#思考脑与反射脑" class="headerlink" title="思考脑与反射脑"></a>思考脑与反射脑</h3><p>简单介绍下什么是思考脑和反射脑。思考脑管理性，反射脑管直觉，存储脑管记忆，直觉依赖习惯，用直觉做出反应，快速，但未必正确;思考脑管理性，理性依赖逻辑，缓慢，但更加正确。</p>
+<p>有科学家通过研究，发现一个人一天的行为中，5%是非习惯性的，用思考脑的逻辑驱动，95%是习惯性的，用反射脑的直觉驱动，决定我们一生的，永远是95%的反射脑(习惯)，而不是5%的思考脑(逻辑)。回想自己的一天，大部分的判断和观点是不是都是靠直觉，靠习惯的，什么情况下才会用思考脑?是不是一个人的时候用思考脑比较多，而在多人对话场景中要快只能靠直觉和反射，而给别人好与不好的印象往往是在对话场景中建立起来的，可想而知，反射出来的观点或行为对我们而言是多么重要。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191009113421668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="习以为常"><a href="#习以为常" class="headerlink" title="习以为常"></a>习以为常</h3><p>把95%中的低质量习惯反射，训练成逻辑后的高质量习惯反射需要有很多的时间保障。但对于处理互联网时代的我们，我们对电子设备的依赖程度已经达到了形影不离的地步。甚至上厕所的那几分钟，也是形影不离。对习惯的认知，关键在于换种说法:“把改变玩手机的习惯，用另外一句话来替代，把学习变成习以为常的生活方式”。<br>谁都知道替换可以改变，但为什么这么难?其实关键在于这个意识点能不能变成触发性响应，也就是说当某个触发条件产生的时候，改变的意识能不能弹出来警告自己。</p>
+<p>先对习惯的产生机制要有所了解，习惯并非凭空产生，他有前因后果，前因是前一件事情结束(触发条件)，后果是前一件事情结束后的行为带来的一些额外奖励。比如晚上下班回家洗完澡这件事情结束后，肯定会开始下一件我们最习惯的事情，比如盯手机看剧或者刷八卦，当这件最习惯的事情结束后，大脑会产生精神上的及时享受，内容很丰富、很精彩。短期看是享受，长期看是灾难，因为对未来帮助意义不大，但是却消耗了我们大把时间。而且看剧或者刷八卦带来的信息积累只能称的上是饭后谈资，或者有些根本没机会谈。</p>
+<p>了解习惯产生的机制后，改变习惯就变得很简单，每次在触发条件发生时，弹出一道选择题，选择做无效事情，还是学习？多次以这种方式不断强化自己做对选择题。久而久之，正确的行为被训练得多了，就成为顺其自然的习惯了。所以改变习惯，就是在触发条件发生时，让自己做对选择题，打破旧有习惯回路，建立新的习惯回路。相信这句话“精英之所以精英，是不间断的正向行为习惯的驱使”。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191009113432838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="时间管理：三八理论"><a href="#时间管理：三八理论" class="headerlink" title="时间管理：三八理论"></a>时间管理：三八理论</h3><p>时间管理三八理论:每个人每天有公平的24个小时，第1个八小时用于睡觉、第2个八小时用于工作、第3个八小时用于自由支配，但人与人的差距主要是由第3个八小时决定的，第3个8小时用于消费、交易还是投资有着非常大的人生差别。以下班空闲时间为例解释消费、交易、投资从而理解人生差异的不同:</p>
+<p>下班空闲时间，用于消费，比如刷新闻，刷抖音，刷朋友圈，产生及时享受，没产生成长，钱还是那些钱，职位还是原来职位;</p>
+<p>下班空闲时间，用于交易，接个外快，赚点辛苦钱，产生金钱，没产生成长，钱没多多少，职位却还是原来职位;</p>
+<p>下班空闲时间，用于投资，以终为始，相信“慢慢来，成长最快”的认知，持续不断投入多维领域的学习，沉淀能力，获得成长，从成长中获得金钱，名誉的升级;</p>
+<p>看完时间的消费、交易、投资的解释，在看《习以为常》中做选择题的重要性，做对选择题其实就是投资，投资自己的成长，投资自己的学习，人生的不同不就是因为投资自己而变得不一样吗？但是投资需要时间，时间怎么来?<br>“找到不被打扰的时间”。只有找到了不被打扰的时间用于投资自己的成长才能发生复利效应。如果想从工作中省点时间，想从周末挤点时间用于学习，这叫成长的断崖，我相信不能持续，学习必须是每日的必修课，必须是日拱一卒，持之以恒，有不断的输入，也有不断的输出，持续地沉淀，在关键时刻输出解决问题能力，从而获得能力认可。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191009113454188.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="注意力"><a href="#注意力" class="headerlink" title="注意力"></a>注意力</h3><p>先来解个疑惑:“为什么看电影注意力特别好，做正事注意力集中不了”。<br>首先我们要接受这个现实，医学上把这叫作注意力缺失症，基本所有人都有这种毛病，因为做正事比较枯燥、困难，让人不舒服，集中不了注意力，逃避很正常!<br>其次找到改善方法，通常可以这么做，给自己准备一个笔记本，边读边思考，顺带把重要的观点记录下来，开始会觉得很困难，但是慢慢坚持下来你会发现，思考会越来越深入，注意力集中时间越来越长。<br>注意力和时间管理的认知一旦结合，我们可以兴奋地这么说:“在不被打扰的时间里，用好注意力投资在自己成长上，我们的人生会不一样，在未来会遇到更好的自己”。</p>
+<h3 id="执行力"><a href="#执行力" class="headerlink" title="执行力"></a>执行力</h3><p><img src="https://img-blog.csdnimg.cn/2019100911350491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>提升执行力，首先让自己成为投资者，投资自己的成长，投资在正确的事情上，此时去认知执行力才有意义，我对执行力的认知:“想明白，然后一步一步做下去”，如果想不明白，根本谈不上执行力。同时提升执行力的时候，还需要自律，通过自律让执行力得到持续，要相信持续投资自己的成长，可以实现“慢慢来，成长最快”的复利效果。</p>
+<h3 id="贵人"><a href="#贵人" class="headerlink" title="贵人"></a>贵人</h3><p>很多时候我们会觉得身边缺少贵人，或者有贵人但离自己太远。产生这种认知离不开4个方面:</p>
+<ul>
+<li><p>一是，自己不自信，不相信自己能够影响他人，导致缺乏主动沟通，长期沟通，沟通的延续性和习惯没有建立。</p>
+</li>
+<li><p>二是，自己心态问题，自己的心态若是不够积极正向，没有贵人敢进入你的思维空间，因为价值观不匹配，很难形成认知共识。</p>
+</li>
+<li><p>三是，职场原因，很多时候可能你的老板就是你的贵人，但是因为职场，因为上下级，碍于面子，碍于工作，不敢多交流，多请教。</p>
+</li>
+<li><p>四是，贵人来了又走了，有贵人帮你改变，帮你进步，但是自己不努力，抱着过去做事的心态和方法在职场上浪迹天涯，进步不明显，否定了他作为贵人的价值和意义。</p>
+</li>
+</ul>
+<p>如果恰好有这么一位贵人，应该懂得珍惜，珍惜的主要方式是用成长回报他，因为你的成长在未来可以帮助他。同时在平时需要建立有效沟通，首先让贵人真正地了解你，在确定贵人能够帮助你，影响你时，你应该大胆去承担一些有挑战的事情，哪怕遇到委屈，遇到压力，遇到失败，要相信此时的你才是真实的你，你的天花板，你的瓶颈就在于此，借助贵人助你提升能力，下次同样的事情来临时，自己就能够得心应手，这种能力的锻炼机会非常少，和阿里经常说的借事修人非常匹配，事情失败了没关系，但人要成，人的能力要提升。<br><img src="https://img-blog.csdnimg.cn/20191009113514341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="会议"><a href="#会议" class="headerlink" title="会议"></a>会议</h3><p>会多不一定是坏事，反而可能成为你训练思考，训练总结归纳，训练逻辑表达的地方。<br>而且用什么样的身份参与会议，或者在过程中角色如何切换，也是非常重要。我一般用3种角色参加:</p>
+<p>作为参与者，认真聆听，快速提炼自己想表达的逻辑，然后参与讨论。</p>
+<p>作为聆听者，仔细聆听，认真输入，在脑中组织思路，组织逻辑。</p>
+<p>作为中断者，发现有些会议真的没有继续的必要了，出于好意，提示会议的重心或者结束会议。<br><img src="https://img-blog.csdnimg.cn/20191009113530117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="跳出舒适区"><a href="#跳出舒适区" class="headerlink" title="跳出舒适区"></a>跳出舒适区</h3><p>心理学家把我们可能面对的学习内容分成了三个区，分别是舒适区、学习区和恐慌区。舒适区太容易，待太久了，总想跳出去看看。恐慌区太难，太难带来恐惧，就像梁宁在产品思维中讲同理心时，恐惧会产生束缚也会产生动力，就看安全边界有没有被侵犯，如果无法战胜挑战，恐惧就产生了束缚，退回到舒适区。</p>
+<p>所以跳出舒适区，不是说跳到恐慌区，而是跳到两者之间的学习区，在学习区中达到困难和能力的平衡状态，引用米哈里·契克森米哈赖在《心流:最优体验心里学》这本书提到的:要想在工作中达到心流状态，这项工作的挑战和你的技能必须形成平衡，如果工作的挑战大大低于你的技能，你会觉得工作很无聊。如果工作的挑战大大超出你的技能，你会感到焦虑。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191009113539437.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="职业规划"><a href="#职业规划" class="headerlink" title="职业规划"></a>职业规划</h3><p>职业规划不是某个岗位，某个角色，而是工作能力的提升。针对自己岗位需要的能力，职场需要的能力，然后用专家思维，多维视角重点突破3-4项能力，抱着120%的努力拿到结果，甚至是超出期望的结果，事情成了，能力也就被认可了，所谓的角色，岗位只是顺其自然的结果。<br><img src="https://img-blog.csdnimg.cn/20191009113546898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="时间换空间"><a href="#时间换空间" class="headerlink" title="时间换空间"></a>时间换空间</h3><p>所谓时间换空间，就是让我们无法看清未来是什么样子的时候，把注意力聚焦在当下，做成长该做的事。</p>
+<p><img src="https://img-blog.csdnimg.cn/20191009113555901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>所谓直觉反射，就是通过大量的逻辑反复训练，提升自己的直觉准确性，从狭窄的5%进入广阔的95%;<br>所谓以习为常，就是在触发条件发生进入下一个行为前，做对选择题;<br>所谓时间管理，就是找到不被打扰的时间用于投资自己;<br>所谓注意力，就是专注在目标事务上，直到产生期望结果;<br>所谓执行力，就是让自己先想明白，然后一步一步走下去;<br>所谓贵人，就是能够持续陪你一起输出高质量内容的人;<br>所谓会议，就是模拟机器学习思路，通过参与讨论获得正反馈来验证自己的观点;<br>所谓跳出舒适区，就是先跳出，然后进入学习区，平衡挑战和能力达到心流的体验;<br>所谓职业规划，就是提升工作需要的能力;<br>所谓时间换空间，就是慢慢来，持之以恒，成长最快。</p>
+<p>更多文章请关注我的公众号：码农职场<br><img src="https://img-blog.csdnimg.cn/20191009113626957.png" alt="在这里插入图片描述"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>红黑树</title>
+    <url>/data_structure/red_and_black_tree/</url>
+    <content><![CDATA[<p>红黑树和平衡二叉树的思想是类似的，都是在插入过程中对二叉排序树进行调整，从而提升性能，它的增删改查均可以在O(lg n)内完成。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>红黑树是一棵二叉排序树。且满足以下特点：</p>
+<ul>
+<li><p>节点是红色或黑色。</p>
+</li>
+<li><p>根节点是黑色。</p>
+</li>
+<li><p>每个叶子节点都是黑色的空节点（NIL节点）。</p>
+</li>
+<li><p>每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)。</p>
+</li>
+<li><p>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。</p>
+</li>
+</ul>
+<p>下图就是一棵简单的红黑树示例：<br><img src="https://img-blog.csdnimg.cn/20200604234313694.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>示例中每个结点最后都是一个NIL结点，它是黑色的，不过我们画图时通常会省略它。所以下文以及后续文章中绘制时都会省略NIL结点，大家记得还有它就可以。</p>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>红黑树的插入与删除和AVL树类似，也是每插入一个结点，都检查是否破坏了树的结构，然后进行调整。红黑树每个结点插入时默认都为红色，这样做可以降低黑高，也可以减少调整的次数。</p>
+<h3 id="插入元素"><a href="#插入元素" class="headerlink" title="插入元素"></a>插入元素</h3><p>红黑树的概念理解起来较为复杂，我们以一个简单的示例，看看如何构造一棵红黑树。</p>
+<p>现有数组int[] a = {1, 10, 9, 2, 3, 8, 7, 4, 5, 6};我们要将其变为一棵红黑树。</p>
+<p>首先插入1，此时树是空的，1就是根结点，根结点是黑色的：<br><img src="https://img-blog.csdnimg.cn/202006042343549.png"><br>然后插入元素10，此时依然符合规则，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234426203.png"><br>当插入元素9时，这时是需要调整的第一种情况，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234604991.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>红黑树规则4中强调不能有两个相邻的红色结点，所以此时我们需要对其进行调整。调整的原则有多个相关因素，这里的情况是，父结点10是其祖父结点1（父结点的父结点）的右孩子，当前结点9是其父结点10的左孩子，且没有叔叔结点（父结点的兄弟结点），此时需要进行两次旋转，第一次，以父结点10右旋：<br><img src="https://img-blog.csdnimg.cn/20200604234653898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>然后将父结点（此时是9）染为黑色，祖父结点1染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604234726279.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>然后以祖父结点1左旋：<br><img src="https://img-blog.csdnimg.cn/20200604234801183.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>下一步，插入元素2，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604234831311.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>此时情况与上一步类似，区别在于父结点1是祖父结点9的左孩子，当前结点2是父结点的右孩子，且叔叔结点10是红色的。这时需要先将叔叔结点10染为黑色，再进行下一步操作，具体做法是将父结点1和叔叔结点10染为黑色，祖父结点9染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604234913248.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>由于结点9是根节点，必须为黑色，将它染为黑色即可：<br><img src="https://img-blog.csdnimg.cn/20200604234945664.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>下一步，插入元素3，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235026982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>这和我们之前插入元素10的情况一模一样，需要将父结点2染为黑色，祖父结点1染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235106297.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>然后左旋：<br><img src="https://img-blog.csdnimg.cn/20200604235140766.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>下一步，插入元素8，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235214237.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
+<p>此时和插入元素2有些类似，区别在于父结点3是右孩子，当前结点8也是右孩子，这时也需要先将叔叔结点1染为黑色，具体操作是先将1和3染为黑色，再将祖父结点2染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235250905.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>此时树已经平衡了，不需要再进行其他操作了，现在插入元素7，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235321982.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>这时和之前插入元素9时一模一样了，先将7和8右旋，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235351319.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>然后将7染为黑色，3染为红色，再进行左旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/2020060423542296.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>下一步要插入的元素是4，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235451208.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>这里和插入元素2是类似的，先将3和8染为黑色，7染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235525247.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>但此时2和7相邻且颜色均为红色，我们需要对它们继续进行调整。这时情况变为了父结点2为红色，叔叔结点10为黑色，且2为左孩子，7为右孩子，这时需要以2左旋。这时左旋与之前不同的地方在于结点7旋转完成后将有三个孩子，结果类似于下图：<br><img src="https://img-blog.csdnimg.cn/20200604235609567.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>这种情况处理起来也很简单，只需要把7原来的左孩子3，变成2的右孩子即可，结果如下：<br><img src="https://img-blog.csdnimg.cn/2020060423563965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>然后再把2的父结点7染为黑色，祖父结点9染为红色。结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604235709284.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>此时又需要右旋了，我们要以9右旋，右旋完成后7又有三个孩子，这种情况和上述是对称的，我们把7原有的右孩子8，变成9的左孩子即可，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235738345.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>下一个要插入的元素是5，插入后如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235833460.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>有了上述一些操作，处理5变得十分简单，将3染为红色，4染为黑色，然后左旋，结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/2020060423590063.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>最后插入元素6，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200604235928699.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>又是叔叔结点3为红色的情况，这种情况我们处理过多次了，首先将3和5染为黑色，4染为红色，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604235957745.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
+<p>此时问题向上传递到了元素4，我们看2、4、7、9的颜色和位置关系，这种情况我们也处理过，先将2和9染为黑色，7染为红色，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605000037707.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>最后7是根结点，染为黑色即可，最终结果如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060500011633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>可以看到，在插入元素时，叔叔结点是主要影响因素，待插入结点与父结点的关系决定了是否需要多次旋转。可以总结为以下几种情况：  </p>
+<ul>
+<li><p>如果父结点是黑色，插入即可，无需调整。  </p>
+</li>
+<li><p>如果叔叔结点是红色，就把父结点和叔叔结点都转为黑色，祖父结点转为红色，将不平衡向上传递。  </p>
+</li>
+<li><p>如果叔叔结点是黑色或者没有叔叔结点，就看父结点和待插入结点的关系。如果待插入结点和父结点的关系，与父结点与祖父结点的关系一致，比如待插入结点是父结点的左孩子，父结点也是祖父结点的左孩子，就无需多次旋转。否则就先通过相应的旋转将其关系变为一致。  </p>
+</li>
+</ul>
+<h3 id="删除元素"><a href="#删除元素" class="headerlink" title="删除元素"></a>删除元素</h3><p>要从一棵红黑树中删除一个元素，主要分为三种情况。  </p>
+<h4 id="待删除元素没有孩子"><a href="#待删除元素没有孩子" class="headerlink" title="待删除元素没有孩子"></a>待删除元素没有孩子</h4><p>没有孩子指的是没有值不为NIL的孩子。这种情况下，如果删除的元素是红色的，可以直接删除，如果删除的元素是黑色的，就需要进行调整了。</p>
+<p>例如我们从下图中删除元素1：<br><img src="https://img-blog.csdnimg.cn/20200605000144385.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>删除元素1后，2的左孩子为NIL，这条支路上的黑色结点数就比其他支路少了，所以需要进行调整。  </p>
+<p>这时，我们的关注点从叔叔结点转到兄弟结点，也就是结点4，此时4是红色的，就把它染为黑色，把父结点2染为红色，如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060500022268.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>然后以2左旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605000305280.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>此时兄弟结点为3，且它没有红色的孩子，这时只需要把它染为红色，父结点2染为黑色即可。结果如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000338313.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
+<h4 id="待删除元素有一个孩子"><a href="#待删除元素有一个孩子" class="headerlink" title="待删除元素有一个孩子"></a>待删除元素有一个孩子</h4><p>这应该是删除操作中最简单的一种情况了，根据红黑树的定义，我们可以推测，如果一个元素仅有一个孩子，那么这个元素一定是黑色的，而且其孩子是红色的。  </p>
+<p>假设我们有一个红色节点，它是树中的某一个节点，且仅有一个孩子，那么根据红色节点不能相邻的条件，它的孩子一定是黑色的，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000410994.png">  </p>
+<p>但这个子树的黑高却不再平衡了（注意每个节点的叶节点都是一个NIL节点），因此红色节点不可能只有一个孩子。  </p>
+<p>而若是一个黑色节点仅有一个孩子，如果其孩子是黑色的，同样会打破黑高的平衡，所以其孩子只能是红色的，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000440111.png"><br>只有这一种情况符合红黑树的定义，这时要删除这个元素，只需要使用其孩子代替它，仅代替值而不代替颜色即可，上图的情况删除完后变为：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200605000513512.png"><br>可以看到，树的黑高并没有发生变化，因此也不需要进行调整。  </p>
+<h4 id="待删除元素有两个孩子"><a href="#待删除元素有两个孩子" class="headerlink" title="待删除元素有两个孩子"></a>待删除元素有两个孩子</h4><p>我们在讨论二叉排序树时说过，如果删除一个有两个孩子的元素，可以使用它的前驱或者后继结点代替它。因为它的前驱或者后继结点最多只会有一个孩子，所以这种情况可以转为情况1或情况2处理。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>删除元素最复杂的是情况1，这主要由其兄弟结点以及兄弟结点的孩子颜色共同决定。这里简要做下总结。</p>
+<p>我们以N代表当前待删除节点，以P代表父结点，以S代表兄弟结点，以SL代表兄弟结点的左孩子，SR代表兄弟结点的右孩子，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605000548232.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>根据红黑树定义，这种情况下S要么有红色的子结点，要么只有NIL结点，以下对S有黑色结点的情况均表示NIL  </p>
+<p>主要有以下几种：</p>
+<p>1、S是红色，P一定是黑色，S也不会有红色的孩子，如下：<br><img src="https://img-blog.csdnimg.cn/20200605000620842.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>此时把P和S颜色变换，再左旋，如下：<br><img src="https://img-blog.csdnimg.cn/20200605000651129.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>这样变换后，N支路上的黑色结点并没有增加，所以依然少一个。  </p>
+<p>2、P，S以及S的全部孩子都是黑色<br>无论S有几个孩子，或者没有孩子，只要不是红色都是这种情况，此时情况如下：<br><img src="https://img-blog.csdnimg.cn/20200605000719213.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>我们把S染为红色，这样一来，N和S两个支路都少了一个黑色结点，所以可以把问题向父结点转移，通过递归解决。染色后如下：<br><img src="https://img-blog.csdnimg.cn/20200605000752525.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
+<p>3、P为红（S一定为黑），S的孩子都为黑<br>这种情况最为简单，只需要把P和S颜色交换即可。这样N支路多了一个黑色元素，而S支路没有减少，所以达到了平衡。<br><img src="https://img-blog.csdnimg.cn/20200605000827894.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br><img src="https://img-blog.csdnimg.cn/20200605000900335.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
+<p>4、P任意色，S为黑，N是P的左孩子，S的右孩子SR为红，S的左孩子任意<br>如下所示<br><img src="https://img-blog.csdnimg.cn/20200605000930320.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>此时将S改为P的颜色，SR和P改为黑色，然后左旋，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200605001000461.png"><br>可以发现，此时N支路多了一个黑色结点，而其余支路均没有收到影响，所以调整完毕。  </p>
+<p>5、P任意色，S为黑，N是P的左孩子，S的左孩子SL为红，S的右孩子SR为黑，如下所示：<br><img src="https://img-blog.csdnimg.cn/20200605001037305.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>此时变换S和SL的颜色，然后右旋，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200605001108965.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"><br>这时，所有分支的黑色结点数均没有改变，但情况5转为了情况4，再进行一次操作即可。  </p>
+<p>还有一些情况与上述是对称的，我们进行相应的转换即可。  </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>红黑树的操作比较复杂，插入元素可能需要多次变色与旋转，删除也是。这些操作的目的都是为了保证红黑树的结构不被破坏。这些复杂的插入与删除操作希望大家可以亲手尝试一下，以加深理解。  </p>
+<p>红黑树是JDK中TreeMap、TreeSet的底层数据结构，在JDK1.8中HashMap也用到了红黑树，所以掌握它对我们后续的分析十分重要。  </p>
 ]]></content>
   </entry>
 </search>

@@ -275,7 +275,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/hash_table/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -294,7 +294,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/data_structure/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8/" itemprop="url">树组与链表</a></h1>
+                <a class="post-title-link" href="/data_structure/hash_table/" itemprop="url">哈希表</a></h1>
         
 
         <div class="post-meta">
@@ -346,15 +346,12 @@
       
         
           
-          数组在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  
-  
-正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：
-
-创建一个数组，必须声明其长度，以在内存中寻找合
+          无论是数组还是链表，其对数据的查询表现都比较无力，要想知道一个元素是否在数组或链表中，只能从前向后挨个对比。在后续将会分析的二叉排序树中，还会将数据排序以进行二分查找，将时间复杂度从O(n)降低到O(lg n)。
+出现这个问题的根源在于，我们没有办法直接根据一个元素找到它存储的位置，那有没有办法消除
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/data_structure/%E6%95%B0%E7%BB%84%E4%B8%8E%E9%93%BE%E8%A1%A8/#more" rel="contents">
+            <a class="btn" href="/data_structure/hash_table/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -405,7 +402,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/tree_and_binaryTree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -424,7 +421,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/data_structure/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url">树与二叉树</a></h1>
+                <a class="post-title-link" href="/data_structure/tree_and_binaryTree/" itemprop="url">树与二叉树</a></h1>
         
 
         <div class="post-meta">
@@ -480,11 +477,11 @@
 树的定义树是N的节点的有限集。N=0时称为空树，在一个非空树中：  
 
 有且只有一个根（）节点。
-当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称
+ 当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/data_structure/%E6%A0%91%E4%B8%8E%E4%BA%8C%E5%8F%89%E6%A0%91/#more" rel="contents">
+            <a class="btn" href="/data_structure/tree_and_binaryTree/#more" rel="contents">
               阅读全文 &raquo;
             </a>
           </div>
@@ -1696,8 +1693,6 @@ Android的消息机制主要是指handl
       <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
       人
     </span>
-  
-
   
 </div>
 
