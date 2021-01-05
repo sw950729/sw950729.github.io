@@ -79,26 +79,17 @@
 
 
 
-<meta name="description" content="数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。 树的定义树是N的节点的有限集。N=0时称为空树，在一个非空树中：    有且只有一个根（）节点。 当n&amp;gt;1 时，其余结点可分为m (m&amp;gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。  下图就是一个树： 节点分类树的结点包含一个数据元素及若干指向其子树">
+<meta name="description" content="Jvm中的内存划分JVM 中的内存可以划分为若干个不同的数据区域，主要分为：程序计数器、虚拟机栈、本地方法栈、堆、方法区。   程序计数器java本身是多线程的，当某一线程被CPU挂起后，需要记录程序执行的位置，这个时候就需要用到程序计数器。方便CPU重新执行此线程时，知道从哪行指令开始执行。这就是程序计数器的作用。 注意：1、在JVM中，对于程序计数器没有规定任何OutOfMemoryError">
 <meta property="og:type" content="article">
-<meta property="og:title" content="树与二叉树">
-<meta property="og:url" content="http://yoursite.com/data_structure/树与二叉树/index.html">
+<meta property="og:title" content="程序运行时，内存是如何分配的？">
+<meta property="og:url" content="http://yoursite.com/jvm/程序运行时，内存是如何分配的？/index.html">
 <meta property="og:site_name" content="我就是马云飞">
-<meta property="og:description" content="数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。 树的定义树是N的节点的有限集。N=0时称为空树，在一个非空树中：    有且只有一个根（）节点。 当n&amp;gt;1 时，其余结点可分为m (m&amp;gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。  下图就是一个树： 节点分类树的结点包含一个数据元素及若干指向其子树">
+<meta property="og:description" content="Jvm中的内存划分JVM 中的内存可以划分为若干个不同的数据区域，主要分为：程序计数器、虚拟机栈、本地方法栈、堆、方法区。   程序计数器java本身是多线程的，当某一线程被CPU挂起后，需要记录程序执行的位置，这个时候就需要用到程序计数器。方便CPU重新执行此线程时，知道从哪行指令开始执行。这就是程序计数器的作用。 注意：1、在JVM中，对于程序计数器没有规定任何OutOfMemoryError">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-06-04T15:27:06.707Z">
+<meta property="og:updated_time" content="2021-01-05T15:41:43.034Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="树与二叉树">
-<meta name="twitter:description" content="数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。 树的定义树是N的节点的有限集。N=0时称为空树，在一个非空树中：    有且只有一个根（）节点。 当n&amp;gt;1 时，其余结点可分为m (m&amp;gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。  下图就是一个树： 节点分类树的结点包含一个数据元素及若干指向其子树">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="程序运行时，内存是如何分配的？">
+<meta name="twitter:description" content="Jvm中的内存划分JVM 中的内存可以划分为若干个不同的数据区域，主要分为：程序计数器、虚拟机栈、本地方法栈、堆、方法区。   程序计数器java本身是多线程的，当某一线程被CPU挂起后，需要记录程序执行的位置，这个时候就需要用到程序计数器。方便CPU重新执行此线程时，知道从哪行指令开始执行。这就是程序计数器的作用。 注意：1、在JVM中，对于程序计数器没有规定任何OutOfMemoryError">
 
 
 
@@ -128,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/data_structure/树与二叉树/"/>
+  <link rel="canonical" href="http://yoursite.com/jvm/程序运行时，内存是如何分配的？/"/>
 
 
 
 
 
-  <title>树与二叉树 | 我就是马云飞</title>
+  <title>程序运行时，内存是如何分配的？ | 我就是马云飞</title>
   
 
 
@@ -251,7 +242,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/data_structure/树与二叉树/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/jvm/程序运行时，内存是如何分配的？/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="马云飞">
@@ -268,7 +259,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">树与二叉树</h1>
+          <h1 class="post-title" itemprop="name headline">程序运行时，内存是如何分配的？</h1>
         
 
         <div class="post-meta">
@@ -280,8 +271,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:19:01+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-05T23:27:25+08:00">
+                2021-01-05
               </time>
             
 
@@ -323,27 +314,16 @@
       
 
       
-        <p>数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。</p>
-<h3 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h3><p>树是N的节点的有限集。N=0时称为空树，在一个非空树中：  </p>
-<ul>
-<li>有且只有一个根（）节点。</li>
-<li>当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。</li>
-</ul>
-<p>下图就是一个树：<br><img src="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>树的结点包含一个数据元素及若干指向其子树的分支。结点拥有的子树数称为结点的度(Degree) 。度为0的结点称为叶结点(Leaf) 或终端结点；度不为0 的结点称为非终端结点或分支结点。除根结点之外，分支结点也称为内部结点。树的度是树内各结点的度的最大值。</p>
-<p>如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。<br><img src="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h3><p>结点的子树的根称为该结点的孩子(Child)，相应地，该结点称为孩子的双亲(Parent)。同一个双亲的孩子之间互称兄弟(Sibling)。结点的祖先是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的子孙。  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>结点的层次(LeveI)从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度(Depth)或高度 。<br><img src="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="有序树与无序树"><a href="#有序树与无序树" class="headerlink" title="有序树与无序树"></a>有序树与无序树</h3><p>如果将树中结点的各子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树。</p>
-<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是n(n ≥ 0) 个结点的有限集合，该集合或者为空集(称为空二叉树)，或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。<br>下图就是一个二叉树，二叉树就是每个节点的度≤2的树。<br><img src="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p>二叉树遍历是指从根节点出发，按照某种顺序依次访问二叉树的所有节点，使得每个节点被访问一次且只能被访问一次。二叉树遍历分为前序遍历，中序遍历以及后续遍历。</p>
-<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树， 再前序遍历右子树。</p>
-<p>如下图所示，遍历结果为：ABDGHCEIF。<br><img src="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>规则是若树为空，则空操作返回，否则从根结点开始(注意并不是先访问根结点) ，中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树。</p>
-<p>如下图所示，遍历结果为：GDHBAEICF。<br><img src="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>规则是若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
-<p>如下图所示，遍历结果为：GHDBIEFCA。<br><img src="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+        <h3 id="Jvm中的内存划分"><a href="#Jvm中的内存划分" class="headerlink" title="Jvm中的内存划分"></a>Jvm中的内存划分</h3><p>JVM 中的内存可以划分为若干个不同的数据区域，主要分为：<strong>程序计数器、虚拟机栈、本地方法栈、堆、方法区</strong>。  </p>
+<h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>java本身是多线程的，当某一线程被CPU挂起后，需要记录程序执行的位置，这个时候就需要用到程序计数器。方便CPU重新执行此线程时，知道从哪行指令开始执行。这就是程序计数器的作用。</p>
+<p>注意：<br>1、在JVM中，对于程序计数器没有规定任何OutOfMemoryError的情况。<br>2、线程私有的，每条线程内部都有一个私有程序计数器。它的生命周期随着线程的创建而创建，随着线程的结束而死亡。<br>3、当一个线程正在执行一个Java方法的时候，这个计数器记录的是正在执行的虚拟机字节码指令的地址。如果正在执行的是Native方法，这个计数器值则为空（Undefined）。</p>
+<h3 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h3><p>虚拟机栈是线程私有的，与线程的生命周期同步。在java的虚拟机规范中，定义了两种异常：<br>1、StackOverflowError：当线程请求栈深度超出虚拟机栈所允许的深度时抛出。<br>2、OutOfMemoryError：当Java虚拟机动态扩展到无法申请足够内存时抛出。  </p>
+<p>JVM是基于栈的解释器执行的，DVM是基于寄存器解释器执行的。</p>
+<h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>本地方法栈和上面介绍的虚拟栈基本相同，只不过是针对本地（native）方法。在开发中如果涉及JNI可能接触本地方法栈多一些，在有些虚拟机的实现中已经将两个合二为一了（比如HotSpot）。</p>
+<h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>Java 堆（Heap）是 JVM所管理的内存中最大的一块，该区域唯一目的就是存放对象实例，几乎所有对象的实例都在堆里面分配，因此它也是Java垃圾收集器（GC）管理的主要区域，有时候也叫作“GC堆”）。同时它也是所有线程共享的内存区域，因此被分配在此区域的对象如果被多个线程访问的话，需要考虑线程安全问题。</p>
+<h3 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h3><p>方法区（Method Area）也是JVM规范里规定的一块运行时数据区。方法区主要是存储已经被 JVM 加载的类信息（版本、字段、方法、接口）、常量、静态变量、即时编译器编译后的代码和数据。该区域同堆一样，也是被各个线程共享的内存区域。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>JVM 的运行时内存结构中一共有两个“栈”和一个“堆”，分别是：Java虚拟机栈和本地方法栈，以及“GC堆”和方法区。除此之外还有一个程序计数器，但是我们开发者几乎不会用到这一部分。JVM内存中只有堆和方法区是线程共享的数据区域，其它区域都是线程私有的。并且程序计数器是唯一一个在Java虚拟机规范中没有规定任何OutOfMemoryError 情况的区域。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p>拉勾教育 - Android 工程师进阶34讲 </p>
 
       
     </div>
@@ -397,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/android/activity/launchmode/" rel="next" title="Activity的启动模式">
-                <i class="fa fa-chevron-left"></i> Activity的启动模式
+              <a href="/soft_skills/如何在工作中快速成长？致工程师的十条建议。/" rel="next" title="如何在工作中快速成长？致工程师的十条建议。">
+                <i class="fa fa-chevron-left"></i> 如何在工作中快速成长？致工程师的十条建议。
               </a>
             
           </div>
@@ -407,8 +387,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/data_structure/数组与链表/" rel="prev" title="树组与链表">
-                树组与链表 <i class="fa fa-chevron-right"></i>
+              <a href="/jvm/jmm/" rel="prev" title="Java JMM内存模型">
+                Java JMM内存模型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -555,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#树的定义"><span class="nav-number">1.</span> <span class="nav-text">树的定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点分类"><span class="nav-number">2.</span> <span class="nav-text">节点分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#节点间的关系"><span class="nav-number">3.</span> <span class="nav-text">节点间的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#深度"><span class="nav-number">4.</span> <span class="nav-text">深度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有序树与无序树"><span class="nav-number">5.</span> <span class="nav-text">有序树与无序树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树"><span class="nav-number">6.</span> <span class="nav-text">二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树遍历"><span class="nav-number">7.</span> <span class="nav-text">二叉树遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#前序遍历"><span class="nav-number">7.1.</span> <span class="nav-text">前序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#中序遍历"><span class="nav-number">7.2.</span> <span class="nav-text">中序遍历</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#后序遍历"><span class="nav-number">7.3.</span> <span class="nav-text">后序遍历</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Jvm中的内存划分"><span class="nav-number">1.</span> <span class="nav-text">Jvm中的内存划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#程序计数器"><span class="nav-number">2.</span> <span class="nav-text">程序计数器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟机栈"><span class="nav-number">3.</span> <span class="nav-text">虚拟机栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地方法栈"><span class="nav-number">4.</span> <span class="nav-text">本地方法栈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#堆"><span class="nav-number">5.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法区"><span class="nav-number">6.</span> <span class="nav-text">方法区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">7.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
