@@ -356,19 +356,53 @@
 <p>而 PhoneWindow 作为 Window 的唯一实现类，PhoneWindow 的权利可是非常大大，不过对于我们来说用处并不大。</p>
 <p>下面我们来说说DecorView：<br>这样，我们做个假设，一个跟布局高度是wrap的控件，我们运行之后可以发现，除了那个控件，留下了大量的空白区域，由于我们的手机屏幕不能透明，所以这些空白区域肯定要显示一些东西，那么应该显示什么呢？当然如果你没有设置全屏。我们还会发现标题栏状态栏那些。而这些就是所谓的DecorView。</p>
 <h3 id="事件处理的过程"><a href="#事件处理的过程" class="headerlink" title="事件处理的过程"></a>事件处理的过程</h3><p>我们先看下下面的表格：</p>
-<table style="word-break:break-all;"><br>  <thead><br><br>    <tr><br>      <th style="text-align: center">类型</th><br>      <th style="text-align: center">相关方法</th><br>      <th style="text-align: center">Activity</th><br>      <th style="text-align: center">ViewGroup</th><br>      <th style="text-align: center">View</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <td style="text-align: center">事件分发</td><br>      <td style="text-align: center">dispatchTouchEvent</td><br>      <td style="text-align: center">√</td><br>      <td style="text-align: center">√</td><br>      <td style="text-align: center">√</td><br>    </tr><br>    <tr><br>      <td style="text-align: center">事件拦截</td><br>      <td style="text-align: center">onInterceptTouchEvent</td><br>      <td style="text-align: center">X</td><br>      <td style="text-align: center">√</td><br>      <td style="text-align: center">X</td><br>    </tr><br>    <tr><br>      <td style="text-align: center">事件消费</td><br>      <td style="text-align: center">onTouchEvent</td><br>      <td style="text-align: center">√</td><br>      <td style="text-align: center">√</td><br>      <td style="text-align: center">√</td><br>    </tr><br>  </tbody><br></table>
+<table style="word-break:break-all;">
+  <thead>
+
+<pre><code>&lt;tr&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;类型&lt;/th&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;相关方法&lt;/th&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;Activity&lt;/th&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;ViewGroup&lt;/th&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;View&lt;/th&gt;
+&lt;/tr&gt;</code></pre>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">事件分发</td>
+      <td style="text-align: center">dispatchTouchEvent</td>
+      <td style="text-align: center">√</td>
+      <td style="text-align: center">√</td>
+      <td style="text-align: center">√</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">事件拦截</td>
+      <td style="text-align: center">onInterceptTouchEvent</td>
+      <td style="text-align: center">X</td>
+      <td style="text-align: center">√</td>
+      <td style="text-align: center">X</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">事件消费</td>
+      <td style="text-align: center">onTouchEvent</td>
+      <td style="text-align: center">√</td>
+      <td style="text-align: center">√</td>
+      <td style="text-align: center">√</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>从上表可以看到 Activity 和 View 都是没有事件拦截的，这是因为：</p>
 <pre><code>1. Activity 作为原始的事件分发者，如果 Activity 拦截了事件会导致整个屏幕都无法响应事件，这肯定不是我们想要的效果。
-2. View最为事件传递的最末端，要么消费掉事件，要么不处理进行回传，根本没必要进行事件拦截。
-</code></pre><p>所以我们知道了activity是最上层，而view是最底层，那么结合之前view的结构的那张图，我们可以知道view的传递流程应该是这样：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Activity －&gt; PhoneWindow －&gt; DecorView －&gt; ViewGroup －&gt; ... －&gt; View</div></pre></td></tr></table></figure>
+2. View最为事件传递的最末端，要么消费掉事件，要么不处理进行回传，根本没必要进行事件拦截。</code></pre>
+<p>所以我们知道了activity是最上层，而view是最底层，那么结合之前view的结构的那张图，我们可以知道view的传递流程应该是这样：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Activity －&gt; PhoneWindow －&gt; DecorView －&gt; ViewGroup －&gt; ... －&gt; View</span><br></pre></td></tr></table></figure>
 <p>而view的处理恰恰相反，那就是这样:</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><div class="line">Activity &lt;－ PhoneWindow &lt;－ DecorView &lt;－ ViewGroup &lt;－ ... &lt;－ View</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Activity &lt;－ PhoneWindow &lt;－ DecorView &lt;－ ViewGroup &lt;－ ... &lt;－ View</span><br></pre></td></tr></table></figure>
 <p>如果上面的你理解了，下面这张图，对你来说也就是小意思了。<br><img src="http://img.blog.csdn.net/20170803160330745?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>如果你已经完全理解了上面的内容。那么对于view的事件处理。你已经懂了50%了。</p>
 <h3 id="事件分发和拦截"><a href="#事件分发和拦截" class="headerlink" title="事件分发和拦截"></a>事件分发和拦截</h3><p>事件分发和拦截的流程其实就是上面那张图。《群英传》中举得例子很恰当。我们现在也对所有的流程对应一个职位:</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">Activity:公司大boss</div><div class="line">RootView：项目经理</div><div class="line">ViewGroup：技术组长</div><div class="line">View：码农</div></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Activity:</span>公司大boss</span><br><span class="line">RootView：项目经理</span><br><span class="line">ViewGroup：技术组长</span><br><span class="line">View：码农</span><br></pre></td></tr></table></figure>
 <p>前面已经知道了处理流程，我们这边在写一次。<br><strong>分发(dispatch)–&gt;拦截(onIntercept)–&gt;消费(ontouch)</strong></p>
 <p> <strong>public boolean dispatchTouchEvent(MotionEvent ev)</strong> </p>
 <p>用来进行事件分发。如果事件能够传递到当前view。那么此方法一定会调用，返回结果受当前View的ontouch和下级的dispatchtouchevent影响，表示是否消耗当前事件。</p>
@@ -376,22 +410,46 @@
 <p>在上述方法内部调用，用来判断是否拦截事件，如果当前view拦截了事件，那么在同一序列中此方法不会在调用，返回结果表示是否拦截事件。</p>
 <p>  <strong>public boolean onTouchEvent(MotionEvent event)</strong> </p>
 <p>在dispatch方法中调用，用来处理点击事件，返回结果表示是否消耗当前事件，如果不消耗，那么当前view再也无法接受事件。</p>
-<table style="word-break:break-all;"><br>  <thead><br><br>    <tr><br>      <th style="text-align: center">类型</th><br>      <th style="text-align: center">true</th><br>      <th style="text-align: center">false</th><br>      <th style="text-align: center">方法</th><br>    </tr><br>  </thead><br>  <tbody><br>    <tr><br>      <td style="text-align: center">事件传递</td><br>      <td style="text-align: center">拦截，不继续</td><br>      <td style="text-align: center">不拦截，继续</td><br>      <td style="text-align: center">onIntercept</td><br>    </tr><br>    <tr><br>      <td style="text-align: center">事件处理</td><br>      <td style="text-align: center">处理了，无需审核</td><br>      <td style="text-align: center">给上级处理</td><br>      <td style="text-align: center">ontouch</td><br>    </tr><br>  </tbody><br></table>
+<table style="word-break:break-all;">
+  <thead>
+
+<pre><code>&lt;tr&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;类型&lt;/th&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;true&lt;/th&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;false&lt;/th&gt;
+  &lt;th style=&quot;text-align: center&quot;&gt;方法&lt;/th&gt;
+&lt;/tr&gt;</code></pre>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">事件传递</td>
+      <td style="text-align: center">拦截，不继续</td>
+      <td style="text-align: center">不拦截，继续</td>
+      <td style="text-align: center">onIntercept</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">事件处理</td>
+      <td style="text-align: center">处理了，无需审核</td>
+      <td style="text-align: center">给上级处理</td>
+      <td style="text-align: center">ontouch</td>
+    </tr>
+  </tbody>
+</table>
 
 <p>默认情况下，我们都是返回false。</p>
 <h4 id="默认的点击事件"><a href="#默认的点击事件" class="headerlink" title="默认的点击事件"></a>默认的点击事件</h4><p>我们先看下整体的效果图，再来进行点击查看结果：<br><img src="http://img.blog.csdn.net/20170803163244742?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>当然这是一个framelayout。你们只要知道是一层盖一层就对了= = 。那么现在所有的事件我们直接return  super来看下效果图：<br><img src="http://img.blog.csdn.net/20170803164453908?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>我们通过上面列举的职位可以分析下情况，具体详情如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">MainActivity [老板]: dispatchTouchEvent     经理,我准备发展一下电商业务,下周之前做一个淘宝出来.</div><div class="line">RootView     [经理]: dispatchTouchEvent     呼叫技术部,老板要做淘宝,下周上线.</div><div class="line">RootView     [经理]: onInterceptTouchEvent  (老板可能疯了,但又不是我做.)</div><div class="line">ViewGroupA   [组长]: dispatchTouchEvent     老板要做淘宝,下周上线?</div><div class="line">ViewGroupA   [组长]: onInterceptTouchEvent  (看着不太靠谱,先问问小王怎么看)</div><div class="line">View1        [码农]: dispatchTouchEvent     做淘宝???</div><div class="line">View1        [码农]: onTouchEvent           这个真心做不了啊.</div><div class="line">ViewGroupA   [组长]: onTouchEvent           小王说做不了.</div><div class="line">RootView     [经理]: onTouchEvent           报告老板, 技术部说做不了.</div><div class="line">MainActivity [老板]: onTouchEvent           这么简单都做不了,你们都是干啥的(愤怒).</div></pre></td></tr></table></figure>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">MainActivity</span> [老板]: dispatchTouchEvent     经理,我准备发展一下电商业务,下周之前做一个淘宝出来.</span><br><span class="line"><span class="symbol">RootView</span>     [经理]: dispatchTouchEvent     呼叫技术部,老板要做淘宝,下周上线.</span><br><span class="line"><span class="symbol">RootView</span>     [经理]: onInterceptTouchEvent  (老板可能疯了,但又不是我做.)</span><br><span class="line"><span class="symbol">ViewGroupA</span>   [组长]: dispatchTouchEvent     老板要做淘宝,下周上线?</span><br><span class="line"><span class="symbol">ViewGroupA</span>   [组长]: onInterceptTouchEvent  (看着不太靠谱,先问问小王怎么看)</span><br><span class="line"><span class="symbol">View1</span>        [码农]: dispatchTouchEvent     做淘宝???</span><br><span class="line"><span class="symbol">View1</span>        [码农]: onTouchEvent           这个真心做不了啊.</span><br><span class="line"><span class="symbol">ViewGroupA</span>   [组长]: onTouchEvent           小王说做不了.</span><br><span class="line"><span class="symbol">RootView</span>     [经理]: onTouchEvent           报告老板, 技术部说做不了.</span><br><span class="line"><span class="symbol">MainActivity</span> [老板]: onTouchEvent           这么简单都做不了,你们都是干啥的(愤怒).</span><br></pre></td></tr></table></figure>
 <p>可以从log日志中看出，和我们上面的流程是一模一样的。我们尝试下对某个view的TouchEvent 直接拦截了（return true），然后在看看效果图：<br><img src="http://img.blog.csdn.net/20170804094215210?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"><br>流程应该就是这样：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">MainActivity [老板]: dispatchTouchEvent     把按钮做的好看一点,要有光泽,给人一种点击的欲望.</div><div class="line">RootView     [经理]: dispatchTouchEvent     技术部,老板说按钮不好看,要加一道光.</div><div class="line">RootView     [经理]: onInterceptTouchEvent  </div><div class="line">ViewGroupA   [组长]: dispatchTouchEvent     给按钮加上一道光.</div><div class="line">ViewGroupA   [组长]: onInterceptTouchEvent  </div><div class="line">View1        [码农]: dispatchTouchEvent     加一道光.</div><div class="line">View1        [码农]: onTouchEvent           做好了.</div></pre></td></tr></table></figure>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">MainActivity</span> [老板]: dispatchTouchEvent     把按钮做的好看一点,要有光泽,给人一种点击的欲望.</span><br><span class="line"><span class="symbol">RootView</span>     [经理]: dispatchTouchEvent     技术部,老板说按钮不好看,要加一道光.</span><br><span class="line"><span class="symbol">RootView</span>     [经理]: onInterceptTouchEvent  </span><br><span class="line"><span class="symbol">ViewGroupA</span>   [组长]: dispatchTouchEvent     给按钮加上一道光.</span><br><span class="line"><span class="symbol">ViewGroupA</span>   [组长]: onInterceptTouchEvent  </span><br><span class="line"><span class="symbol">View1</span>        [码农]: dispatchTouchEvent     加一道光.</span><br><span class="line"><span class="symbol">View1</span>        [码农]: onTouchEvent           做好了.</span><br></pre></td></tr></table></figure>
 <p>那么我们如果ViewGroup进行拦截处理呢？也就是View的事件不响应了。我们再一次的看看效果图：<br><img src="http://img.blog.csdn.net/20170804095231990?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3c5NTA3Mjk=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
 <p>流程如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">MainActivity [老板]: dispatchTouchEvent     现在项目做到什么程度了?</div><div class="line">RootView     [经理]: dispatchTouchEvent     技术部,你们的app快做完了么?</div><div class="line">RootView     [经理]: onInterceptTouchEvent  </div><div class="line">ViewGroupA   [组长]: dispatchTouchEvent     项目进度?</div><div class="line">ViewGroupA   [组长]: onInterceptTouchEvent  </div><div class="line">ViewGroupA   [组长]: onTouchEvent           正在测试,明天就测试完了</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">MainActivity</span> <span class="selector-attr">[老板]</span>: <span class="selector-tag">dispatchTouchEvent</span>     现在项目做到什么程度了?</span><br><span class="line"><span class="selector-tag">RootView</span>     <span class="selector-attr">[经理]</span>: <span class="selector-tag">dispatchTouchEvent</span>     技术部,你们的<span class="selector-tag">app</span>快做完了么?</span><br><span class="line"><span class="selector-tag">RootView</span>     <span class="selector-attr">[经理]</span>: <span class="selector-tag">onInterceptTouchEvent</span>  </span><br><span class="line"><span class="selector-tag">ViewGroupA</span>   <span class="selector-attr">[组长]</span>: <span class="selector-tag">dispatchTouchEvent</span>     项目进度?</span><br><span class="line"><span class="selector-tag">ViewGroupA</span>   <span class="selector-attr">[组长]</span>: <span class="selector-tag">onInterceptTouchEvent</span>  </span><br><span class="line"><span class="selector-tag">ViewGroupA</span>   <span class="selector-attr">[组长]</span>: <span class="selector-tag">onTouchEvent</span>           正在测试,明天就测试完了</span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>综上所失，我们可以发现，我们几乎没有在dispatch里面进行任何处理，不是说用不到，只是这个方法用的不多，一般都在拦截和消费里面进行处理，通知上层或者下层是否需要执行。昨天一个小伙伴刚和我说他最近也在重新整理view这块，也是一个功能就要用到了dispatch这个方法。这个具体我就不细说了。你们可以自己理理。</p>
 <p>这个篇幅我只是对view做了一个简单的介绍，通过标题“浅析”也知道。不过，如果这篇你们看懂了。对于正常的需求开发已无大碍。后面我尽可能去深入分析一次。</p>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>《android群英传》</p>
-<p> <a href="http://www.gcssloop.com/customview/dispatch-touchevent-theory" target="_blank" rel="external">事件分发机制原理</a></p>
+<p> <a target="_blank" rel="noopener" href="http://www.gcssloop.com/customview/dispatch-touchevent-theory">事件分发机制原理</a></p>
 
       
     </div>

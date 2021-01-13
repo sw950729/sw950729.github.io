@@ -363,7 +363,7 @@
 </li>
 </ul>
 <h3 id="Activity的生命周期"><a href="#Activity的生命周期" class="headerlink" title="Activity的生命周期"></a>Activity的生命周期</h3><p>首先我们先看下图解是怎么描述activity的生命周期的。</p>
-<p><img src="https://developer.android.google.cn/images/activity_lifecycle.png" alt=""></p>
+<p><img src="https://developer.android.google.cn/images/activity_lifecycle.png"></p>
 <p>在正常情况下，Acitivity的生命周期会先后经历如下的生命周期：</p>
 <p>1）onCreate：表示Activity正在被创建，一般来说，我们会在这个方法中设置布局以及一些数据的初始化。</p>
 <p>2）onStart：表示Activity正在被启动，这个Activity已经可见，但并不是前台，这种情况下，我们无法操作这个Activity。</p>
@@ -379,10 +379,12 @@
 <p>销毁一个Activity：onPasue()–&gt;onStop()–&gt;onDestroy()。</p>
 <h3 id="异常情况下Activity的生命周期"><a href="#异常情况下Activity的生命周期" class="headerlink" title="异常情况下Activity的生命周期"></a>异常情况下Activity的生命周期</h3><p>首先，我们需要什么情况算异常情况。最好的例子莫过于横竖屏切换，这种情况Activity会被销毁并且重建，一般来说，系统会调用onSaveInstanceState 方法进行数据的存储。然后通过调用onRestoreInstanceState进行数据的恢复。如果我们想知道当前activity是否被重建了。我们可以在onCreate中判断bundle是否为null或者重写onRestoreInstanceState方法。一般推荐使用后者，因为只有在重建的情况下，此方法才会被调用。</p>
 <p>如果我们希望当系统配置参数发生改变时，当前Activity不会被重建应该怎么做呢？自然是有的，我们可以在Mainfest文件中为Activity配置configChanges属性。比如，我们想当屏幕切换的时候当前Activity不被重启。我们可以这样：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">android:configChanges=&quot;orientation|screenSize&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">android:</span>configChanges=<span class="string">&quot;orientation|screenSize&quot;</span></span><br></pre></td></tr></table></figure>
 <p>configChanges的选项有很多，这里我们常用的只有locale、orentation、keyboardHidden以及screenSize。（需要注意的是：screenSize这个属性比较特殊，minSdkVersion 和targetSdkVersion 低于13时，此选项不会导致activity重启。否则会导致activity重启。）</p>
 <p>此时，我们可以通过重写此方法来进行一些特殊处理：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">@Override</div><div class="line">public void onConfigurationChanged(Configuration newConfig) &#123;</div><div class="line">    super.onConfigurationChanged(newConfig);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line"><span class="keyword">public</span> void onConfigurationChanged(Configuration <span class="keyword">new</span><span class="type">Config</span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>.onConfigurationChanged(<span class="keyword">new</span><span class="type">Config</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h3><p>《Android开发艺术探索》</p>
 <p>Android官方API文档</p>
 
