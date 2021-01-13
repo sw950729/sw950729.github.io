@@ -79,29 +79,17 @@
 
 
 
-<meta name="description" content="前言 本文是我最近刚看完的一本《阿里工程师的自我修养》书中的部分内容，我做了简单的梳理。侵删。   思考脑与反射脑简单介绍下什么是思考脑和反射脑。思考脑管理性，反射脑管直觉，存储脑管记忆，直觉依赖习惯，用直觉做出反应，快速，但未必正确;思考脑管理性，理性依赖逻辑，缓慢，但更加正确。 有科学家通过研究，发现一个人一天的行为中，5%是非习惯性的，用思考脑的逻辑驱动，95%是习惯性的，用反射脑的直觉驱动">
+<meta name="description" content="前言gradle是一个基于JVM的构建工具，它结合了Python、Ruby和Smalltalk的许多强大的特性，Groovy 代码能够与Java代码很好地结合，也能用于扩展现有代码。由于其运行在 JVM 上的特性，Groovy可以使用其他Java语言编写的库。目前已经应用在多数Android技术体系中，比如，jenkins，插件化，组件化，模块化等等。如果你不了解gradle，那么前面几个技术点很">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何在工作中快速成长？致工程师的十条建议。">
-<meta property="og:url" content="http://yoursite.com/soft_skills/business_tips/index.html">
+<meta property="og:title" content="Gradle入门之Groovy语法">
+<meta property="og:url" content="http://yoursite.com/gradle/2/index.html">
 <meta property="og:site_name" content="我就是马云飞">
-<meta property="og:description" content="前言 本文是我最近刚看完的一本《阿里工程师的自我修养》书中的部分内容，我做了简单的梳理。侵删。   思考脑与反射脑简单介绍下什么是思考脑和反射脑。思考脑管理性，反射脑管直觉，存储脑管记忆，直觉依赖习惯，用直觉做出反应，快速，但未必正确;思考脑管理性，理性依赖逻辑，缓慢，但更加正确。 有科学家通过研究，发现一个人一天的行为中，5%是非习惯性的，用思考脑的逻辑驱动，95%是习惯性的，用反射脑的直觉驱动">
+<meta property="og:description" content="前言gradle是一个基于JVM的构建工具，它结合了Python、Ruby和Smalltalk的许多强大的特性，Groovy 代码能够与Java代码很好地结合，也能用于扩展现有代码。由于其运行在 JVM 上的特性，Groovy可以使用其他Java语言编写的库。目前已经应用在多数Android技术体系中，比如，jenkins，插件化，组件化，模块化等等。如果你不了解gradle，那么前面几个技术点很">
 <meta property="og:locale">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113257423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113421668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113432838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113454188.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/2019100911350491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113514341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113530117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113539437.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113546898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113555901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191009113626957.png">
-<meta property="article:published_time" content="2020-06-04T13:21:54.965Z">
-<meta property="article:modified_time" content="2020-06-04T14:49:28.260Z">
+<meta property="article:published_time" content="2021-01-13T14:10:04.152Z">
+<meta property="article:modified_time" content="2021-01-13T14:14:15.505Z">
 <meta property="article:author" content="马云飞">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191009113257423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70">
 
 
 
@@ -131,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/soft_skills/business_tips/"/>
+  <link rel="canonical" href="http://yoursite.com/gradle/2/"/>
 
 
 
 
 
-  <title>如何在工作中快速成长？致工程师的十条建议。 | 我就是马云飞</title>
+  <title>Gradle入门之Groovy语法 | 我就是马云飞</title>
   
 
 
@@ -288,7 +276,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/soft_skills/business_tips/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/gradle/2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -305,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">如何在工作中快速成长？致工程师的十条建议。</h1>
+          <h1 class="post-title" itemprop="name headline">Gradle入门之Groovy语法</h1>
         
 
         <div class="post-meta">
@@ -317,8 +305,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-04T21:21:54+08:00">
-                2020-06-04
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-13T22:10:04+08:00">
+                2021-01-13
               </time>
             
 
@@ -355,50 +343,132 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
-<p>本文是我最近刚看完的一本《阿里工程师的自我修养》书中的部分内容，我做了简单的梳理。侵删。</p>
-</blockquote>
-<p><img src="https://img-blog.csdnimg.cn/20191009113257423.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="思考脑与反射脑"><a href="#思考脑与反射脑" class="headerlink" title="思考脑与反射脑"></a>思考脑与反射脑</h3><p>简单介绍下什么是思考脑和反射脑。思考脑管理性，反射脑管直觉，存储脑管记忆，直觉依赖习惯，用直觉做出反应，快速，但未必正确;思考脑管理性，理性依赖逻辑，缓慢，但更加正确。</p>
-<p>有科学家通过研究，发现一个人一天的行为中，5%是非习惯性的，用思考脑的逻辑驱动，95%是习惯性的，用反射脑的直觉驱动，决定我们一生的，永远是95%的反射脑(习惯)，而不是5%的思考脑(逻辑)。回想自己的一天，大部分的判断和观点是不是都是靠直觉，靠习惯的，什么情况下才会用思考脑?是不是一个人的时候用思考脑比较多，而在多人对话场景中要快只能靠直觉和反射，而给别人好与不好的印象往往是在对话场景中建立起来的，可想而知，反射出来的观点或行为对我们而言是多么重要。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113421668.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="习以为常"><a href="#习以为常" class="headerlink" title="习以为常"></a>习以为常</h3><p>把95%中的低质量习惯反射，训练成逻辑后的高质量习惯反射需要有很多的时间保障。但对于处理互联网时代的我们，我们对电子设备的依赖程度已经达到了形影不离的地步。甚至上厕所的那几分钟，也是形影不离。对习惯的认知，关键在于换种说法:“把改变玩手机的习惯，用另外一句话来替代，把学习变成习以为常的生活方式”。<br>谁都知道替换可以改变，但为什么这么难?其实关键在于这个意识点能不能变成触发性响应，也就是说当某个触发条件产生的时候，改变的意识能不能弹出来警告自己。</p>
-<p>先对习惯的产生机制要有所了解，习惯并非凭空产生，他有前因后果，前因是前一件事情结束(触发条件)，后果是前一件事情结束后的行为带来的一些额外奖励。比如晚上下班回家洗完澡这件事情结束后，肯定会开始下一件我们最习惯的事情，比如盯手机看剧或者刷八卦，当这件最习惯的事情结束后，大脑会产生精神上的及时享受，内容很丰富、很精彩。短期看是享受，长期看是灾难，因为对未来帮助意义不大，但是却消耗了我们大把时间。而且看剧或者刷八卦带来的信息积累只能称的上是饭后谈资，或者有些根本没机会谈。</p>
-<p>了解习惯产生的机制后，改变习惯就变得很简单，每次在触发条件发生时，弹出一道选择题，选择做无效事情，还是学习？多次以这种方式不断强化自己做对选择题。久而久之，正确的行为被训练得多了，就成为顺其自然的习惯了。所以改变习惯，就是在触发条件发生时，让自己做对选择题，打破旧有习惯回路，建立新的习惯回路。相信这句话“精英之所以精英，是不间断的正向行为习惯的驱使”。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113432838.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="时间管理：三八理论"><a href="#时间管理：三八理论" class="headerlink" title="时间管理：三八理论"></a>时间管理：三八理论</h3><p>时间管理三八理论:每个人每天有公平的24个小时，第1个八小时用于睡觉、第2个八小时用于工作、第3个八小时用于自由支配，但人与人的差距主要是由第3个八小时决定的，第3个8小时用于消费、交易还是投资有着非常大的人生差别。以下班空闲时间为例解释消费、交易、投资从而理解人生差异的不同:</p>
-<p>下班空闲时间，用于消费，比如刷新闻，刷抖音，刷朋友圈，产生及时享受，没产生成长，钱还是那些钱，职位还是原来职位;</p>
-<p>下班空闲时间，用于交易，接个外快，赚点辛苦钱，产生金钱，没产生成长，钱没多多少，职位却还是原来职位;</p>
-<p>下班空闲时间，用于投资，以终为始，相信“慢慢来，成长最快”的认知，持续不断投入多维领域的学习，沉淀能力，获得成长，从成长中获得金钱，名誉的升级;</p>
-<p>看完时间的消费、交易、投资的解释，在看《习以为常》中做选择题的重要性，做对选择题其实就是投资，投资自己的成长，投资自己的学习，人生的不同不就是因为投资自己而变得不一样吗？但是投资需要时间，时间怎么来?<br>“找到不被打扰的时间”。只有找到了不被打扰的时间用于投资自己的成长才能发生复利效应。如果想从工作中省点时间，想从周末挤点时间用于学习，这叫成长的断崖，我相信不能持续，学习必须是每日的必修课，必须是日拱一卒，持之以恒，有不断的输入，也有不断的输出，持续地沉淀，在关键时刻输出解决问题能力，从而获得能力认可。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113454188.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="注意力"><a href="#注意力" class="headerlink" title="注意力"></a>注意力</h3><p>先来解个疑惑:“为什么看电影注意力特别好，做正事注意力集中不了”。<br>首先我们要接受这个现实，医学上把这叫作注意力缺失症，基本所有人都有这种毛病，因为做正事比较枯燥、困难，让人不舒服，集中不了注意力，逃避很正常!<br>其次找到改善方法，通常可以这么做，给自己准备一个笔记本，边读边思考，顺带把重要的观点记录下来，开始会觉得很困难，但是慢慢坚持下来你会发现，思考会越来越深入，注意力集中时间越来越长。<br>注意力和时间管理的认知一旦结合，我们可以兴奋地这么说:“在不被打扰的时间里，用好注意力投资在自己成长上，我们的人生会不一样，在未来会遇到更好的自己”。</p>
-<h3 id="执行力"><a href="#执行力" class="headerlink" title="执行力"></a>执行力</h3><p><img src="https://img-blog.csdnimg.cn/2019100911350491.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<p>提升执行力，首先让自己成为投资者，投资自己的成长，投资在正确的事情上，此时去认知执行力才有意义，我对执行力的认知:“想明白，然后一步一步做下去”，如果想不明白，根本谈不上执行力。同时提升执行力的时候，还需要自律，通过自律让执行力得到持续，要相信持续投资自己的成长，可以实现“慢慢来，成长最快”的复利效果。</p>
-<h3 id="贵人"><a href="#贵人" class="headerlink" title="贵人"></a>贵人</h3><p>很多时候我们会觉得身边缺少贵人，或者有贵人但离自己太远。产生这种认知离不开4个方面:</p>
-<ul>
-<li><p>一是，自己不自信，不相信自己能够影响他人，导致缺乏主动沟通，长期沟通，沟通的延续性和习惯没有建立。</p>
-</li>
-<li><p>二是，自己心态问题，自己的心态若是不够积极正向，没有贵人敢进入你的思维空间，因为价值观不匹配，很难形成认知共识。</p>
-</li>
-<li><p>三是，职场原因，很多时候可能你的老板就是你的贵人，但是因为职场，因为上下级，碍于面子，碍于工作，不敢多交流，多请教。</p>
-</li>
-<li><p>四是，贵人来了又走了，有贵人帮你改变，帮你进步，但是自己不努力，抱着过去做事的心态和方法在职场上浪迹天涯，进步不明显，否定了他作为贵人的价值和意义。</p>
-</li>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle是一个基于JVM的构建工具，它结合了Python、Ruby和Smalltalk的许多强大的特性，Groovy 代码能够与Java代码很好地结合，也能用于扩展现有代码。由于其运行在 JVM 上的特性，Groovy可以使用其他Java语言编写的库。目前已经应用在多数Android技术体系中，比如，jenkins，插件化，组件化，模块化等等。如果你不了解gradle，那么前面几个技术点很难深入理解。  </p>
+<p>Groovy 的语法跟 kotlin 类似，如果我们有 kotlin 的经验的话那么学习 groovy 会容易很多。下面我们一起来学习下groovy的核心语法，大家可以跟着样例敲一下加深理解、记忆。</p>
+<h3 id="基本特点"><a href="#基本特点" class="headerlink" title="基本特点"></a>基本特点</h3><ul>
+<li>构建在强大的Java语言之上 并 添加了从Python，Ruby和Smalltalk等语言中学到的 诸多特征，例如动态类型转换、闭包和元编程（metaprogramming）支持。</li>
+<li>为Java开发者提供了 现代最流行的编程语言特性，而且学习成本很低（几乎为零）。</li>
+<li>支持DSL（Domain Specific Languages领域定义语言）和其它简洁的语法，让代码变得易于阅读和维护。</li>
+<li>受检查类型异常(Checked Exception)也可以不用捕获。</li>
+<li>Groovy拥有处理原生类型，面向对象以及一个Ant DSL，使得创建Shell Scripts变得非常简单。</li>
+<li>在开发Web，GUI，数据库或控制台程序时 通过 减少框架性代码 大大提高了开发者的效率。</li>
+<li>支持单元测试和模拟（对象），可以 简化测试。</li>
+<li>无缝集成 所有已经存在的 Java对象和类库。</li>
+<li>直接编译成Java字节码，这样可以在任何使用Java的地方 使用Groovy。</li>
+<li>支持函数式编程，不需要main函数。</li>
+<li>一些新的运算符。</li>
+<li>默认导入常用的包。</li>
+<li>断言不支持jvm的-ea参数进行开关。</li>
+<li>支持对对象进行布尔求值。</li>
+<li>类不支持default作用域，且默认作用域为public。</li>
+<li>groovy中基本类型也是对象，可以直接调用对象的方法。</li>
 </ul>
-<p>如果恰好有这么一位贵人，应该懂得珍惜，珍惜的主要方式是用成长回报他，因为你的成长在未来可以帮助他。同时在平时需要建立有效沟通，首先让贵人真正地了解你，在确定贵人能够帮助你，影响你时，你应该大胆去承担一些有挑战的事情，哪怕遇到委屈，遇到压力，遇到失败，要相信此时的你才是真实的你，你的天花板，你的瓶颈就在于此，借助贵人助你提升能力，下次同样的事情来临时，自己就能够得心应手，这种能力的锻炼机会非常少，和阿里经常说的借事修人非常匹配，事情失败了没关系，但人要成，人的能力要提升。<br><img src="https://img-blog.csdnimg.cn/20191009113514341.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="会议"><a href="#会议" class="headerlink" title="会议"></a>会议</h3><p>会多不一定是坏事，反而可能成为你训练思考，训练总结归纳，训练逻辑表达的地方。<br>而且用什么样的身份参与会议，或者在过程中角色如何切换，也是非常重要。我一般用3种角色参加:</p>
-<p>作为参与者，认真聆听，快速提炼自己想表达的逻辑，然后参与讨论。</p>
-<p>作为聆听者，仔细聆听，认真输入，在脑中组织思路，组织逻辑。</p>
-<p>作为中断者，发现有些会议真的没有继续的必要了，出于好意，提示会议的重心或者结束会议。<br><img src="https://img-blog.csdnimg.cn/20191009113530117.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="跳出舒适区"><a href="#跳出舒适区" class="headerlink" title="跳出舒适区"></a>跳出舒适区</h3><p>心理学家把我们可能面对的学习内容分成了三个区，分别是舒适区、学习区和恐慌区。舒适区太容易，待太久了，总想跳出去看看。恐慌区太难，太难带来恐惧，就像梁宁在产品思维中讲同理心时，恐惧会产生束缚也会产生动力，就看安全边界有没有被侵犯，如果无法战胜挑战，恐惧就产生了束缚，退回到舒适区。</p>
-<p>所以跳出舒适区，不是说跳到恐慌区，而是跳到两者之间的学习区，在学习区中达到困难和能力的平衡状态，引用米哈里·契克森米哈赖在《心流:最优体验心里学》这本书提到的:要想在工作中达到心流状态，这项工作的挑战和你的技能必须形成平衡，如果工作的挑战大大低于你的技能，你会觉得工作很无聊。如果工作的挑战大大超出你的技能，你会感到焦虑。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113539437.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="职业规划"><a href="#职业规划" class="headerlink" title="职业规划"></a>职业规划</h3><p>职业规划不是某个岗位，某个角色，而是工作能力的提升。针对自己岗位需要的能力，职场需要的能力，然后用专家思维，多维视角重点突破3-4项能力，抱着120%的努力拿到结果，甚至是超出期望的结果，事情成了，能力也就被认可了，所谓的角色，岗位只是顺其自然的结果。<br><img src="https://img-blog.csdnimg.cn/20191009113546898.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="时间换空间"><a href="#时间换空间" class="headerlink" title="时间换空间"></a>时间换空间</h3><p>所谓时间换空间，就是让我们无法看清未来是什么样子的时候，把注意力聚焦在当下，做成长该做的事。</p>
-<p><img src="https://img-blog.csdnimg.cn/20191009113555901.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9zaWxlbmNlLmJsb2cuY3Nkbi5uZXQ=,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>所谓直觉反射，就是通过大量的逻辑反复训练，提升自己的直觉准确性，从狭窄的5%进入广阔的95%;<br>所谓以习为常，就是在触发条件发生进入下一个行为前，做对选择题;<br>所谓时间管理，就是找到不被打扰的时间用于投资自己;<br>所谓注意力，就是专注在目标事务上，直到产生期望结果;<br>所谓执行力，就是让自己先想明白，然后一步一步走下去;<br>所谓贵人，就是能够持续陪你一起输出高质量内容的人;<br>所谓会议，就是模拟机器学习思路，通过参与讨论获得正反馈来验证自己的观点;<br>所谓跳出舒适区，就是先跳出，然后进入学习区，平衡挑战和能力达到心流的体验;<br>所谓职业规划，就是提升工作需要的能力;<br>所谓时间换空间，就是慢慢来，持之以恒，成长最快。</p>
-<p>更多文章请关注我的公众号：码农职场<br><img src="https://img-blog.csdnimg.cn/20191009113626957.png" alt="在这里插入图片描述"></p>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="Groovy中的变量"><a href="#Groovy中的变量" class="headerlink" title="Groovy中的变量"></a>Groovy中的变量</h4><p>groovy中变量既可以像java一样是强类型的，也可以像kotlin一样是弱类型的。<br>代码示例如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        String a &#x3D; &#39;Hello World&#39;</span><br><span class="line">        def b &#x3D; &quot;Hello Silence&quot;</span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hello World</span><br><span class="line">Hello Silence</span><br></pre></td></tr></table></figure>
+<h4 id="Groovy中的运算符和条件控制"><a href="#Groovy中的运算符和条件控制" class="headerlink" title="Groovy中的运算符和条件控制"></a>Groovy中的运算符和条件控制</h4><p>与java一致，这里不过多介绍</p>
+<h4 id="Groovy中的字符串"><a href="#Groovy中的字符串" class="headerlink" title="Groovy中的字符串"></a>Groovy中的字符串</h4><p>Groovy提供了多种表示String字面量的方法。Groovy中的字符串可以用单引号（’），双引号（“）或三引号（“““）括起来。此外，由三重引号括起来的Groovy字符串可以跨越多行。  </p>
+<p>示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        String a &#x3D; &#39;Hello World&#39;</span><br><span class="line">        def b &#x3D; &quot;Hello Silence&quot;</span><br><span class="line">        def c &#x3D; &#39;&#39;&#39;Hello World</span><br><span class="line">Hello Silence&#39;&#39;&#39;</span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">        println(c)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hello World</span><br><span class="line">Hello Silence</span><br><span class="line">Hello World</span><br><span class="line">Hello Silence</span><br></pre></td></tr></table></figure>
+<h5 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h5><p>Groovy的扩展和kotlin的一样，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        String a &#x3D; &#39;Hello World&#39;</span><br><span class="line">        def b &#x3D; &quot;Hello $a&quot;</span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hello World</span><br><span class="line">Hello Hello World</span><br></pre></td></tr></table></figure>
+<h5 id="字符串的索引"><a href="#字符串的索引" class="headerlink" title="字符串的索引"></a>字符串的索引</h5><p>Groovy中的字符串是字符的有序序列。字符串中的单个字符可以通过其位置访问。这由索引位置给出。</p>
+<p>字符串索引从零开始，以小于字符串长度的一个结束。Groovy还允许负索引从字符串的末尾开始计数。</p>
+<p>具体示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        String a &#x3D; &#39;Hello World&#39;</span><br><span class="line">        println(a[1])&#x2F;&#x2F;输出坐标为1的内容</span><br><span class="line">        println(a[-2])&#x2F;&#x2F;输出坐标为倒数第二的内容</span><br><span class="line">        println(a[1..2])&#x2F;&#x2F;输出坐标区间为1-2的内容</span><br><span class="line">        println(a[2..5])&#x2F;&#x2F;输出坐标区间为2-5的内容</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">e</span><br><span class="line">l</span><br><span class="line">el</span><br><span class="line">llo </span><br></pre></td></tr></table></figure>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="Range范围"><a href="#Range范围" class="headerlink" title="Range范围"></a>Range范围</h4><p>范围是指定值序列的速记。范围由序列中的第一个和最后一个值表示，Range可以是包含或排除。包含范围包括从第一个到最后一个的所有值，而独占范围包括除最后一个之外的所有值。</p>
+<ul>
+<li>1..10 — 包含范围的示例</li>
+<li>1 .. &lt;10 - 独占范围的示例</li>
+<li>‘a’..’x’ - 范围也可以由字符组成</li>
+<li>10..1 - 范围也可以按降序排列</li>
+<li>‘x’..’a’ - 范围也可以由字符组成并按降序排列。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>contains()</td>
+<td>检查范围是否包含特定值</td>
+</tr>
+<tr>
+<td>get()</td>
+<td>返回此范围中指定位置处的元素。</td>
+</tr>
+<tr>
+<td>getFrom()</td>
+<td>获得此范围的下限值。</td>
+</tr>
+<tr>
+<td>getTo()</td>
+<td>获得此范围的上限值。</td>
+</tr>
+<tr>
+<td>isReverse()</td>
+<td>这是一个反向的范围，反向迭代</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>获得范围的元素值。</td>
+</tr>
+<tr>
+<td>subList()</td>
+<td>返回此指定的fromIndex（包括）和toIndex（排除）之间的此范围部分的视图。</td>
+</tr>
+</tbody></table>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>列表是用于存储数据项集合的结构。在 Groovy中，List保存了一系列对象引用。</p>
+<p>List中的对象引用占据序列中的位置，并通过整数索引来区分。</p>
+<p>groovy 中的一个列表中的数据可以是任意类型。这和java下集合列表有些不同，java下的列表是同种类型的数据集合。</p>
+<p>groovy中列表还可以嵌套列表。如[1,2,[3,4,5],“aaa”]groovy列表内置有反转方法 reverse()。调用 List.reverse() 可以实现列表反转。groovy列表内置有排序方法 sort()。调用 List.sort() 可以实现列表排序。空列表表示为[]声明一个空集合。</p>
+<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p>Map是对象引用的无序集合。Map集合中的元素由键值访问。Map中使用的键可以是任何类。当我们插入到Map集合中时，需要两个值：键和值。</p>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h4 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h4><p>Groovy中的面向对象和其他任何的面向对象语言一样，存在类和对象的概念。不过在groovy新增了一个trait的关键字，名为特征。</p>
+<h4 id="Groovy中的特征"><a href="#Groovy中的特征" class="headerlink" title="Groovy中的特征"></a>Groovy中的特征</h4><p>特征是语言结构的构造，其他包括：</p>
+<ul>
+<li>行为的组成</li>
+<li>接口运行时的实现</li>
+<li>与静态类型检查/编译的兼容性  </li>
+</ul>
+<p>使用trait关键字定义特征。示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        Student st &#x3D; new Student();</span><br><span class="line">        st.StudentID &#x3D; 1</span><br><span class="line">        st.Marks1 &#x3D; 10</span><br><span class="line">        st.DisplayMarks()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">trait Marks &#123;</span><br><span class="line">    void DisplayMarks() &#123;</span><br><span class="line">        println(&quot;Display Marks&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student implements Marks &#123;</span><br><span class="line">    int StudentID</span><br><span class="line">    int Marks1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Display Marks</span><br></pre></td></tr></table></figure>
+<p>上述示例中trait是类似接口的存在，同理，trait也可以实现接口。<br>示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        Student st &#x3D; new Student();</span><br><span class="line">        st.StudentID &#x3D; 1</span><br><span class="line">        st.Marks1 &#x3D; 10</span><br><span class="line">        st.DisplayMarks()</span><br><span class="line">        st.DisplayTotal()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Total &#123;</span><br><span class="line">    void DisplayTotal()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">trait Marks implements Total &#123;</span><br><span class="line">    void DisplayMarks() &#123;</span><br><span class="line">        println(&quot;Display Marks&quot;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void DisplayTotal() &#123;</span><br><span class="line">        println(&quot;Display Total&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Student implements Marks &#123;</span><br><span class="line">    int StudentID</span><br><span class="line">    int Marks1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Display Marks</span><br><span class="line">Display Total</span><br></pre></td></tr></table></figure>
+<h4 id="扩展特征"><a href="#扩展特征" class="headerlink" title="扩展特征"></a>扩展特征</h4><p>特征的扩展则使用extends关键字，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">trait Marks &#123;</span><br><span class="line">   void DisplayMarks() &#123;</span><br><span class="line">      println(&quot;Marks1&quot;);</span><br><span class="line">   &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">trait Total extends Marks &#123;</span><br><span class="line">   void DisplayMarks() &#123;</span><br><span class="line">      println(&quot;Total&quot;);</span><br><span class="line">   &#125; </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+<h3 id="Groovy中的闭包"><a href="#Groovy中的闭包" class="headerlink" title="Groovy中的闭包"></a>Groovy中的闭包</h3><p>闭包是一个短的匿名代码块，个人理解是和lamda是差不多的。<br>下面是一个简单的闭包例子，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        def test &#x3D; &#123; println &quot;Hello World&quot; &#125;</span><br><span class="line">        test.call()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+<h4 id="闭包中的形式参数"><a href="#闭包中的形式参数" class="headerlink" title="闭包中的形式参数"></a>闭包中的形式参数</h4><p>闭包也可以包含形式参数，以使它们更有用，就像Groovy中的方法一样。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        def hello&#x3D;&quot;Hello&quot;</span><br><span class="line">        def test &#x3D; &#123;params -&gt; println &quot;$hello World&quot; &#125;</span><br><span class="line">        test.call()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果也是Hello World。<br>当然我们还有另外一种写法：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        def test &#x3D; &#123; println &quot;Hello $&#123;it&#125;&quot; &#125;</span><br><span class="line">        test.call(&quot;World&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们还可以把上面两种的形式，进行组合，示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        def hello&#x3D;&quot;Hello&quot;</span><br><span class="line">        def test &#x3D; &#123; params -&gt;println &quot;$hello $&#123;params&#125;&quot; &#125;</span><br><span class="line">        test.call(&quot;World&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="在方法中使用闭包"><a href="#在方法中使用闭包" class="headerlink" title="在方法中使用闭包"></a>在方法中使用闭包</h4><p>类似kotlin的方法中可以传匿名函数一样。示例代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Study &#123;</span><br><span class="line">    static void main(String[] args) &#123;</span><br><span class="line">        def hello&#x3D;&quot;Hello&quot;</span><br><span class="line">        def test &#x3D; &#123; params -&gt;println &quot;$hello $&#123;params&#125;&quot; &#125;</span><br><span class="line">        Study.Display(test)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    def static Display(clo) &#123;</span><br><span class="line">        clo.call(&quot;Silence&quot;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Hello Silence</span><br></pre></td></tr></table></figure>
+<h3 id="Groovy中的Json"><a href="#Groovy中的Json" class="headerlink" title="Groovy中的Json"></a>Groovy中的Json</h3><p>我们先来看看 groovy 中对象与 json 字符串之间的相互转换：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import groovy.json.JsonOutput</span><br><span class="line"></span><br><span class="line">class Study&#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        def study &#x3D; [new Person(&quot;silence&quot;, 25),</span><br><span class="line">                     new Person(&quot;david&quot;, 26)]</span><br><span class="line">        def json&#x3D;JsonOutput.toJson(study)</span><br><span class="line">        println json</span><br><span class="line">        &#x2F;&#x2F;带格式的输出json</span><br><span class="line">        println JsonOutput.prettyPrint(json)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class Person &#123;</span><br><span class="line">    private String name</span><br><span class="line">    private int age</span><br><span class="line"></span><br><span class="line">    Person(String name, int age) &#123;</span><br><span class="line">        this.name &#x3D; name</span><br><span class="line">        this.age &#x3D; age</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String getName() &#123;</span><br><span class="line">        return name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void setName(String name) &#123;</span><br><span class="line">        this.name &#x3D; name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    int getAge() &#123;</span><br><span class="line">        return age</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    void setAge(int age) &#123;</span><br><span class="line">        this.age &#x3D; age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">[&#123;&quot;age&quot;:25,&quot;name&quot;:&quot;silence&quot;&#125;,&#123;&quot;age&quot;:26,&quot;name&quot;:&quot;david&quot;&#125;]</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;age&quot;: 25,</span><br><span class="line">        &quot;name&quot;: &quot;silence&quot;</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;age&quot;: 26,</span><br><span class="line">        &quot;name&quot;: &quot;david&quot;</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本篇主要讲解了groovy的基本语法，整体上是和kotlin和java的语法是差不多的。相对而言，熟悉kotlin和java的，上手groovy会很快。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010289802/article/details/105752715">暴力突破 Gradle 自动化项目构建（二）- Groovy 核心语法</a><br><a target="_blank" rel="noopener" href="https://www.w3cschool.cn/groovy/">Groovy教程</a></p>
 
       
     </div>
@@ -452,8 +522,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/data_structure/algorithmic_complexity/" rel="next" title="算法复杂度">
-                <i class="fa fa-chevron-left"></i> 算法复杂度
+              <a href="/gradle/1/" rel="next" title="Gradle入门以及环境搭建">
+                <i class="fa fa-chevron-left"></i> Gradle入门以及环境搭建
               </a>
             
           </div>
@@ -461,10 +531,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/jvm/memory_allocation/" rel="prev" title="程序运行时，内存是如何分配的？">
-                程序运行时，内存是如何分配的？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -627,7 +693,7 @@ head.appendChild(script);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E8%80%83%E8%84%91%E4%B8%8E%E5%8F%8D%E5%B0%84%E8%84%91"><span class="nav-number">2.</span> <span class="nav-text">思考脑与反射脑</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A0%E4%BB%A5%E4%B8%BA%E5%B8%B8"><span class="nav-number">3.</span> <span class="nav-text">习以为常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%EF%BC%9A%E4%B8%89%E5%85%AB%E7%90%86%E8%AE%BA"><span class="nav-number">4.</span> <span class="nav-text">时间管理：三八理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E5%8A%9B"><span class="nav-number">5.</span> <span class="nav-text">注意力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E5%8A%9B"><span class="nav-number">6.</span> <span class="nav-text">执行力</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B4%B5%E4%BA%BA"><span class="nav-number">7.</span> <span class="nav-text">贵人</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%9A%E8%AE%AE"><span class="nav-number">8.</span> <span class="nav-text">会议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B7%B3%E5%87%BA%E8%88%92%E9%80%82%E5%8C%BA"><span class="nav-number">9.</span> <span class="nav-text">跳出舒适区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92"><span class="nav-number">10.</span> <span class="nav-text">职业规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E6%8D%A2%E7%A9%BA%E9%97%B4"><span class="nav-number">11.</span> <span class="nav-text">时间换空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">12.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">基本特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Groovy%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F"><span class="nav-number">3.1.</span> <span class="nav-text">Groovy中的变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Groovy%E4%B8%AD%E7%9A%84%E8%BF%90%E7%AE%97%E7%AC%A6%E5%92%8C%E6%9D%A1%E4%BB%B6%E6%8E%A7%E5%88%B6"><span class="nav-number">3.2.</span> <span class="nav-text">Groovy中的运算符和条件控制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Groovy%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.3.</span> <span class="nav-text">Groovy中的字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95"><span class="nav-number">3.3.1.</span> <span class="nav-text">字符串的扩展</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E7%B4%A2%E5%BC%95"><span class="nav-number">3.3.2.</span> <span class="nav-text">字符串的索引</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Range%E8%8C%83%E5%9B%B4"><span class="nav-number">4.1.</span> <span class="nav-text">Range范围</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#List"><span class="nav-number">4.2.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Map"><span class="nav-number">4.3.</span> <span class="nav-text">Map</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">5.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">5.1.</span> <span class="nav-text">三大特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Groovy%E4%B8%AD%E7%9A%84%E7%89%B9%E5%BE%81"><span class="nav-number">5.2.</span> <span class="nav-text">Groovy中的特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%A9%E5%B1%95%E7%89%B9%E5%BE%81"><span class="nav-number">5.3.</span> <span class="nav-text">扩展特征</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Groovy%E4%B8%AD%E7%9A%84%E9%97%AD%E5%8C%85"><span class="nav-number">6.</span> <span class="nav-text">Groovy中的闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AD%E5%8C%85%E4%B8%AD%E7%9A%84%E5%BD%A2%E5%BC%8F%E5%8F%82%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">闭包中的形式参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E6%96%B9%E6%B3%95%E4%B8%AD%E4%BD%BF%E7%94%A8%E9%97%AD%E5%8C%85"><span class="nav-number">6.2.</span> <span class="nav-text">在方法中使用闭包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Groovy%E4%B8%AD%E7%9A%84Json"><span class="nav-number">7.</span> <span class="nav-text">Groovy中的Json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">8.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">9.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
