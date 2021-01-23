@@ -88,7 +88,7 @@
 <meta property="og:locale">
 <meta property="og:image" content="https://s0.lgstatic.com/i/image3/M01/85/E8/Cgq2xl6O2nSAXgX1AAAk3WIjy2w291.png">
 <meta property="article:published_time" content="2021-01-05T15:32:25.780Z">
-<meta property="article:modified_time" content="2021-01-05T15:42:06.291Z">
+<meta property="article:modified_time" content="2021-01-23T09:56:10.661Z">
 <meta property="article:author" content="马云飞">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s0.lgstatic.com/i/image3/M01/85/E8/Cgq2xl6O2nSAXgX1AAAk3WIjy2w291.png">
@@ -198,6 +198,16 @@
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
             关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
           </a>
         </li>
       
@@ -318,6 +328,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JVM/" itemprop="url" rel="index">
+                    <span itemprop="name">JVM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -377,8 +409,8 @@
 </ul>
 <h4 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h4><p>准备是链接的第 2 步，这一阶段的主要目的是为类中的静态变量分配内存，并为其设置“0值”。</p>
 <h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><p>解析是链接的最后一步，这一阶段的任务是把常量池中的符号引用转换为直接引用，也就是具体的内存地址。在这一阶段，JVM会将常量池中的类、接口名、字段名、方法名等转换为具体的内存地址。</p>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>这是 class 加载的最后一步，这一阶段是执行类构造器<clinit>方法的过程，并真正初始化类变量。比如：</clinit></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">public static int value = 100;</div></pre></td></tr></table></figure>
+<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>这是 class 加载的最后一步，这一阶段是执行类构造器<clinit>方法的过程，并真正初始化类变量。比如：</p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> value = <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
 <p>在准备阶段 value 被分配内存并设置为 0，在初始化阶段 value 就会被设置为 100。</p>
 <h4 id="初始化的时机"><a href="#初始化的时机" class="headerlink" title="初始化的时机"></a>初始化的时机</h4><p>对于装载阶段，JVM 并没有规范何时具体执行。但是对于初始化，JVM规范中严格规定了 class 初始化的时机，主要有以下几种情况会触发 class 的初始化：</p>
 <ul>
@@ -583,12 +615,21 @@ head.appendChild(script);
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
