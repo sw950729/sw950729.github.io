@@ -79,15 +79,19 @@
 
 
 
-<meta name="description" content="我若成佛，天下无魔；我若成魔，佛耐我何。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="我就是马云飞">
-<meta property="og:url" content="http://yoursite.com/archives/2017/11/index.html">
+<meta name="description" content="前言gradle命令最终是通过task去执行的，可见task在gradle中的重要性。 Task的定义与配置task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下： 1234567task test1Task&amp;#123;    println(&quot;test1Task&quot;)&amp;#125;tasks.create(name:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gradle核心之Task">
+<meta property="og:url" content="http://yoursite.com/gradle/6/index.html">
 <meta property="og:site_name" content="我就是马云飞">
-<meta property="og:description" content="我若成佛，天下无魔；我若成魔，佛耐我何。">
+<meta property="og:description" content="前言gradle命令最终是通过task去执行的，可见task在gradle中的重要性。 Task的定义与配置task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下： 1234567task test1Task&amp;#123;    println(&quot;test1Task&quot;)&amp;#125;tasks.create(name:">
 <meta property="og:locale">
+<meta property="og:image" content="https://s3.ax1x.com/2021/01/25/sLQTc4.png">
+<meta property="article:published_time" content="2021-01-25T13:46:18.261Z">
+<meta property="article:modified_time" content="2021-01-25T13:48:10.411Z">
 <meta property="article:author" content="马云飞">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s3.ax1x.com/2021/01/25/sLQTc4.png">
 
 
 
@@ -117,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/11/"/>
+  <link rel="canonical" href="http://yoursite.com/gradle/6/"/>
 
 
 
 
 
-  <title>归档 | 我就是马云飞</title>
+  <title>Gradle核心之Task | 我就是马云飞</title>
   
 
 
@@ -142,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -270,73 +274,292 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 目前共计 32 篇日志。 继续努力。
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/gradle/6/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/icon.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="我就是马云飞">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/performance/" itemprop="url">
-              
-                <span itemprop="name">android性能优化全方面解析</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Gradle核心之Task</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-03T20:38:44+08:00"
-              content="2017-11-03" >
-          11-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-25T21:46:18+08:00">
+                2021-01-25
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Gradle/" itemprop="url" rel="index">
+                    <span itemprop="name">Gradle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle命令最终是通过task去执行的，可见task在gradle中的重要性。</p>
+<h3 id="Task的定义与配置"><a href="#Task的定义与配置" class="headerlink" title="Task的定义与配置"></a>Task的定义与配置</h3><p>task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">task test1Task&#123;</span><br><span class="line">    println(<span class="string">&quot;test1Task&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.create(<span class="attr">name:</span><span class="string">&#x27;test2Task&#x27;</span>)&#123;</span><br><span class="line">    println(<span class="string">&quot;test2Task&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>刚刚我们为task指定了一个name。我们可以看看除了name我们还可以指定什么，我们打开Task的源代码，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Task</span>&gt;, <span class="title">ExtensionAware</span> </span>&#123;</span><br><span class="line">    String TASK_NAME = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DESCRIPTION = <span class="string">&quot;description&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_GROUP = <span class="string">&quot;group&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_TYPE = <span class="string">&quot;type&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DEPENDS_ON = <span class="string">&quot;dependsOn&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_OVERWRITE = <span class="string">&quot;overwrite&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_ACTION = <span class="string">&quot;action&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructor arguments for the Task</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> 4.7</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Incubating</span></span><br><span class="line">    String TASK_CONSTRUCTOR_ARGS = <span class="string">&quot;constructorArgs&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面我们介绍下这些属性都是用来干嘛的。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>ask 名字</td>
+<td>必须指定</td>
+</tr>
+<tr>
+<td>description</td>
+<td>task 的描述信息</td>
+<td>null</td>
+</tr>
+<tr>
+<td>group</td>
+<td>该 task 所属组</td>
+<td>null</td>
+</tr>
+<tr>
+<td>type</td>
+<td>需要创建的 task Class</td>
+<td>DefaultTask</td>
+</tr>
+<tr>
+<td>dependsOn</td>
+<td>该 task 所依赖的 task 集合</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>overwrite</td>
+<td>替换一个已存在的 task</td>
+<td>false</td>
+</tr>
+<tr>
+<td>action</td>
+<td>当 task 执行的时候，需要执行的闭包 closure 或 行为 Action</td>
+<td>null</td>
+</tr>
+<tr>
+<td>constructorArgs</td>
+<td>传递到 task Class 构造器中的参数</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<h3 id="Task的执行"><a href="#Task的执行" class="headerlink" title="Task的执行"></a>Task的执行</h3><p>前面我们也介绍了gradle的生命周期，通过前面的文章我们可以知道，在执行阶段gradle会输出每个gradle执行的内容。当然我们还可以通过<code>doFirst</code>和<code>doLast</code>为我们的 task 指定执行阶段要执行的代码。关于这2个的属性介绍如下：</p>
+<ul>
+<li>doFirst :表示当前task执行最开始的时候被调用的Action。</li>
+<li>doLast：表示单曲task即将执行完的时候被调用的Action。</li>
+</ul>
+<p>我们可以验证下上面两个属性，执行代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    doFirst &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task first&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    doLast &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task last&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line"></span><br><span class="line">&gt; <span class="attr">Task :</span>test1Task</span><br><span class="line">test1Task first</span><br><span class="line">test1Task last</span><br><span class="line">:test1Task spend <span class="number">17</span>ms</span><br></pre></td></tr></table></figure>
+<h3 id="Task的执行顺序"><a href="#Task的执行顺序" class="headerlink" title="Task的执行顺序"></a>Task的执行顺序</h3><p>首先了解下，控制task执行顺序的方式有两种。</p>
+<ul>
+<li>通过dependsOn强依赖的方式</li>
+<li>通过api指定执行顺序</li>
+</ul>
+<p><img src="https://s3.ax1x.com/2021/01/25/sLQTc4.png" alt="image"></p>
+<h4 id="dependsOn强依赖"><a href="#dependsOn强依赖" class="headerlink" title="dependsOn强依赖"></a>dependsOn强依赖</h4><p>强依赖的方式又分为两种，动态依赖及静态依赖，我们来举个例子：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖一</span></span><br><span class="line">task test3Task(<span class="attr">dependsOn:</span> [test1Task, test2Task]) &#123;</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖二</span></span><br><span class="line">test3Task.dependsOn(test1Task, test2Task)</span><br><span class="line"><span class="comment">//动态依赖</span></span><br><span class="line">task test4Task &#123;</span><br><span class="line">    dependsOn tasks.findAll &#123; task -&gt;</span><br><span class="line">        <span class="keyword">return</span> task.name.startsWith(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    println(<span class="string">&quot;test4Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line">test2Tasking...</span><br><span class="line">test3Tasking...</span><br><span class="line">test4Tasking...</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，虽然我依赖了其他的task，但是依赖的task输出顺序它是随机的。</p>
+<h4 id="API指定输出顺序"><a href="#API指定输出顺序" class="headerlink" title="API指定输出顺序"></a>API指定输出顺序</h4><table>
+<thead>
+<tr>
+<th>关键字名称</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mustRunAfter</td>
+<td>指定一个任务必须执行在另一个任务之后</td>
+<td>优先级小于dependsOn属性</td>
+</tr>
+<tr>
+<td>shouldRunAfter</td>
+<td>指定一个任务应该执行在另一个任务之后</td>
+<td>一般不用</td>
+</tr>
+</tbody></table>
+<p>举个栗子：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test1Task &#123;</span><br><span class="line">    mustRunAfter test2Task</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test3Task &#123;</span><br><span class="line">    mustRunAfter test1Task</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了方便查看，我们把顺序修改了，不让它按照1、2、3的形式输出，现在我们看看上述代码的输出结果：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test2Tasking...</span><br><span class="line">test1Tasking...</span><br><span class="line">test3Tasking...</span><br></pre></td></tr></table></figure>
+<h3 id="Task类型"><a href="#Task类型" class="headerlink" title="Task类型"></a>Task类型</h3><p>除了定义一个task之外，我们也可以使用task的type属性来直接使用一个已有的 task 类型，比如Gradle自带的Copy、Delete、Sync等等。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节我们介绍了Task的使用，除了上面介绍的，我们还可以通过gradle官网去查看task相关指令。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010289802/article/details/105908520">暴力突破 Gradle 自动化项目构建（六）- Gradle 核心之 Task</a></p>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt=" 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt=" 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/gradle/5/" rel="next" title="Gradle核心之Project">
+                <i class="fa fa-chevron-left"></i> Gradle核心之Project
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -344,6 +567,27 @@
 
 
           
+    <div class="comments" id="comments">
+    
+    <!--PC和WAP自适应版-->
+<div id="SOHUCS" ></div> 
+<script type="text/javascript"> 
+(function(){ 
+var appid = 'cyvfaAzrH'; 
+var conf = 'prod_cad0b69fa18123c7b7668ff4d76cc0f2'; 
+var width = window.innerWidth || document.documentElement.clientWidth; 
+if (width < 960) {
+var head = document.getElementsByTagName('head')[0]||document.head||document.documentElement;
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.charset = 'utf-8';
+script.id = 'changyan_mobile_js';
+script.src = 'https://cy-cdn.kuaizhan.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf;
+head.appendChild(script);
+} else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://cy-cdn.kuaizhan.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+  
+
+
 
         </div>
         
@@ -364,8 +608,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -448,6 +701,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Task%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">Task的定义与配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Task%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="nav-number">3.</span> <span class="nav-text">Task的执行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Task%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="nav-number">4.</span> <span class="nav-text">Task的执行顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#dependsOn%E5%BC%BA%E4%BE%9D%E8%B5%96"><span class="nav-number">4.1.</span> <span class="nav-text">dependsOn强依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#API%E6%8C%87%E5%AE%9A%E8%BE%93%E5%87%BA%E9%A1%BA%E5%BA%8F"><span class="nav-number">4.2.</span> <span class="nav-text">API指定输出顺序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Task%E7%B1%BB%E5%9E%8B"><span class="nav-number">5.</span> <span class="nav-text">Task类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">7.</span> <span class="nav-text">参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -609,6 +878,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
