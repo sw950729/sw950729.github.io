@@ -503,7 +503,7 @@
 <li><p>可以向项目中现有的对象类型添加新的扩展属性、方法等，可方便项目的配置和构建优化，比如 Android 项目构建中的 android{} 就是AndroidGradle插件为Project 对象添加的一个扩展。</p>
 </li>
 </ul>
-<h3 id="插件的类型"><a href="#插件的类型" class="headerlink" title="插件的类型"></a>插件的类型</h3><p>插件主要是分为两种：脚本式插件和二进制式插件。</p>
+<h3 id="插件的分类"><a href="#插件的分类" class="headerlink" title="插件的分类"></a>插件的分类</h3><p>插件主要是分为两种：脚本式插件和二进制式插件。</p>
 <h4 id="脚本式插件"><a href="#脚本式插件" class="headerlink" title="脚本式插件"></a>脚本式插件</h4><p>脚本式插件就类似于前面文章提到的，自己新建一个config.gradle，然后通过</p>
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">from:</span><span class="string">&quot;../config.gradle&quot;</span></span><br></pre></td></tr></table></figure>
 <p>去引用config.gradle文件中的一些属性等，如可将某些工具性质的方法以及各个依赖使用的版本号分别定义到单个gradle文件中，方便统一调用和管理各个依赖的版本号等。</p>
