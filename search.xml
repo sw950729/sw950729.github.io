@@ -1788,4 +1788,68 @@
 </ul>
 ]]></content>
   </entry>
+  <entry>
+    <title>如何自己动手撸一个Gradle插件</title>
+    <url>/gradle/7/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前面我们已经把gradle中groovy的一些语法，以及常用的project和task介绍了一遍，那么我们通过自己撸个插件。刚好把前面的内容巩固下。</p>
+<h3 id="插件的作用"><a href="#插件的作用" class="headerlink" title="插件的作用"></a>插件的作用</h3><p>首先我们需要了解下插件的作用，主要有如下几点：</p>
+<ul>
+<li><p>添加任务到项目中，可对项目进行测试、编译、打包；    </p>
+</li>
+<li><p>添加依赖到项目中，可用来配置项目构建过程中需要的依赖； </p>
+</li>
+<li><p>可以向项目中现有的对象类型添加新的扩展属性、方法等，可方便项目的配置和构建优化，比如 Android 项目构建中的 android{} 就是AndroidGradle插件为Project 对象添加的一个扩展。</p>
+</li>
+</ul>
+<h3 id="插件的使用"><a href="#插件的使用" class="headerlink" title="插件的使用"></a>插件的使用</h3><p>插件主要是分为两种：脚本式插件和二进制式插件。</p>
+<h4 id="脚本式插件"><a href="#脚本式插件" class="headerlink" title="脚本式插件"></a>脚本式插件</h4><p>脚本式插件就类似于前面文章提到的，自己新建一个config.gradle，然后通过</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">from:</span><span class="string">&quot;../config.gradle&quot;</span></span><br></pre></td></tr></table></figure>
+<p>去引用config.gradle文件中的一些属性等，如可将某些工具性质的方法以及各个依赖使用的版本号分别定义到单个gradle文件中，方便统一调用和管理各个依赖的版本号等。</p>
+<h4 id="二进制式插件"><a href="#二进制式插件" class="headerlink" title="二进制式插件"></a>二进制式插件</h4><p>二进制插件一般式之通过式Plugin接口，实现apply方法。该方法中的泛型指的是此Plugin可以应用到的对象，一般是将其应用到Project对象上。一般来说二进制插件分为三种方式：</p>
+<ul>
+<li>Build script：直接在gradle脚本文件中实现plugin接口并应用，不适用于对外提供</li>
+<li>buildSrc project： buildSrc是Gradle 在项目中配置自定义插件的默认目录。一般来说很少使用</li>
+<li>Standalone project：独立的工程，编译后不仅可以对内也可以对外使用</li>
+</ul>
+<p>前面两个应用场景很少，在这就不过多介绍了，想了解的可以自己百度一下～，我们着重介绍一下最后一个。</p>
+<h3 id="动手撸一个-Standalone-project"><a href="#动手撸一个-Standalone-project" class="headerlink" title="动手撸一个 Standalone project"></a>动手撸一个 Standalone project</h3><p>既然是独立的工程，那么首先我们需要新建一个moudle。整个创建步骤如下：  </p>
+<ul>
+<li><p>新建moudle，类型可以选择Android。然后把目录删干净，只留下build.gradle文件并把build.gradle内部清空。</p>
+</li>
+<li><p>在moudle创建src/main/groovy目录，并新建其包名。同时在main目录下再新建resources/META-INF/gradle-plugins目录，在这个目录下编写一个和插件id名字相同的.properties文件，这样Gradle就可以找到插件实现了。  </p>
+</li>
+</ul>
+<p>修改properties文件：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation-<span class="class"><span class="keyword">class</span>=<span class="title">com</span>.<span class="title">xxxx</span>.<span class="title">plugin</span>.<span class="title">MyGradlePlugin</span></span></span><br></pre></td></tr></table></figure>
+<p>修改build.gralde文件如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;java-gradle-plugin&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;kotlin&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;groovy&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;maven&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;maven-publish&#x27;</span></span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">group = <span class="string">&#x27;你的plugin包名&#x27;</span></span><br><span class="line">version = <span class="string">&#x27;你的plugin版本号&#x27;</span></span><br><span class="line"></span><br><span class="line">publishing &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123;</span><br><span class="line">            url = uri(<span class="string">&quot;$rootDir/repo&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    publications &#123;</span><br><span class="line">        maven(MavenPublication) &#123;</span><br><span class="line">            from components.java</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(<span class="attr">dir:</span> <span class="string">&quot;libs&quot;</span>, <span class="attr">include:</span> [<span class="string">&quot;*.jar&quot;</span>])</span><br><span class="line">    implementation <span class="string">&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span></span><br><span class="line">    <span class="comment">//gradle sdk</span></span><br><span class="line">    implementation gradleApi()</span><br><span class="line">    <span class="comment">//groovy sdk</span></span><br><span class="line">    implementation localGroovy()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>依赖groovy相关插件是为了我们可以创建groovy文件。依赖maven是为了后续的本地上传以及调试。  </p>
+<p>现在我们先写一个简单的试试效果。在你的目录下新建一个plugin：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">         project.task(<span class="string">&#x27;MyGradlePlugin&#x27;</span>) &#123;</span><br><span class="line">            doLast &#123;</span><br><span class="line">                println(<span class="string">&#x27;task in MyGradlePlugin&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后我们点击Gradle -&gt; myGradlePlugin -&gt; publishing -&gt; publish。执行完成后，会在项目根目录下生成repo仓库。也就是之前在build.gradle中配置的url。  </p>
+<p>既然本地maven已经生成了，接下来就是我们的引用了。我们在根目录的build.gradle引用我们本地的maven。示例如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    google()</span><br><span class="line">    jcenter()</span><br><span class="line">    maven &#123;</span><br><span class="line">        url = uri(<span class="string">&quot;$rootDir/repo&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本地maven依赖完成后，我们在根目录把自己引用的插件依赖下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&quot;myGradlePlugin&quot;</span></span><br><span class="line"> dependencies &#123;</span><br><span class="line">        ...</span><br><span class="line">        classpath <span class="string">&#x27;com.xxxx.plugin:myGradlePlugin:1.0.0&#x27;</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们sync一下。好了成功了。那我们如何验证我们自己写的plugin呢。我们在命令行输入：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">./gradlew MyGradlePlugin</span><br></pre></td></tr></table></figure>
+<p>然后你会发现它输出了：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">Task:</span>MyGradlePlugin</span><br><span class="line">task <span class="keyword">in</span> MyGradlePlugin</span><br></pre></td></tr></table></figure>
+<p>卧槽，卧槽，成功了！！</p>
+<p>我们加大点难度，我们需要在build.gradle动态一些属性，并且自己写的plugin可以读到这些动态配置的属性。既然需要动态配置属性，那我们先定义一下需要动态的属性，新建一个Extension。具体示例如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePluginExtension</span> &#123;</span></span><br><span class="line">    String versionName</span><br><span class="line">    String versionCode</span><br><span class="line">    String versionInfo</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    String toString() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;versionName = $versionName , versionCode = $versionCode , versionInfo = $versionInfo&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们定义了版本的属性，比如版本号，版本名称，版本信息等等。既然定义了，那么我们怎么读取这些属性呢。修改我们的plugin：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">        project.extensions.create(<span class="string">&quot;MyGradlePluginExtension&quot;</span>, MyGradlePluginExtension.<span class="keyword">class</span>)</span><br><span class="line">        project.task(<span class="string">&#x27;MyGradlePluginExtension&#x27;</span>) &#123;</span><br><span class="line">            doLast &#123;</span><br><span class="line">                MyGradlePluginExtension releaseInfo = project.MyGradlePluginExtension</span><br><span class="line">                println releaseInfo</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码修改后，可以看到逻辑如下，创建一个MyGradlePluginExtension，然后定义一个task为MyGradlePluginExtension（我这边为了方便2个名称用的同一个，其实可以分开）。也就是说我们在执行MyGradlePluginExtension的Task时候，会读取project的MyGradlePluginExtension的属性，然后将其输出。</p>
+<p>重新上传maven，这里就不多说了，前面有提到过，然后我们在根目录新增如下代码：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">MyGradlePluginExtension &#123;</span><br><span class="line">    versionName = <span class="number">1.0</span></span><br><span class="line">    versionCode = <span class="number">1.0</span></span><br><span class="line">    versionInfo = <span class="string">&quot;测试第一版&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们执行这个task，会看到面板输出如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">Task :</span>MyGradlePluginExtension</span><br><span class="line">versionName = <span class="number">1.0</span> , versionCode = <span class="number">1.0</span> , versionInfo = 测试第一版</span><br></pre></td></tr></table></figure>
+<p>动态配置生效了～</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节主要讲了Gradle插件的分类以及我们该如何去自己写一个插件并进行应用。更多自定义的操作可以查看官方文档：<a href="https://docs.gradle.org/4.1/userguide/custom_plugins.html#sec:custom_plugins_standalone_project">编写自定义插件</a></p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
 </search>
