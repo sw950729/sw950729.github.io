@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020年度总结</title>
+    <url>/conclusion/2020/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>不知不觉又到了写年度总结的时候，细翻了下，去年我居然没去写年度总结，想了想，可能当时也的确没什么总结的，可能就算有也不知道咋写吧。当然了这都是借口，不过现在就总结下2020的内容吧。</p>
+<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>今年工作对比19年来说，相对来说轻松一点，19年除了相关业务开发。因为是新项目所以我还负责管理android小组，虽然总共没几个人。不过要对接PMO，PM，QA等等。在这情况下，还需要负责业务开发，往往忙的只有晚上才能开始写代码。而今年除了业务的开发，其他的到没啥，所以我更注重于自我的成长，以及在团队内部推动相关技术，进行落地。</p>
+<p>不过对比上面这些，可能还需要在团队中给自己定位。比如领导对我说的一句话：“你工作很辛苦，也很努力，工时也是团队中最多的，不过做东西都是缩起来，其他同事也不知道你在干嘛。东西做完了，别人认可你做的内容么，有没有和同事讨论你这套东西是不是最实用的，能不能再浓缩一下”。</p>
+<p>后来自己想想，的确之前一个技术方案的确定—落地—实施。好像都是自己一个人去进行的。于是后面我就改变了思路，从草稿—沟通确定方案—落地任务细分到人—实施。对比之前的，相对自己会轻松很多，而且团队成员也知道我要做什么，并且方案确定了，细分到人去完成这个任务。自己反而会有成就感。</p>
+<h3 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h3><p>身为一个技术人，个人成长是绝不能落下的。比如今年疫情放小长假的情况下，我在家自学了flutter了。并用泓洋的开放API开发了一个flutter项目<a href="https://github.com/sw950729/WanAndroid_Flutter">WanAndroid_Flutter</a>。并在团队内部做flutter相关的分享，以及推动使用flutter进行业务开发。</p>
+<p>为了倒逼自己进步，我退掉了一些无关紧要的群，甚至关闭了朋友圈，淡出了朋友们的朋友圈。另外，今年在拉钩教育上买了六门课，完整的看完了三门课，包括一些课反复的看。进行知识点的吸收以及内化。</p>
+<p>对于blog的输出，我发现我上次更新blog还是18年的9月份。目前这家公司是18年11月入职的，也就是入职到这边之后，我几乎没有对外输出过blog。几乎可能证明两点，一个是懒、一个是没有成长所以不好输出blog。所以为了学习的内容不容易忘，也为了忘了可以快速查笔记巩固回来。近期我开始慢慢的同步更新了blog。同步地址是个人博客：silencedev.cn。今年已经更新的blog如下：<br><img src="https://s3.ax1x.com/2021/01/26/sjveoR.jpg" alt="image"></p>
+<p>后面我还会持续输出，尽可能保证一周一篇左右。毕竟，不逼自己一把，你永远不知道你会有多努力。</p>
+<p>如何确定自己是否有成长，当然除了本身技术的上的提升，还有工作上的成长，主要参考如下几个方面：</p>
+<ul>
+<li>是否愿意主要承担更多工作</li>
+<li>是否具备Owner意识</li>
+<li>在团队中其他成员是否认同你做的内容</li>
+<li>是否可以通过技术推进业务发展</li>
+<li>跨部门的沟通、协作</li>
+<li>在团队中的影响力，在部门中的影响力。</li>
+</ul>
+<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>今年后半年发福了，原本体重一直很稳定，今年下半年突然间的就胖了十斤。不过今年体验的时候，发现还好，各个指标都在正常范围内。</p>
+<p>今年外出游玩了两次，去了很久想去但一直没去的黄山，觉得工作太累，出门去厦门度假了一周。</p>
+<p>作息变得越来越晚，前两年基本12点半之前就入睡了，近两年稳定在一点到两点之间，不过相对起的比较晚，所以整体还好，不过晚睡的毛病还是要改。</p>
+<p>剩下的就是一直被催婚，停不下来的那种。于是，我就决定今年过年不回家了。虽然这个想法在去年年初就和父母沟通过了，但是刚好这次疫情回家要做检测，也刚好遂了不回家愿。毕竟也不是第一次不在家过年了。</p>
+<h3 id="2021规划"><a href="#2021规划" class="headerlink" title="2021规划"></a>2021规划</h3><ul>
+<li>减肥</li>
+<li>技术沉淀</li>
+<li>看书（一个月一本）</li>
+<li>出门玩一圈</li>
+<li>找个对象（年年在说，年年放最后一个）</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
     <title>什么是context？</title>
     <url>/android/context/</url>
     <content><![CDATA[<h3 id="Context基本概念"><a href="#Context基本概念" class="headerlink" title="Context基本概念"></a>Context基本概念</h3><p>先看一下Context源码，代码如下：  </p>
@@ -53,6 +86,475 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Gradle入门以及环境搭建</title>
+    <url>/gradle/1/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle目前主要是在项目构建的时候使用，如果我们需要了解gradle。首先需要熟悉grooy的语法，本节来搭建groovy的环境，为了后续学习准备。</p>
+<h3 id="Groovy环境搭建"><a href="#Groovy环境搭建" class="headerlink" title="Groovy环境搭建"></a>Groovy环境搭建</h3><h4 id="groovy-SDK下载"><a href="#groovy-SDK下载" class="headerlink" title="groovy SDK下载"></a>groovy SDK下载</h4><ul>
+<li>官网下载，直接解压，然后目录选择groovy/libexec。</li>
+<li>brew安装的groovy目录选择/usr/local/opt/groovy/libexec。（另外，在idea中无法切到/user目录下，mac按Cmd + Shift + G来切换目录）</li>
+</ul>
+<h4 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h4><p>使用sudo vim ~/.bash_profile打开编辑环境变量文本。在末尾加上<br>export GROOVY_HOME=/usr/local/opt/groovy/libexec。然后esc+:wq进行保存</p>
+<h3 id="gradle项目"><a href="#gradle项目" class="headerlink" title="gradle项目"></a>gradle项目</h3><p>在idea中新建一个groovy项目。如下：<br><img src="https://s3.ax1x.com/2021/01/06/sVxThQ.png" alt="image"></p>
+<p>创建好项目后，我们新建一个 groovy 文件，并添加 hello world 的代码如下：<br><img src="https://s3.ax1x.com/2021/01/06/sZip4K.png" alt="image"><br>能够正常输出 hello world，收工！</p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Gradle入门之Groovy语法</title>
+    <url>/gradle/2/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle是一个基于JVM的构建工具，它结合了Python、Ruby和Smalltalk的许多强大的特性，Groovy 代码能够与Java代码很好地结合，也能用于扩展现有代码。由于其运行在 JVM 上的特性，Groovy可以使用其他Java语言编写的库。目前已经应用在多数Android技术体系中，比如，jenkins，插件化，组件化，模块化等等。如果你不了解gradle，那么前面几个技术点很难深入理解。  </p>
+<p>Groovy 的语法跟 kotlin 类似，如果我们有 kotlin 的经验的话那么学习 groovy 会容易很多。下面我们一起来学习下groovy的核心语法，大家可以跟着样例敲一下加深理解、记忆。</p>
+<h3 id="基本特点"><a href="#基本特点" class="headerlink" title="基本特点"></a>基本特点</h3><ul>
+<li>构建在强大的Java语言之上 并 添加了从Python，Ruby和Smalltalk等语言中学到的 诸多特征，例如动态类型转换、闭包和元编程（metaprogramming）支持。</li>
+<li>为Java开发者提供了 现代最流行的编程语言特性，而且学习成本很低（几乎为零）。</li>
+<li>支持DSL（Domain Specific Languages领域定义语言）和其它简洁的语法，让代码变得易于阅读和维护。</li>
+<li>受检查类型异常(Checked Exception)也可以不用捕获。</li>
+<li>Groovy拥有处理原生类型，面向对象以及一个Ant DSL，使得创建Shell Scripts变得非常简单。</li>
+<li>在开发Web，GUI，数据库或控制台程序时 通过 减少框架性代码 大大提高了开发者的效率。</li>
+<li>支持单元测试和模拟（对象），可以 简化测试。</li>
+<li>无缝集成 所有已经存在的 Java对象和类库。</li>
+<li>直接编译成Java字节码，这样可以在任何使用Java的地方 使用Groovy。</li>
+<li>支持函数式编程，不需要main函数。</li>
+<li>一些新的运算符。</li>
+<li>默认导入常用的包。</li>
+<li>断言不支持jvm的-ea参数进行开关。</li>
+<li>支持对对象进行布尔求值。</li>
+<li>类不支持default作用域，且默认作用域为public。</li>
+<li>groovy中基本类型也是对象，可以直接调用对象的方法。</li>
+</ul>
+<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="Groovy中的变量"><a href="#Groovy中的变量" class="headerlink" title="Groovy中的变量"></a>Groovy中的变量</h4><p>groovy中变量既可以像java一样是强类型的，也可以像kotlin一样是弱类型的。<br>代码示例如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        <span class="keyword">def</span> b = <span class="string">&quot;Hello Silence&quot;</span></span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Silence</span></span><br></pre></td></tr></table></figure>
+<h4 id="Groovy中的运算符和条件控制"><a href="#Groovy中的运算符和条件控制" class="headerlink" title="Groovy中的运算符和条件控制"></a>Groovy中的运算符和条件控制</h4><p>与java一致，这里不过多介绍</p>
+<h4 id="Groovy中的字符串"><a href="#Groovy中的字符串" class="headerlink" title="Groovy中的字符串"></a>Groovy中的字符串</h4><p>Groovy提供了多种表示String字面量的方法。Groovy中的字符串可以用单引号（’），双引号（“）或三引号（“““）括起来。此外，由三重引号括起来的Groovy字符串可以跨越多行。  </p>
+<p>示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        <span class="keyword">def</span> b = <span class="string">&quot;Hello Silence&quot;</span></span><br><span class="line">        <span class="keyword">def</span> c = <span class="string">&#x27;&#x27;&#x27;Hello World</span></span><br><span class="line"><span class="string">Hello Silence&#x27;&#x27;&#x27;</span></span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">        println(c)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Silence</span></span><br><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Silence</span></span><br></pre></td></tr></table></figure>
+<h5 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h5><p>Groovy的扩展和kotlin的一样，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        <span class="keyword">def</span> b = <span class="string">&quot;Hello $a&quot;</span></span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Hello World</span></span><br></pre></td></tr></table></figure>
+<h5 id="字符串的索引"><a href="#字符串的索引" class="headerlink" title="字符串的索引"></a>字符串的索引</h5><p>Groovy中的字符串是字符的有序序列。字符串中的单个字符可以通过其位置访问。这由索引位置给出。</p>
+<p>字符串索引从零开始，以小于字符串长度的一个结束。Groovy还允许负索引从字符串的末尾开始计数。</p>
+<p>具体示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        println(a[<span class="number">1</span>])<span class="comment">//输出坐标为1的内容</span></span><br><span class="line">        println(a[<span class="number">-2</span>])<span class="comment">//输出坐标为倒数第二的内容</span></span><br><span class="line">        println(a[<span class="number">1.</span><span class="number">.2</span>])<span class="comment">//输出坐标区间为1-2的内容</span></span><br><span class="line">        println(a[<span class="number">2.</span><span class="number">.5</span>])<span class="comment">//输出坐标区间为2-5的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">e</span></span><br><span class="line"><span class="attribute">l</span></span><br><span class="line"><span class="attribute">el</span></span><br><span class="line"><span class="attribute">llo</span> </span><br></pre></td></tr></table></figure>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="Range范围"><a href="#Range范围" class="headerlink" title="Range范围"></a>Range范围</h4><p>范围是指定值序列的速记。范围由序列中的第一个和最后一个值表示，Range可以是包含或排除。包含范围包括从第一个到最后一个的所有值，而独占范围包括除最后一个之外的所有值。</p>
+<ul>
+<li>1..10 — 包含范围的示例</li>
+<li>1 .. &lt;10 - 独占范围的示例</li>
+<li>‘a’..’x’ - 范围也可以由字符组成</li>
+<li>10..1 - 范围也可以按降序排列</li>
+<li>‘x’..’a’ - 范围也可以由字符组成并按降序排列。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>contains()</td>
+<td>检查范围是否包含特定值</td>
+</tr>
+<tr>
+<td>get()</td>
+<td>返回此范围中指定位置处的元素。</td>
+</tr>
+<tr>
+<td>getFrom()</td>
+<td>获得此范围的下限值。</td>
+</tr>
+<tr>
+<td>getTo()</td>
+<td>获得此范围的上限值。</td>
+</tr>
+<tr>
+<td>isReverse()</td>
+<td>这是一个反向的范围，反向迭代</td>
+</tr>
+<tr>
+<td>size()</td>
+<td>获得范围的元素值。</td>
+</tr>
+<tr>
+<td>subList()</td>
+<td>返回此指定的fromIndex（包括）和toIndex（排除）之间的此范围部分的视图。</td>
+</tr>
+</tbody></table>
+<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>列表是用于存储数据项集合的结构。在 Groovy中，List保存了一系列对象引用。</p>
+<p>List中的对象引用占据序列中的位置，并通过整数索引来区分。</p>
+<p>groovy 中的一个列表中的数据可以是任意类型。这和java下集合列表有些不同，java下的列表是同种类型的数据集合。</p>
+<p>groovy中列表还可以嵌套列表。如[1,2,[3,4,5],“aaa”]groovy列表内置有反转方法 reverse()。调用 List.reverse() 可以实现列表反转。groovy列表内置有排序方法 sort()。调用 List.sort() 可以实现列表排序。空列表表示为[]声明一个空集合。</p>
+<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p>Map是对象引用的无序集合。Map集合中的元素由键值访问。Map中使用的键可以是任何类。当我们插入到Map集合中时，需要两个值：键和值。</p>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h4 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h4><p>Groovy中的面向对象和其他任何的面向对象语言一样，存在类和对象的概念。不过在groovy新增了一个trait的关键字，名为特征。</p>
+<h4 id="Groovy中的特征"><a href="#Groovy中的特征" class="headerlink" title="Groovy中的特征"></a>Groovy中的特征</h4><p>特征是语言结构的构造，其他包括：</p>
+<ul>
+<li>行为的组成</li>
+<li>接口运行时的实现</li>
+<li>与静态类型检查/编译的兼容性  </li>
+</ul>
+<p>使用trait关键字定义特征。示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        Student st = <span class="keyword">new</span> Student();</span><br><span class="line">        st.StudentID = <span class="number">1</span></span><br><span class="line">        st.Marks1 = <span class="number">10</span></span><br><span class="line">        st.DisplayMarks()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">    <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">        println(<span class="string">&quot;Display Marks&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> StudentID</span><br><span class="line">    <span class="keyword">int</span> Marks1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Display</span> <span class="attribute">Marks</span></span><br></pre></td></tr></table></figure>
+<p>上述示例中trait是类似接口的存在，同理，trait也可以实现接口。<br>示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        Student st = <span class="keyword">new</span> Student();</span><br><span class="line">        st.StudentID = <span class="number">1</span></span><br><span class="line">        st.Marks1 = <span class="number">10</span></span><br><span class="line">        st.DisplayMarks()</span><br><span class="line">        st.DisplayTotal()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Total</span> &#123;</span></span><br><span class="line">    <span class="keyword">void</span> DisplayTotal()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Marks</span> <span class="keyword">implements</span> <span class="title">Total</span> &#123;</span></span><br><span class="line">    <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">        println(<span class="string">&quot;Display Marks&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> DisplayTotal() &#123;</span><br><span class="line">        println(<span class="string">&quot;Display Total&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> StudentID</span><br><span class="line">    <span class="keyword">int</span> Marks1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Display</span> <span class="variable">Marks</span></span><br><span class="line"><span class="built_in">Display</span> <span class="built_in">Total</span></span><br></pre></td></tr></table></figure>
+<h4 id="扩展特征"><a href="#扩展特征" class="headerlink" title="扩展特征"></a>扩展特征</h4><p>特征的扩展则使用extends关键字，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">   <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">      println(<span class="string">&quot;Marks1&quot;</span>);</span><br><span class="line">   &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Total</span> <span class="keyword">extends</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">   <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">      println(<span class="string">&quot;Total&quot;</span>);</span><br><span class="line">   &#125; </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+<h3 id="Groovy中的闭包"><a href="#Groovy中的闭包" class="headerlink" title="Groovy中的闭包"></a>Groovy中的闭包</h3><p>闭包是一个短的匿名代码块，个人理解是和lamda是差不多的。<br>下面是一个简单的闭包例子，代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> test = &#123; println <span class="string">&quot;Hello World&quot;</span> &#125;</span><br><span class="line">        test.call()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br></pre></td></tr></table></figure>
+<h4 id="闭包中的形式参数"><a href="#闭包中的形式参数" class="headerlink" title="闭包中的形式参数"></a>闭包中的形式参数</h4><p>闭包也可以包含形式参数，以使它们更有用，就像Groovy中的方法一样。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> hello=<span class="string">&quot;Hello&quot;</span></span><br><span class="line">        <span class="keyword">def</span> test = &#123;params -&gt; println <span class="string">&quot;$hello World&quot;</span> &#125;</span><br><span class="line">        test.call()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果也是Hello World。<br>当然我们还有另外一种写法：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> test = &#123; println <span class="string">&quot;Hello $&#123;it&#125;&quot;</span> &#125;</span><br><span class="line">        test.call(<span class="string">&quot;World&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们还可以把上面两种的形式，进行组合，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> hello=<span class="string">&quot;Hello&quot;</span></span><br><span class="line">        <span class="keyword">def</span> test = &#123; params -&gt;println <span class="string">&quot;$hello $&#123;params&#125;&quot;</span> &#125;</span><br><span class="line">        test.call(<span class="string">&quot;World&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="在方法中使用闭包"><a href="#在方法中使用闭包" class="headerlink" title="在方法中使用闭包"></a>在方法中使用闭包</h4><p>类似kotlin的方法中可以传匿名函数一样。示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> hello=<span class="string">&quot;Hello&quot;</span></span><br><span class="line">        <span class="keyword">def</span> test = &#123; params -&gt;println <span class="string">&quot;$hello $&#123;params&#125;&quot;</span> &#125;</span><br><span class="line">        Study.Display(test)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="keyword">static</span> Display(clo) &#123;</span><br><span class="line">        clo.call(<span class="string">&quot;Silence&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello Silence</span></span><br></pre></td></tr></table></figure>
+<h3 id="Groovy中的Json"><a href="#Groovy中的Json" class="headerlink" title="Groovy中的Json"></a>Groovy中的Json</h3><p>我们先来看看 groovy 中对象与 json 字符串之间的相互转换：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> groovy.json.JsonOutput</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> study = [<span class="keyword">new</span> Person(<span class="string">&quot;silence&quot;</span>, <span class="number">25</span>),</span><br><span class="line">                     <span class="keyword">new</span> Person(<span class="string">&quot;david&quot;</span>, <span class="number">26</span>)]</span><br><span class="line">        <span class="keyword">def</span> json=JsonOutput.toJson(study)</span><br><span class="line">        println json</span><br><span class="line">        <span class="comment">//带格式的输出json</span></span><br><span class="line">        println JsonOutput.prettyPrint(json)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> &#123;</span></span><br><span class="line">    <span class="keyword">private</span> String name</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    Person(String name, <span class="keyword">int</span> age) &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name</span><br><span class="line">        <span class="built_in">this</span>.age = age</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> setName(String name) &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> getAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> age</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> setAge(<span class="keyword">int</span> age) &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[&#123;<span class="attr">&quot;age&quot;</span>:<span class="number">25</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;silence&quot;</span>&#125;,&#123;<span class="attr">&quot;age&quot;</span>:<span class="number">26</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;david&quot;</span>&#125;]</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;age&quot;</span>: <span class="number">25</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;silence&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;age&quot;</span>: <span class="number">26</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;david&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本篇主要讲解了groovy的基本语法，整体上是和kotlin和java的语法是差不多的。相对而言，熟悉kotlin和java的，上手groovy会很快。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/u010289802/article/details/105752715">暴力突破 Gradle 自动化项目构建（二）- Groovy 核心语法</a><br><a href="https://www.w3cschool.cn/groovy/">Groovy教程</a></p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Gradle入门之Groovy元编程</title>
+    <url>/gradle/3/</url>
+    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Groovy的元编程是指groovy运行时，可以理解成编写代码所执行的时期，也就是Runtime。在比如有解释执行的Js,编译执行的java，还有运行时期执行的代码java反射。  </p>
+<p>Groovy运行时的处理逻辑如下图：<br><img src="https://s3.ax1x.com/2021/01/14/sdrfyj.png" alt="untitled diagram.png"></p>
+<h3 id="元编程"><a href="#元编程" class="headerlink" title="元编程"></a>元编程</h3><p>按照上图所示，我们可以自己写一个Demo，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> person = <span class="keyword">new</span> Personal(<span class="attr">name:</span> <span class="string">&quot;Silence&quot;</span>, <span class="attr">age:</span> <span class="number">26</span>)</span><br><span class="line">        println(person.printName())</span><br><span class="line">        println(person.printAge())</span><br><span class="line">        println(person.sex)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Personal</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> String name</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My name is $name&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My ag is $age&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My ag is <span class="number">26</span></span><br><span class="line">Exception in thread &quot;main&quot; groovy.lang.MissingPropertyException: No such property: sex for class: Personal</span><br><span class="line">	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:<span class="number">65</span>)</span><br><span class="line">	at org.codehaus.groovy.runtime.callsite.GetEffectivePogoPropertySite.getProperty(GetEffectivePogoPropertySite.java:<span class="number">87</span>)</span><br><span class="line">	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callGetProperty(AbstractCallSite.java:<span class="number">329</span>)</span><br><span class="line">	at Study.main(Study.groovy:<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+<p>可以看到前两个日志是正常输出的，第三个控制台则提示MissingPropertyException。也就是上图中，所以逻辑都没进去导致异常输出。</p>
+<p>我们在看看如果我们复写invokeMethod方法时的输出效果，代码修改如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Personal</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> String name</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My name is $name&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My ag is $age&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Object invokeMethod(String name, Object args) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;this invoke method is $name,this params is $args&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>控制台输出如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My ag is <span class="number">26</span></span><br><span class="line"><span class="keyword">this</span> invoke method is sex,<span class="keyword">this</span> params is []</span><br></pre></td></tr></table></figure>
+<p>然后我们看看重写methodMissing方法后：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Personal</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> String name</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My name is $name&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My ag is $age&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Object invokeMethod(String name, Object args) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;this invoke method is $name,this params is $args&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Object methodMissing(String name, Object args) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;this Missing method is $name,this params is $args&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My ag is <span class="number">26</span></span><br><span class="line"><span class="keyword">this</span> Missing method is sex,<span class="keyword">this</span> params is []</span><br></pre></td></tr></table></figure>
+<p>可以看出，两个方法都重写时，优先调用methodMissing。如果找不到才会调用invokeMethod。  </p>
+<h3 id="MetaClass"><a href="#MetaClass" class="headerlink" title="MetaClass"></a>MetaClass</h3><p>Metaclasses在方法解析中起到核心作用，对于来自groovy代码的每个方法调用，Groovy将找到给定对象的MetaClass，并通过MetaClass＃invokeMethod将方法解析委托给Metaclasses，不应该与GroovyObject＃invokeMethod混淆，后者恰好是Metaclasses最终可能调用的方法。</p>
+<h4 id="注入新字段"><a href="#注入新字段" class="headerlink" title="注入新字段"></a>注入新字段</h4><p>现在我们通过metaClass给Personal注入一个新属性看看：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">Personal.metaClass.sex = <span class="string">&quot;男&quot;</span></span><br><span class="line"><span class="keyword">def</span> person = <span class="keyword">new</span> Personal(<span class="attr">name:</span> <span class="string">&quot;Silence&quot;</span>, <span class="attr">age:</span> <span class="number">26</span>)</span><br><span class="line">println(person.printName())</span><br><span class="line">println(person.printAge())</span><br><span class="line">println(person.sex)</span><br></pre></td></tr></table></figure>
+<p>可以看出我们注入了一个sex的字段，输入结果如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My age is <span class="number">26</span></span><br><span class="line">男</span><br></pre></td></tr></table></figure>
+<p>当然了，注入静态变量也是类似，加上static即可。</p>
+<h3 id="注入新方法"><a href="#注入新方法" class="headerlink" title="注入新方法"></a>注入新方法</h3><p>看到我们输入性别的时候，发现好像和上面对比，不工整，那就自己整一个工整的，修改代码：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">Personal.metaClass.sex = <span class="string">&quot;男&quot;</span></span><br><span class="line">Personal.metaClass.printSex = &#123; -&gt;</span><br><span class="line">    <span class="string">&quot;My sex is $sex&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">def</span> person = <span class="keyword">new</span> Personal(<span class="attr">name:</span> <span class="string">&quot;Silence&quot;</span>, <span class="attr">age:</span> <span class="number">26</span>)</span><br><span class="line">println(person.printName())</span><br><span class="line">println(person.printAge())</span><br><span class="line">println(person.printSex())</span><br></pre></td></tr></table></figure>
+<p>输出结果可想而之：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">My <span class="built_in">name</span> <span class="keyword">is</span> Silence</span><br><span class="line">My age <span class="keyword">is</span> <span class="number">26</span></span><br><span class="line">My sex <span class="keyword">is</span> 男</span><br></pre></td></tr></table></figure>
+<p>这下工整了～。当然了，注入静态方法也是类似，加上static即可。  </p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>可以看出，我们可以通过metaClass给类新增变量，新增方法。那么这个和直接在类这种提供有什么区别呢？<br>举个例子：引入第三方库，其中的某个类有我们想用的方法，但是这个方法又不够全，想给里面添加点自己的方法。通常是extends它进而扩展，但是如果是final 类，任何类不能继承它，只能用它已有的方法。这个时候groovy的动态添加就有了大展身手的地方。不修改、不继承，通过metaclass变相的对原有的类进行了扩展。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/qq_39969226/article/details/102918552?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-6&spm=1001.2101.3001.4242">groovy中的元编程</a><br><a href="https://blog.csdn.net/usagoole/article/details/87390383">Groovy笔记之元编程</a></p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Gradle简介及生命周期</title>
+    <url>/gradle/4/</url>
+    <content><![CDATA[<h3 id="Gradle简介"><a href="#Gradle简介" class="headerlink" title="Gradle简介"></a>Gradle简介</h3><p>gradle主要是由三个部分组成。</p>
+<ul>
+<li>groovy 核心语法：包括 groovy 基本语法、闭包、数据结构、面向对象等等。前面我们已经介绍过了。</li>
+<li>Android DSL（build scrpit block）：Android 插件在 Gradle 所特有的东西，我们可以在不同的 build scrpit block 中去做不同的事情。</li>
+<li>Gradle api：包括task，projects，setting等等。</li>
+</ul>
+<p>具体如下图：<br><img src="https://s3.ax1x.com/2021/01/19/sgahpq.png" alt="image"></p>
+<h3 id="Gradle优势"><a href="#Gradle优势" class="headerlink" title="Gradle优势"></a>Gradle优势</h3><ul>
+<li>灵活性：相对于 Maven、Ant 等构建工具，Gradle 提供了一系列的 API 让我们有能力去修改或定制项目的构建过程。</li>
+<li>粒度性：源码的编译，资源的编译，都是一个一个Task的，我们可以修改task来达到精细控制上。</li>
+<li>扩展性：Gradle 支持插件机制，所以我们可以复用这些插件，就如同复用库一样简单方便。</li>
+<li>兼容性：Gradle 不仅自身功能强大，而且它还能兼容所有的Maven、Ant功能，也就是说，Gradle 吸取了所有构建工具的长处。</li>
+</ul>
+<h3 id="Gradle生命周期"><a href="#Gradle生命周期" class="headerlink" title="Gradle生命周期"></a>Gradle生命周期</h3><p>gradle的生命周期主要是如下三个部分：</p>
+<ul>
+<li>初始化阶段: 解析setting.gradle文件</li>
+<li>配置阶段：解析所有的projects对象中的task，主要解析各个project下的build.gradle文件</li>
+<li>执行阶段：执行project下具体的的task及其依赖task</li>
+</ul>
+<p>接下来我们看下gradle的流程图：<br><img src="https://s3.ax1x.com/2021/01/19/sgor0e.png" alt="image"></p>
+<p>将上面流程可以再细化一下，细化之后如下图：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC80LzIwLzE3MTk1MDcxZTY1Y2JjZDg?x-oss-process=image/format,png" alt="image"></p>
+<h4 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h4><p>初始化主要是读取setting.gradle文件中include的projects数量。我们可以通过如下命令查看project数量。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">./gradlew project</span><br></pre></td></tr></table></figure>
+<p>输出如下：</p>
+<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">------------------------------------------------------------</span><br><span class="line">Root project</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">Root project <span class="emphasis">&#x27;APMProjetct&#x27;</span></span><br><span class="line">+--- Project <span class="emphasis">&#x27;:apm&#x27;</span></span><br><span class="line">+--- Project <span class="emphasis">&#x27;:app&#x27;</span></span><br><span class="line">\--- Project <span class="emphasis">&#x27;:aspectj&#x27;</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置阶段"><a href="#配置阶段" class="headerlink" title="配置阶段"></a>配置阶段</h4><p>配置阶段主要是构造各个project下的task依赖关系图，需要注意的是，执行任何Gradle命令，在初始化阶段和配置阶段的逻辑都会被执行。</p>
+<h4 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h4><p>配置完成后，便是依次执行指定的task以及依赖的task。</p>
+<h4 id="生命周期的监听"><a href="#生命周期的监听" class="headerlink" title="生命周期的监听"></a>生命周期的监听</h4><p>在root project的build.gradle中添加如下代码：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 配置阶段开始前的监听回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">this</span>.beforeEvaluate &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 配置阶段后的监听回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">this</span>.afterEvaluate &#123;</span><br><span class="line">    println <span class="string">&#x27;配置阶段执行完毕...&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * gradle执行完毕后的回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">this</span>.gradle.buildFinished &#123;</span><br><span class="line">    println <span class="string">&#x27;执行阶段执行完毕...&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//等同于 beforeEvaluate</span></span><br><span class="line"><span class="built_in">this</span>.gradle.beforeProject &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//等同于 afterEvaluate</span></span><br><span class="line"><span class="built_in">this</span>.gradle.afterProject &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>构建后，输出如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">配置阶段执行完毕...</span><br><span class="line"></span><br><span class="line">CONFIGURE SUCCESSFUL <span class="keyword">in</span> <span class="number">0</span>s</span><br><span class="line">执行阶段执行完毕...</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文主要是让你对gradle有一个初步对认识，以及gradle的生命周期。接下来我们会介绍最常用project以及task</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.cnblogs.com/start1225/p/9956558.html">Gradle系列之三 Gradle概述以及生命周期</a></p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Gradle核心之Project</title>
+    <url>/gradle/5/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>project在gradle里起到里重要的作用，上节我们也说过可以通过<code>./gradlew projects</code>打印当前项目下所有的project，准确的说是有build.gradle的文件既是一个project。而有多少project取决于在setting.gradle文件中设置了多少个。一个project对应一个输出，而具体输出什么取决于build.gradle里面的内容。</p>
+<h3 id="Project核心API"><a href="#Project核心API" class="headerlink" title="Project核心API"></a>Project核心API</h3><p>每个工程下都有一个build.gradle文件。根目录的build.gradle可以管理子工程下面的build.gradle。下面具体看下project相关api。</p>
+<h4 id="getAllProjects"><a href="#getAllProjects" class="headerlink" title="getAllProjects()"></a>getAllProjects()</h4><p>我们可以通过getAllprojects打印出所有的project，可以理解成和<code>./gradlew projects</code>命令一样。示例带入如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">getAllprojects().eachWithIndex &#123; Project entry, <span class="keyword">int</span> i -&gt;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">        println(<span class="string">&quot;RootProject-------$&#123;entry.name&#125;&quot;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        println(<span class="string">&quot;SubProject-------$&#123;entry.name&#125;&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">RootProject-------APMProjetct</span><br><span class="line">SubProject-------apm</span><br><span class="line">SubProject-------app</span><br><span class="line">SubProject-------aspectj</span><br></pre></td></tr></table></figure>
+<h4 id="getSubprojects"><a href="#getSubprojects" class="headerlink" title="getSubprojects()"></a>getSubprojects()</h4><p>此方法是获取所有子工程的实例，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">getSubprojects().eachWithIndex &#123; Project entry, <span class="keyword">int</span> i -&gt;</span><br><span class="line">        println(<span class="string">&quot;SubProject-------$&#123;entry.name&#125;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; Configure project :</span><br><span class="line">SubProject-------apm</span><br><span class="line">SubProject-------app</span><br><span class="line">SubProject-------aspectj</span><br></pre></td></tr></table></figure>
+<h4 id="getRootProject"><a href="#getRootProject" class="headerlink" title="getRootProject()"></a>getRootProject()</h4><p>既然我们可以拿到所有的子节点，那我们依然可以单独获取到根节点，示例代码如下：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">println</span><span class="params">(<span class="string">&quot;the root project name is $&#123;getRootProject().name&#125;&quot;</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight xquery"><table><tr><td class="code"><pre><span class="line">&gt; Configure project :</span><br><span class="line">the<span class="built_in"> root</span> project<span class="built_in"> name</span> <span class="literal">is</span> APMProjetct</span><br></pre></td></tr></table></figure>
+<h4 id="getParent"><a href="#getParent" class="headerlink" title="getParent()"></a>getParent()</h4><p>此方法是用于在子工程获取父工程的实例，示例代码如下：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">println</span><span class="params">(<span class="string">&quot;the parent project name is $&#123;getParent().name&#125;&quot;</span>)</span></span></span><br></pre></td></tr></table></figure>
+<p>输出结果可想而知：</p>
+<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&gt; Configure project :aspectj</span><br><span class="line"><span class="keyword">the</span> parent project <span class="built_in">name</span> <span class="keyword">is</span> APMProjetct</span><br></pre></td></tr></table></figure>
+<h4 id="projects"><a href="#projects" class="headerlink" title="projects()"></a>projects()</h4><p>project是为了让我们在父工程的build.gradle文件，针对子project做一些单独的处理，比如这样：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">project</span><span class="params">(<span class="string">&quot;app&quot;</span>)</span></span> &#123;</span><br><span class="line">    apply plugin: <span class="string">&#x27;com.android.application&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="allprojects"><a href="#allprojects" class="headerlink" title="allprojects()"></a>allprojects()</h4><p>allprojects 表示用于配置当前 project 及其每一个子 project，在 allprojects 中我们一般用来配置一些通用的配置，比如最常见的全局仓库配置。</p>
+<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">allprojects</span> &#123;</span><br><span class="line">    <span class="variable">repositories</span> &#123;</span><br><span class="line">        <span class="function"><span class="title">google</span>()</span></span><br><span class="line">        <span class="function"><span class="title">jcenter</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="subprojects"><a href="#subprojects" class="headerlink" title="subprojects()"></a>subprojects()</h4><p>此方法是为了让我们对所有的子project做一些配置，比如这样：</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">subprojects</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">project</span>.plugins.hasPlugin(<span class="string">&quot;com.android.library&quot;</span>))&#123;</span><br><span class="line">        apply <span class="keyword">from</span> <span class="string">&quot;../uploadMaven.gradle&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="ext扩展属性"><a href="#ext扩展属性" class="headerlink" title="ext扩展属性"></a>ext扩展属性</h4><p>我们可以通过ext扩展属性默认修改其他工程build.gradle的文件配置。比如我在root project中新增了如下属性：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">ext &#123;</span><br><span class="line">    minSdkVersion = <span class="number">21</span></span><br><span class="line">    targetSdkVersion = <span class="number">30</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么我们可以在子工程的build.gralde文件修改文件如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">30</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;30.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xxxxx.apmprojetct&quot;</span></span><br><span class="line">        minSdkVersion rootProject.ext.minSdkVersion</span><br><span class="line">        targetSdkVersion rootProject.ext.targetSdkVersion</span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外我们还可以通过apply的形式依赖自己新增的gradle文件，比如我们可以新增一个config.gradle文件，具体内容如下:</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            storeFile file(<span class="string">&#x27;xxx.jks&#x27;</span>)</span><br><span class="line">            storePassword <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line">            keyAlias <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">            keyPassword <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">            v1SigningEnabled <span class="literal">true</span></span><br><span class="line">            v2SigningEnabled <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        release &#123;</span><br><span class="line">            storeFile file(<span class="string">&#x27;xxx.jks&#x27;</span>)</span><br><span class="line">            storePassword <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line">            keyAlias <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">            keyPassword <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line">            v1SigningEnabled <span class="literal">true</span></span><br><span class="line">            v2SigningEnabled <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那么我们可以在工程中这样使用：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">from:</span> <span class="string">&#x27;config.gradle&#x27;</span></span><br><span class="line">android &#123;</span><br><span class="line">      buildTypes &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            signingConfig signingConfigs.debug</span><br><span class="line">            minifyEnabled <span class="literal">false</span></span><br><span class="line">            shrinkResources <span class="literal">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&#x27;proguard-android.txt&#x27;</span>), <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line">            versionNameSuffix <span class="string">&quot;_dev&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">        release &#123;</span><br><span class="line">            signingConfig signingConfigs.release</span><br><span class="line">            minifyEnabled <span class="literal">true</span></span><br><span class="line">            shrinkResources <span class="literal">true</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&#x27;proguard-android.txt&#x27;</span>), <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="gradle文件操作"><a href="#gradle文件操作" class="headerlink" title="gradle文件操作"></a>gradle文件操作</h3><p>gradle中操作本地文件可以使用的是Project.file()方法，通过指定文件的相对路径或者绝对路径来进行操作。比如我们可以新建一个文件，可以查看一个文件的绝对路径，也可以判断一个文件是否存在，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用相对路径</span></span><br><span class="line">File configFile = file(<span class="string">&#x27;src/main/java/test.java&#x27;</span>)</span><br><span class="line">configFile.createNewFile();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用绝对路径</span></span><br><span class="line">configFile = file(‘<span class="regexp">/Users/</span>xxx<span class="regexp">/xxx/</span>src<span class="regexp">/main/</span>java/test.java’)</span><br><span class="line">println(configFile.absolutePath)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用一个文件对象</span></span><br><span class="line">configFile = file(<span class="keyword">new</span> File(<span class="string">&#x27;src/main/java/test.java&#x27;</span>))</span><br><span class="line"><span class="comment">// 打印文件是否存在</span></span><br><span class="line">println(configFile.exists())</span><br></pre></td></tr></table></figure>
+<p>同步一下，输出结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>xxx<span class="regexp">/xxx/</span>src<span class="regexp">/main/</span>java/test.java</span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="文件集合"><a href="#文件集合" class="headerlink" title="文件集合"></a>文件集合</h4><p>Gradle中文件集合就是类似于java中的数组，Gradle中使用FileCollection接口表示，我们可以使用Project.files()方法来获得一个文件集合对象,所有文件集合都是用到的时候才会创建。示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">FileCollection collection = files(<span class="string">&#x27;src/test1.txt&#x27;</span>,</span><br><span class="line">        <span class="keyword">new</span> File(<span class="string">&#x27;src/test2.txt&#x27;</span>),</span><br><span class="line">        [<span class="string">&#x27;src/test3.txt&#x27;</span>, <span class="string">&#x27;src/test4.txt&#x27;</span>])</span><br></pre></td></tr></table></figure>
+<p>我们可以这样遍历文件：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 遍历所有集合</span></span><br><span class="line">collection.each &#123; File file -&gt;</span><br><span class="line">    println file.name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们还可以这样转换文件：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 把文件集合转换为Set类型</span></span><br><span class="line">Set set1 = collection.files</span><br><span class="line">Set set2 = collection <span class="keyword">as</span> Set</span><br><span class="line"><span class="comment">// 把文件集合转换为List类型</span></span><br><span class="line">List list = collection <span class="keyword">as</span> List</span><br><span class="line"><span class="comment">// 把文件集合转换为String类型</span></span><br><span class="line">String path = collection.asPath</span><br><span class="line"><span class="comment">// 把文件集合转换为File类型</span></span><br><span class="line">File file1 = collection.singleFile</span><br><span class="line">File file2 = collection <span class="keyword">as</span> File</span><br></pre></td></tr></table></figure>
+<p>除此之外，我们还可以新增或者删除一个文件，比如这样：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 添加或者删除一个集合</span></span><br><span class="line"><span class="keyword">def</span> union = collection + files(<span class="string">&#x27;src/test5.txt&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> different = collection - files(<span class="string">&#x27;src/test3.txt&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="文件树"><a href="#文件树" class="headerlink" title="文件树"></a>文件树</h4><p>文件树你可以理解成是一个有层级结构的文件集合，所以文件树中包含了所有文件集合的操作。我们可以使用Project.fileTree()方法来创建文件树对象，还可以使用过虑条件来包含或排除相关文件。示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定目录创建文件树对象</span></span><br><span class="line">FileTree tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src/main&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给文件树对象添加包含指定文件</span></span><br><span class="line">tree.include <span class="string">&#x27;**/*.java&#x27;</span></span><br><span class="line"><span class="comment">// 给文件树对象添加排除指定文件</span></span><br><span class="line">tree.exclude <span class="string">&#x27;**/Abstract*&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用路径创建文件树对象，同时指定包含的文件</span></span><br><span class="line">tree = fileTree(<span class="string">&#x27;src&#x27;</span>).include(<span class="string">&#x27;**/*.java&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过闭包创建文件树</span></span><br><span class="line">tree = fileTree(<span class="string">&#x27;src&#x27;</span>) &#123;</span><br><span class="line">    include <span class="string">&#x27;**/*.java&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过map创建文件树</span></span><br><span class="line">tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src&#x27;</span>, <span class="attr">include:</span> <span class="string">&#x27;**/*.java&#x27;</span>)</span><br><span class="line">tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src&#x27;</span>, <span class="attr">includes:</span> [<span class="string">&#x27;**/*.java&#x27;</span>, <span class="string">&#x27;**/*.xml&#x27;</span>])</span><br><span class="line">tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src&#x27;</span>, <span class="attr">include:</span> <span class="string">&#x27;**/*.java&#x27;</span>, <span class="attr">exclude:</span> <span class="string">&#x27;**/*test*/**&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>既然说到了文件树的创建，当然，我们也可以对文件树进行一些业务操作，比如：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 遍历文件树的所有文件</span></span><br><span class="line">tree.each &#123;File file -&gt;</span><br><span class="line">    println file</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过虑生成新的文件树对象</span></span><br><span class="line">FileTree filtered = tree.matching &#123;</span><br><span class="line">    include <span class="string">&#x27;org/gradle/api/**&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用“+”号合并两个文件树，同文件集合的“+”操作一样</span></span><br><span class="line">FileTree sum = tree + fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src/test&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 访问文件树中各项内容</span></span><br><span class="line">tree.visit &#123;element -&gt;</span><br><span class="line">    println <span class="string">&quot;$element.relativePath =&gt; $element.file&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><p>我们可以通过copy的task对文件进行copy动作，并且可以指定copy内容和过滤copy内容，还可以在copy的过程中对文件进行重命名操作，先来个简单的，比如我需要从A目录copy到B目录，那我们可以这样做：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task copyTask(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    from <span class="string">&#x27;src/main/java/fileA&#x27;</span></span><br><span class="line">    into <span class="string">&#x27;src/main/kotlin/fileB&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然，我们也是支持批量copy的，比如这样：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task copyTask(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    <span class="comment">// 拷贝src/main/webapp目录下所有的文件</span></span><br><span class="line">    from <span class="string">&#x27;src/main/java&#x27;</span></span><br><span class="line">    <span class="comment">// 拷贝单独的一个文件</span></span><br><span class="line">    from <span class="string">&#x27;src/main/res/index.html&#x27;</span></span><br><span class="line">    <span class="comment">// 从Zip压缩文件中拷贝内容</span></span><br><span class="line">    from zipTree(<span class="string">&#x27;src/main/assets.zip&#x27;</span>)</span><br><span class="line">    <span class="comment">// 拷贝到的目标目录</span></span><br><span class="line">    into <span class="string">&#x27;src/main/mouble&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>前面我们也说了，我们可以在copy的时候进行重命名，最常见的场景，就是项目拆解模块的时候，我们需要重新命名，那我们可以这样操作：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task rename(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    from <span class="string">&#x27;moudleA/src/main/res/&#x27;</span></span><br><span class="line">    into <span class="string">&#x27;moudleB/src/main/res/&#x27;</span></span><br><span class="line">    <span class="comment">// 使用一个闭包方式重命名文件</span></span><br><span class="line">    rename &#123; String fileName -&gt;</span><br><span class="line">        fileName.replace(<span class="string">&#x27;moudleA&#x27;</span>, <span class="string">&#x27;moudleB&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>大量的节约了手动重命名的成本。<br>同样我们也可以新增过滤条件：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task copyTaskWithPatterns(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    from <span class="string">&#x27;src/main/drawable&#x27;</span></span><br><span class="line">    into <span class="string">&#x27;src/main/drawable-xxhdpi&#x27;</span></span><br><span class="line">    include <span class="string">&#x27;*.jpg&#x27;</span></span><br><span class="line">    exclude &#123; details -&gt; details.file.name.endsWith(<span class="string">&#x27;.png&#x27;</span>) &amp;&amp;</span><br><span class="line">                         details.file.text.contains(<span class="string">&#x27;.webp&#x27;</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当然我们还可以拷贝的同时，并删除对应目录文件，我们可以这么操作：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task libs(<span class="attr">type:</span> Sync) &#123;</span><br><span class="line">    from configurations.runtime</span><br><span class="line">    <span class="comment">// 拷贝之前会把$buildDir/libs目录下所有的清除</span></span><br><span class="line">    into <span class="string">&quot;$buildDir/libs&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文我们简单的介绍了projects的相关操作以及在gradle中我们如何去操作文件，当然，gradle中除了projects，还有一个核心的task，这个我们放在下一节进行介绍。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/u010289802/article/details/105891913">暴力突破 Gradle 自动化项目构建（五）- Gradle 核心之 Project</a><br><a href="https://blog.csdn.net/u011077027/article/details/103251170">gradle操作文件详解</a></p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Gradle核心之Task</title>
+    <url>/gradle/6/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle命令最终是通过task去执行的，可见task在gradle中的重要性。</p>
+<h3 id="Task的定义与配置"><a href="#Task的定义与配置" class="headerlink" title="Task的定义与配置"></a>Task的定义与配置</h3><p>task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test1Task&#123;</span><br><span class="line">    println(<span class="string">&quot;test1Task&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.create(<span class="attr">name:</span><span class="string">&#x27;test2Task&#x27;</span>)&#123;</span><br><span class="line">    println(<span class="string">&quot;test2Task&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>刚刚我们为task指定了一个name。我们可以看看除了name我们还可以指定什么，我们打开Task的源代码，如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Task</span>&gt;, <span class="title">ExtensionAware</span> </span>&#123;</span><br><span class="line">    String TASK_NAME = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DESCRIPTION = <span class="string">&quot;description&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_GROUP = <span class="string">&quot;group&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_TYPE = <span class="string">&quot;type&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DEPENDS_ON = <span class="string">&quot;dependsOn&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_OVERWRITE = <span class="string">&quot;overwrite&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_ACTION = <span class="string">&quot;action&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructor arguments for the Task</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> 4.7</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Incubating</span></span><br><span class="line">    String TASK_CONSTRUCTOR_ARGS = <span class="string">&quot;constructorArgs&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面我们介绍下这些属性都是用来干嘛的。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>ask 名字</td>
+<td>必须指定</td>
+</tr>
+<tr>
+<td>description</td>
+<td>task 的描述信息</td>
+<td>null</td>
+</tr>
+<tr>
+<td>group</td>
+<td>该 task 所属组</td>
+<td>null</td>
+</tr>
+<tr>
+<td>type</td>
+<td>需要创建的 task Class</td>
+<td>DefaultTask</td>
+</tr>
+<tr>
+<td>dependsOn</td>
+<td>该 task 所依赖的 task 集合</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>overwrite</td>
+<td>替换一个已存在的 task</td>
+<td>false</td>
+</tr>
+<tr>
+<td>action</td>
+<td>当 task 执行的时候，需要执行的闭包 closure 或 行为 Action</td>
+<td>null</td>
+</tr>
+<tr>
+<td>constructorArgs</td>
+<td>传递到 task Class 构造器中的参数</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<h3 id="Task的执行"><a href="#Task的执行" class="headerlink" title="Task的执行"></a>Task的执行</h3><p>前面我们也介绍了gradle的生命周期，通过前面的文章我们可以知道，在执行阶段gradle会输出每个gradle执行的内容。当然我们还可以通过<code>doFirst</code>和<code>doLast</code>为我们的 task 指定执行阶段要执行的代码。关于这2个的属性介绍如下：</p>
+<ul>
+<li>doFirst :表示当前task执行最开始的时候被调用的Action。</li>
+<li>doLast：表示单曲task即将执行完的时候被调用的Action。</li>
+</ul>
+<p>我们可以验证下上面两个属性，执行代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    doFirst &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task first&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    doLast &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task last&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line"></span><br><span class="line">&gt; <span class="attr">Task :</span>test1Task</span><br><span class="line">test1Task first</span><br><span class="line">test1Task last</span><br><span class="line">:test1Task spend <span class="number">17</span>ms</span><br></pre></td></tr></table></figure>
+<h3 id="Task的执行顺序"><a href="#Task的执行顺序" class="headerlink" title="Task的执行顺序"></a>Task的执行顺序</h3><p>首先了解下，控制task执行顺序的方式有两种。</p>
+<ul>
+<li>通过dependsOn强依赖的方式</li>
+<li>通过api指定执行顺序</li>
+</ul>
+<p><img src="https://s3.ax1x.com/2021/01/25/sLQTc4.png" alt="image"></p>
+<h4 id="dependsOn强依赖"><a href="#dependsOn强依赖" class="headerlink" title="dependsOn强依赖"></a>dependsOn强依赖</h4><p>强依赖的方式又分为两种，动态依赖及静态依赖，我们来举个例子：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖一</span></span><br><span class="line">task test3Task(<span class="attr">dependsOn:</span> [test1Task, test2Task]) &#123;</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖二</span></span><br><span class="line">test3Task.dependsOn(test1Task, test2Task)</span><br><span class="line"><span class="comment">//动态依赖</span></span><br><span class="line">task test4Task &#123;</span><br><span class="line">    dependsOn tasks.findAll &#123; task -&gt;</span><br><span class="line">        <span class="keyword">return</span> task.name.startsWith(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    println(<span class="string">&quot;test4Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line">test2Tasking...</span><br><span class="line">test3Tasking...</span><br><span class="line">test4Tasking...</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，虽然我依赖了其他的task，但是依赖的task输出顺序它是随机的。</p>
+<h4 id="API指定输出顺序"><a href="#API指定输出顺序" class="headerlink" title="API指定输出顺序"></a>API指定输出顺序</h4><table>
+<thead>
+<tr>
+<th>关键字名称</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mustRunAfter</td>
+<td>指定一个任务必须执行在另一个任务之后</td>
+<td>优先级小于dependsOn属性</td>
+</tr>
+<tr>
+<td>shouldRunAfter</td>
+<td>指定一个任务应该执行在另一个任务之后</td>
+<td>一般不用</td>
+</tr>
+</tbody></table>
+<p>举个栗子：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test1Task &#123;</span><br><span class="line">    mustRunAfter test2Task</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test3Task &#123;</span><br><span class="line">    mustRunAfter test1Task</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了方便查看，我们把顺序修改了，不让它按照1、2、3的形式输出，现在我们看看上述代码的输出结果：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test2Tasking...</span><br><span class="line">test1Tasking...</span><br><span class="line">test3Tasking...</span><br></pre></td></tr></table></figure>
+<h3 id="Task类型"><a href="#Task类型" class="headerlink" title="Task类型"></a>Task类型</h3><p>除了定义一个task之外，我们也可以使用task的type属性来直接使用一个已有的 task 类型，比如Gradle自带的Copy、Delete、Sync等等。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节我们介绍了Task的使用，除了上面介绍的，我们还可以通过gradle官网去查看task相关指令。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/u010289802/article/details/105908520">暴力突破 Gradle 自动化项目构建（六）- Gradle 核心之 Task</a></p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>如何自己动手撸一个Gradle插件</title>
+    <url>/gradle/7/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前面我们已经把gradle中groovy的一些语法，以及常用的project和task介绍了一遍，那么我们通过自己撸个插件。刚好把前面的内容巩固下。</p>
+<h3 id="插件的作用"><a href="#插件的作用" class="headerlink" title="插件的作用"></a>插件的作用</h3><p>首先我们需要了解下插件的作用，主要有如下几点：</p>
+<ul>
+<li><p>添加任务到项目中，可对项目进行测试、编译、打包；    </p>
+</li>
+<li><p>添加依赖到项目中，可用来配置项目构建过程中需要的依赖； </p>
+</li>
+<li><p>可以向项目中现有的对象类型添加新的扩展属性、方法等，可方便项目的配置和构建优化，比如 Android 项目构建中的 android{} 就是AndroidGradle插件为Project 对象添加的一个扩展。</p>
+</li>
+</ul>
+<h3 id="插件的类型"><a href="#插件的类型" class="headerlink" title="插件的类型"></a>插件的类型</h3><p>插件主要是分为两种：脚本式插件和二进制式插件。</p>
+<h4 id="脚本式插件"><a href="#脚本式插件" class="headerlink" title="脚本式插件"></a>脚本式插件</h4><p>脚本式插件就类似于前面文章提到的，自己新建一个config.gradle，然后通过</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">from:</span><span class="string">&quot;../config.gradle&quot;</span></span><br></pre></td></tr></table></figure>
+<p>去引用config.gradle文件中的一些属性等，如可将某些工具性质的方法以及各个依赖使用的版本号分别定义到单个gradle文件中，方便统一调用和管理各个依赖的版本号等。</p>
+<h4 id="二进制式插件"><a href="#二进制式插件" class="headerlink" title="二进制式插件"></a>二进制式插件</h4><p>二进制插件一般式之通过式Plugin接口，实现apply方法。该方法中的泛型指的是此Plugin可以应用到的对象，一般是将其应用到Project对象上。一般来说二进制插件分为三种方式：</p>
+<ul>
+<li>Build script：直接在gradle脚本文件中实现plugin接口并应用，不适用于对外提供</li>
+<li>buildSrc project： buildSrc是Gradle 在项目中配置自定义插件的默认目录。一般来说很少使用</li>
+<li>Standalone project：独立的工程，编译后不仅可以对内也可以对外使用</li>
+</ul>
+<p>前面两个应用场景很少，在这就不过多介绍了，想了解的可以自己百度一下～，我们着重介绍一下最后一个。</p>
+<h3 id="动手撸一个-Standalone-project"><a href="#动手撸一个-Standalone-project" class="headerlink" title="动手撸一个 Standalone project"></a>动手撸一个 Standalone project</h3><p>既然是独立的工程，那么首先我们需要新建一个moudle。整个创建步骤如下：  </p>
+<ul>
+<li><p>新建moudle，类型可以选择Android。然后把目录删干净，只留下build.gradle文件并把build.gradle内部清空。</p>
+</li>
+<li><p>在moudle创建src/main/groovy目录，并新建其包名。同时在main目录下再新建resources/META-INF/gradle-plugins目录，在这个目录下编写一个和插件id名字相同的.properties文件，这样Gradle就可以找到插件实现了。  </p>
+</li>
+</ul>
+<p>修改properties文件：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation-<span class="class"><span class="keyword">class</span>=<span class="title">com</span>.<span class="title">xxxx</span>.<span class="title">plugin</span>.<span class="title">MyGradlePlugin</span></span></span><br></pre></td></tr></table></figure>
+<p>修改build.gralde文件如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;java-gradle-plugin&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;kotlin&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;groovy&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;maven&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;maven-publish&#x27;</span></span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">group = <span class="string">&#x27;你的plugin包名&#x27;</span></span><br><span class="line">version = <span class="string">&#x27;你的plugin版本号&#x27;</span></span><br><span class="line"></span><br><span class="line">publishing &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123;</span><br><span class="line">            url = uri(<span class="string">&quot;$rootDir/repo&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    publications &#123;</span><br><span class="line">        maven(MavenPublication) &#123;</span><br><span class="line">            from components.java</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(<span class="attr">dir:</span> <span class="string">&quot;libs&quot;</span>, <span class="attr">include:</span> [<span class="string">&quot;*.jar&quot;</span>])</span><br><span class="line">    implementation <span class="string">&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span></span><br><span class="line">    <span class="comment">//gradle sdk</span></span><br><span class="line">    implementation gradleApi()</span><br><span class="line">    <span class="comment">//groovy sdk</span></span><br><span class="line">    implementation localGroovy()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>依赖groovy相关插件是为了我们可以创建groovy文件。依赖maven是为了后续的本地上传以及调试。  </p>
+<p>现在我们先写一个简单的试试效果。在你的目录下新建一个plugin：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">         project.task(<span class="string">&#x27;MyGradlePlugin&#x27;</span>) &#123;</span><br><span class="line">            doLast &#123;</span><br><span class="line">                println(<span class="string">&#x27;task in MyGradlePlugin&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>然后我们点击Gradle -&gt; myGradlePlugin -&gt; publishing -&gt; publish。执行完成后，会在项目根目录下生成repo仓库。也就是之前在build.gradle中配置的url。  </p>
+<p>既然本地maven已经生成了，接下来就是我们的引用了。我们在根目录的build.gradle引用我们本地的maven。示例如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    google()</span><br><span class="line">    jcenter()</span><br><span class="line">    maven &#123;</span><br><span class="line">        url = uri(<span class="string">&quot;$rootDir/repo&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>本地maven依赖完成后，我们在根目录把自己引用的插件依赖下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&quot;myGradlePlugin&quot;</span></span><br><span class="line"> dependencies &#123;</span><br><span class="line">        ...</span><br><span class="line">        classpath <span class="string">&#x27;com.xxxx.plugin:myGradlePlugin:1.0.0&#x27;</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们sync一下。好了成功了。那我们如何验证我们自己写的plugin呢。我们在命令行输入：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">./gradlew MyGradlePlugin</span><br></pre></td></tr></table></figure>
+<p>然后你会发现它输出了：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">Task:</span>MyGradlePlugin</span><br><span class="line">task <span class="keyword">in</span> MyGradlePlugin</span><br></pre></td></tr></table></figure>
+<p>卧槽，卧槽，成功了！！</p>
+<p>我们加大点难度，我们需要在build.gradle动态一些属性，并且自己写的plugin可以读到这些动态配置的属性。既然需要动态配置属性，那我们先定义一下需要动态的属性，新建一个Extension。具体示例如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePluginExtension</span> &#123;</span></span><br><span class="line">    String versionName</span><br><span class="line">    String versionCode</span><br><span class="line">    String versionInfo</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    String toString() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;versionName = $versionName , versionCode = $versionCode , versionInfo = $versionInfo&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们定义了版本的属性，比如版本号，版本名称，版本信息等等。既然定义了，那么我们怎么读取这些属性呢。修改我们的plugin：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">        project.extensions.create(<span class="string">&quot;MyGradlePluginExtension&quot;</span>, MyGradlePluginExtension.<span class="keyword">class</span>)</span><br><span class="line">        project.task(<span class="string">&#x27;MyGradlePluginExtension&#x27;</span>) &#123;</span><br><span class="line">            doLast &#123;</span><br><span class="line">                MyGradlePluginExtension releaseInfo = project.MyGradlePluginExtension</span><br><span class="line">                println releaseInfo</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>代码修改后，可以看到逻辑如下，创建一个MyGradlePluginExtension，然后定义一个task为MyGradlePluginExtension（我这边为了方便2个名称用的同一个，其实可以分开）。也就是说我们在执行MyGradlePluginExtension的Task时候，会读取project的MyGradlePluginExtension的属性，然后将其输出。</p>
+<p>重新上传maven，这里就不多说了，前面有提到过，然后我们在根目录新增如下代码：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">MyGradlePluginExtension &#123;</span><br><span class="line">    versionName = <span class="number">1.0</span></span><br><span class="line">    versionCode = <span class="number">1.0</span></span><br><span class="line">    versionInfo = <span class="string">&quot;测试第一版&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们执行这个task，会看到面板输出如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">Task :</span>MyGradlePluginExtension</span><br><span class="line">versionName = <span class="number">1.0</span> , versionCode = <span class="number">1.0</span> , versionInfo = 测试第一版</span><br></pre></td></tr></table></figure>
+<p>动态配置生效了～</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节主要讲了Gradle插件的分类以及我们该如何去自己写一个插件并进行应用。更多自定义的操作可以查看官方文档：<a href="https://docs.gradle.org/4.1/userguide/custom_plugins.html#sec:custom_plugins_standalone_project">编写自定义插件</a></p>
+]]></content>
+      <categories>
+        <category>Gradle</category>
+      </categories>
+  </entry>
+  <entry>
     <title>算法复杂度</title>
     <url>/data_structure/algorithmic_complexity/</url>
     <content><![CDATA[<p>算法复杂度分为时间复杂度和空间复杂度。其作用：时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。</p>
@@ -60,55 +562,6 @@
 <p>时间复杂度的分析方法：<br>1、时间复杂度就是函数中基本操作所执行的次数<br>2、一般默认的是最坏时间复杂度，即分析最坏情况下所能执行的次数<br>3、忽略掉常数项<br>4、关注运行时间的增长趋势，关注函数式中增长最快的表达式，忽略系数<br>5、计算时间复杂度是估算随着n的增长函数执行次数的增长趋势<br>6、递归算法的时间复杂度为：递归总次数 * 每次递归中基本操作所执行的次数  </p>
 <p>常用的时间复杂度有以下七种，算法时间复杂度依次增加：O(1)常数型、O(log2 n)对数型、O(n)线性型、O(nlog2n)二维型、O(n^2^)平方型、O(n^3^)立方型、O(2^n^)指数型.</p>
 <h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>算法的空间复杂度并不是计算实际占用的空间，而是计算整个算法的辅助空间单元的个数，与问题的规模没有关系。算法的空间复杂度S(n)定义为该算法所耗费空间的数量级。<br>S(n)=O(f(n))  若算法执行时所需要的辅助空间相对于输入数据量n而言是一个常数，则称这个算法的辅助空间为O(1);<br>递归算法的空间复杂度：递归深度N*每次递归所要的辅助空间，如果每次递归所需的辅助空间是常数，则递归的空间复杂度是 O(N).</p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>树组与链表</title>
-    <url>/data_structure/arrays_and_stack/</url>
-    <content><![CDATA[<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604231852160.png" alt="image">  </p>
-<p>正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：</p>
-<ul>
-<li><p>创建一个数组，必须声明其长度，以在内存中寻找合适的一段连续存储单元。这也意味着数组的大小是固定的，我们无法动态调整其大小。</p>
-</li>
-<li><p>想要获取数组中第i个元素，其时间复杂度是O(1)，因为可以根据其地址直接找到它。同理修改也是。</p>
-</li>
-<li><p>数组对查询表现一般，要想查找一个元素，需要遍历，时间复杂度为O(n)。</p>
-</li>
-<li><p>因为地址连续，想要在数组中插入一个元素是复杂的，因为从插入位置起，后边的所有元素都需要向后移动一位。同理删除也是，只是移动方向为向前。并且，当数组存满时，就无法继续插入了。</p>
-</li>
-<li><p>因为数组要占据一整块内存，有可能产生许多的碎片，也可能因为找不到合适的内存块，而导致存储失败。</p>
-</li>
-</ul>
-<p>总结起来就是：数组大小固定，查找迅速，增删复杂，需要完整的内存块，容易产生碎片。</p>
-<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060423192923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>分析这种结构，我们可以得出以下几个结论：</p>
-<ul>
-<li><p>声明一个链表时，不需要知道其长度，也不需要连续的内存块，所以其大小可以动态调整。</p>
-</li>
-<li><p>链表的每个元素都分为数据域和指针域，前者是实际存储的数据，后者则指向下一个元素的地址。和数组相比，每个元素需要占用的内存更大了。</p>
-</li>
-<li><p>要获取链表的第 i 个元素变得复杂，因为其地址存放在它上一个元素的指针域里，所以只能从第一个元素起，进行 i 次操作。同理修改也是。</p>
-</li>
-<li><p>链表对查询表现也一般，需要遍历，时间复杂度为O(n)。</p>
-</li>
-<li><p>增加与删除一个元素更方便了，因为没有对内存地址的限制，我们只需要在对应节点合理处理下指针域的值，就可以把一个元素插入链表或者从链表删除。</p>
-</li>
-<li><p>链表对内存的要求很小，只要能够存储下一个数据元素的内存块都可以使用，因此不会造成碎片化。</p>
-</li>
-</ul>
-<p>总结起来就是：大小可以动态调整，增删迅速，查找较慢，数据元素所占内存略多，不需要整块内存块，不会造成碎片化。</p>
-<h3 id="数组与链表的选择"><a href="#数组与链表的选择" class="headerlink" title="数组与链表的选择"></a>数组与链表的选择</h3><p>通过以上分析，数组和链表对我们影响最大的几点区别在于：</p>
-<ul>
-<li>数组按位置查找迅速，链表增删方便</li>
-<li>数组是固定大小，链表可以随时扩充与缩减</li>
-<li>链表每个元素占据内存略多于数组</li>
-<li>数组和链表在查询方面表现都比较一般，耗时较长  </li>
-</ul>
-<p>数组就像身上编了号站成一排的人，要找第10个人很容易，根据人身上的编号很快就能找到。但插入、删除慢，要望某个位置插入或删除一个人时，后面的人身上的编号都要变。当然，加入或删除的人始终末尾的也快。<br>链表就像手牵着手站成一圈的人，要找第10个人不容易，必须从第一个人一个个数过去。但插入、删除快。插入时只要解开两个人的手，并重新牵上新加进来的人的手就可以。删除一样的道理。  </p>
-<p>在数据量很小，内容基本固定时，我们选择何种数据结构的影响并不大。但当数据量较大时，如果我们需要对数据进行频繁的插入删除，我们应该选择链表，如果我们需要频繁的获取某个位置的元素，我们应该选择数组。数组与链表并没有明确的优劣之分，根据不同的使用场景进行不同的选择，才是这两种结构使用的最佳方式。</p>
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
@@ -160,6 +613,55 @@
 <p>可以看到，此树的高度仅为4，与之前的8相差很多，性能自然也好很多。</p>
 <p>平衡二叉树的删除操作与插入类似，这里将不再介绍。大家可以自己思考如何最高效地删除元素，可以分叶结点、仅有一个子结点和有两个子结点三种情况考虑，这里还用到了递归的思想。</p>
 <p>接下来我们将介绍另一种实现方式，红黑树。</p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>树组与链表</title>
+    <url>/data_structure/arrays_and_stack/</url>
+    <content><![CDATA[<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604231852160.png" alt="image">  </p>
+<p>正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：</p>
+<ul>
+<li><p>创建一个数组，必须声明其长度，以在内存中寻找合适的一段连续存储单元。这也意味着数组的大小是固定的，我们无法动态调整其大小。</p>
+</li>
+<li><p>想要获取数组中第i个元素，其时间复杂度是O(1)，因为可以根据其地址直接找到它。同理修改也是。</p>
+</li>
+<li><p>数组对查询表现一般，要想查找一个元素，需要遍历，时间复杂度为O(n)。</p>
+</li>
+<li><p>因为地址连续，想要在数组中插入一个元素是复杂的，因为从插入位置起，后边的所有元素都需要向后移动一位。同理删除也是，只是移动方向为向前。并且，当数组存满时，就无法继续插入了。</p>
+</li>
+<li><p>因为数组要占据一整块内存，有可能产生许多的碎片，也可能因为找不到合适的内存块，而导致存储失败。</p>
+</li>
+</ul>
+<p>总结起来就是：数组大小固定，查找迅速，增删复杂，需要完整的内存块，容易产生碎片。</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060423192923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>分析这种结构，我们可以得出以下几个结论：</p>
+<ul>
+<li><p>声明一个链表时，不需要知道其长度，也不需要连续的内存块，所以其大小可以动态调整。</p>
+</li>
+<li><p>链表的每个元素都分为数据域和指针域，前者是实际存储的数据，后者则指向下一个元素的地址。和数组相比，每个元素需要占用的内存更大了。</p>
+</li>
+<li><p>要获取链表的第 i 个元素变得复杂，因为其地址存放在它上一个元素的指针域里，所以只能从第一个元素起，进行 i 次操作。同理修改也是。</p>
+</li>
+<li><p>链表对查询表现也一般，需要遍历，时间复杂度为O(n)。</p>
+</li>
+<li><p>增加与删除一个元素更方便了，因为没有对内存地址的限制，我们只需要在对应节点合理处理下指针域的值，就可以把一个元素插入链表或者从链表删除。</p>
+</li>
+<li><p>链表对内存的要求很小，只要能够存储下一个数据元素的内存块都可以使用，因此不会造成碎片化。</p>
+</li>
+</ul>
+<p>总结起来就是：大小可以动态调整，增删迅速，查找较慢，数据元素所占内存略多，不需要整块内存块，不会造成碎片化。</p>
+<h3 id="数组与链表的选择"><a href="#数组与链表的选择" class="headerlink" title="数组与链表的选择"></a>数组与链表的选择</h3><p>通过以上分析，数组和链表对我们影响最大的几点区别在于：</p>
+<ul>
+<li>数组按位置查找迅速，链表增删方便</li>
+<li>数组是固定大小，链表可以随时扩充与缩减</li>
+<li>链表每个元素占据内存略多于数组</li>
+<li>数组和链表在查询方面表现都比较一般，耗时较长  </li>
+</ul>
+<p>数组就像身上编了号站成一排的人，要找第10个人很容易，根据人身上的编号很快就能找到。但插入、删除慢，要望某个位置插入或删除一个人时，后面的人身上的编号都要变。当然，加入或删除的人始终末尾的也快。<br>链表就像手牵着手站成一圈的人，要找第10个人不容易，必须从第一个人一个个数过去。但插入、删除快。插入时只要解开两个人的手，并重新牵上新加进来的人的手就可以。删除一样的道理。  </p>
+<p>在数据量很小，内容基本固定时，我们选择何种数据结构的影响并不大。但当数据量较大时，如果我们需要对数据进行频繁的插入删除，我们应该选择链表，如果我们需要频繁的获取某个位置的元素，我们应该选择数组。数组与链表并没有明确的优劣之分，根据不同的使用场景进行不同的选择，才是这两种结构使用的最佳方式。</p>
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
@@ -313,411 +815,6 @@
 <li>tcp_fin_timeout: 处于FIN_WAIT_2的时间  （调小）</li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Gradle入门之Groovy语法</title>
-    <url>/gradle/2/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle是一个基于JVM的构建工具，它结合了Python、Ruby和Smalltalk的许多强大的特性，Groovy 代码能够与Java代码很好地结合，也能用于扩展现有代码。由于其运行在 JVM 上的特性，Groovy可以使用其他Java语言编写的库。目前已经应用在多数Android技术体系中，比如，jenkins，插件化，组件化，模块化等等。如果你不了解gradle，那么前面几个技术点很难深入理解。  </p>
-<p>Groovy 的语法跟 kotlin 类似，如果我们有 kotlin 的经验的话那么学习 groovy 会容易很多。下面我们一起来学习下groovy的核心语法，大家可以跟着样例敲一下加深理解、记忆。</p>
-<h3 id="基本特点"><a href="#基本特点" class="headerlink" title="基本特点"></a>基本特点</h3><ul>
-<li>构建在强大的Java语言之上 并 添加了从Python，Ruby和Smalltalk等语言中学到的 诸多特征，例如动态类型转换、闭包和元编程（metaprogramming）支持。</li>
-<li>为Java开发者提供了 现代最流行的编程语言特性，而且学习成本很低（几乎为零）。</li>
-<li>支持DSL（Domain Specific Languages领域定义语言）和其它简洁的语法，让代码变得易于阅读和维护。</li>
-<li>受检查类型异常(Checked Exception)也可以不用捕获。</li>
-<li>Groovy拥有处理原生类型，面向对象以及一个Ant DSL，使得创建Shell Scripts变得非常简单。</li>
-<li>在开发Web，GUI，数据库或控制台程序时 通过 减少框架性代码 大大提高了开发者的效率。</li>
-<li>支持单元测试和模拟（对象），可以 简化测试。</li>
-<li>无缝集成 所有已经存在的 Java对象和类库。</li>
-<li>直接编译成Java字节码，这样可以在任何使用Java的地方 使用Groovy。</li>
-<li>支持函数式编程，不需要main函数。</li>
-<li>一些新的运算符。</li>
-<li>默认导入常用的包。</li>
-<li>断言不支持jvm的-ea参数进行开关。</li>
-<li>支持对对象进行布尔求值。</li>
-<li>类不支持default作用域，且默认作用域为public。</li>
-<li>groovy中基本类型也是对象，可以直接调用对象的方法。</li>
-</ul>
-<h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="Groovy中的变量"><a href="#Groovy中的变量" class="headerlink" title="Groovy中的变量"></a>Groovy中的变量</h4><p>groovy中变量既可以像java一样是强类型的，也可以像kotlin一样是弱类型的。<br>代码示例如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        <span class="keyword">def</span> b = <span class="string">&quot;Hello Silence&quot;</span></span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Silence</span></span><br></pre></td></tr></table></figure>
-<h4 id="Groovy中的运算符和条件控制"><a href="#Groovy中的运算符和条件控制" class="headerlink" title="Groovy中的运算符和条件控制"></a>Groovy中的运算符和条件控制</h4><p>与java一致，这里不过多介绍</p>
-<h4 id="Groovy中的字符串"><a href="#Groovy中的字符串" class="headerlink" title="Groovy中的字符串"></a>Groovy中的字符串</h4><p>Groovy提供了多种表示String字面量的方法。Groovy中的字符串可以用单引号（’），双引号（“）或三引号（“““）括起来。此外，由三重引号括起来的Groovy字符串可以跨越多行。  </p>
-<p>示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        <span class="keyword">def</span> b = <span class="string">&quot;Hello Silence&quot;</span></span><br><span class="line">        <span class="keyword">def</span> c = <span class="string">&#x27;&#x27;&#x27;Hello World</span></span><br><span class="line"><span class="string">Hello Silence&#x27;&#x27;&#x27;</span></span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">        println(c)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果如下：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Silence</span></span><br><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Silence</span></span><br></pre></td></tr></table></figure>
-<h5 id="字符串的扩展"><a href="#字符串的扩展" class="headerlink" title="字符串的扩展"></a>字符串的扩展</h5><p>Groovy的扩展和kotlin的一样，示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        <span class="keyword">def</span> b = <span class="string">&quot;Hello $a&quot;</span></span><br><span class="line">        println(a)</span><br><span class="line">        println(b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br><span class="line"><span class="attribute">Hello Hello World</span></span><br></pre></td></tr></table></figure>
-<h5 id="字符串的索引"><a href="#字符串的索引" class="headerlink" title="字符串的索引"></a>字符串的索引</h5><p>Groovy中的字符串是字符的有序序列。字符串中的单个字符可以通过其位置访问。这由索引位置给出。</p>
-<p>字符串索引从零开始，以小于字符串长度的一个结束。Groovy还允许负索引从字符串的末尾开始计数。</p>
-<p>具体示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        String a = <span class="string">&#x27;Hello World&#x27;</span></span><br><span class="line">        println(a[<span class="number">1</span>])<span class="comment">//输出坐标为1的内容</span></span><br><span class="line">        println(a[<span class="number">-2</span>])<span class="comment">//输出坐标为倒数第二的内容</span></span><br><span class="line">        println(a[<span class="number">1.</span><span class="number">.2</span>])<span class="comment">//输出坐标区间为1-2的内容</span></span><br><span class="line">        println(a[<span class="number">2.</span><span class="number">.5</span>])<span class="comment">//输出坐标区间为2-5的内容</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">e</span></span><br><span class="line"><span class="attribute">l</span></span><br><span class="line"><span class="attribute">el</span></span><br><span class="line"><span class="attribute">llo</span> </span><br></pre></td></tr></table></figure>
-<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><h4 id="Range范围"><a href="#Range范围" class="headerlink" title="Range范围"></a>Range范围</h4><p>范围是指定值序列的速记。范围由序列中的第一个和最后一个值表示，Range可以是包含或排除。包含范围包括从第一个到最后一个的所有值，而独占范围包括除最后一个之外的所有值。</p>
-<ul>
-<li>1..10 — 包含范围的示例</li>
-<li>1 .. &lt;10 - 独占范围的示例</li>
-<li>‘a’..’x’ - 范围也可以由字符组成</li>
-<li>10..1 - 范围也可以按降序排列</li>
-<li>‘x’..’a’ - 范围也可以由字符组成并按降序排列。</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th>方法</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>contains()</td>
-<td>检查范围是否包含特定值</td>
-</tr>
-<tr>
-<td>get()</td>
-<td>返回此范围中指定位置处的元素。</td>
-</tr>
-<tr>
-<td>getFrom()</td>
-<td>获得此范围的下限值。</td>
-</tr>
-<tr>
-<td>getTo()</td>
-<td>获得此范围的上限值。</td>
-</tr>
-<tr>
-<td>isReverse()</td>
-<td>这是一个反向的范围，反向迭代</td>
-</tr>
-<tr>
-<td>size()</td>
-<td>获得范围的元素值。</td>
-</tr>
-<tr>
-<td>subList()</td>
-<td>返回此指定的fromIndex（包括）和toIndex（排除）之间的此范围部分的视图。</td>
-</tr>
-</tbody></table>
-<h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><p>列表是用于存储数据项集合的结构。在 Groovy中，List保存了一系列对象引用。</p>
-<p>List中的对象引用占据序列中的位置，并通过整数索引来区分。</p>
-<p>groovy 中的一个列表中的数据可以是任意类型。这和java下集合列表有些不同，java下的列表是同种类型的数据集合。</p>
-<p>groovy中列表还可以嵌套列表。如[1,2,[3,4,5],“aaa”]groovy列表内置有反转方法 reverse()。调用 List.reverse() 可以实现列表反转。groovy列表内置有排序方法 sort()。调用 List.sort() 可以实现列表排序。空列表表示为[]声明一个空集合。</p>
-<h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p>Map是对象引用的无序集合。Map集合中的元素由键值访问。Map中使用的键可以是任何类。当我们插入到Map集合中时，需要两个值：键和值。</p>
-<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><h4 id="三大特性"><a href="#三大特性" class="headerlink" title="三大特性"></a>三大特性</h4><p>Groovy中的面向对象和其他任何的面向对象语言一样，存在类和对象的概念。不过在groovy新增了一个trait的关键字，名为特征。</p>
-<h4 id="Groovy中的特征"><a href="#Groovy中的特征" class="headerlink" title="Groovy中的特征"></a>Groovy中的特征</h4><p>特征是语言结构的构造，其他包括：</p>
-<ul>
-<li>行为的组成</li>
-<li>接口运行时的实现</li>
-<li>与静态类型检查/编译的兼容性  </li>
-</ul>
-<p>使用trait关键字定义特征。示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        Student st = <span class="keyword">new</span> Student();</span><br><span class="line">        st.StudentID = <span class="number">1</span></span><br><span class="line">        st.Marks1 = <span class="number">10</span></span><br><span class="line">        st.DisplayMarks()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">    <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">        println(<span class="string">&quot;Display Marks&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> StudentID</span><br><span class="line">    <span class="keyword">int</span> Marks1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Display</span> <span class="attribute">Marks</span></span><br></pre></td></tr></table></figure>
-<p>上述示例中trait是类似接口的存在，同理，trait也可以实现接口。<br>示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        Student st = <span class="keyword">new</span> Student();</span><br><span class="line">        st.StudentID = <span class="number">1</span></span><br><span class="line">        st.Marks1 = <span class="number">10</span></span><br><span class="line">        st.DisplayMarks()</span><br><span class="line">        st.DisplayTotal()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Total</span> &#123;</span></span><br><span class="line">    <span class="keyword">void</span> DisplayTotal()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Marks</span> <span class="keyword">implements</span> <span class="title">Total</span> &#123;</span></span><br><span class="line">    <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">        println(<span class="string">&quot;Display Marks&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> DisplayTotal() &#123;</span><br><span class="line">        println(<span class="string">&quot;Display Total&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> StudentID</span><br><span class="line">    <span class="keyword">int</span> Marks1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="built_in">Display</span> <span class="variable">Marks</span></span><br><span class="line"><span class="built_in">Display</span> <span class="built_in">Total</span></span><br></pre></td></tr></table></figure>
-<h4 id="扩展特征"><a href="#扩展特征" class="headerlink" title="扩展特征"></a>扩展特征</h4><p>特征的扩展则使用extends关键字，示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">   <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">      println(<span class="string">&quot;Marks1&quot;</span>);</span><br><span class="line">   &#125; </span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">trait</span> <span class="title">Total</span> <span class="keyword">extends</span> <span class="title">Marks</span> &#123;</span></span><br><span class="line">   <span class="keyword">void</span> DisplayMarks() &#123;</span><br><span class="line">      println(<span class="string">&quot;Total&quot;</span>);</span><br><span class="line">   &#125; </span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
-<h3 id="Groovy中的闭包"><a href="#Groovy中的闭包" class="headerlink" title="Groovy中的闭包"></a>Groovy中的闭包</h3><p>闭包是一个短的匿名代码块，个人理解是和lamda是差不多的。<br>下面是一个简单的闭包例子，代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> test = &#123; println <span class="string">&quot;Hello World&quot;</span> &#125;</span><br><span class="line">        test.call()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello World</span></span><br></pre></td></tr></table></figure>
-<h4 id="闭包中的形式参数"><a href="#闭包中的形式参数" class="headerlink" title="闭包中的形式参数"></a>闭包中的形式参数</h4><p>闭包也可以包含形式参数，以使它们更有用，就像Groovy中的方法一样。</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> hello=<span class="string">&quot;Hello&quot;</span></span><br><span class="line">        <span class="keyword">def</span> test = &#123;params -&gt; println <span class="string">&quot;$hello World&quot;</span> &#125;</span><br><span class="line">        test.call()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果也是Hello World。<br>当然我们还有另外一种写法：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> test = &#123; println <span class="string">&quot;Hello $&#123;it&#125;&quot;</span> &#125;</span><br><span class="line">        test.call(<span class="string">&quot;World&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们还可以把上面两种的形式，进行组合，示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> hello=<span class="string">&quot;Hello&quot;</span></span><br><span class="line">        <span class="keyword">def</span> test = &#123; params -&gt;println <span class="string">&quot;$hello $&#123;params&#125;&quot;</span> &#125;</span><br><span class="line">        test.call(<span class="string">&quot;World&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="在方法中使用闭包"><a href="#在方法中使用闭包" class="headerlink" title="在方法中使用闭包"></a>在方法中使用闭包</h4><p>类似kotlin的方法中可以传匿名函数一样。示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> hello=<span class="string">&quot;Hello&quot;</span></span><br><span class="line">        <span class="keyword">def</span> test = &#123; params -&gt;println <span class="string">&quot;$hello $&#123;params&#125;&quot;</span> &#125;</span><br><span class="line">        Study.Display(test)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="keyword">static</span> Display(clo) &#123;</span><br><span class="line">        clo.call(<span class="string">&quot;Silence&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">Hello Silence</span></span><br></pre></td></tr></table></figure>
-<h3 id="Groovy中的Json"><a href="#Groovy中的Json" class="headerlink" title="Groovy中的Json"></a>Groovy中的Json</h3><p>我们先来看看 groovy 中对象与 json 字符串之间的相互转换：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> groovy.json.JsonOutput</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> study = [<span class="keyword">new</span> Person(<span class="string">&quot;silence&quot;</span>, <span class="number">25</span>),</span><br><span class="line">                     <span class="keyword">new</span> Person(<span class="string">&quot;david&quot;</span>, <span class="number">26</span>)]</span><br><span class="line">        <span class="keyword">def</span> json=JsonOutput.toJson(study)</span><br><span class="line">        println json</span><br><span class="line">        <span class="comment">//带格式的输出json</span></span><br><span class="line">        println JsonOutput.prettyPrint(json)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span> &#123;</span></span><br><span class="line">    <span class="keyword">private</span> String name</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    Person(String name, <span class="keyword">int</span> age) &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name</span><br><span class="line">        <span class="built_in">this</span>.age = age</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    String getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> setName(String name) &#123;</span><br><span class="line">        <span class="built_in">this</span>.name = name</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> getAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> age</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">void</span> setAge(<span class="keyword">int</span> age) &#123;</span><br><span class="line">        <span class="built_in">this</span>.age = age</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">[&#123;<span class="attr">&quot;age&quot;</span>:<span class="number">25</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;silence&quot;</span>&#125;,&#123;<span class="attr">&quot;age&quot;</span>:<span class="number">26</span>,<span class="attr">&quot;name&quot;</span>:<span class="string">&quot;david&quot;</span>&#125;]</span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;age&quot;</span>: <span class="number">25</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;silence&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">&quot;age&quot;</span>: <span class="number">26</span>,</span><br><span class="line">        <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;david&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本篇主要讲解了groovy的基本语法，整体上是和kotlin和java的语法是差不多的。相对而言，熟悉kotlin和java的，上手groovy会很快。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/u010289802/article/details/105752715">暴力突破 Gradle 自动化项目构建（二）- Groovy 核心语法</a><br><a href="https://www.w3cschool.cn/groovy/">Groovy教程</a></p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Gradle入门以及环境搭建</title>
-    <url>/gradle/1/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle目前主要是在项目构建的时候使用，如果我们需要了解gradle。首先需要熟悉grooy的语法，本节来搭建groovy的环境，为了后续学习准备。</p>
-<h3 id="Groovy环境搭建"><a href="#Groovy环境搭建" class="headerlink" title="Groovy环境搭建"></a>Groovy环境搭建</h3><h4 id="groovy-SDK下载"><a href="#groovy-SDK下载" class="headerlink" title="groovy SDK下载"></a>groovy SDK下载</h4><ul>
-<li>官网下载，直接解压，然后目录选择groovy/libexec。</li>
-<li>brew安装的groovy目录选择/usr/local/opt/groovy/libexec。（另外，在idea中无法切到/user目录下，mac按Cmd + Shift + G来切换目录）</li>
-</ul>
-<h4 id="环境变量配置"><a href="#环境变量配置" class="headerlink" title="环境变量配置"></a>环境变量配置</h4><p>使用sudo vim ~/.bash_profile打开编辑环境变量文本。在末尾加上<br>export GROOVY_HOME=/usr/local/opt/groovy/libexec。然后esc+:wq进行保存</p>
-<h3 id="gradle项目"><a href="#gradle项目" class="headerlink" title="gradle项目"></a>gradle项目</h3><p>在idea中新建一个groovy项目。如下：<br><img src="https://s3.ax1x.com/2021/01/06/sVxThQ.png" alt="image"></p>
-<p>创建好项目后，我们新建一个 groovy 文件，并添加 hello world 的代码如下：<br><img src="https://s3.ax1x.com/2021/01/06/sZip4K.png" alt="image"><br>能够正常输出 hello world，收工！</p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Gradle入门之Groovy元编程</title>
-    <url>/gradle/3/</url>
-    <content><![CDATA[<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Groovy的元编程是指groovy运行时，可以理解成编写代码所执行的时期，也就是Runtime。在比如有解释执行的Js,编译执行的java，还有运行时期执行的代码java反射。  </p>
-<p>Groovy运行时的处理逻辑如下图：<br><img src="https://s3.ax1x.com/2021/01/14/sdrfyj.png" alt="untitled diagram.png"></p>
-<h3 id="元编程"><a href="#元编程" class="headerlink" title="元编程"></a>元编程</h3><p>按照上图所示，我们可以自己写一个Demo，示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Study</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) &#123;</span><br><span class="line">        <span class="keyword">def</span> person = <span class="keyword">new</span> Personal(<span class="attr">name:</span> <span class="string">&quot;Silence&quot;</span>, <span class="attr">age:</span> <span class="number">26</span>)</span><br><span class="line">        println(person.printName())</span><br><span class="line">        println(person.printAge())</span><br><span class="line">        println(person.sex)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Personal</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> String name</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My name is $name&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My ag is $age&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My ag is <span class="number">26</span></span><br><span class="line">Exception in thread &quot;main&quot; groovy.lang.MissingPropertyException: No such property: sex for class: Personal</span><br><span class="line">	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:<span class="number">65</span>)</span><br><span class="line">	at org.codehaus.groovy.runtime.callsite.GetEffectivePogoPropertySite.getProperty(GetEffectivePogoPropertySite.java:<span class="number">87</span>)</span><br><span class="line">	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callGetProperty(AbstractCallSite.java:<span class="number">329</span>)</span><br><span class="line">	at Study.main(Study.groovy:<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
-<p>可以看到前两个日志是正常输出的，第三个控制台则提示MissingPropertyException。也就是上图中，所以逻辑都没进去导致异常输出。</p>
-<p>我们在看看如果我们复写invokeMethod方法时的输出效果，代码修改如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Personal</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> String name</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My name is $name&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My ag is $age&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Object invokeMethod(String name, Object args) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;this invoke method is $name,this params is $args&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>控制台输出如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My ag is <span class="number">26</span></span><br><span class="line"><span class="keyword">this</span> invoke method is sex,<span class="keyword">this</span> params is []</span><br></pre></td></tr></table></figure>
-<p>然后我们看看重写methodMissing方法后：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Personal</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> String name</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span> age</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My name is $name&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> String printAge() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;My ag is $age&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Object invokeMethod(String name, Object args) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;this invoke method is $name,this params is $args&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Object methodMissing(String name, Object args) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;this Missing method is $name,this params is $args&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My ag is <span class="number">26</span></span><br><span class="line"><span class="keyword">this</span> Missing method is sex,<span class="keyword">this</span> params is []</span><br></pre></td></tr></table></figure>
-<p>可以看出，两个方法都重写时，优先调用methodMissing。如果找不到才会调用invokeMethod。  </p>
-<h3 id="MetaClass"><a href="#MetaClass" class="headerlink" title="MetaClass"></a>MetaClass</h3><p>Metaclasses在方法解析中起到核心作用，对于来自groovy代码的每个方法调用，Groovy将找到给定对象的MetaClass，并通过MetaClass＃invokeMethod将方法解析委托给Metaclasses，不应该与GroovyObject＃invokeMethod混淆，后者恰好是Metaclasses最终可能调用的方法。</p>
-<h4 id="注入新字段"><a href="#注入新字段" class="headerlink" title="注入新字段"></a>注入新字段</h4><p>现在我们通过metaClass给Personal注入一个新属性看看：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">Personal.metaClass.sex = <span class="string">&quot;男&quot;</span></span><br><span class="line"><span class="keyword">def</span> person = <span class="keyword">new</span> Personal(<span class="attr">name:</span> <span class="string">&quot;Silence&quot;</span>, <span class="attr">age:</span> <span class="number">26</span>)</span><br><span class="line">println(person.printName())</span><br><span class="line">println(person.printAge())</span><br><span class="line">println(person.sex)</span><br></pre></td></tr></table></figure>
-<p>可以看出我们注入了一个sex的字段，输入结果如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">My name is Silence</span><br><span class="line">My age is <span class="number">26</span></span><br><span class="line">男</span><br></pre></td></tr></table></figure>
-<p>当然了，注入静态变量也是类似，加上static即可。</p>
-<h3 id="注入新方法"><a href="#注入新方法" class="headerlink" title="注入新方法"></a>注入新方法</h3><p>看到我们输入性别的时候，发现好像和上面对比，不工整，那就自己整一个工整的，修改代码：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">Personal.metaClass.sex = <span class="string">&quot;男&quot;</span></span><br><span class="line">Personal.metaClass.printSex = &#123; -&gt;</span><br><span class="line">    <span class="string">&quot;My sex is $sex&quot;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">def</span> person = <span class="keyword">new</span> Personal(<span class="attr">name:</span> <span class="string">&quot;Silence&quot;</span>, <span class="attr">age:</span> <span class="number">26</span>)</span><br><span class="line">println(person.printName())</span><br><span class="line">println(person.printAge())</span><br><span class="line">println(person.printSex())</span><br></pre></td></tr></table></figure>
-<p>输出结果可想而之：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">My <span class="built_in">name</span> <span class="keyword">is</span> Silence</span><br><span class="line">My age <span class="keyword">is</span> <span class="number">26</span></span><br><span class="line">My sex <span class="keyword">is</span> 男</span><br></pre></td></tr></table></figure>
-<p>这下工整了～。当然了，注入静态方法也是类似，加上static即可。  </p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>可以看出，我们可以通过metaClass给类新增变量，新增方法。那么这个和直接在类这种提供有什么区别呢？<br>举个例子：引入第三方库，其中的某个类有我们想用的方法，但是这个方法又不够全，想给里面添加点自己的方法。通常是extends它进而扩展，但是如果是final 类，任何类不能继承它，只能用它已有的方法。这个时候groovy的动态添加就有了大展身手的地方。不修改、不继承，通过metaclass变相的对原有的类进行了扩展。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/qq_39969226/article/details/102918552?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_baidulandingword-6&spm=1001.2101.3001.4242">groovy中的元编程</a><br><a href="https://blog.csdn.net/usagoole/article/details/87390383">Groovy笔记之元编程</a></p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Gradle简介及生命周期</title>
-    <url>/gradle/4/</url>
-    <content><![CDATA[<h3 id="Gradle简介"><a href="#Gradle简介" class="headerlink" title="Gradle简介"></a>Gradle简介</h3><p>gradle主要是由三个部分组成。</p>
-<ul>
-<li>groovy 核心语法：包括 groovy 基本语法、闭包、数据结构、面向对象等等。前面我们已经介绍过了。</li>
-<li>Android DSL（build scrpit block）：Android 插件在 Gradle 所特有的东西，我们可以在不同的 build scrpit block 中去做不同的事情。</li>
-<li>Gradle api：包括task，projects，setting等等。</li>
-</ul>
-<p>具体如下图：<br><img src="https://s3.ax1x.com/2021/01/19/sgahpq.png" alt="image"></p>
-<h3 id="Gradle优势"><a href="#Gradle优势" class="headerlink" title="Gradle优势"></a>Gradle优势</h3><ul>
-<li>灵活性：相对于 Maven、Ant 等构建工具，Gradle 提供了一系列的 API 让我们有能力去修改或定制项目的构建过程。</li>
-<li>粒度性：源码的编译，资源的编译，都是一个一个Task的，我们可以修改task来达到精细控制上。</li>
-<li>扩展性：Gradle 支持插件机制，所以我们可以复用这些插件，就如同复用库一样简单方便。</li>
-<li>兼容性：Gradle 不仅自身功能强大，而且它还能兼容所有的Maven、Ant功能，也就是说，Gradle 吸取了所有构建工具的长处。</li>
-</ul>
-<h3 id="Gradle生命周期"><a href="#Gradle生命周期" class="headerlink" title="Gradle生命周期"></a>Gradle生命周期</h3><p>gradle的生命周期主要是如下三个部分：</p>
-<ul>
-<li>初始化阶段: 解析setting.gradle文件</li>
-<li>配置阶段：解析所有的projects对象中的task，主要解析各个project下的build.gradle文件</li>
-<li>执行阶段：执行project下具体的的task及其依赖task</li>
-</ul>
-<p>接下来我们看下gradle的流程图：<br><img src="https://s3.ax1x.com/2021/01/19/sgor0e.png" alt="image"></p>
-<p>将上面流程可以再细化一下，细化之后如下图：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC80LzIwLzE3MTk1MDcxZTY1Y2JjZDg?x-oss-process=image/format,png" alt="image"></p>
-<h4 id="初始化阶段"><a href="#初始化阶段" class="headerlink" title="初始化阶段"></a>初始化阶段</h4><p>初始化主要是读取setting.gradle文件中include的projects数量。我们可以通过如下命令查看project数量。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">./gradlew project</span><br></pre></td></tr></table></figure>
-<p>输出如下：</p>
-<figure class="highlight asciidoc"><table><tr><td class="code"><pre><span class="line">------------------------------------------------------------</span><br><span class="line">Root project</span><br><span class="line">------------------------------------------------------------</span><br><span class="line">Root project <span class="emphasis">&#x27;APMProjetct&#x27;</span></span><br><span class="line">+--- Project <span class="emphasis">&#x27;:apm&#x27;</span></span><br><span class="line">+--- Project <span class="emphasis">&#x27;:app&#x27;</span></span><br><span class="line">\--- Project <span class="emphasis">&#x27;:aspectj&#x27;</span></span><br></pre></td></tr></table></figure>
-<h4 id="配置阶段"><a href="#配置阶段" class="headerlink" title="配置阶段"></a>配置阶段</h4><p>配置阶段主要是构造各个project下的task依赖关系图，需要注意的是，执行任何Gradle命令，在初始化阶段和配置阶段的逻辑都会被执行。</p>
-<h4 id="执行阶段"><a href="#执行阶段" class="headerlink" title="执行阶段"></a>执行阶段</h4><p>配置完成后，便是依次执行指定的task以及依赖的task。</p>
-<h4 id="生命周期的监听"><a href="#生命周期的监听" class="headerlink" title="生命周期的监听"></a>生命周期的监听</h4><p>在root project的build.gradle中添加如下代码：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 配置阶段开始前的监听回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">this</span>.beforeEvaluate &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 配置阶段后的监听回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">this</span>.afterEvaluate &#123;</span><br><span class="line">    println <span class="string">&#x27;配置阶段执行完毕...&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * gradle执行完毕后的回调</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="built_in">this</span>.gradle.buildFinished &#123;</span><br><span class="line">    println <span class="string">&#x27;执行阶段执行完毕...&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//等同于 beforeEvaluate</span></span><br><span class="line"><span class="built_in">this</span>.gradle.beforeProject &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//等同于 afterEvaluate</span></span><br><span class="line"><span class="built_in">this</span>.gradle.afterProject &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>构建后，输出如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">配置阶段执行完毕...</span><br><span class="line"></span><br><span class="line">CONFIGURE SUCCESSFUL <span class="keyword">in</span> <span class="number">0</span>s</span><br><span class="line">执行阶段执行完毕...</span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文主要是让你对gradle有一个初步对认识，以及gradle的生命周期。接下来我们会介绍最常用project以及task</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://www.cnblogs.com/start1225/p/9956558.html">Gradle系列之三 Gradle概述以及生命周期</a></p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Gradle核心之Task</title>
-    <url>/gradle/6/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle命令最终是通过task去执行的，可见task在gradle中的重要性。</p>
-<h3 id="Task的定义与配置"><a href="#Task的定义与配置" class="headerlink" title="Task的定义与配置"></a>Task的定义与配置</h3><p>task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test1Task&#123;</span><br><span class="line">    println(<span class="string">&quot;test1Task&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.create(<span class="attr">name:</span><span class="string">&#x27;test2Task&#x27;</span>)&#123;</span><br><span class="line">    println(<span class="string">&quot;test2Task&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>刚刚我们为task指定了一个name。我们可以看看除了name我们还可以指定什么，我们打开Task的源代码，如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Task</span>&gt;, <span class="title">ExtensionAware</span> </span>&#123;</span><br><span class="line">    String TASK_NAME = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DESCRIPTION = <span class="string">&quot;description&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_GROUP = <span class="string">&quot;group&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_TYPE = <span class="string">&quot;type&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DEPENDS_ON = <span class="string">&quot;dependsOn&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_OVERWRITE = <span class="string">&quot;overwrite&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_ACTION = <span class="string">&quot;action&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructor arguments for the Task</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> 4.7</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Incubating</span></span><br><span class="line">    String TASK_CONSTRUCTOR_ARGS = <span class="string">&quot;constructorArgs&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>下面我们介绍下这些属性都是用来干嘛的。</p>
-<table>
-<thead>
-<tr>
-<th>字段</th>
-<th>描述</th>
-<th>默认值</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>name</td>
-<td>ask 名字</td>
-<td>必须指定</td>
-</tr>
-<tr>
-<td>description</td>
-<td>task 的描述信息</td>
-<td>null</td>
-</tr>
-<tr>
-<td>group</td>
-<td>该 task 所属组</td>
-<td>null</td>
-</tr>
-<tr>
-<td>type</td>
-<td>需要创建的 task Class</td>
-<td>DefaultTask</td>
-</tr>
-<tr>
-<td>dependsOn</td>
-<td>该 task 所依赖的 task 集合</td>
-<td>[]</td>
-</tr>
-<tr>
-<td>overwrite</td>
-<td>替换一个已存在的 task</td>
-<td>false</td>
-</tr>
-<tr>
-<td>action</td>
-<td>当 task 执行的时候，需要执行的闭包 closure 或 行为 Action</td>
-<td>null</td>
-</tr>
-<tr>
-<td>constructorArgs</td>
-<td>传递到 task Class 构造器中的参数</td>
-<td>null</td>
-</tr>
-</tbody></table>
-<h3 id="Task的执行"><a href="#Task的执行" class="headerlink" title="Task的执行"></a>Task的执行</h3><p>前面我们也介绍了gradle的生命周期，通过前面的文章我们可以知道，在执行阶段gradle会输出每个gradle执行的内容。当然我们还可以通过<code>doFirst</code>和<code>doLast</code>为我们的 task 指定执行阶段要执行的代码。关于这2个的属性介绍如下：</p>
-<ul>
-<li>doFirst :表示当前task执行最开始的时候被调用的Action。</li>
-<li>doLast：表示单曲task即将执行完的时候被调用的Action。</li>
-</ul>
-<p>我们可以验证下上面两个属性，执行代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    doFirst &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task first&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    doLast &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task last&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line"></span><br><span class="line">&gt; <span class="attr">Task :</span>test1Task</span><br><span class="line">test1Task first</span><br><span class="line">test1Task last</span><br><span class="line">:test1Task spend <span class="number">17</span>ms</span><br></pre></td></tr></table></figure>
-<h3 id="Task的执行顺序"><a href="#Task的执行顺序" class="headerlink" title="Task的执行顺序"></a>Task的执行顺序</h3><p>首先了解下，控制task执行顺序的方式有两种。</p>
-<ul>
-<li>通过dependsOn强依赖的方式</li>
-<li>通过api指定执行顺序</li>
-</ul>
-<p><img src="https://s3.ax1x.com/2021/01/25/sLQTc4.png" alt="image"></p>
-<h4 id="dependsOn强依赖"><a href="#dependsOn强依赖" class="headerlink" title="dependsOn强依赖"></a>dependsOn强依赖</h4><p>强依赖的方式又分为两种，动态依赖及静态依赖，我们来举个例子：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖一</span></span><br><span class="line">task test3Task(<span class="attr">dependsOn:</span> [test1Task, test2Task]) &#123;</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖二</span></span><br><span class="line">test3Task.dependsOn(test1Task, test2Task)</span><br><span class="line"><span class="comment">//动态依赖</span></span><br><span class="line">task test4Task &#123;</span><br><span class="line">    dependsOn tasks.findAll &#123; task -&gt;</span><br><span class="line">        <span class="keyword">return</span> task.name.startsWith(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    println(<span class="string">&quot;test4Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line">test2Tasking...</span><br><span class="line">test3Tasking...</span><br><span class="line">test4Tasking...</span><br></pre></td></tr></table></figure>
-<p>需要注意的是，虽然我依赖了其他的task，但是依赖的task输出顺序它是随机的。</p>
-<h4 id="API指定输出顺序"><a href="#API指定输出顺序" class="headerlink" title="API指定输出顺序"></a>API指定输出顺序</h4><table>
-<thead>
-<tr>
-<th>关键字名称</th>
-<th>作用</th>
-<th>备注</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>mustRunAfter</td>
-<td>指定一个任务必须执行在另一个任务之后</td>
-<td>优先级小于dependsOn属性</td>
-</tr>
-<tr>
-<td>shouldRunAfter</td>
-<td>指定一个任务应该执行在另一个任务之后</td>
-<td>一般不用</td>
-</tr>
-</tbody></table>
-<p>举个栗子：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test1Task &#123;</span><br><span class="line">    mustRunAfter test2Task</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test3Task &#123;</span><br><span class="line">    mustRunAfter test1Task</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>为了方便查看，我们把顺序修改了，不让它按照1、2、3的形式输出，现在我们看看上述代码的输出结果：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test2Tasking...</span><br><span class="line">test1Tasking...</span><br><span class="line">test3Tasking...</span><br></pre></td></tr></table></figure>
-<h3 id="Task类型"><a href="#Task类型" class="headerlink" title="Task类型"></a>Task类型</h3><p>除了定义一个task之外，我们也可以使用task的type属性来直接使用一个已有的 task 类型，比如Gradle自带的Copy、Delete、Sync等等。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节我们介绍了Task的使用，除了上面介绍的，我们还可以通过gradle官网去查看task相关指令。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/u010289802/article/details/105908520">暴力突破 Gradle 自动化项目构建（六）- Gradle 核心之 Task</a></p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Gradle核心之Project</title>
-    <url>/gradle/5/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>project在gradle里起到里重要的作用，上节我们也说过可以通过<code>./gradlew projects</code>打印当前项目下所有的project，准确的说是有build.gradle的文件既是一个project。而有多少project取决于在setting.gradle文件中设置了多少个。一个project对应一个输出，而具体输出什么取决于build.gradle里面的内容。</p>
-<h3 id="Project核心API"><a href="#Project核心API" class="headerlink" title="Project核心API"></a>Project核心API</h3><p>每个工程下都有一个build.gradle文件。根目录的build.gradle可以管理子工程下面的build.gradle。下面具体看下project相关api。</p>
-<h4 id="getAllProjects"><a href="#getAllProjects" class="headerlink" title="getAllProjects()"></a>getAllProjects()</h4><p>我们可以通过getAllprojects打印出所有的project，可以理解成和<code>./gradlew projects</code>命令一样。示例带入如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">getAllprojects().eachWithIndex &#123; Project entry, <span class="keyword">int</span> i -&gt;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>) &#123;</span><br><span class="line">        println(<span class="string">&quot;RootProject-------$&#123;entry.name&#125;&quot;</span>)</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        println(<span class="string">&quot;SubProject-------$&#123;entry.name&#125;&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">RootProject-------APMProjetct</span><br><span class="line">SubProject-------apm</span><br><span class="line">SubProject-------app</span><br><span class="line">SubProject-------aspectj</span><br></pre></td></tr></table></figure>
-<h4 id="getSubprojects"><a href="#getSubprojects" class="headerlink" title="getSubprojects()"></a>getSubprojects()</h4><p>此方法是获取所有子工程的实例，示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">getSubprojects().eachWithIndex &#123; Project entry, <span class="keyword">int</span> i -&gt;</span><br><span class="line">        println(<span class="string">&quot;SubProject-------$&#123;entry.name&#125;&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt; Configure project :</span><br><span class="line">SubProject-------apm</span><br><span class="line">SubProject-------app</span><br><span class="line">SubProject-------aspectj</span><br></pre></td></tr></table></figure>
-<h4 id="getRootProject"><a href="#getRootProject" class="headerlink" title="getRootProject()"></a>getRootProject()</h4><p>既然我们可以拿到所有的子节点，那我们依然可以单独获取到根节点，示例代码如下：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">println</span><span class="params">(<span class="string">&quot;the root project name is $&#123;getRootProject().name&#125;&quot;</span>)</span></span></span><br></pre></td></tr></table></figure>
-<p>输出结果如下：</p>
-<figure class="highlight xquery"><table><tr><td class="code"><pre><span class="line">&gt; Configure project :</span><br><span class="line">the<span class="built_in"> root</span> project<span class="built_in"> name</span> <span class="literal">is</span> APMProjetct</span><br></pre></td></tr></table></figure>
-<h4 id="getParent"><a href="#getParent" class="headerlink" title="getParent()"></a>getParent()</h4><p>此方法是用于在子工程获取父工程的实例，示例代码如下：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">println</span><span class="params">(<span class="string">&quot;the parent project name is $&#123;getParent().name&#125;&quot;</span>)</span></span></span><br></pre></td></tr></table></figure>
-<p>输出结果可想而知：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&gt; Configure project :aspectj</span><br><span class="line"><span class="keyword">the</span> parent project <span class="built_in">name</span> <span class="keyword">is</span> APMProjetct</span><br></pre></td></tr></table></figure>
-<h4 id="projects"><a href="#projects" class="headerlink" title="projects()"></a>projects()</h4><p>project是为了让我们在父工程的build.gradle文件，针对子project做一些单独的处理，比如这样：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">project</span><span class="params">(<span class="string">&quot;app&quot;</span>)</span></span> &#123;</span><br><span class="line">    apply plugin: <span class="string">&#x27;com.android.application&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="allprojects"><a href="#allprojects" class="headerlink" title="allprojects()"></a>allprojects()</h4><p>allprojects 表示用于配置当前 project 及其每一个子 project，在 allprojects 中我们一般用来配置一些通用的配置，比如最常见的全局仓库配置。</p>
-<figure class="highlight isbl"><table><tr><td class="code"><pre><span class="line"><span class="variable">allprojects</span> &#123;</span><br><span class="line">    <span class="variable">repositories</span> &#123;</span><br><span class="line">        <span class="function"><span class="title">google</span>()</span></span><br><span class="line">        <span class="function"><span class="title">jcenter</span>()</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="subprojects"><a href="#subprojects" class="headerlink" title="subprojects()"></a>subprojects()</h4><p>此方法是为了让我们对所有的子project做一些配置，比如这样：</p>
-<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">subprojects</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">project</span>.plugins.hasPlugin(<span class="string">&quot;com.android.library&quot;</span>))&#123;</span><br><span class="line">        apply <span class="keyword">from</span> <span class="string">&quot;../uploadMaven.gradle&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="ext扩展属性"><a href="#ext扩展属性" class="headerlink" title="ext扩展属性"></a>ext扩展属性</h4><p>我们可以通过ext扩展属性默认修改其他工程build.gradle的文件配置。比如我在root project中新增了如下属性：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">ext &#123;</span><br><span class="line">    minSdkVersion = <span class="number">21</span></span><br><span class="line">    targetSdkVersion = <span class="number">30</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那么我们可以在子工程的build.gralde文件修改文件如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    compileSdkVersion <span class="number">30</span></span><br><span class="line">    buildToolsVersion <span class="string">&quot;30.0.1&quot;</span></span><br><span class="line"></span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        applicationId <span class="string">&quot;com.xxxxx.apmprojetct&quot;</span></span><br><span class="line">        minSdkVersion rootProject.ext.minSdkVersion</span><br><span class="line">        targetSdkVersion rootProject.ext.targetSdkVersion</span><br><span class="line">        versionCode <span class="number">1</span></span><br><span class="line">        versionName <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">        testInstrumentationRunner <span class="string">&quot;androidx.test.runner.AndroidJUnitRunner&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>另外我们还可以通过apply的形式依赖自己新增的gradle文件，比如我们可以新增一个config.gradle文件，具体内容如下:</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">android &#123;</span><br><span class="line">    signingConfigs &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            storeFile file(<span class="string">&#x27;xxx.jks&#x27;</span>)</span><br><span class="line">            storePassword <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line">            keyAlias <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">            keyPassword <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">            v1SigningEnabled <span class="literal">true</span></span><br><span class="line">            v2SigningEnabled <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">        release &#123;</span><br><span class="line">            storeFile file(<span class="string">&#x27;xxx.jks&#x27;</span>)</span><br><span class="line">            storePassword <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line">            keyAlias <span class="string">&#x27;xxxx&#x27;</span></span><br><span class="line">            keyPassword <span class="string">&#x27;xxx&#x27;</span></span><br><span class="line">            v1SigningEnabled <span class="literal">true</span></span><br><span class="line">            v2SigningEnabled <span class="literal">true</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那么我们可以在工程中这样使用：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">from:</span> <span class="string">&#x27;config.gradle&#x27;</span></span><br><span class="line">android &#123;</span><br><span class="line">      buildTypes &#123;</span><br><span class="line">        debug &#123;</span><br><span class="line">            signingConfig signingConfigs.debug</span><br><span class="line">            minifyEnabled <span class="literal">false</span></span><br><span class="line">            shrinkResources <span class="literal">false</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&#x27;proguard-android.txt&#x27;</span>), <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line">            versionNameSuffix <span class="string">&quot;_dev&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">        release &#123;</span><br><span class="line">            signingConfig signingConfigs.release</span><br><span class="line">            minifyEnabled <span class="literal">true</span></span><br><span class="line">            shrinkResources <span class="literal">true</span></span><br><span class="line">            proguardFiles getDefaultProguardFile(<span class="string">&#x27;proguard-android.txt&#x27;</span>), <span class="string">&#x27;proguard-rules.pro&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="gradle文件操作"><a href="#gradle文件操作" class="headerlink" title="gradle文件操作"></a>gradle文件操作</h3><p>gradle中操作本地文件可以使用的是Project.file()方法，通过指定文件的相对路径或者绝对路径来进行操作。比如我们可以新建一个文件，可以查看一个文件的绝对路径，也可以判断一个文件是否存在，示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 使用相对路径</span></span><br><span class="line">File configFile = file(<span class="string">&#x27;src/main/java/test.java&#x27;</span>)</span><br><span class="line">configFile.createNewFile();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用绝对路径</span></span><br><span class="line">configFile = file(‘<span class="regexp">/Users/</span>xxx<span class="regexp">/xxx/</span>src<span class="regexp">/main/</span>java/test.java’)</span><br><span class="line">println(configFile.absolutePath)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用一个文件对象</span></span><br><span class="line">configFile = file(<span class="keyword">new</span> File(<span class="string">&#x27;src/main/java/test.java&#x27;</span>))</span><br><span class="line"><span class="comment">// 打印文件是否存在</span></span><br><span class="line">println(configFile.exists())</span><br></pre></td></tr></table></figure>
-<p>同步一下，输出结果如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="regexp">/Users/</span>xxx<span class="regexp">/xxx/</span>src<span class="regexp">/main/</span>java/test.java</span><br><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h4 id="文件集合"><a href="#文件集合" class="headerlink" title="文件集合"></a>文件集合</h4><p>Gradle中文件集合就是类似于java中的数组，Gradle中使用FileCollection接口表示，我们可以使用Project.files()方法来获得一个文件集合对象,所有文件集合都是用到的时候才会创建。示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">FileCollection collection = files(<span class="string">&#x27;src/test1.txt&#x27;</span>,</span><br><span class="line">        <span class="keyword">new</span> File(<span class="string">&#x27;src/test2.txt&#x27;</span>),</span><br><span class="line">        [<span class="string">&#x27;src/test3.txt&#x27;</span>, <span class="string">&#x27;src/test4.txt&#x27;</span>])</span><br></pre></td></tr></table></figure>
-<p>我们可以这样遍历文件：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 遍历所有集合</span></span><br><span class="line">collection.each &#123; File file -&gt;</span><br><span class="line">    println file.name</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们还可以这样转换文件：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 把文件集合转换为Set类型</span></span><br><span class="line">Set set1 = collection.files</span><br><span class="line">Set set2 = collection <span class="keyword">as</span> Set</span><br><span class="line"><span class="comment">// 把文件集合转换为List类型</span></span><br><span class="line">List list = collection <span class="keyword">as</span> List</span><br><span class="line"><span class="comment">// 把文件集合转换为String类型</span></span><br><span class="line">String path = collection.asPath</span><br><span class="line"><span class="comment">// 把文件集合转换为File类型</span></span><br><span class="line">File file1 = collection.singleFile</span><br><span class="line">File file2 = collection <span class="keyword">as</span> File</span><br></pre></td></tr></table></figure>
-<p>除此之外，我们还可以新增或者删除一个文件，比如这样：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 添加或者删除一个集合</span></span><br><span class="line"><span class="keyword">def</span> union = collection + files(<span class="string">&#x27;src/test5.txt&#x27;</span>)</span><br><span class="line"><span class="keyword">def</span> different = collection - files(<span class="string">&#x27;src/test3.txt&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<h4 id="文件树"><a href="#文件树" class="headerlink" title="文件树"></a>文件树</h4><p>文件树你可以理解成是一个有层级结构的文件集合，所以文件树中包含了所有文件集合的操作。我们可以使用Project.fileTree()方法来创建文件树对象，还可以使用过虑条件来包含或排除相关文件。示例代码如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 指定目录创建文件树对象</span></span><br><span class="line">FileTree tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src/main&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 给文件树对象添加包含指定文件</span></span><br><span class="line">tree.include <span class="string">&#x27;**/*.java&#x27;</span></span><br><span class="line"><span class="comment">// 给文件树对象添加排除指定文件</span></span><br><span class="line">tree.exclude <span class="string">&#x27;**/Abstract*&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用路径创建文件树对象，同时指定包含的文件</span></span><br><span class="line">tree = fileTree(<span class="string">&#x27;src&#x27;</span>).include(<span class="string">&#x27;**/*.java&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过闭包创建文件树</span></span><br><span class="line">tree = fileTree(<span class="string">&#x27;src&#x27;</span>) &#123;</span><br><span class="line">    include <span class="string">&#x27;**/*.java&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 通过map创建文件树</span></span><br><span class="line">tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src&#x27;</span>, <span class="attr">include:</span> <span class="string">&#x27;**/*.java&#x27;</span>)</span><br><span class="line">tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src&#x27;</span>, <span class="attr">includes:</span> [<span class="string">&#x27;**/*.java&#x27;</span>, <span class="string">&#x27;**/*.xml&#x27;</span>])</span><br><span class="line">tree = fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src&#x27;</span>, <span class="attr">include:</span> <span class="string">&#x27;**/*.java&#x27;</span>, <span class="attr">exclude:</span> <span class="string">&#x27;**/*test*/**&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>既然说到了文件树的创建，当然，我们也可以对文件树进行一些业务操作，比如：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 遍历文件树的所有文件</span></span><br><span class="line">tree.each &#123;File file -&gt;</span><br><span class="line">    println file</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 过虑生成新的文件树对象</span></span><br><span class="line">FileTree filtered = tree.matching &#123;</span><br><span class="line">    include <span class="string">&#x27;org/gradle/api/**&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用“+”号合并两个文件树，同文件集合的“+”操作一样</span></span><br><span class="line">FileTree sum = tree + fileTree(<span class="attr">dir:</span> <span class="string">&#x27;src/test&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 访问文件树中各项内容</span></span><br><span class="line">tree.visit &#123;element -&gt;</span><br><span class="line">    println <span class="string">&quot;$element.relativePath =&gt; $element.file&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="文件拷贝"><a href="#文件拷贝" class="headerlink" title="文件拷贝"></a>文件拷贝</h4><p>我们可以通过copy的task对文件进行copy动作，并且可以指定copy内容和过滤copy内容，还可以在copy的过程中对文件进行重命名操作，先来个简单的，比如我需要从A目录copy到B目录，那我们可以这样做：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task copyTask(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    from <span class="string">&#x27;src/main/java/fileA&#x27;</span></span><br><span class="line">    into <span class="string">&#x27;src/main/kotlin/fileB&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然，我们也是支持批量copy的，比如这样：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task copyTask(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    <span class="comment">// 拷贝src/main/webapp目录下所有的文件</span></span><br><span class="line">    from <span class="string">&#x27;src/main/java&#x27;</span></span><br><span class="line">    <span class="comment">// 拷贝单独的一个文件</span></span><br><span class="line">    from <span class="string">&#x27;src/main/res/index.html&#x27;</span></span><br><span class="line">    <span class="comment">// 从Zip压缩文件中拷贝内容</span></span><br><span class="line">    from zipTree(<span class="string">&#x27;src/main/assets.zip&#x27;</span>)</span><br><span class="line">    <span class="comment">// 拷贝到的目标目录</span></span><br><span class="line">    into <span class="string">&#x27;src/main/mouble&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>前面我们也说了，我们可以在copy的时候进行重命名，最常见的场景，就是项目拆解模块的时候，我们需要重新命名，那我们可以这样操作：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task rename(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    from <span class="string">&#x27;moudleA/src/main/res/&#x27;</span></span><br><span class="line">    into <span class="string">&#x27;moudleB/src/main/res/&#x27;</span></span><br><span class="line">    <span class="comment">// 使用一个闭包方式重命名文件</span></span><br><span class="line">    rename &#123; String fileName -&gt;</span><br><span class="line">        fileName.replace(<span class="string">&#x27;moudleA&#x27;</span>, <span class="string">&#x27;moudleB&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>大量的节约了手动重命名的成本。<br>同样我们也可以新增过滤条件：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task copyTaskWithPatterns(<span class="attr">type:</span> Copy) &#123;</span><br><span class="line">    from <span class="string">&#x27;src/main/drawable&#x27;</span></span><br><span class="line">    into <span class="string">&#x27;src/main/drawable-xxhdpi&#x27;</span></span><br><span class="line">    include <span class="string">&#x27;*.jpg&#x27;</span></span><br><span class="line">    exclude &#123; details -&gt; details.file.name.endsWith(<span class="string">&#x27;.png&#x27;</span>) &amp;&amp;</span><br><span class="line">                         details.file.text.contains(<span class="string">&#x27;.webp&#x27;</span>) &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>当然我们还可以拷贝的同时，并删除对应目录文件，我们可以这么操作：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">task libs(<span class="attr">type:</span> Sync) &#123;</span><br><span class="line">    from configurations.runtime</span><br><span class="line">    <span class="comment">// 拷贝之前会把$buildDir/libs目录下所有的清除</span></span><br><span class="line">    into <span class="string">&quot;$buildDir/libs&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文我们简单的介绍了projects的相关操作以及在gradle中我们如何去操作文件，当然，gradle中除了projects，还有一个核心的task，这个我们放在下一节进行介绍。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/u010289802/article/details/105891913">暴力突破 Gradle 自动化项目构建（五）- Gradle 核心之 Project</a><br><a href="https://blog.csdn.net/u011077027/article/details/103251170">gradle操作文件详解</a></p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
   </entry>
   <entry>
     <title>ArrayList源码分析</title>
@@ -1754,102 +1851,5 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.ViewGroup包涵多个子view的时候，我们是从后遍历，判断当前view是否可以点击，然后分发给需要处理的子view。<br>2.我们可以在onInterceptTouchEvent中进行事件拦截。<br>3.我们可以发现ViewGroup没有onTouchEvent事件，说明他的处理逻辑和View是一样的。<br>4.子view如果消耗了事件，那么ViewGroup就不会在接受到事件了。</p>
 <p>最后我放上<a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/view/ViewGroup.java">ViewGroup源码</a>，你们可以自己去了解。</p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>2020年度总结</title>
-    <url>/conclusion/2020/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>不知不觉又到了写年度总结的时候，细翻了下，去年我居然没去写年度总结，想了想，可能当时也的确没什么总结的，可能就算有也不知道咋写吧。当然了这都是借口，不过现在就总结下2020的内容吧。</p>
-<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>今年工作对比19年来说，相对来说轻松一点，19年除了相关业务开发。因为是新项目所以我还负责管理android小组，虽然总共没几个人。不过要对接PMO，PM，QA等等。在这情况下，还需要负责业务开发，往往忙的只有晚上才能开始写代码。而今年除了业务的开发，其他的到没啥，所以我更注重于自我的成长，以及在团队内部推动相关技术，进行落地。</p>
-<p>不过对比上面这些，可能还需要在团队中给自己定位。比如领导对我说的一句话：“你工作很辛苦，也很努力，工时也是团队中最多的，不过做东西都是缩起来，其他同事也不知道你在干嘛。东西做完了，别人认可你做的内容么，有没有和同事讨论你这套东西是不是最实用的，能不能再浓缩一下”。</p>
-<p>后来自己想想，的确之前一个技术方案的确定—落地—实施。好像都是自己一个人去进行的。于是后面我就改变了思路，从草稿—沟通确定方案—落地任务细分到人—实施。对比之前的，相对自己会轻松很多，而且团队成员也知道我要做什么，并且方案确定了，细分到人去完成这个任务。自己反而会有成就感。</p>
-<h3 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h3><p>身为一个技术人，个人成长是绝不能落下的。比如今年疫情放小长假的情况下，我在家自学了flutter了。并用泓洋的开放API开发了一个flutter项目<a href="https://github.com/sw950729/WanAndroid_Flutter">WanAndroid_Flutter</a>。并在团队内部做flutter相关的分享，以及推动使用flutter进行业务开发。</p>
-<p>为了倒逼自己进步，我退掉了一些无关紧要的群，甚至关闭了朋友圈，淡出了朋友们的朋友圈。另外，今年在拉钩教育上买了六门课，完整的看完了三门课，包括一些课反复的看。进行知识点的吸收以及内化。</p>
-<p>对于blog的输出，我发现我上次更新blog还是18年的9月份。目前这家公司是18年11月入职的，也就是入职到这边之后，我几乎没有对外输出过blog。几乎可能证明两点，一个是懒、一个是没有成长所以不好输出blog。所以为了学习的内容不容易忘，也为了忘了可以快速查笔记巩固回来。近期我开始慢慢的同步更新了blog。同步地址是个人博客：silencedev.cn。今年已经更新的blog如下：<br><img src="https://s3.ax1x.com/2021/01/26/sjveoR.jpg" alt="image"></p>
-<p>后面我还会持续输出，尽可能保证一周一篇左右。毕竟，不逼自己一把，你永远不知道你会有多努力。</p>
-<p>如何确定自己是否有成长，当然除了本身技术的上的提升，还有工作上的成长，主要参考如下几个方面：</p>
-<ul>
-<li>是否愿意主要承担更多工作</li>
-<li>是否具备Owner意识</li>
-<li>在团队中其他成员是否认同你做的内容</li>
-<li>是否可以通过技术推进业务发展</li>
-<li>跨部门的沟通、协作</li>
-<li>在团队中的影响力，在部门中的影响力。</li>
-</ul>
-<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>今年后半年发福了，原本体重一直很稳定，今年下半年突然间的就胖了十斤。不过今年体验的时候，发现还好，各个指标都在正常范围内。</p>
-<p>今年外出游玩了两次，去了很久想去但一直没去的黄山，觉得工作太累，出门去厦门度假了一周。</p>
-<p>作息变得越来越晚，前两年基本12点半之前就入睡了，近两年稳定在一点到两点之间，不过相对起的比较晚，所以整体还好，不过晚睡的毛病还是要改。</p>
-<p>剩下的就是一直被催婚，停不下来的那种。于是，我就决定今年过年不回家了。虽然这个想法在去年年初就和父母沟通过了，但是刚好这次疫情回家要做检测，也刚好遂了不回家愿。毕竟也不是第一次不在家过年了。</p>
-<h3 id="2021规划"><a href="#2021规划" class="headerlink" title="2021规划"></a>2021规划</h3><ul>
-<li>减肥</li>
-<li>技术沉淀</li>
-<li>看书（一个月一本）</li>
-<li>出门玩一圈</li>
-<li>找个对象（年年在说，年年放最后一个）</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>如何自己动手撸一个Gradle插件</title>
-    <url>/gradle/7/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前面我们已经把gradle中groovy的一些语法，以及常用的project和task介绍了一遍，那么我们通过自己撸个插件。刚好把前面的内容巩固下。</p>
-<h3 id="插件的作用"><a href="#插件的作用" class="headerlink" title="插件的作用"></a>插件的作用</h3><p>首先我们需要了解下插件的作用，主要有如下几点：</p>
-<ul>
-<li><p>添加任务到项目中，可对项目进行测试、编译、打包；    </p>
-</li>
-<li><p>添加依赖到项目中，可用来配置项目构建过程中需要的依赖； </p>
-</li>
-<li><p>可以向项目中现有的对象类型添加新的扩展属性、方法等，可方便项目的配置和构建优化，比如 Android 项目构建中的 android{} 就是AndroidGradle插件为Project 对象添加的一个扩展。</p>
-</li>
-</ul>
-<h3 id="插件的使用"><a href="#插件的使用" class="headerlink" title="插件的使用"></a>插件的使用</h3><p>插件主要是分为两种：脚本式插件和二进制式插件。</p>
-<h4 id="脚本式插件"><a href="#脚本式插件" class="headerlink" title="脚本式插件"></a>脚本式插件</h4><p>脚本式插件就类似于前面文章提到的，自己新建一个config.gradle，然后通过</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">from:</span><span class="string">&quot;../config.gradle&quot;</span></span><br></pre></td></tr></table></figure>
-<p>去引用config.gradle文件中的一些属性等，如可将某些工具性质的方法以及各个依赖使用的版本号分别定义到单个gradle文件中，方便统一调用和管理各个依赖的版本号等。</p>
-<h4 id="二进制式插件"><a href="#二进制式插件" class="headerlink" title="二进制式插件"></a>二进制式插件</h4><p>二进制插件一般式之通过式Plugin接口，实现apply方法。该方法中的泛型指的是此Plugin可以应用到的对象，一般是将其应用到Project对象上。一般来说二进制插件分为三种方式：</p>
-<ul>
-<li>Build script：直接在gradle脚本文件中实现plugin接口并应用，不适用于对外提供</li>
-<li>buildSrc project： buildSrc是Gradle 在项目中配置自定义插件的默认目录。一般来说很少使用</li>
-<li>Standalone project：独立的工程，编译后不仅可以对内也可以对外使用</li>
-</ul>
-<p>前面两个应用场景很少，在这就不过多介绍了，想了解的可以自己百度一下～，我们着重介绍一下最后一个。</p>
-<h3 id="动手撸一个-Standalone-project"><a href="#动手撸一个-Standalone-project" class="headerlink" title="动手撸一个 Standalone project"></a>动手撸一个 Standalone project</h3><p>既然是独立的工程，那么首先我们需要新建一个moudle。整个创建步骤如下：  </p>
-<ul>
-<li><p>新建moudle，类型可以选择Android。然后把目录删干净，只留下build.gradle文件并把build.gradle内部清空。</p>
-</li>
-<li><p>在moudle创建src/main/groovy目录，并新建其包名。同时在main目录下再新建resources/META-INF/gradle-plugins目录，在这个目录下编写一个和插件id名字相同的.properties文件，这样Gradle就可以找到插件实现了。  </p>
-</li>
-</ul>
-<p>修改properties文件：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">implementation-<span class="class"><span class="keyword">class</span>=<span class="title">com</span>.<span class="title">xxxx</span>.<span class="title">plugin</span>.<span class="title">MyGradlePlugin</span></span></span><br></pre></td></tr></table></figure>
-<p>修改build.gralde文件如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;java-gradle-plugin&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;kotlin&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;groovy&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;maven&#x27;</span></span><br><span class="line">apply <span class="attr">plugin:</span> <span class="string">&#x27;maven-publish&#x27;</span></span><br><span class="line"></span><br><span class="line">repositories &#123;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">group = <span class="string">&#x27;你的plugin包名&#x27;</span></span><br><span class="line">version = <span class="string">&#x27;你的plugin版本号&#x27;</span></span><br><span class="line"></span><br><span class="line">publishing &#123;</span><br><span class="line">    repositories &#123;</span><br><span class="line">        maven &#123;</span><br><span class="line">            url = uri(<span class="string">&quot;$rootDir/repo&quot;</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    publications &#123;</span><br><span class="line">        maven(MavenPublication) &#123;</span><br><span class="line">            from components.java</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(<span class="attr">dir:</span> <span class="string">&quot;libs&quot;</span>, <span class="attr">include:</span> [<span class="string">&quot;*.jar&quot;</span>])</span><br><span class="line">    implementation <span class="string">&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span></span><br><span class="line">    <span class="comment">//gradle sdk</span></span><br><span class="line">    implementation gradleApi()</span><br><span class="line">    <span class="comment">//groovy sdk</span></span><br><span class="line">    implementation localGroovy()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>依赖groovy相关插件是为了我们可以创建groovy文件。依赖maven是为了后续的本地上传以及调试。  </p>
-<p>现在我们先写一个简单的试试效果。在你的目录下新建一个plugin：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">         project.task(<span class="string">&#x27;MyGradlePlugin&#x27;</span>) &#123;</span><br><span class="line">            doLast &#123;</span><br><span class="line">                println(<span class="string">&#x27;task in MyGradlePlugin&#x27;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>然后我们点击Gradle -&gt; myGradlePlugin -&gt; publishing -&gt; publish。执行完成后，会在项目根目录下生成repo仓库。也就是之前在build.gradle中配置的url。  </p>
-<p>既然本地maven已经生成了，接下来就是我们的引用了。我们在根目录的build.gradle引用我们本地的maven。示例如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">repositories &#123;</span><br><span class="line">    google()</span><br><span class="line">    jcenter()</span><br><span class="line">    maven &#123;</span><br><span class="line">        url = uri(<span class="string">&quot;$rootDir/repo&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>本地maven依赖完成后，我们在根目录把自己引用的插件依赖下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">apply <span class="attr">plugin:</span> <span class="string">&quot;myGradlePlugin&quot;</span></span><br><span class="line"> dependencies &#123;</span><br><span class="line">        ...</span><br><span class="line">        classpath <span class="string">&#x27;com.xxxx.plugin:myGradlePlugin:1.0.0&#x27;</span></span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>然后我们sync一下。好了成功了。那我们如何验证我们自己写的plugin呢。我们在命令行输入：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">./gradlew MyGradlePlugin</span><br></pre></td></tr></table></figure>
-<p>然后你会发现它输出了：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">Task:</span>MyGradlePlugin</span><br><span class="line">task <span class="keyword">in</span> MyGradlePlugin</span><br></pre></td></tr></table></figure>
-<p>卧槽，卧槽，成功了！！</p>
-<p>我们加大点难度，我们需要在build.gradle动态一些属性，并且自己写的plugin可以读到这些动态配置的属性。既然需要动态配置属性，那我们先定义一下需要动态的属性，新建一个Extension。具体示例如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePluginExtension</span> &#123;</span></span><br><span class="line">    String versionName</span><br><span class="line">    String versionCode</span><br><span class="line">    String versionInfo</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    String toString() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;versionName = $versionName , versionCode = $versionCode , versionInfo = $versionInfo&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们定义了版本的属性，比如版本号，版本名称，版本信息等等。既然定义了，那么我们怎么读取这些属性呢。修改我们的plugin：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">        project.extensions.create(<span class="string">&quot;MyGradlePluginExtension&quot;</span>, MyGradlePluginExtension.<span class="keyword">class</span>)</span><br><span class="line">        project.task(<span class="string">&#x27;MyGradlePluginExtension&#x27;</span>) &#123;</span><br><span class="line">            doLast &#123;</span><br><span class="line">                MyGradlePluginExtension releaseInfo = project.MyGradlePluginExtension</span><br><span class="line">                println releaseInfo</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>代码修改后，可以看到逻辑如下，创建一个MyGradlePluginExtension，然后定义一个task为MyGradlePluginExtension（我这边为了方便2个名称用的同一个，其实可以分开）。也就是说我们在执行MyGradlePluginExtension的Task时候，会读取project的MyGradlePluginExtension的属性，然后将其输出。</p>
-<p>重新上传maven，这里就不多说了，前面有提到过，然后我们在根目录新增如下代码：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">MyGradlePluginExtension &#123;</span><br><span class="line">    versionName = <span class="number">1.0</span></span><br><span class="line">    versionCode = <span class="number">1.0</span></span><br><span class="line">    versionInfo = <span class="string">&quot;测试第一版&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后我们执行这个task，会看到面板输出如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="attr">Task :</span>MyGradlePluginExtension</span><br><span class="line">versionName = <span class="number">1.0</span> , versionCode = <span class="number">1.0</span> , versionInfo = 测试第一版</span><br></pre></td></tr></table></figure>
-<p>动态配置生效了～</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节主要讲了Gradle插件的分类以及我们该如何去自己写一个插件并进行应用。更多自定义的操作可以查看官方文档：<a href="https://docs.gradle.org/4.1/userguide/custom_plugins.html#sec:custom_plugins_standalone_project">编写自定义插件</a></p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
   </entry>
 </search>
