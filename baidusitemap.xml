@@ -1,139 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://yoursite.com/gradle/7/</loc>
-    <lastmod>2021-02-02</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/conclusion/2020/</loc>
-    <lastmod>2021-02-02</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/gradle/4/</loc>
-    <lastmod>2021-01-28</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/android/view/view-event/</loc>
-    <lastmod>2021-01-25</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/gradle/6/</loc>
-    <lastmod>2021-01-25</lastmod>
-  </url>
-  <url>
     <loc>http://yoursite.com/java/arraylist/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/java/hashmap/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/java/linkedlist/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/java/treemap/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/jvm/memory_allocation/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/jvm/jmm/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/jvm/gc/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/jvm/classinit/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/data_structure/tree_and_binaryTree/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/data_structure/red_and_black_tree/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/data_structure/hash_table/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/data_structure/binary_sort_tree/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/data_structure/balanced_binary_tree/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/data_structure/arrays_and_stack/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/data_structure/algorithmic_complexity/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/gradle/5/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/gradle/3/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/gradle/2/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/gradle/1/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/android/activity/lifecycle/</loc>
-    <lastmod>2021-01-23</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/http/tcp/</loc>
-    <lastmod>2020-07-22</lastmod>
-  </url>
-  <url>
-    <loc>http://yoursite.com/android/view/touchevent/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <lastmod>2021-02-03</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/android/view/viewgroup-event/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <lastmod>2021-02-03</lastmod>
   </url>
   <url>
-    <loc>http://yoursite.com/android/context/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <loc>http://yoursite.com/android/view/view-event/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/android/view/touchevent/</loc>
+    <lastmod>2021-02-03</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/android/window_manager/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <lastmod>2021-02-03</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/android/thread_pool/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <lastmod>2021-02-03</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/android/handler/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/android/context/</loc>
+    <lastmod>2021-02-03</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/android/activity/launchmode/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/android/activity/lifecycle/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/java/treemap/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/http/tcp/</loc>
+    <lastmod>2021-02-03</lastmod>
   </url>
   <url>
     <loc>http://yoursite.com/soft_skills/business_tips/</loc>
-    <lastmod>2020-06-04</lastmod>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/data_structure/tree_and_binaryTree/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/data_structure/red_and_black_tree/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/data_structure/hash_table/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/data_structure/binary_sort_tree/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/data_structure/balanced_binary_tree/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/data_structure/arrays_and_stack/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/data_structure/algorithmic_complexity/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/java/linkedlist/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/java/hashmap/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/jvm/memory_allocation/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/jvm/jmm/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/jvm/classinit/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/jvm/gc/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/gradle/7/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/gradle/4/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/gradle/6/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/gradle/5/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/gradle/3/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/gradle/2/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/gradle/1/</loc>
+    <lastmod>2021-02-03</lastmod>
+  </url>
+  <url>
+    <loc>http://yoursite.com/conclusion/2020/</loc>
+    <lastmod>2021-02-03</lastmod>
   </url>
 </urlset> 

@@ -32,6 +32,9 @@
 <li>找个对象（年年在说，年年放最后一个）</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>人生</category>
+      </categories>
   </entry>
   <entry>
     <title>什么是context？</title>
@@ -84,6 +87,9 @@
 <p>所以说对于客户化的第三方应用来说两个方法返回值一样，只是返回值类型不同，还有就是依附的对象不同而已。</p>
 <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>从上面我们分析了context，但我们要合理的利用的context对象，context与其所关联的对象生命周期相同，所以我们需要避免出现没有必要的内存泄漏。</p>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>Gradle入门以及环境搭建</title>
@@ -815,6 +821,9 @@
 <li>tcp_fin_timeout: 处于FIN_WAIT_2的时间  （调小）</li>
 </ul>
 ]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
   </entry>
   <entry>
     <title>ArrayList源码分析</title>
@@ -1248,6 +1257,9 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>所谓直觉反射，就是通过大量的逻辑反复训练，提升自己的直觉准确性，从狭窄的5%进入广阔的95%;<br>所谓以习为常，就是在触发条件发生进入下一个行为前，做对选择题;<br>所谓时间管理，就是找到不被打扰的时间用于投资自己;<br>所谓注意力，就是专注在目标事务上，直到产生期望结果;<br>所谓执行力，就是让自己先想明白，然后一步一步走下去;<br>所谓贵人，就是能够持续陪你一起输出高质量内容的人;<br>所谓会议，就是模拟机器学习思路，通过参与讨论获得正反馈来验证自己的观点;<br>所谓跳出舒适区，就是先跳出，然后进入学习区，平衡挑战和能力达到心流的体验;<br>所谓职业规划，就是提升工作需要的能力;<br>所谓时间换空间，就是慢慢来，持之以恒，成长最快。</p>
 <p>更多文章请关注我的公众号：码农职场<br><img src="https://img-blog.csdnimg.cn/20191009113626957.png" alt="在这里插入图片描述"></p>
 ]]></content>
+      <categories>
+        <category>软技能</category>
+      </categories>
   </entry>
   <entry>
     <title>Activity的启动模式</title>
@@ -1273,6 +1285,9 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>Activity生命周期详解</title>
@@ -1320,6 +1335,9 @@
 <h3 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h3><p>《Android开发艺术探索》</p>
 <p>Android官方API文档</p>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>View的事件机制分析</title>
@@ -1425,6 +1443,9 @@
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>《android群英传》</p>
 <p> <a href="http://www.gcssloop.com/customview/dispatch-touchevent-theory">事件分发机制原理</a></p>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>View的事件源码分析</title>
@@ -1474,6 +1495,9 @@
 <p>4.如果view的ontouch消耗了事件，他不再执行任何点击事件。</p>
 <p>5.对于click的处理，如果想只执行longclick不执行的click的方法，只有选择不去监听click，至于为什么，我们前面分析过。</p>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>Android的消息机制</title>
@@ -1514,6 +1538,9 @@
 <p>主线程的消息循环开启之后，activitythread还需要一个handler来和消息队列进行交互，也就是activitythread.H。其内部定义了一组消息的类型，主要是四大组件的停止和启动。</p>
 <p>activitythread通过applicationthread和ams进行进程间通信。ams以进程间通信的方式完成activitythread的请求后会回调applicationthread中的binder方法。然后applicationthread会向H发送消息，H收到消息后会将applicationthread的逻辑切换到activitythread中去执行，即切换到主线程执行。这个过程就是主线程的消息循环模型。</p>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>Android的线程和线程池</title>
@@ -1641,6 +1668,9 @@
 </li>
 </ul>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>如何理解Window和WindowManager</title>
@@ -1761,6 +1791,9 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (mView.getParent() != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (localLOGV) Log.v(TAG, <span class="string">&quot;REMOVE! &quot;</span> + mView + <span class="string">&quot; in &quot;</span> + <span class="keyword">this</span>);</span><br><span class="line">        mWM.removeViewImmediate(mView);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>任何 View 都是附属在一个Window上面的，Window表示一个窗口的概念，也是一个抽象的概念，Window 并不是实际存在的，它是以View的形式存在的。WindowManager 是外界也就是我们访问Window的入口，Window的具体实现位于WindowManagerService 中，WindowManagerService 和 WindowManager 的交互是一个 IPC 过程。</p>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
   <entry>
     <title>红黑树</title>
@@ -1851,5 +1884,8 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>1.ViewGroup包涵多个子view的时候，我们是从后遍历，判断当前view是否可以点击，然后分发给需要处理的子view。<br>2.我们可以在onInterceptTouchEvent中进行事件拦截。<br>3.我们可以发现ViewGroup没有onTouchEvent事件，说明他的处理逻辑和View是一样的。<br>4.子view如果消耗了事件，那么ViewGroup就不会在接受到事件了。</p>
 <p>最后我放上<a href="https://android.googlesource.com/platform/frameworks/base/+/master/core/java/android/view/ViewGroup.java">ViewGroup源码</a>，你们可以自己去了解。</p>
 ]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
   </entry>
 </search>
