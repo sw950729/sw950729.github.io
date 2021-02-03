@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/conclusion/2020/</loc>
+    
+    <lastmod>2021-02-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/java/arraylist/</loc>
     
     <lastmod>2021-02-03</lastmod>
@@ -227,13 +234,6 @@
   
   <url>
     <loc>http://yoursite.com/gradle/1/</loc>
-    
-    <lastmod>2021-02-03</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/conclusion/2020/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
