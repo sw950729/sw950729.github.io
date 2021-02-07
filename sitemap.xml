@@ -2,259 +2,266 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/android/view/touchevent/</loc>
+    <loc>http://silencedev.cn/jetpack/introduction/</loc>
+    
+    <lastmod>2021-02-07</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://silencedev.cn/android/view/touchevent/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/2/</loc>
+    <loc>http://silencedev.cn/gradle/2/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/transform/</loc>
+    <loc>http://silencedev.cn/gradle/transform/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/7/</loc>
+    <loc>http://silencedev.cn/gradle/7/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/6/</loc>
+    <loc>http://silencedev.cn/gradle/6/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/4/</loc>
+    <loc>http://silencedev.cn/gradle/4/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/5/</loc>
+    <loc>http://silencedev.cn/gradle/5/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/3/</loc>
+    <loc>http://silencedev.cn/gradle/3/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/gradle/1/</loc>
+    <loc>http://silencedev.cn/gradle/1/</loc>
     
     <lastmod>2021-02-04</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/conclusion/2020/</loc>
+    <loc>http://silencedev.cn/conclusion/2020/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/java/arraylist/</loc>
+    <loc>http://silencedev.cn/java/arraylist/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/view/viewgroup-event/</loc>
+    <loc>http://silencedev.cn/android/view/viewgroup-event/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/view/view-event/</loc>
+    <loc>http://silencedev.cn/android/view/view-event/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/window_manager/</loc>
+    <loc>http://silencedev.cn/android/window_manager/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/thread_pool/</loc>
+    <loc>http://silencedev.cn/android/thread_pool/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/handler/</loc>
+    <loc>http://silencedev.cn/android/handler/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/context/</loc>
+    <loc>http://silencedev.cn/android/context/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/activity/launchmode/</loc>
+    <loc>http://silencedev.cn/android/activity/launchmode/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/android/activity/lifecycle/</loc>
+    <loc>http://silencedev.cn/android/activity/lifecycle/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/java/treemap/</loc>
+    <loc>http://silencedev.cn/java/treemap/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/http/tcp/</loc>
+    <loc>http://silencedev.cn/http/tcp/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/soft_skills/business_tips/</loc>
+    <loc>http://silencedev.cn/soft_skills/business_tips/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/data_structure/tree_and_binaryTree/</loc>
+    <loc>http://silencedev.cn/data_structure/tree_and_binaryTree/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/data_structure/red_and_black_tree/</loc>
+    <loc>http://silencedev.cn/data_structure/red_and_black_tree/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/data_structure/hash_table/</loc>
+    <loc>http://silencedev.cn/data_structure/hash_table/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/data_structure/binary_sort_tree/</loc>
+    <loc>http://silencedev.cn/data_structure/binary_sort_tree/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/data_structure/balanced_binary_tree/</loc>
+    <loc>http://silencedev.cn/data_structure/balanced_binary_tree/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/data_structure/arrays_and_stack/</loc>
+    <loc>http://silencedev.cn/data_structure/arrays_and_stack/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/data_structure/algorithmic_complexity/</loc>
+    <loc>http://silencedev.cn/data_structure/algorithmic_complexity/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/java/linkedlist/</loc>
+    <loc>http://silencedev.cn/java/linkedlist/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/java/hashmap/</loc>
+    <loc>http://silencedev.cn/java/hashmap/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/jvm/memory_allocation/</loc>
+    <loc>http://silencedev.cn/jvm/memory_allocation/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/jvm/jmm/</loc>
+    <loc>http://silencedev.cn/jvm/jmm/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/jvm/classinit/</loc>
+    <loc>http://silencedev.cn/jvm/classinit/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/jvm/gc/</loc>
+    <loc>http://silencedev.cn/jvm/gc/</loc>
     
     <lastmod>2021-02-03</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>http://silencedev.cn/about/index.html</loc>
     
     <lastmod>2021-01-25</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>http://silencedev.cn/categories/index.html</loc>
     
     <lastmod>2021-01-23</lastmod>
     
@@ -262,8 +269,8 @@
   
 
   <url>
-    <loc>http://yoursite.com/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -272,57 +279,64 @@
 
   
   <url>
-    <loc>http://yoursite.com/categories/Gradle/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/Gradle/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/Java/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/Java/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/JVM/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/JVM/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/%E4%BA%BA%E7%94%9F/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/http/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/http/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/android/</loc>
-    <lastmod>2021-02-04</lastmod>
+    <loc>http://silencedev.cn/categories/android/</loc>
+    <lastmod>2021-02-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://silencedev.cn/categories/Jetpack/</loc>
+    <lastmod>2021-02-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

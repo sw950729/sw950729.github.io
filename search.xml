@@ -2003,4 +2003,60 @@
         <category>Gradle</category>
       </categories>
   </entry>
+  <entry>
+    <title>Android Jetpack架构组件——什么是Jetpack？</title>
+    <url>/jetpack/introduction/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>提到Android架构，我们首先想到的是MVC，MVP，MVVM。他们主要是针对视图和模型的。随着Android的发展，从原来的框架很少，全是自己动手撸。到现在框架越来越多，选型也越来越多，导致开发出来越来越不规范。我们知道MVP和MVVM只是应用在架构上，而不是在框架选型上。而google在2018年推出jetpack就是为了解决以上的问题。</p>
+<h3 id="Jetpack是什么？"><a href="#Jetpack是什么？" class="headerlink" title="Jetpack是什么？"></a>Jetpack是什么？</h3><p>Jetpack它不是一个新的架构，而是一个由多个库组成的套件，可帮助开发者遵循最佳做法，减少样板代码并编写可在各种Android版本和设备中一致运行的代码，让开发者精力集中编写重要的代码。</p>
+<h3 id="Jetpack的优势"><a href="#Jetpack的优势" class="headerlink" title="Jetpack的优势"></a>Jetpack的优势</h3><p>既然需要使用Jetpack，那么说不出一些优势，你的领导也不会同意说换就换的。下面我们看看jetpack有哪些优势：</p>
+<ul>
+<li>Jetpack 拥有基于生命周期感知的能力，可以减少NPE崩溃、内存泄漏。为我们开发出健壮且流畅的程序提供强力保障。</li>
+<li>Jetpack 可以减少样板代码，有助于提升 Android 开发的效率。</li>
+</ul>
+<h3 id="JetPack的分类"><a href="#JetPack的分类" class="headerlink" title="JetPack的分类"></a>JetPack的分类</h3><p>我们来看下google官方提供的一张图：<br><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/e6R24K.png" alt="jetpack体系"><br>由图可知，Jetpack被分成了四大类：</p>
+<ul>
+<li>基础 - Foundation</li>
+<li>架构 - Architecture</li>
+<li>界面 - UI</li>
+<li>行为 - Behavior</li>
+</ul>
+<h4 id="Foundation（基础组件）"><a href="#Foundation（基础组件）" class="headerlink" title="Foundation（基础组件）"></a>Foundation（基础组件）</h4><ul>
+<li>AppCompat：帮助较低版本的Android系统进行兼容</li>
+<li>Android KTX：优化了供Kotlin使用的Jetpack和Android平台API，帮助开发者以更简洁、更愉悦、更惯用的方式使用Kotlin进行Android开发</li>
+<li>Multidex：为具有多个Dex文件应用提供支持</li>
+<li>Test：从AndroidStudio中快速检测基于Kotlin或Java的代码</li>
+</ul>
+<h4 id="Architecture（架构组件）"><a href="#Architecture（架构组件）" class="headerlink" title="Architecture（架构组件）"></a>Architecture（架构组件）</h4><ul>
+<li>Data Binding：属于支持库可使用声明式将布局中的界面组件绑定到应用中的数据源</li>
+<li>Lifecycles：管理Activity和Fragment生命周期</li>
+<li>LiveData：是一个可观察的数据持有者类。与常规Observable不同，LiveData是有生命周期感知的</li>
+<li>Navigation：处理应用内导航所需的一切</li>
+<li>Paging：一次加载/按需加载 &amp;&amp; 显示小块数据</li>
+<li>Room：帮助开发者更友好、流畅的访问SQLite数据库</li>
+<li>ViewModel：以生命周期感知的方式存储和管理与UI相关的数据</li>
+<li>WorkManager：管理Android的后台的作业，即使应用程序退出或设备重新启动也可以运行可延迟的异步任务</li>
+</ul>
+<h4 id="UI（界面组件）"><a href="#UI（界面组件）" class="headerlink" title="UI（界面组件）"></a>UI（界面组件）</h4><ul>
+<li>Animation and Transition：该框架包含用于常见效果的内置动画，并允许开发者创建自定义动画和生命周期回调</li>
+<li>Auto：开发Android Auto应用的组件，提供了适用于所有车辆的标准化界面和用户交互</li>
+<li>TV：构建可让用户在大屏幕上体验沉浸式内容的应用</li>
+<li>Wear：开发Wear应用的组件</li>
+<li>Emoji：即便用户没有更新Android系统也可以获取最新的表情符号</li>
+<li>Fragment：组件化界面的基本单位</li>
+<li>Layout：用XML中声明UI元素或者在代码中实例化UI元素</li>
+<li>Paletee：从调色板中提取出有用的信息</li>
+</ul>
+<h4 id="Behavior（行为组件）"><a href="#Behavior（行为组件）" class="headerlink" title="Behavior（行为组件）"></a>Behavior（行为组件）</h4><ul>
+<li>DownloadManager：可处理长时间运行的HTTP下载&amp;&amp;超时重连</li>
+<li>Media &amp; playback：用于媒体播放，以及路由的向后兼容API</li>
+<li>Permissions：用于检查和请求应用权限的兼容性API</li>
+<li>Notifications：提供向后兼容的通知API，支持Wear和Auto</li>
+<li>Sharing：提供适合应用操作栏的共享操作</li>
+<li>Slices：创建可在应用外部显示应用数据的灵活界面元素</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Jetpack</category>
+      </categories>
+  </entry>
 </search>
