@@ -92,6 +92,202 @@
       </categories>
   </entry>
   <entry>
+    <title>算法复杂度</title>
+    <url>/data_structure/algorithmic_complexity/</url>
+    <content><![CDATA[<p>算法复杂度分为时间复杂度和空间复杂度。其作用：时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。</p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数f(n)，进而分析f(n)随n的变化情况并确定T(n)的数量级。这里用”O”来表示数量级，给出算法的时间复杂度。 T(n)=O(f(n));<br>它表示随着问题规模的n的增大，算法的执行时间的增长率和f(n)的增长率相同，这称作算法的渐进时间复杂度，简称时间复杂度。而我们一般讨论的是最坏时间复杂度，这样做的原因是：最坏情况下的时间复杂度是算法在任何输入实例上运行时间的上界，分析最坏的情况以估算算法指向时间的一个上界。</p>
+<p>时间复杂度的分析方法：<br>1、时间复杂度就是函数中基本操作所执行的次数<br>2、一般默认的是最坏时间复杂度，即分析最坏情况下所能执行的次数<br>3、忽略掉常数项<br>4、关注运行时间的增长趋势，关注函数式中增长最快的表达式，忽略系数<br>5、计算时间复杂度是估算随着n的增长函数执行次数的增长趋势<br>6、递归算法的时间复杂度为：递归总次数 * 每次递归中基本操作所执行的次数  </p>
+<p>常用的时间复杂度有以下七种，算法时间复杂度依次增加：O(1)常数型、O(log2 n)对数型、O(n)线性型、O(nlog2n)二维型、O(n^2^)平方型、O(n^3^)立方型、O(2^n^)指数型.</p>
+<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>算法的空间复杂度并不是计算实际占用的空间，而是计算整个算法的辅助空间单元的个数，与问题的规模没有关系。算法的空间复杂度S(n)定义为该算法所耗费空间的数量级。<br>S(n)=O(f(n))  若算法执行时所需要的辅助空间相对于输入数据量n而言是一个常数，则称这个算法的辅助空间为O(1);<br>递归算法的空间复杂度：递归深度N*每次递归所要的辅助空间，如果每次递归所需的辅助空间是常数，则递归的空间复杂度是 O(N).</p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>树组与链表</title>
+    <url>/data_structure/arrays_and_stack/</url>
+    <content><![CDATA[<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604231852160.png" alt="image">  </p>
+<p>正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：</p>
+<ul>
+<li><p>创建一个数组，必须声明其长度，以在内存中寻找合适的一段连续存储单元。这也意味着数组的大小是固定的，我们无法动态调整其大小。</p>
+</li>
+<li><p>想要获取数组中第i个元素，其时间复杂度是O(1)，因为可以根据其地址直接找到它。同理修改也是。</p>
+</li>
+<li><p>数组对查询表现一般，要想查找一个元素，需要遍历，时间复杂度为O(n)。</p>
+</li>
+<li><p>因为地址连续，想要在数组中插入一个元素是复杂的，因为从插入位置起，后边的所有元素都需要向后移动一位。同理删除也是，只是移动方向为向前。并且，当数组存满时，就无法继续插入了。</p>
+</li>
+<li><p>因为数组要占据一整块内存，有可能产生许多的碎片，也可能因为找不到合适的内存块，而导致存储失败。</p>
+</li>
+</ul>
+<p>总结起来就是：数组大小固定，查找迅速，增删复杂，需要完整的内存块，容易产生碎片。</p>
+<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060423192923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>分析这种结构，我们可以得出以下几个结论：</p>
+<ul>
+<li><p>声明一个链表时，不需要知道其长度，也不需要连续的内存块，所以其大小可以动态调整。</p>
+</li>
+<li><p>链表的每个元素都分为数据域和指针域，前者是实际存储的数据，后者则指向下一个元素的地址。和数组相比，每个元素需要占用的内存更大了。</p>
+</li>
+<li><p>要获取链表的第 i 个元素变得复杂，因为其地址存放在它上一个元素的指针域里，所以只能从第一个元素起，进行 i 次操作。同理修改也是。</p>
+</li>
+<li><p>链表对查询表现也一般，需要遍历，时间复杂度为O(n)。</p>
+</li>
+<li><p>增加与删除一个元素更方便了，因为没有对内存地址的限制，我们只需要在对应节点合理处理下指针域的值，就可以把一个元素插入链表或者从链表删除。</p>
+</li>
+<li><p>链表对内存的要求很小，只要能够存储下一个数据元素的内存块都可以使用，因此不会造成碎片化。</p>
+</li>
+</ul>
+<p>总结起来就是：大小可以动态调整，增删迅速，查找较慢，数据元素所占内存略多，不需要整块内存块，不会造成碎片化。</p>
+<h3 id="数组与链表的选择"><a href="#数组与链表的选择" class="headerlink" title="数组与链表的选择"></a>数组与链表的选择</h3><p>通过以上分析，数组和链表对我们影响最大的几点区别在于：</p>
+<ul>
+<li>数组按位置查找迅速，链表增删方便</li>
+<li>数组是固定大小，链表可以随时扩充与缩减</li>
+<li>链表每个元素占据内存略多于数组</li>
+<li>数组和链表在查询方面表现都比较一般，耗时较长  </li>
+</ul>
+<p>数组就像身上编了号站成一排的人，要找第10个人很容易，根据人身上的编号很快就能找到。但插入、删除慢，要望某个位置插入或删除一个人时，后面的人身上的编号都要变。当然，加入或删除的人始终末尾的也快。<br>链表就像手牵着手站成一圈的人，要找第10个人不容易，必须从第一个人一个个数过去。但插入、删除快。插入时只要解开两个人的手，并重新牵上新加进来的人的手就可以。删除一样的道理。  </p>
+<p>在数据量很小，内容基本固定时，我们选择何种数据结构的影响并不大。但当数据量较大时，如果我们需要对数据进行频繁的插入删除，我们应该选择链表，如果我们需要频繁的获取某个位置的元素，我们应该选择数组。数组与链表并没有明确的优劣之分，根据不同的使用场景进行不同的选择，才是这两种结构使用的最佳方式。</p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>平衡二叉树</title>
+    <url>/data_structure/balanced_binary_tree/</url>
+    <content><![CDATA[<p>二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，且左子树和右子树的深度之差的绝对值不超过1。我们将二叉树上结点的左子树深度减去右子树深度的值称为平衡因子BF (Balance Factor)，那么平衡二叉树上所有结点的平衡因子只可能是-1、0和1。</p>
+<p>如下图就不是一棵AVL树，因为结点18的左子树高度为2，右子树高度为0，高度差大于1。<br><img src="https://img-blog.csdnimg.cn/20200604232909854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>但通过一定的步骤调整之后，可以将其转为一棵平衡二叉树，如下图：<br><img src="https://img-blog.csdnimg.cn/20200604232947478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>平衡二叉树构建的基本思想就是在构建二叉排序树的过程中，每当插入一个结点时，先检查是否因插入而破坏了树的平衡性，若是，则找出最小不平衡子树。在保持二叉排序树特性的前提下，调整最小不平衡子树中各结点之间的链接关系，进行相应的旋转，使之成为新的平衡子树。最小不平衡子树是指距离插入结点最近的，且平衡因子的绝对值大于1 的结点为根的子树。</p>
+<p>下面通过一个实例，了解平衡二叉树的构建过程。</p>
+<p>假如我们要将数组int[] a = {3, 2, 1, 4, 5, 6, 7, 10, 9, 8}构建成一棵二叉排序树，如果直接按照二叉排序树的定义，会得到下面的结果：<br><img src="https://img-blog.csdnimg.cn/20200604233021566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>这样的结果对查找是十分不利的，树的高度达到了8，而且大多数只有一个孩子。所以我们需要一些操作，将它变成一棵AVL树。</p>
+<p>首先，插入元素3和2时，没有什么影响，此时3的平衡因子为1，2的平衡因子为0，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604233056990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在，要把1插入树中，这时结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/2020060423312969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>此时3的平衡因子为2了，不再符合平衡二叉树的规则。此时，整棵树就是最小不平衡子树，我们将其右旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233205675.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>再插入4，也不会影响平衡，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233236547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>此时，插入元素5，以3为根结点的子树成为了最小不平衡子树，如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233309434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在要对其进行左旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233350415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在继续插入元素6，此时以2为根结点的右子树为最小不平衡子树，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233422864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>这时再次需要对其进行左旋，这次旋转后要将4的左孩子变为2的右孩子，以满足二叉排序树的定义，如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233451438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>再插入7时，情况和之前有些类似了，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233540770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>左旋后结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233612956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>现在，继续插入10，此时无需调整，结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233645958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>下一步，插入元素9，此时结果如下：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233715778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>按照之前的经验，这时我们应该进行左旋了，但是左旋之后9将变为10的右孩子，这会不符合二叉排序树的定义。和之前不同的是，7和10的平衡因子符号相反，这是造成这一结果的原因。这种情况下，要先以10为根节点右旋，再进行左旋，结果如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233755596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233825578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>最后插入元素8，如下所示：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233910376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>此时情况和上述类似，6是最小不平衡子树的根结点，9和6的平衡因子符号相反，所以先以9为根结点右旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604233942312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>然后再以6左旋：  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604234013915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
+<p>可以看到，此树的高度仅为4，与之前的8相差很多，性能自然也好很多。</p>
+<p>平衡二叉树的删除操作与插入类似，这里将不再介绍。大家可以自己思考如何最高效地删除元素，可以分叶结点、仅有一个子结点和有两个子结点三种情况考虑，这里还用到了递归的思想。</p>
+<p>接下来我们将介绍另一种实现方式，红黑树。</p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>二叉排序树</title>
+    <url>/data_structure/binary_sort_tree/</url>
+    <content><![CDATA[<p>解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。</p>
+<p>二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数低一些，但可以通过AVL树、红黑树等增加稳定性。</p>
+<p>HashMap在JDK1.8的实现中，就结合了哈希表的高效和红黑树的稳定，我们之后会详细分析其实现。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>二叉排序树(Binary Sort Tree)，又称为二叉查找树。它或者是一棵空树，或者是具有下列性质的二叉树：</p>
+<ul>
+<li><p>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值</p>
+</li>
+<li><p>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值</p>
+</li>
+<li><p>它的左、右子树也分别为二叉排序树</p>
+</li>
+</ul>
+<p>如下就是一棵简单的二叉排序树：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>当对这棵树进行中序遍历时，其结果将按照从小到大排序。</p>
+<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>二叉排序树的查找时间复杂度为O(lg n)，查找使用二分法。要在上图中找到元素37，只需要四次操作即可。</p>
+<p>首先，找到根元素22，37比22大，所以淘汰左子树，再找到35，淘汰左子树，再找到41，进入左子树，得到37。可以看到其速度比挨个对比高了很多。</p>
+<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>二叉排序树的插入操作和查询类似，也需要通过二分法进行查找，找到合适的位置再插入元素，所以其插入速度相比链表较慢。</p>
+<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>从二叉排序树中删除一个元素主要分为三种情况。</p>
+<p>例如要从下面这个二叉排序树中删除一个元素：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<ul>
+<li><p>删除的元素是叶结点，这时可以直接删除它。比如要删除值为1的元素，删除它对树没有任何影响。</p>
+</li>
+<li><p>删除的元素仅有左孩子或者仅有右孩子时，直接让其孩子顶替它即可。比如要删除元素35，只需要用41顶替它即可。</p>
+</li>
+<li><p>删除的元素既有左孩子又有右孩子，这时删除它相对复杂。一种好的方式是找到它的前驱或者后继来代替它。比如要删除元素9，就用6或者13代替它即可。</p>
+</li>
+</ul>
+<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>一棵普通的二叉排序树也会出现不平衡问题，如果插入的数据都在树的一侧，就会使得树的深度迅速增大，每次二分查找可以排除的数据很少，从而查询速度严重下降，比如下方这棵树：<br><img src="https://img-blog.csdnimg.cn/20200604231633327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>要查找值为2的元素，使用二分法和使用链表速度差不多。</p>
+<p>为了解决这种问题，就需要在元素插入时即进行修正，后续介绍的AVL树和红黑树就是两种不同的解决方案。</p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>哈希表</title>
+    <url>/data_structure/hash_table/</url>
+    <content><![CDATA[<p>无论是数组还是链表，其对数据的查询表现都比较无力，要想知道一个元素是否在数组或链表中，只能从前向后挨个对比。在后续将会分析的二叉排序树中，还会将数据排序以进行二分查找，将时间复杂度从O(n)降低到O(lg n)。</p>
+<p>出现这个问题的根源在于，我们没有办法直接根据一个元素找到它存储的位置，那有没有办法消除这个对比的过程呢？哈希表就是解决查询问题的一种方案。</p>
+<h3 id="什么是哈希表"><a href="#什么是哈希表" class="headerlink" title="什么是哈希表"></a>什么是哈希表</h3><p>通俗来讲，哈希表是通过关键字key来获取数据的一种数据结构。它把关键字映射成表中的位置来获取元素，这种映射称为hash函数。</p>
+<p>因为不同的key类型不一样，可能是int，可能是string…但内存地址不会以这些对象也寻址，它会通过hash算法将其转换成int从而完成数据的存储。hash函数需要保证的是对于相同的key，其计算结果总是相同的。  </p>
+<p>这个过程类似查字典，如果要查一个字，我们不会从第一页到最后一页挨着看，这将需要很长的时间，而是根据其发音先在拼音表中找到对应的页数，直接定位到对应的页即可。当然，由于有许多发音一致的汉字，所以我们可能依然需要逐个对比，但这复杂度就小太多了。</p>
+<p>哈希表的过程就和上述例子一样，我们通过key经过hash算法直接定位其位置。然而类似于许多发音一致的，也就是有许多的key通过hash定位的结果是一样，那么这就是hash碰撞。  </p>
+<h3 id="如何解决hash碰撞"><a href="#如何解决hash碰撞" class="headerlink" title="如何解决hash碰撞"></a>如何解决hash碰撞</h3><p>目前比较通用的方法就是使用数组加链表去处理，先看一张图<br><img src="https://img-blog.csdnimg.cn/202006042317255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>然后举个简单的例子：<br>hashmap是数组和链表的结合，它拥有这两种特性。怎么说呢？举个例子，一个学校有不同年级，不同年级有不同班级，不同班级有不同的学生。hashmap里面包含了一个数组，entry包装对象，而entry里面包含了k，v，next。</p>
+<p>对next有似曾相识的感觉？打个比方。用年级对应k，班级对应v。而同一个年级，同一个班级，有不同的学生，对于这个学生，就是通过next来查询的。在后续文章中我们会对其进行详尽的分析。</p>
+<h3 id="哈希表的优缺点"><a href="#哈希表的优缺点" class="headerlink" title="哈希表的优缺点"></a>哈希表的优缺点</h3><p>哈希表是一种优化存储的思想，具体存储元素的依然是其他的数据结构。设计良好的哈希表，能同时兼备数组和链表的优点，它能在插入和查找时都具备良好的性能。然而设计不好的哈希表，有可能会出现较多的哈希碰撞，导致链表过长，从而哈希表会更像一个链表。还有当数据量很大时，为防止链表过长，就需要对数组进行扩容，这时就涉及到了数组的拷贝，其对性能的影响也很严重，所以需要提前对可能的情况有良好的预测，才能真正发挥哈希表的优势。</p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>树与二叉树</title>
+    <url>/data_structure/tree_and_binaryTree/</url>
+    <content><![CDATA[<p>数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。</p>
+<h3 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h3><p>树是N的节点的有限集。N=0时称为空树，在一个非空树中：  </p>
+<ul>
+<li>有且只有一个根（）节点。</li>
+<li> 当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。</li>
+</ul>
+<p>下图就是一个树：<br><img src="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>树的结点包含一个数据元素及若干指向其子树的分支。结点拥有的子树数称为结点的度(Degree) 。度为0的结点称为叶结点(Leaf) 或终端结点；度不为0 的结点称为非终端结点或分支结点。除根结点之外，分支结点也称为内部结点。树的度是树内各结点的度的最大值。</p>
+<p>如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。<br><img src="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h3><p>结点的子树的根称为该结点的孩子(Child)，相应地，该结点称为孩子的双亲(Parent)。同一个双亲的孩子之间互称兄弟(Sibling)。结点的祖先是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的子孙。  </p>
+<p><img src="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>结点的层次(LeveI)从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度(Depth)或高度 。<br><img src="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="有序树与无序树"><a href="#有序树与无序树" class="headerlink" title="有序树与无序树"></a>有序树与无序树</h3><p>如果将树中结点的各子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树。</p>
+<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是n(n ≥ 0) 个结点的有限集合，该集合或者为空集(称为空二叉树)，或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。<br>下图就是一个二叉树，二叉树就是每个节点的度≤2的树。<br><img src="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p>二叉树遍历是指从根节点出发，按照某种顺序依次访问二叉树的所有节点，使得每个节点被访问一次且只能被访问一次。二叉树遍历分为前序遍历，中序遍历以及后续遍历。</p>
+<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树， 再前序遍历右子树。</p>
+<p>如下图所示，遍历结果为：ABDGHCEIF。<br><img src="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>规则是若树为空，则空操作返回，否则从根结点开始(注意并不是先访问根结点) ，中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树。</p>
+<p>如下图所示，遍历结果为：GDHBAEICF。<br><img src="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>规则是若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
+<p>如下图所示，遍历结果为：GHDBIEFCA。<br><img src="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Gradle入门以及环境搭建</title>
     <url>/gradle/1/</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle目前主要是在项目构建的时候使用，如果我们需要了解gradle。首先需要熟悉grooy的语法，本节来搭建groovy的环境，为了后续学习准备。</p>
@@ -561,199 +757,118 @@
       </categories>
   </entry>
   <entry>
-    <title>算法复杂度</title>
-    <url>/data_structure/algorithmic_complexity/</url>
-    <content><![CDATA[<p>算法复杂度分为时间复杂度和空间复杂度。其作用：时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。</p>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>一般情况下，算法中基本操作重复执行的次数是问题规模n的某个函数f(n)，进而分析f(n)随n的变化情况并确定T(n)的数量级。这里用”O”来表示数量级，给出算法的时间复杂度。 T(n)=O(f(n));<br>它表示随着问题规模的n的增大，算法的执行时间的增长率和f(n)的增长率相同，这称作算法的渐进时间复杂度，简称时间复杂度。而我们一般讨论的是最坏时间复杂度，这样做的原因是：最坏情况下的时间复杂度是算法在任何输入实例上运行时间的上界，分析最坏的情况以估算算法指向时间的一个上界。</p>
-<p>时间复杂度的分析方法：<br>1、时间复杂度就是函数中基本操作所执行的次数<br>2、一般默认的是最坏时间复杂度，即分析最坏情况下所能执行的次数<br>3、忽略掉常数项<br>4、关注运行时间的增长趋势，关注函数式中增长最快的表达式，忽略系数<br>5、计算时间复杂度是估算随着n的增长函数执行次数的增长趋势<br>6、递归算法的时间复杂度为：递归总次数 * 每次递归中基本操作所执行的次数  </p>
-<p>常用的时间复杂度有以下七种，算法时间复杂度依次增加：O(1)常数型、O(log2 n)对数型、O(n)线性型、O(nlog2n)二维型、O(n^2^)平方型、O(n^3^)立方型、O(2^n^)指数型.</p>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>算法的空间复杂度并不是计算实际占用的空间，而是计算整个算法的辅助空间单元的个数，与问题的规模没有关系。算法的空间复杂度S(n)定义为该算法所耗费空间的数量级。<br>S(n)=O(f(n))  若算法执行时所需要的辅助空间相对于输入数据量n而言是一个常数，则称这个算法的辅助空间为O(1);<br>递归算法的空间复杂度：递归深度N*每次递归所要的辅助空间，如果每次递归所需的辅助空间是常数，则递归的空间复杂度是 O(N).</p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>平衡二叉树</title>
-    <url>/data_structure/balanced_binary_tree/</url>
-    <content><![CDATA[<p>二叉排序树很好的平衡了插入与查找的效率，但不平衡的二叉排序树效率大打折扣。今天介绍的AVL树就是一种解决此问题的方案。</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>平衡二叉树，是一种二叉排序树，其中每一个节点的左子树和右子树的高度差至多等于1。它是一种高度平衡的二叉排序树。意思是说，要么它是一棵空树，要么它的左子树和右子树都是平衡二叉树，且左子树和右子树的深度之差的绝对值不超过1。我们将二叉树上结点的左子树深度减去右子树深度的值称为平衡因子BF (Balance Factor)，那么平衡二叉树上所有结点的平衡因子只可能是-1、0和1。</p>
-<p>如下图就不是一棵AVL树，因为结点18的左子树高度为2，右子树高度为0，高度差大于1。<br><img src="https://img-blog.csdnimg.cn/20200604232909854.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>但通过一定的步骤调整之后，可以将其转为一棵平衡二叉树，如下图：<br><img src="https://img-blog.csdnimg.cn/20200604232947478.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>平衡二叉树构建的基本思想就是在构建二叉排序树的过程中，每当插入一个结点时，先检查是否因插入而破坏了树的平衡性，若是，则找出最小不平衡子树。在保持二叉排序树特性的前提下，调整最小不平衡子树中各结点之间的链接关系，进行相应的旋转，使之成为新的平衡子树。最小不平衡子树是指距离插入结点最近的，且平衡因子的绝对值大于1 的结点为根的子树。</p>
-<p>下面通过一个实例，了解平衡二叉树的构建过程。</p>
-<p>假如我们要将数组int[] a = {3, 2, 1, 4, 5, 6, 7, 10, 9, 8}构建成一棵二叉排序树，如果直接按照二叉排序树的定义，会得到下面的结果：<br><img src="https://img-blog.csdnimg.cn/20200604233021566.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>这样的结果对查找是十分不利的，树的高度达到了8，而且大多数只有一个孩子。所以我们需要一些操作，将它变成一棵AVL树。</p>
-<p>首先，插入元素3和2时，没有什么影响，此时3的平衡因子为1，2的平衡因子为0，结果如下：<br><img src="https://img-blog.csdnimg.cn/20200604233056990.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>现在，要把1插入树中，这时结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/2020060423312969.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>此时3的平衡因子为2了，不再符合平衡二叉树的规则。此时，整棵树就是最小不平衡子树，我们将其右旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233205675.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>再插入4，也不会影响平衡，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233236547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>此时，插入元素5，以3为根结点的子树成为了最小不平衡子树，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233309434.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>现在要对其进行左旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233350415.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>现在继续插入元素6，此时以2为根结点的右子树为最小不平衡子树，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233422864.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>这时再次需要对其进行左旋，这次旋转后要将4的左孩子变为2的右孩子，以满足二叉排序树的定义，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233451438.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>再插入7时，情况和之前有些类似了，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233540770.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>左旋后结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233612956.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>现在，继续插入10，此时无需调整，结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233645958.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>下一步，插入元素9，此时结果如下：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233715778.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>按照之前的经验，这时我们应该进行左旋了，但是左旋之后9将变为10的右孩子，这会不符合二叉排序树的定义。和之前不同的是，7和10的平衡因子符号相反，这是造成这一结果的原因。这种情况下，要先以10为根节点右旋，再进行左旋，结果如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233755596.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70">  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233825578.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>最后插入元素8，如下所示：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233910376.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>此时情况和上述类似，6是最小不平衡子树的根结点，9和6的平衡因子符号相反，所以先以9为根结点右旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604233942312.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>然后再以6左旋：  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604234013915.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70"></p>
-<p>可以看到，此树的高度仅为4，与之前的8相差很多，性能自然也好很多。</p>
-<p>平衡二叉树的删除操作与插入类似，这里将不再介绍。大家可以自己思考如何最高效地删除元素，可以分叶结点、仅有一个子结点和有两个子结点三种情况考虑，这里还用到了递归的思想。</p>
-<p>接下来我们将介绍另一种实现方式，红黑树。</p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>树组与链表</title>
-    <url>/data_structure/arrays_and_stack/</url>
-    <content><![CDATA[<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>在java中，数组定义为一种基本类型，其可以通过下标获取到对应位置的数据。那么这种结构的数据，在内存中是怎么存放的呢？  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604231852160.png" alt="image">  </p>
-<p>正如上图所示，数组在内存中是一段连续的存储单元，每个数据依次放在每个单元中。分析这种结构，我们可以得出以下几个结论：</p>
+    <title>Gradle中Transform是什么？</title>
+    <url>/gradle/transform/</url>
+    <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Google从 Android Gradle 1.5.0 开始，提供了Transform API。通过Transform API，允许第三方以插件的形式，在Android应用程序打包成dex文件之前的编译过程中操作.class文件。我们只要实现一套Transform，去遍历所有.class文件的所有方法，然后进行修改，再对源文件进行替换，即可以达到插入代码的目的。</p>
+<h3 id="Transform可以做什么"><a href="#Transform可以做什么" class="headerlink" title="Transform可以做什么"></a>Transform可以做什么</h3><p>首先，我们可以先执行一次build操作，命令行会输出如下内容：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; Transform core-runtime.aar (androidx.arch.core:core-runtime:2.0.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-livedata-core.aar (androidx.lifecycle:lifecycle-livedata-core:2.0.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-livedata.aar (androidx.lifecycle:lifecycle-livedata:2.0.0) with AarTransform</span><br><span class="line">&gt; Transform interpolator.aar (androidx.interpolator:interpolator:1.0.0) with AarTransform</span><br><span class="line">&gt; Transform savedstate.aar (androidx.savedstate:savedstate:1.0.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-viewmodel.aar (androidx.lifecycle:lifecycle-viewmodel:2.1.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-runtime.aar (androidx.lifecycle:lifecycle-runtime:2.1.0) with AarTransform</span><br><span class="line">&gt; Transform versionedparcelable.aar (androidx.versionedparcelable:versionedparcelable:1.1.0) with AarTransform</span><br><span class="line">&gt; Transform cursoradapter.aar (androidx.cursoradapter:cursoradapter:1.0.0) with AarTransform</span><br><span class="line">&gt; Transform core.aar (androidx.core:core:1.3.2) with AarTransform</span><br><span class="line">&gt; Transform customview.aar (androidx.customview:customview:1.0.0) with AarTransform</span><br></pre></td></tr></table></figure>
+<p>也就是在构建过程中，会执行一个个的Transform。那么回到刚开始的问题，Transform可以做什么，我先列一些大家常听的，以及常见的:</p>
 <ul>
-<li><p>创建一个数组，必须声明其长度，以在内存中寻找合适的一段连续存储单元。这也意味着数组的大小是固定的，我们无法动态调整其大小。</p>
+<li><p>无痕埋点：不需要侵入代码即可以对页面进行埋点，不过一般这种都是针对比较简单的case，复杂的业务场景很难通过无痕埋点处理。</p>
 </li>
-<li><p>想要获取数组中第i个元素，其时间复杂度是O(1)，因为可以根据其地址直接找到它。同理修改也是。</p>
+<li><p>性能监控：这个也很常见。</p>
 </li>
-<li><p>数组对查询表现一般，要想查找一个元素，需要遍历，时间复杂度为O(n)。</p>
+<li><p>事件防抖：避免短期内多次点击按钮。</p>
 </li>
-<li><p>因为地址连续，想要在数组中插入一个元素是复杂的，因为从插入位置起，后边的所有元素都需要向后移动一位。同理删除也是，只是移动方向为向前。并且，当数组存满时，就无法继续插入了。</p>
+<li><p>热修复：在方法前插入预留函数已做替换。</p>
 </li>
-<li><p>因为数组要占据一整块内存，有可能产生许多的碎片，也可能因为找不到合适的内存块，而导致存储失败。</p>
+<li><p>……</p>
 </li>
 </ul>
-<p>总结起来就是：数组大小固定，查找迅速，增删复杂，需要完整的内存块，容易产生碎片。</p>
-<h3 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h3><p>链表是一种离散存储结构，其在内存中存储不是连续的，每个数据元素都通过一个指针指向其下一个元素的地址。根据指针域的不同，链表又分为单链表、双向链表、循环链表等，这里我们只分析单链表。示意图如下所示：<br><img src="https://img-blog.csdnimg.cn/2020060423192923.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>分析这种结构，我们可以得出以下几个结论：</p>
+<p>那么Transform的操作到底是在什么时候将代码植入的呢？我们看一张google官方的打包图：<br><img src="https://raw.githubusercontent.com/296777513/Picture/master/gradle_plugin/transform_1.png" alt="image">  </p>
+<p>Transform阶段就是在图中红圈的位置，也就是.class文件变成.dex文件过程进行插入的。说白了Transform就是Android官方提供给开发者在项目构建阶段由class到dex转换期间修改class文件的一套api。比较经典的应用就是字节码插桩和代码注入技术。有了这个API，我们就可以根据自己的业务需求做一些定制。</p>
+<h3 id="Transform使用"><a href="#Transform使用" class="headerlink" title="Transform使用"></a>Transform使用</h3><p>前面说了那么多，主要是介绍了，Transform是什么，能做什么。那么该如何使用呢？</p>
+<p>我们先在我们build.gradle中新增一个依赖：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(<span class="attr">dir:</span> <span class="string">&quot;libs&quot;</span>, <span class="attr">include:</span> [<span class="string">&quot;*.jar&quot;</span>])</span><br><span class="line">    implementation <span class="string">&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span></span><br><span class="line">    <span class="comment">//gradle sdk</span></span><br><span class="line">    implementation gradleApi()</span><br><span class="line">    <span class="comment">//groovy sdk</span></span><br><span class="line">    implementation localGroovy()</span><br><span class="line">    <span class="comment">//新增</span></span><br><span class="line">    implementation <span class="string">&quot;com.android.tools.build:gradle:3.3.2&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后新建一个MyTransform：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">//注意Transform有很多路径</span></span><br><span class="line"><span class="keyword">import</span> com.android.build.api.transform.Transform</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTransform</span> <span class="keyword">extends</span> <span class="title">Transform</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    String getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;MyTransform&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Set&lt;QualifiedContent.ContentType&gt; getInputTypes() &#123;</span><br><span class="line">        <span class="keyword">return</span> TransformManager.CONTENT_CLASS</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Set&lt;? super QualifiedContent.Scope&gt; getScopes() &#123;</span><br><span class="line">        return TransformManager.SCOPE_FULL_PROJECT</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    boolean isIncremental() &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="getName"><a href="#getName" class="headerlink" title="getName"></a>getName</h4><p>指定自定义 Transform 的名称，返回的是对应的Task名称</p>
+<h4 id="getInputTypes"><a href="#getInputTypes" class="headerlink" title="getInputTypes"></a>getInputTypes</h4><p>可以看到这个方法是返回一个Set&lt;QualifiedContent.ContentType&gt;集合，其实就是返回Transform需要处理的文件类型。具体有哪些，TransformManager已经给我们提供了，我们来看一下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_CLASS = ImmutableSet.of(CLASSES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_JARS = ImmutableSet.of(CLASSES, RESOURCES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_RESOURCES = ImmutableSet.of(RESOURCES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_NATIVE_LIBS =</span><br><span class="line">        ImmutableSet.of(NATIVE_LIBS);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_DEX = ImmutableSet.of(ExtendedContentType.DEX);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_DEX_WITH_RESOURCES =</span><br><span class="line">        ImmutableSet.of(ExtendedContentType.DEX, RESOURCES);</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CONTENT_CLASS</td>
+<td>表示需要处理 java 的 class 文件</td>
+</tr>
+<tr>
+<td>CONTENT_JARS</td>
+<td>表示需要处理 java 的 class 与 资源文件</td>
+</tr>
+<tr>
+<td>CONTENT_RESOURCES</td>
+<td>表示需要处理 java 的资源文件</td>
+</tr>
+<tr>
+<td>CONTENT_NATIVE_LIBS</td>
+<td>表示需要处理 native 库的代码</td>
+</tr>
+<tr>
+<td>CONTENT_DEX</td>
+<td>表示需要处理 DEX 文件</td>
+</tr>
+<tr>
+<td>CONTENT_DEX_WITH_RESOURCES</td>
+<td>表示需要处理 DEX 与 java 的资源文件</td>
+</tr>
+</tbody></table>
+<h4 id="getScopes"><a href="#getScopes" class="headerlink" title="getScopes"></a>getScopes</h4><p>可以看到这个方法是返回一个Set&lt;QualifiedContent.Scope&gt;集合，其实就是返回Transform处理的作用域。具体有哪些，我们来看一下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** Only the project (module) content */</span></span><br><span class="line">PROJECT(<span class="number">0x01</span>),</span><br><span class="line"><span class="comment">/** Only the sub-projects (other modules) */</span></span><br><span class="line">SUB_PROJECTS(<span class="number">0x04</span>),</span><br><span class="line"><span class="comment">/** Only the external libraries */</span></span><br><span class="line">EXTERNAL_LIBRARIES(<span class="number">0x10</span>),</span><br><span class="line"><span class="comment">/** Code that is being tested by the current variant, including dependencies */</span></span><br><span class="line">TESTED_CODE(<span class="number">0x20</span>),</span><br><span class="line"><span class="comment">/** Local or remote dependencies that are provided-only */</span></span><br><span class="line">PROVIDED_ONLY(<span class="number">0x40</span>),</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Only the project&#x27;s local dependencies (local jars)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @deprecated local dependencies are now processed as &#123;@link #EXTERNAL_LIBRARIES&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Deprecated</span></span><br><span class="line">PROJECT_LOCAL_DEPS(<span class="number">0x02</span>),</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Only the sub-projects&#x27;s local dependencies (local jars).</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @deprecated local dependencies are now processed as &#123;@link#EXTERNAL_LIBRARIES&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Deprecated</span></span><br><span class="line">SUB_PROJECTS_LOCAL_DEPS(<span class="number">0x08</span>);</span><br></pre></td></tr></table></figure>
+<p>这里主要介绍下前面五个。</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>PROJECT</td>
+<td>只处理当前的项目</td>
+</tr>
+<tr>
+<td>SUB_PROJECTS</td>
+<td>只处理子项目</td>
+</tr>
+<tr>
+<td>EXTERNAL_LIBRARIES</td>
+<td>只处理外部依赖库</td>
+</tr>
+<tr>
+<td>TESTED_CODE</td>
+<td>测试代码</td>
+</tr>
+<tr>
+<td>PROVIDED_ONLY</td>
+<td>只提供本地或者远程依赖项</td>
+</tr>
+</tbody></table>
+<p>同样，TransformManager为我们分装了Scope的返回集合，具体如下：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; PROJECT_ONLY = ImmutableSet.of(Scope.PROJECT);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;Scope&gt; SCOPE_FULL_PROJECT =</span><br><span class="line">        Sets.immutableEnumSet(</span><br><span class="line">                Scope.PROJECT,</span><br><span class="line">                Scope.SUB_PROJECTS,</span><br><span class="line">                Scope.EXTERNAL_LIBRARIES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_WITH_IR_FOR_DEXING =</span><br><span class="line">        <span class="keyword">new</span> ImmutableSet.Builder&lt;ScopeType&gt;()</span><br><span class="line">                .addAll(SCOPE_FULL_PROJECT)</span><br><span class="line">                .add(InternalScope.MAIN_SPLIT)</span><br><span class="line">                .build();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_WITH_FEATURES =</span><br><span class="line">        <span class="keyword">new</span> ImmutableSet.Builder&lt;ScopeType&gt;()</span><br><span class="line">                .addAll(SCOPE_FULL_PROJECT)</span><br><span class="line">                .add(InternalScope.FEATURES)</span><br><span class="line">                .build();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_WITH_IR_AND_FEATURES =</span><br><span class="line">        <span class="keyword">new</span> ImmutableSet.Builder&lt;ScopeType&gt;()</span><br><span class="line">                .addAll(SCOPE_FULL_PROJECT)</span><br><span class="line">                .add(InternalScope.MAIN_SPLIT)</span><br><span class="line">                .add(InternalScope.FEATURES)</span><br><span class="line">                .build();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FEATURES = ImmutableSet.of(InternalScope.FEATURES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_LIBRARY_WITH_LOCAL_JARS =</span><br><span class="line">        ImmutableSet.of(Scope.PROJECT, InternalScope.LOCAL_DEPS);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_IR_FOR_SLICING =</span><br><span class="line">        ImmutableSet.of(Scope.PROJECT, Scope.SUB_PROJECTS);</span><br></pre></td></tr></table></figure>
+<h4 id="isIncremental"><a href="#isIncremental" class="headerlink" title="isIncremental"></a>isIncremental</h4><p>是否进行增量更新，如果返回true，TransformInput会包含一份修改的文件列表，如果返回 false，则会删除上次修改的记录并进行全量编译。</p>
+<h4 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h4><p>这是最主要的方法，对文件和jar对处理都是在这里进行的，代码植入也是通过此方法进行操作的。常用到的属性有以下几个：</p>
 <ul>
-<li><p>声明一个链表时，不需要知道其长度，也不需要连续的内存块，所以其大小可以动态调整。</p>
+<li><p>TransformInput：对输入的class文件转变成目标字节码文件，TransformInput就是这些输入文件的抽象。目前它包含DirectoryInput集合与JarInput集合。</p>
 </li>
-<li><p>链表的每个元素都分为数据域和指针域，前者是实际存储的数据，后者则指向下一个元素的地址。和数组相比，每个元素需要占用的内存更大了。</p>
+<li><p>DirectoryInput：源码方式参与项目编译的所有目录结构及其目录下的源文件。</p>
 </li>
-<li><p>要获取链表的第 i 个元素变得复杂，因为其地址存放在它上一个元素的指针域里，所以只能从第一个元素起，进行 i 次操作。同理修改也是。</p>
+<li><p>JarInput：Jar包方式参与项目编译的所有本地jar或远程jar包。</p>
 </li>
-<li><p>链表对查询表现也一般，需要遍历，时间复杂度为O(n)。</p>
-</li>
-<li><p>增加与删除一个元素更方便了，因为没有对内存地址的限制，我们只需要在对应节点合理处理下指针域的值，就可以把一个元素插入链表或者从链表删除。</p>
-</li>
-<li><p>链表对内存的要求很小，只要能够存储下一个数据元素的内存块都可以使用，因此不会造成碎片化。</p>
+<li><p>TransformOutProvider：通过这个类来获取输出路径。</p>
 </li>
 </ul>
-<p>总结起来就是：大小可以动态调整，增删迅速，查找较慢，数据元素所占内存略多，不需要整块内存块，不会造成碎片化。</p>
-<h3 id="数组与链表的选择"><a href="#数组与链表的选择" class="headerlink" title="数组与链表的选择"></a>数组与链表的选择</h3><p>通过以上分析，数组和链表对我们影响最大的几点区别在于：</p>
-<ul>
-<li>数组按位置查找迅速，链表增删方便</li>
-<li>数组是固定大小，链表可以随时扩充与缩减</li>
-<li>链表每个元素占据内存略多于数组</li>
-<li>数组和链表在查询方面表现都比较一般，耗时较长  </li>
-</ul>
-<p>数组就像身上编了号站成一排的人，要找第10个人很容易，根据人身上的编号很快就能找到。但插入、删除慢，要望某个位置插入或删除一个人时，后面的人身上的编号都要变。当然，加入或删除的人始终末尾的也快。<br>链表就像手牵着手站成一圈的人，要找第10个人不容易，必须从第一个人一个个数过去。但插入、删除快。插入时只要解开两个人的手，并重新牵上新加进来的人的手就可以。删除一样的道理。  </p>
-<p>在数据量很小，内容基本固定时，我们选择何种数据结构的影响并不大。但当数据量较大时，如果我们需要对数据进行频繁的插入删除，我们应该选择链表，如果我们需要频繁的获取某个位置的元素，我们应该选择数组。数组与链表并没有明确的优劣之分，根据不同的使用场景进行不同的选择，才是这两种结构使用的最佳方式。</p>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>当你编写完成之后，我们只需要在我们的plugin中添加如下代码就可以使用你自己写的Transform了。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">def</span> android = project.extensions.getByType(AppExtension)</span><br><span class="line">        <span class="keyword">def</span> classTransform = <span class="keyword">new</span> MyTransform(project)</span><br><span class="line">        <span class="comment">//注册你的Transform</span></span><br><span class="line">        android.registerTransform(classTransform)</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>回到标题，Transform是什么？Transform其实就是在编译过程中可以动态织入代码。最主要的目的就是解耦。让开发更注重于业务开发。一些数据监控、无痕埋点等逻辑交给Transfrom处理。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/a296777513/article/details/90665134">Gradle-初探代码注入Transform</a></p>
 ]]></content>
       <categories>
-        <category>数据结构与算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>二叉排序树</title>
-    <url>/data_structure/binary_sort_tree/</url>
-    <content><![CDATA[<p>解决查询速度慢的方案除了哈希表外，还可以使用二叉排序树。我们知道，查询慢主要是因为不知道元素的位置，使用hash函数映射虽然解决了问题，但其并不稳定，当出现大量的哈希碰撞后其表现更像一个链表，查询速度大大降低。</p>
-<p>二叉排序树的方案则是使元素有序，这样便可以使用二分法进行查找了，虽然效率相比hash函数低一些，但可以通过AVL树、红黑树等增加稳定性。</p>
-<p>HashMap在JDK1.8的实现中，就结合了哈希表的高效和红黑树的稳定，我们之后会详细分析其实现。</p>
-<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>二叉排序树(Binary Sort Tree)，又称为二叉查找树。它或者是一棵空树，或者是具有下列性质的二叉树：</p>
-<ul>
-<li><p>若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值</p>
-</li>
-<li><p>若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值</p>
-</li>
-<li><p>它的左、右子树也分别为二叉排序树</p>
-</li>
-</ul>
-<p>如下就是一棵简单的二叉排序树：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>当对这棵树进行中序遍历时，其结果将按照从小到大排序。</p>
-<h3 id="查询操作"><a href="#查询操作" class="headerlink" title="查询操作"></a>查询操作</h3><p>二叉排序树的查找时间复杂度为O(lg n)，查找使用二分法。要在上图中找到元素37，只需要四次操作即可。</p>
-<p>首先，找到根元素22，37比22大，所以淘汰左子树，再找到35，淘汰左子树，再找到41，进入左子树，得到37。可以看到其速度比挨个对比高了很多。</p>
-<h3 id="插入操作"><a href="#插入操作" class="headerlink" title="插入操作"></a>插入操作</h3><p>二叉排序树的插入操作和查询类似，也需要通过二分法进行查找，找到合适的位置再插入元素，所以其插入速度相比链表较慢。</p>
-<h3 id="删除操作"><a href="#删除操作" class="headerlink" title="删除操作"></a>删除操作</h3><p>从二叉排序树中删除一个元素主要分为三种情况。</p>
-<p>例如要从下面这个二叉排序树中删除一个元素：<br><img src="https://img-blog.csdnimg.cn/20200604231449302.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<ul>
-<li><p>删除的元素是叶结点，这时可以直接删除它。比如要删除值为1的元素，删除它对树没有任何影响。</p>
-</li>
-<li><p>删除的元素仅有左孩子或者仅有右孩子时，直接让其孩子顶替它即可。比如要删除元素35，只需要用41顶替它即可。</p>
-</li>
-<li><p>删除的元素既有左孩子又有右孩子，这时删除它相对复杂。一种好的方式是找到它的前驱或者后继来代替它。比如要删除元素9，就用6或者13代替它即可。</p>
-</li>
-</ul>
-<h3 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h3><p>一棵普通的二叉排序树也会出现不平衡问题，如果插入的数据都在树的一侧，就会使得树的深度迅速增大，每次二分查找可以排除的数据很少，从而查询速度严重下降，比如下方这棵树：<br><img src="https://img-blog.csdnimg.cn/20200604231633327.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"><br>要查找值为2的元素，使用二分法和使用链表速度差不多。</p>
-<p>为了解决这种问题，就需要在元素插入时即进行修正，后续介绍的AVL树和红黑树就是两种不同的解决方案。</p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>哈希表</title>
-    <url>/data_structure/hash_table/</url>
-    <content><![CDATA[<p>无论是数组还是链表，其对数据的查询表现都比较无力，要想知道一个元素是否在数组或链表中，只能从前向后挨个对比。在后续将会分析的二叉排序树中，还会将数据排序以进行二分查找，将时间复杂度从O(n)降低到O(lg n)。</p>
-<p>出现这个问题的根源在于，我们没有办法直接根据一个元素找到它存储的位置，那有没有办法消除这个对比的过程呢？哈希表就是解决查询问题的一种方案。</p>
-<h3 id="什么是哈希表"><a href="#什么是哈希表" class="headerlink" title="什么是哈希表"></a>什么是哈希表</h3><p>通俗来讲，哈希表是通过关键字key来获取数据的一种数据结构。它把关键字映射成表中的位置来获取元素，这种映射称为hash函数。</p>
-<p>因为不同的key类型不一样，可能是int，可能是string…但内存地址不会以这些对象也寻址，它会通过hash算法将其转换成int从而完成数据的存储。hash函数需要保证的是对于相同的key，其计算结果总是相同的。  </p>
-<p>这个过程类似查字典，如果要查一个字，我们不会从第一页到最后一页挨着看，这将需要很长的时间，而是根据其发音先在拼音表中找到对应的页数，直接定位到对应的页即可。当然，由于有许多发音一致的汉字，所以我们可能依然需要逐个对比，但这复杂度就小太多了。</p>
-<p>哈希表的过程就和上述例子一样，我们通过key经过hash算法直接定位其位置。然而类似于许多发音一致的，也就是有许多的key通过hash定位的结果是一样，那么这就是hash碰撞。  </p>
-<h3 id="如何解决hash碰撞"><a href="#如何解决hash碰撞" class="headerlink" title="如何解决hash碰撞"></a>如何解决hash碰撞</h3><p>目前比较通用的方法就是使用数组加链表去处理，先看一张图<br><img src="https://img-blog.csdnimg.cn/202006042317255.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>然后举个简单的例子：<br>hashmap是数组和链表的结合，它拥有这两种特性。怎么说呢？举个例子，一个学校有不同年级，不同年级有不同班级，不同班级有不同的学生。hashmap里面包含了一个数组，entry包装对象，而entry里面包含了k，v，next。</p>
-<p>对next有似曾相识的感觉？打个比方。用年级对应k，班级对应v。而同一个年级，同一个班级，有不同的学生，对于这个学生，就是通过next来查询的。在后续文章中我们会对其进行详尽的分析。</p>
-<h3 id="哈希表的优缺点"><a href="#哈希表的优缺点" class="headerlink" title="哈希表的优缺点"></a>哈希表的优缺点</h3><p>哈希表是一种优化存储的思想，具体存储元素的依然是其他的数据结构。设计良好的哈希表，能同时兼备数组和链表的优点，它能在插入和查找时都具备良好的性能。然而设计不好的哈希表，有可能会出现较多的哈希碰撞，导致链表过长，从而哈希表会更像一个链表。还有当数据量很大时，为防止链表过长，就需要对数组进行扩容，这时就涉及到了数组的拷贝，其对性能的影响也很严重，所以需要提前对可能的情况有良好的预测，才能真正发挥哈希表的优势。</p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>树与二叉树</title>
-    <url>/data_structure/tree_and_binaryTree/</url>
-    <content><![CDATA[<p>数组与链表是用来解决一对一的问题，而一对多的问题则需要树来解决。</p>
-<h3 id="树的定义"><a href="#树的定义" class="headerlink" title="树的定义"></a>树的定义</h3><p>树是N的节点的有限集。N=0时称为空树，在一个非空树中：  </p>
-<ul>
-<li>有且只有一个根（）节点。</li>
-<li> 当n&gt;1 时，其余结点可分为m (m&gt;0) 个互不相交的有限集T1 、T2、……、Tm，其中每一个集合本身又是一棵树，并且称为根的子树(SubTree)。</li>
-</ul>
-<p>下图就是一个树：<br><img src="https://img-blog.csdnimg.cn/20200604232225999.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点分类"><a href="#节点分类" class="headerlink" title="节点分类"></a>节点分类</h3><p>树的结点包含一个数据元素及若干指向其子树的分支。结点拥有的子树数称为结点的度(Degree) 。度为0的结点称为叶结点(Leaf) 或终端结点；度不为0 的结点称为非终端结点或分支结点。除根结点之外，分支结点也称为内部结点。树的度是树内各结点的度的最大值。</p>
-<p>如下图所示，A结点为根节点，G、H、I、J、F为叶节点，其余节点则为内部节点，此树的度为3。<br><img src="https://img-blog.csdnimg.cn/20200604232309547.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="节点间的关系"><a href="#节点间的关系" class="headerlink" title="节点间的关系"></a>节点间的关系</h3><p>结点的子树的根称为该结点的孩子(Child)，相应地，该结点称为孩子的双亲(Parent)。同一个双亲的孩子之间互称兄弟(Sibling)。结点的祖先是从根到该结点所经分支上的所有结点。反之，以某结点为根的子树中的任一结点都称为该结点的子孙。  </p>
-<p><img src="https://img-blog.csdnimg.cn/20200604232343951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="深度"><a href="#深度" class="headerlink" title="深度"></a>深度</h3><p>结点的层次(LeveI)从根开始定义起，根为第一层，根的孩子为第二层。若某结点在第L层，则其子树的根就在第L+1层。其双亲在同一层的结点互为堂兄弟。树中结点的最大层次称为树的深度(Depth)或高度 。<br><img src="https://img-blog.csdnimg.cn/20200604232435660.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="有序树与无序树"><a href="#有序树与无序树" class="headerlink" title="有序树与无序树"></a>有序树与无序树</h3><p>如果将树中结点的各子树看成从左至右是有次序的，不能互换的，则称该树为有序树，否则称为无序树。</p>
-<h3 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h3><p>二叉树是n(n ≥ 0) 个结点的有限集合，该集合或者为空集(称为空二叉树)，或者由一个根结点和两棵互不相交的、分别称为根结点的左子树和右子树的二叉树组成。<br>下图就是一个二叉树，二叉树就是每个节点的度≤2的树。<br><img src="https://img-blog.csdnimg.cn/20200604232514455.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h3 id="二叉树遍历"><a href="#二叉树遍历" class="headerlink" title="二叉树遍历"></a>二叉树遍历</h3><p>二叉树遍历是指从根节点出发，按照某种顺序依次访问二叉树的所有节点，使得每个节点被访问一次且只能被访问一次。二叉树遍历分为前序遍历，中序遍历以及后续遍历。</p>
-<h4 id="前序遍历"><a href="#前序遍历" class="headerlink" title="前序遍历"></a>前序遍历</h4><p>规则是若二叉树为空，则空操作返回，否则先访问根结点，然后前序遍历左子树， 再前序遍历右子树。</p>
-<p>如下图所示，遍历结果为：ABDGHCEIF。<br><img src="https://img-blog.csdnimg.cn/20200604232550412.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="中序遍历"><a href="#中序遍历" class="headerlink" title="中序遍历"></a>中序遍历</h4><p>规则是若树为空，则空操作返回，否则从根结点开始(注意并不是先访问根结点) ，中序遍历根结点的左子树，然后是访问根结点，最后中序遍历右子树。</p>
-<p>如下图所示，遍历结果为：GDHBAEICF。<br><img src="https://img-blog.csdnimg.cn/20200604232622613.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<h4 id="后序遍历"><a href="#后序遍历" class="headerlink" title="后序遍历"></a>后序遍历</h4><p>规则是若树为空，则空操作返回，否则从左到右先叶子后结点的方式遍历访问左右子树，最后是访问根结点。</p>
-<p>如下图所示，遍历结果为：GHDBIEFCA。<br><img src="https://img-blog.csdnimg.cn/20200604232653753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-]]></content>
-      <categories>
-        <category>数据结构与算法</category>
+        <category>Gradle</category>
       </categories>
   </entry>
   <entry>
@@ -993,6 +1108,62 @@
 ]]></content>
       <categories>
         <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Android Jetpack架构组件——什么是Jetpack？</title>
+    <url>/jetpack/introduction/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>提到Android架构，我们首先想到的是MVC，MVP，MVVM。他们主要是针对视图和模型的。随着Android的发展，从原来的框架很少，全是自己动手撸。到现在框架越来越多，选型也越来越多，导致开发出来越来越不规范。我们知道MVP和MVVM只是应用在架构上，而不是在框架选型上。而google在2018年推出jetpack就是为了解决以上的问题。</p>
+<h3 id="Jetpack是什么？"><a href="#Jetpack是什么？" class="headerlink" title="Jetpack是什么？"></a>Jetpack是什么？</h3><p>Jetpack它不是一个新的架构，而是一个由多个库组成的套件，可帮助开发者遵循最佳做法，减少样板代码并编写可在各种Android版本和设备中一致运行的代码，让开发者精力集中编写重要的代码。</p>
+<h3 id="Jetpack的优势"><a href="#Jetpack的优势" class="headerlink" title="Jetpack的优势"></a>Jetpack的优势</h3><p>既然需要使用Jetpack，那么说不出一些优势，你的领导也不会同意说换就换的。下面我们看看jetpack有哪些优势：</p>
+<ul>
+<li>Jetpack 拥有基于生命周期感知的能力，可以减少NPE崩溃、内存泄漏。为我们开发出健壮且流畅的程序提供强力保障。</li>
+<li>Jetpack 可以减少样板代码，有助于提升 Android 开发的效率。</li>
+</ul>
+<h3 id="JetPack的分类"><a href="#JetPack的分类" class="headerlink" title="JetPack的分类"></a>JetPack的分类</h3><p>我们来看下google官方提供的一张图：<br><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/e6R24K.png" alt="jetpack体系"><br>由图可知，Jetpack被分成了四大类：</p>
+<ul>
+<li>基础 - Foundation</li>
+<li>架构 - Architecture</li>
+<li>界面 - UI</li>
+<li>行为 - Behavior</li>
+</ul>
+<h4 id="Foundation（基础组件）"><a href="#Foundation（基础组件）" class="headerlink" title="Foundation（基础组件）"></a>Foundation（基础组件）</h4><ul>
+<li>AppCompat：帮助较低版本的Android系统进行兼容</li>
+<li>Android KTX：优化了供Kotlin使用的Jetpack和Android平台API，帮助开发者以更简洁、更愉悦、更惯用的方式使用Kotlin进行Android开发</li>
+<li>Multidex：为具有多个Dex文件应用提供支持</li>
+<li>Test：从AndroidStudio中快速检测基于Kotlin或Java的代码</li>
+</ul>
+<h4 id="Architecture（架构组件）"><a href="#Architecture（架构组件）" class="headerlink" title="Architecture（架构组件）"></a>Architecture（架构组件）</h4><ul>
+<li>Data Binding：属于支持库可使用声明式将布局中的界面组件绑定到应用中的数据源</li>
+<li>Lifecycles：管理Activity和Fragment生命周期</li>
+<li>LiveData：是一个可观察的数据持有者类。与常规Observable不同，LiveData是有生命周期感知的</li>
+<li>Navigation：处理应用内导航所需的一切</li>
+<li>Paging：一次加载/按需加载 &amp;&amp; 显示小块数据</li>
+<li>Room：帮助开发者更友好、流畅的访问SQLite数据库</li>
+<li>ViewModel：以生命周期感知的方式存储和管理与UI相关的数据</li>
+<li>WorkManager：管理Android的后台的作业，即使应用程序退出或设备重新启动也可以运行可延迟的异步任务</li>
+</ul>
+<h4 id="UI（界面组件）"><a href="#UI（界面组件）" class="headerlink" title="UI（界面组件）"></a>UI（界面组件）</h4><ul>
+<li>Animation and Transition：该框架包含用于常见效果的内置动画，并允许开发者创建自定义动画和生命周期回调</li>
+<li>Auto：开发Android Auto应用的组件，提供了适用于所有车辆的标准化界面和用户交互</li>
+<li>TV：构建可让用户在大屏幕上体验沉浸式内容的应用</li>
+<li>Wear：开发Wear应用的组件</li>
+<li>Emoji：即便用户没有更新Android系统也可以获取最新的表情符号</li>
+<li>Fragment：组件化界面的基本单位</li>
+<li>Layout：用XML中声明UI元素或者在代码中实例化UI元素</li>
+<li>Paletee：从调色板中提取出有用的信息</li>
+</ul>
+<h4 id="Behavior（行为组件）"><a href="#Behavior（行为组件）" class="headerlink" title="Behavior（行为组件）"></a>Behavior（行为组件）</h4><ul>
+<li>DownloadManager：可处理长时间运行的HTTP下载&amp;&amp;超时重连</li>
+<li>Media &amp; playback：用于媒体播放，以及路由的向后兼容API</li>
+<li>Permissions：用于检查和请求应用权限的兼容性API</li>
+<li>Notifications：提供向后兼容的通知API，支持Wear和Auto</li>
+<li>Sharing：提供适合应用操作栏的共享操作</li>
+<li>Slices：创建可在应用外部显示应用数据的灵活界面元素</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Jetpack</category>
       </categories>
   </entry>
   <entry>
@@ -1886,177 +2057,6 @@
 ]]></content>
       <categories>
         <category>android</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Gradle中Transform是什么？</title>
-    <url>/gradle/transform/</url>
-    <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Google从 Android Gradle 1.5.0 开始，提供了Transform API。通过Transform API，允许第三方以插件的形式，在Android应用程序打包成dex文件之前的编译过程中操作.class文件。我们只要实现一套Transform，去遍历所有.class文件的所有方法，然后进行修改，再对源文件进行替换，即可以达到插入代码的目的。</p>
-<h3 id="Transform可以做什么"><a href="#Transform可以做什么" class="headerlink" title="Transform可以做什么"></a>Transform可以做什么</h3><p>首先，我们可以先执行一次build操作，命令行会输出如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&gt; Transform core-runtime.aar (androidx.arch.core:core-runtime:2.0.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-livedata-core.aar (androidx.lifecycle:lifecycle-livedata-core:2.0.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-livedata.aar (androidx.lifecycle:lifecycle-livedata:2.0.0) with AarTransform</span><br><span class="line">&gt; Transform interpolator.aar (androidx.interpolator:interpolator:1.0.0) with AarTransform</span><br><span class="line">&gt; Transform savedstate.aar (androidx.savedstate:savedstate:1.0.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-viewmodel.aar (androidx.lifecycle:lifecycle-viewmodel:2.1.0) with AarTransform</span><br><span class="line">&gt; Transform lifecycle-runtime.aar (androidx.lifecycle:lifecycle-runtime:2.1.0) with AarTransform</span><br><span class="line">&gt; Transform versionedparcelable.aar (androidx.versionedparcelable:versionedparcelable:1.1.0) with AarTransform</span><br><span class="line">&gt; Transform cursoradapter.aar (androidx.cursoradapter:cursoradapter:1.0.0) with AarTransform</span><br><span class="line">&gt; Transform core.aar (androidx.core:core:1.3.2) with AarTransform</span><br><span class="line">&gt; Transform customview.aar (androidx.customview:customview:1.0.0) with AarTransform</span><br></pre></td></tr></table></figure>
-<p>也就是在构建过程中，会执行一个个的Transform。那么回到刚开始的问题，Transform可以做什么，我先列一些大家常听的，以及常见的:</p>
-<ul>
-<li><p>无痕埋点：不需要侵入代码即可以对页面进行埋点，不过一般这种都是针对比较简单的case，复杂的业务场景很难通过无痕埋点处理。</p>
-</li>
-<li><p>性能监控：这个也很常见。</p>
-</li>
-<li><p>事件防抖：避免短期内多次点击按钮。</p>
-</li>
-<li><p>热修复：在方法前插入预留函数已做替换。</p>
-</li>
-<li><p>……</p>
-</li>
-</ul>
-<p>那么Transform的操作到底是在什么时候将代码植入的呢？我们看一张google官方的打包图：<br><img src="https://raw.githubusercontent.com/296777513/Picture/master/gradle_plugin/transform_1.png" alt="image">  </p>
-<p>Transform阶段就是在图中红圈的位置，也就是.class文件变成.dex文件过程进行插入的。说白了Transform就是Android官方提供给开发者在项目构建阶段由class到dex转换期间修改class文件的一套api。比较经典的应用就是字节码插桩和代码注入技术。有了这个API，我们就可以根据自己的业务需求做一些定制。</p>
-<h3 id="Transform使用"><a href="#Transform使用" class="headerlink" title="Transform使用"></a>Transform使用</h3><p>前面说了那么多，主要是介绍了，Transform是什么，能做什么。那么该如何使用呢？</p>
-<p>我们先在我们build.gradle中新增一个依赖：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">dependencies &#123;</span><br><span class="line">    implementation fileTree(<span class="attr">dir:</span> <span class="string">&quot;libs&quot;</span>, <span class="attr">include:</span> [<span class="string">&quot;*.jar&quot;</span>])</span><br><span class="line">    implementation <span class="string">&quot;org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version&quot;</span></span><br><span class="line">    <span class="comment">//gradle sdk</span></span><br><span class="line">    implementation gradleApi()</span><br><span class="line">    <span class="comment">//groovy sdk</span></span><br><span class="line">    implementation localGroovy()</span><br><span class="line">    <span class="comment">//新增</span></span><br><span class="line">    implementation <span class="string">&quot;com.android.tools.build:gradle:3.3.2&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后新建一个MyTransform：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">//注意Transform有很多路径</span></span><br><span class="line"><span class="keyword">import</span> com.android.build.api.transform.Transform</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTransform</span> <span class="keyword">extends</span> <span class="title">Transform</span> &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    String getName() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;MyTransform&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Set&lt;QualifiedContent.ContentType&gt; getInputTypes() &#123;</span><br><span class="line">        <span class="keyword">return</span> TransformManager.CONTENT_CLASS</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    Set&lt;? super QualifiedContent.Scope&gt; getScopes() &#123;</span><br><span class="line">        return TransformManager.SCOPE_FULL_PROJECT</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    boolean isIncremental() &#123;</span><br><span class="line">        return false</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="getName"><a href="#getName" class="headerlink" title="getName"></a>getName</h4><p>指定自定义 Transform 的名称，返回的是对应的Task名称</p>
-<h4 id="getInputTypes"><a href="#getInputTypes" class="headerlink" title="getInputTypes"></a>getInputTypes</h4><p>可以看到这个方法是返回一个Set&lt;QualifiedContent.ContentType&gt;集合，其实就是返回Transform需要处理的文件类型。具体有哪些，TransformManager已经给我们提供了，我们来看一下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_CLASS = ImmutableSet.of(CLASSES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_JARS = ImmutableSet.of(CLASSES, RESOURCES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_RESOURCES = ImmutableSet.of(RESOURCES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_NATIVE_LIBS =</span><br><span class="line">        ImmutableSet.of(NATIVE_LIBS);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_DEX = ImmutableSet.of(ExtendedContentType.DEX);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ContentType&gt; CONTENT_DEX_WITH_RESOURCES =</span><br><span class="line">        ImmutableSet.of(ExtendedContentType.DEX, RESOURCES);</span><br></pre></td></tr></table></figure>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>CONTENT_CLASS</td>
-<td>表示需要处理 java 的 class 文件</td>
-</tr>
-<tr>
-<td>CONTENT_JARS</td>
-<td>表示需要处理 java 的 class 与 资源文件</td>
-</tr>
-<tr>
-<td>CONTENT_RESOURCES</td>
-<td>表示需要处理 java 的资源文件</td>
-</tr>
-<tr>
-<td>CONTENT_NATIVE_LIBS</td>
-<td>表示需要处理 native 库的代码</td>
-</tr>
-<tr>
-<td>CONTENT_DEX</td>
-<td>表示需要处理 DEX 文件</td>
-</tr>
-<tr>
-<td>CONTENT_DEX_WITH_RESOURCES</td>
-<td>表示需要处理 DEX 与 java 的资源文件</td>
-</tr>
-</tbody></table>
-<h4 id="getScopes"><a href="#getScopes" class="headerlink" title="getScopes"></a>getScopes</h4><p>可以看到这个方法是返回一个Set&lt;QualifiedContent.Scope&gt;集合，其实就是返回Transform处理的作用域。具体有哪些，我们来看一下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">/** Only the project (module) content */</span></span><br><span class="line">PROJECT(<span class="number">0x01</span>),</span><br><span class="line"><span class="comment">/** Only the sub-projects (other modules) */</span></span><br><span class="line">SUB_PROJECTS(<span class="number">0x04</span>),</span><br><span class="line"><span class="comment">/** Only the external libraries */</span></span><br><span class="line">EXTERNAL_LIBRARIES(<span class="number">0x10</span>),</span><br><span class="line"><span class="comment">/** Code that is being tested by the current variant, including dependencies */</span></span><br><span class="line">TESTED_CODE(<span class="number">0x20</span>),</span><br><span class="line"><span class="comment">/** Local or remote dependencies that are provided-only */</span></span><br><span class="line">PROVIDED_ONLY(<span class="number">0x40</span>),</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Only the project&#x27;s local dependencies (local jars)</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @deprecated local dependencies are now processed as &#123;@link #EXTERNAL_LIBRARIES&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Deprecated</span></span><br><span class="line">PROJECT_LOCAL_DEPS(<span class="number">0x02</span>),</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Only the sub-projects&#x27;s local dependencies (local jars).</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * @deprecated local dependencies are now processed as &#123;@link#EXTERNAL_LIBRARIES&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Deprecated</span></span><br><span class="line">SUB_PROJECTS_LOCAL_DEPS(<span class="number">0x08</span>);</span><br></pre></td></tr></table></figure>
-<p>这里主要介绍下前面五个。</p>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>PROJECT</td>
-<td>只处理当前的项目</td>
-</tr>
-<tr>
-<td>SUB_PROJECTS</td>
-<td>只处理子项目</td>
-</tr>
-<tr>
-<td>EXTERNAL_LIBRARIES</td>
-<td>只处理外部依赖库</td>
-</tr>
-<tr>
-<td>TESTED_CODE</td>
-<td>测试代码</td>
-</tr>
-<tr>
-<td>PROVIDED_ONLY</td>
-<td>只提供本地或者远程依赖项</td>
-</tr>
-</tbody></table>
-<p>同样，TransformManager为我们分装了Scope的返回集合，具体如下：</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; PROJECT_ONLY = ImmutableSet.of(Scope.PROJECT);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;Scope&gt; SCOPE_FULL_PROJECT =</span><br><span class="line">        Sets.immutableEnumSet(</span><br><span class="line">                Scope.PROJECT,</span><br><span class="line">                Scope.SUB_PROJECTS,</span><br><span class="line">                Scope.EXTERNAL_LIBRARIES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_WITH_IR_FOR_DEXING =</span><br><span class="line">        <span class="keyword">new</span> ImmutableSet.Builder&lt;ScopeType&gt;()</span><br><span class="line">                .addAll(SCOPE_FULL_PROJECT)</span><br><span class="line">                .add(InternalScope.MAIN_SPLIT)</span><br><span class="line">                .build();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_WITH_FEATURES =</span><br><span class="line">        <span class="keyword">new</span> ImmutableSet.Builder&lt;ScopeType&gt;()</span><br><span class="line">                .addAll(SCOPE_FULL_PROJECT)</span><br><span class="line">                .add(InternalScope.FEATURES)</span><br><span class="line">                .build();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_WITH_IR_AND_FEATURES =</span><br><span class="line">        <span class="keyword">new</span> ImmutableSet.Builder&lt;ScopeType&gt;()</span><br><span class="line">                .addAll(SCOPE_FULL_PROJECT)</span><br><span class="line">                .add(InternalScope.MAIN_SPLIT)</span><br><span class="line">                .add(InternalScope.FEATURES)</span><br><span class="line">                .build();</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FEATURES = ImmutableSet.of(InternalScope.FEATURES);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_FULL_LIBRARY_WITH_LOCAL_JARS =</span><br><span class="line">        ImmutableSet.of(Scope.PROJECT, InternalScope.LOCAL_DEPS);</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Set&lt;ScopeType&gt; SCOPE_IR_FOR_SLICING =</span><br><span class="line">        ImmutableSet.of(Scope.PROJECT, Scope.SUB_PROJECTS);</span><br></pre></td></tr></table></figure>
-<h4 id="isIncremental"><a href="#isIncremental" class="headerlink" title="isIncremental"></a>isIncremental</h4><p>是否进行增量更新，如果返回true，TransformInput会包含一份修改的文件列表，如果返回 false，则会删除上次修改的记录并进行全量编译。</p>
-<h4 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h4><p>这是最主要的方法，对文件和jar对处理都是在这里进行的，代码植入也是通过此方法进行操作的。常用到的属性有以下几个：</p>
-<ul>
-<li><p>TransformInput：对输入的class文件转变成目标字节码文件，TransformInput就是这些输入文件的抽象。目前它包含DirectoryInput集合与JarInput集合。</p>
-</li>
-<li><p>DirectoryInput：源码方式参与项目编译的所有目录结构及其目录下的源文件。</p>
-</li>
-<li><p>JarInput：Jar包方式参与项目编译的所有本地jar或远程jar包。</p>
-</li>
-<li><p>TransformOutProvider：通过这个类来获取输出路径。</p>
-</li>
-</ul>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>当你编写完成之后，我们只需要在我们的plugin中添加如下代码就可以使用你自己写的Transform了。</p>
-<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyGradlePlugin</span> <span class="keyword">implements</span> <span class="title">Plugin</span>&lt;<span class="title">Project</span>&gt; &#123;</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">void</span> apply(Project project) &#123;</span><br><span class="line">        ...</span><br><span class="line">        <span class="keyword">def</span> android = project.extensions.getByType(AppExtension)</span><br><span class="line">        <span class="keyword">def</span> classTransform = <span class="keyword">new</span> MyTransform(project)</span><br><span class="line">        <span class="comment">//注册你的Transform</span></span><br><span class="line">        android.registerTransform(classTransform)</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>回到标题，Transform是什么？Transform其实就是在编译过程中可以动态织入代码。最主要的目的就是解耦。让开发更注重于业务开发。一些数据监控、无痕埋点等逻辑交给Transfrom处理。</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://blog.csdn.net/a296777513/article/details/90665134">Gradle-初探代码注入Transform</a></p>
-]]></content>
-      <categories>
-        <category>Gradle</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Android Jetpack架构组件——什么是Jetpack？</title>
-    <url>/jetpack/introduction/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>提到Android架构，我们首先想到的是MVC，MVP，MVVM。他们主要是针对视图和模型的。随着Android的发展，从原来的框架很少，全是自己动手撸。到现在框架越来越多，选型也越来越多，导致开发出来越来越不规范。我们知道MVP和MVVM只是应用在架构上，而不是在框架选型上。而google在2018年推出jetpack就是为了解决以上的问题。</p>
-<h3 id="Jetpack是什么？"><a href="#Jetpack是什么？" class="headerlink" title="Jetpack是什么？"></a>Jetpack是什么？</h3><p>Jetpack它不是一个新的架构，而是一个由多个库组成的套件，可帮助开发者遵循最佳做法，减少样板代码并编写可在各种Android版本和设备中一致运行的代码，让开发者精力集中编写重要的代码。</p>
-<h3 id="Jetpack的优势"><a href="#Jetpack的优势" class="headerlink" title="Jetpack的优势"></a>Jetpack的优势</h3><p>既然需要使用Jetpack，那么说不出一些优势，你的领导也不会同意说换就换的。下面我们看看jetpack有哪些优势：</p>
-<ul>
-<li>Jetpack 拥有基于生命周期感知的能力，可以减少NPE崩溃、内存泄漏。为我们开发出健壮且流畅的程序提供强力保障。</li>
-<li>Jetpack 可以减少样板代码，有助于提升 Android 开发的效率。</li>
-</ul>
-<h3 id="JetPack的分类"><a href="#JetPack的分类" class="headerlink" title="JetPack的分类"></a>JetPack的分类</h3><p>我们来看下google官方提供的一张图：<br><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/e6R24K.png" alt="jetpack体系"><br>由图可知，Jetpack被分成了四大类：</p>
-<ul>
-<li>基础 - Foundation</li>
-<li>架构 - Architecture</li>
-<li>界面 - UI</li>
-<li>行为 - Behavior</li>
-</ul>
-<h4 id="Foundation（基础组件）"><a href="#Foundation（基础组件）" class="headerlink" title="Foundation（基础组件）"></a>Foundation（基础组件）</h4><ul>
-<li>AppCompat：帮助较低版本的Android系统进行兼容</li>
-<li>Android KTX：优化了供Kotlin使用的Jetpack和Android平台API，帮助开发者以更简洁、更愉悦、更惯用的方式使用Kotlin进行Android开发</li>
-<li>Multidex：为具有多个Dex文件应用提供支持</li>
-<li>Test：从AndroidStudio中快速检测基于Kotlin或Java的代码</li>
-</ul>
-<h4 id="Architecture（架构组件）"><a href="#Architecture（架构组件）" class="headerlink" title="Architecture（架构组件）"></a>Architecture（架构组件）</h4><ul>
-<li>Data Binding：属于支持库可使用声明式将布局中的界面组件绑定到应用中的数据源</li>
-<li>Lifecycles：管理Activity和Fragment生命周期</li>
-<li>LiveData：是一个可观察的数据持有者类。与常规Observable不同，LiveData是有生命周期感知的</li>
-<li>Navigation：处理应用内导航所需的一切</li>
-<li>Paging：一次加载/按需加载 &amp;&amp; 显示小块数据</li>
-<li>Room：帮助开发者更友好、流畅的访问SQLite数据库</li>
-<li>ViewModel：以生命周期感知的方式存储和管理与UI相关的数据</li>
-<li>WorkManager：管理Android的后台的作业，即使应用程序退出或设备重新启动也可以运行可延迟的异步任务</li>
-</ul>
-<h4 id="UI（界面组件）"><a href="#UI（界面组件）" class="headerlink" title="UI（界面组件）"></a>UI（界面组件）</h4><ul>
-<li>Animation and Transition：该框架包含用于常见效果的内置动画，并允许开发者创建自定义动画和生命周期回调</li>
-<li>Auto：开发Android Auto应用的组件，提供了适用于所有车辆的标准化界面和用户交互</li>
-<li>TV：构建可让用户在大屏幕上体验沉浸式内容的应用</li>
-<li>Wear：开发Wear应用的组件</li>
-<li>Emoji：即便用户没有更新Android系统也可以获取最新的表情符号</li>
-<li>Fragment：组件化界面的基本单位</li>
-<li>Layout：用XML中声明UI元素或者在代码中实例化UI元素</li>
-<li>Paletee：从调色板中提取出有用的信息</li>
-</ul>
-<h4 id="Behavior（行为组件）"><a href="#Behavior（行为组件）" class="headerlink" title="Behavior（行为组件）"></a>Behavior（行为组件）</h4><ul>
-<li>DownloadManager：可处理长时间运行的HTTP下载&amp;&amp;超时重连</li>
-<li>Media &amp; playback：用于媒体播放，以及路由的向后兼容API</li>
-<li>Permissions：用于检查和请求应用权限的兼容性API</li>
-<li>Notifications：提供向后兼容的通知API，支持Wear和Auto</li>
-<li>Sharing：提供适合应用操作栏的共享操作</li>
-<li>Slices：创建可在应用外部显示应用数据的灵活界面元素</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Jetpack</category>
       </categories>
   </entry>
 </search>
