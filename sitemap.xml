@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://silencedev.cn/jetpack/viewmodel_use_with_theory/</loc>
+    <loc>http://silencedev.cn/jetpack/lifecycle_theory/</loc>
     
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     
   </url>
   
   <url>
-    <loc>http://silencedev.cn/jetpack/lifecycle_theory/</loc>
+    <loc>http://silencedev.cn/java/linkedlist/</loc>
     
-    <lastmod>2021-02-20</lastmod>
+    <lastmod>2021-02-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://silencedev.cn/jetpack/viewmodel_use_with_theory/</loc>
+    
+    <lastmod>2021-02-24</lastmod>
     
   </url>
   
@@ -233,13 +240,6 @@
   </url>
   
   <url>
-    <loc>http://silencedev.cn/java/linkedlist/</loc>
-    
-    <lastmod>2021-02-03</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://silencedev.cn/java/hashmap/</loc>
     
     <lastmod>2021-02-03</lastmod>
@@ -291,7 +291,7 @@
 
   <url>
     <loc>http://silencedev.cn/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -301,63 +301,63 @@
   
   <url>
     <loc>http://silencedev.cn/categories/%E4%BA%BA%E7%94%9F/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/android/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/Gradle/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/http/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/Java/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/Jetpack/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/JVM/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://silencedev.cn/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/</loc>
-    <lastmod>2021-02-23</lastmod>
+    <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
