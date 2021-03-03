@@ -306,7 +306,7 @@
 <li><p>……</p>
 </li>
 </ul>
-<p>那么Transform的操作到底是在什么时候将代码植入的呢？我们看一张google官方的打包图：<br><img src="https://raw.githubusercontent.com/296777513/Picture/master/gradle_plugin/transform_1.png" alt="image">  </p>
+<p>那么Transform的操作到底是在什么时候将代码植入的呢？我们看一张google官方的打包图：<br><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/20210303225336.png" alt="image">  </p>
 <p>Transform阶段就是在图中红圈的位置，也就是.class文件变成.dex文件过程进行插入的。说白了Transform就是Android官方提供给开发者在项目构建阶段由class到dex转换期间修改class文件的一套api。比较经典的应用就是字节码插桩和代码注入技术。有了这个API，我们就可以根据自己的业务需求做一些定制。</p>
 <h3 id="Transform使用"><a href="#Transform使用" class="headerlink" title="Transform使用"></a>Transform使用</h3><p>前面说了那么多，主要是介绍了，Transform是什么，能做什么。那么该如何使用呢？</p>
 <p>我们先在我们build.gradle中新增一个依赖：</p>
