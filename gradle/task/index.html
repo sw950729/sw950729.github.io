@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Gradle核心之Task | 我就是马云飞</title><meta name="author" content="马云飞"><meta name="copyright" content="马云飞"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="前言gradle命令最终是通过task去执行的，可见task在gradle中的重要性。 Task的定义与配置task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下： 1234567task test1Task&amp;#123;    println(&quot;test1Task&quot;)&amp;#125;tasks.create(name:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gradle核心之Task">
+<meta property="og:url" content="http://silencedev.cn/gradle/task/index.html">
+<meta property="og:site_name" content="我就是马云飞">
+<meta property="og:description" content="前言gradle命令最终是通过task去执行的，可见task在gradle中的重要性。 Task的定义与配置task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下： 1234567task test1Task&amp;#123;    println(&quot;test1Task&quot;)&amp;#125;tasks.create(name:">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/gradle.jpeg">
+<meta property="article:published_time" content="2021-01-25T13:46:18.261Z">
+<meta property="article:modified_time" content="2021-02-04T13:08:04.042Z">
+<meta property="article:author" content="马云飞">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/gradle.jpeg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://silencedev.cn/gradle/task/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":false,"highlightLang":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-02-04 21:08:04'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><meta name="generator" content="Hexo 5.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/images/icon.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/gradle.jpeg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">我就是马云飞</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Gradle核心之Task</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-01-25T13:46:18.261Z" title="发表于 2021-01-25 21:46:18">2021-01-25</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-02-04T13:08:04.042Z" title="更新于 2021-02-04 21:08:04">2021-02-04</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Gradle/">Gradle</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">921</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>4分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>gradle命令最终是通过task去执行的，可见task在gradle中的重要性。</p>
+<h3 id="Task的定义与配置"><a href="#Task的定义与配置" class="headerlink" title="Task的定义与配置"></a>Task的定义与配置</h3><p>task的定义有两种形式，一个是直接通过task函数去创建，另一个是通过task的create方法去创建，示例代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">task test1Task&#123;</span><br><span class="line">    println(<span class="string">&quot;test1Task&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">tasks.create(<span class="attr">name:</span><span class="string">&#x27;test2Task&#x27;</span>)&#123;</span><br><span class="line">    println(<span class="string">&quot;test2Task&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>刚刚我们为task指定了一个name。我们可以看看除了name我们还可以指定什么，我们打开Task的源代码，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Task</span> <span class="keyword">extends</span> <span class="title">Comparable</span>&lt;<span class="title">Task</span>&gt;, <span class="title">ExtensionAware</span> </span>&#123;</span><br><span class="line">    String TASK_NAME = <span class="string">&quot;name&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DESCRIPTION = <span class="string">&quot;description&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_GROUP = <span class="string">&quot;group&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_TYPE = <span class="string">&quot;type&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_DEPENDS_ON = <span class="string">&quot;dependsOn&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_OVERWRITE = <span class="string">&quot;overwrite&quot;</span>;</span><br><span class="line"></span><br><span class="line">    String TASK_ACTION = <span class="string">&quot;action&quot;</span>;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Constructor arguments for the Task</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@since</span> 4.7</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Incubating</span></span><br><span class="line">    String TASK_CONSTRUCTOR_ARGS = <span class="string">&quot;constructorArgs&quot;</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面我们介绍下这些属性都是用来干嘛的。</p>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>name</td>
+<td>ask 名字</td>
+<td>必须指定</td>
+</tr>
+<tr>
+<td>description</td>
+<td>task 的描述信息</td>
+<td>null</td>
+</tr>
+<tr>
+<td>group</td>
+<td>该 task 所属组</td>
+<td>null</td>
+</tr>
+<tr>
+<td>type</td>
+<td>需要创建的 task Class</td>
+<td>DefaultTask</td>
+</tr>
+<tr>
+<td>dependsOn</td>
+<td>该 task 所依赖的 task 集合</td>
+<td>[]</td>
+</tr>
+<tr>
+<td>overwrite</td>
+<td>替换一个已存在的 task</td>
+<td>false</td>
+</tr>
+<tr>
+<td>action</td>
+<td>当 task 执行的时候，需要执行的闭包 closure 或 行为 Action</td>
+<td>null</td>
+</tr>
+<tr>
+<td>constructorArgs</td>
+<td>传递到 task Class 构造器中的参数</td>
+<td>null</td>
+</tr>
+</tbody></table>
+<h3 id="Task的执行"><a href="#Task的执行" class="headerlink" title="Task的执行"></a>Task的执行</h3><p>前面我们也介绍了gradle的生命周期，通过前面的文章我们可以知道，在执行阶段gradle会输出每个gradle执行的内容。当然我们还可以通过<code>doFirst</code>和<code>doLast</code>为我们的 task 指定执行阶段要执行的代码。关于这2个的属性介绍如下：</p>
+<ul>
+<li>doFirst :表示当前task执行最开始的时候被调用的Action。</li>
+<li>doLast：表示单曲task即将执行完的时候被调用的Action。</li>
+</ul>
+<p>我们可以验证下上面两个属性，执行代码如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    doFirst &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task first&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    doLast &#123;</span><br><span class="line">        println(<span class="string">&quot;test1Task last&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line"></span><br><span class="line">&gt; <span class="attr">Task :</span>test1Task</span><br><span class="line">test1Task first</span><br><span class="line">test1Task last</span><br><span class="line">:test1Task spend <span class="number">17</span>ms</span><br></pre></td></tr></table></figure>
+<h3 id="Task的执行顺序"><a href="#Task的执行顺序" class="headerlink" title="Task的执行顺序"></a>Task的执行顺序</h3><p>首先了解下，控制task执行顺序的方式有两种。</p>
+<ul>
+<li>通过dependsOn强依赖的方式</li>
+<li>通过api指定执行顺序</li>
+</ul>
+<p><img src="https://s3.ax1x.com/2021/01/25/sLQTc4.png" alt="image"></p>
+<h4 id="dependsOn强依赖"><a href="#dependsOn强依赖" class="headerlink" title="dependsOn强依赖"></a>dependsOn强依赖</h4><p>强依赖的方式又分为两种，动态依赖及静态依赖，我们来举个例子：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">task test1Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖一</span></span><br><span class="line">task test3Task(<span class="attr">dependsOn:</span> [test1Task, test2Task]) &#123;</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//静态依赖二</span></span><br><span class="line">test3Task.dependsOn(test1Task, test2Task)</span><br><span class="line"><span class="comment">//动态依赖</span></span><br><span class="line">task test4Task &#123;</span><br><span class="line">    dependsOn tasks.findAll &#123; task -&gt;</span><br><span class="line">        <span class="keyword">return</span> task.name.startsWith(<span class="string">&quot;test&quot;</span>)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    println(<span class="string">&quot;test4Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>输出结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test1Tasking...</span><br><span class="line">test2Tasking...</span><br><span class="line">test3Tasking...</span><br><span class="line">test4Tasking...</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，虽然我依赖了其他的task，但是依赖的task输出顺序它是随机的。</p>
+<h4 id="API指定输出顺序"><a href="#API指定输出顺序" class="headerlink" title="API指定输出顺序"></a>API指定输出顺序</h4><table>
+<thead>
+<tr>
+<th>关键字名称</th>
+<th>作用</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>mustRunAfter</td>
+<td>指定一个任务必须执行在另一个任务之后</td>
+<td>优先级小于dependsOn属性</td>
+</tr>
+<tr>
+<td>shouldRunAfter</td>
+<td>指定一个任务应该执行在另一个任务之后</td>
+<td>一般不用</td>
+</tr>
+</tbody></table>
+<p>举个栗子：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">task test2Task &#123;</span><br><span class="line">    println(<span class="string">&quot;test2Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test1Task &#123;</span><br><span class="line">    mustRunAfter test2Task</span><br><span class="line">    println(<span class="string">&quot;test1Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">task test3Task &#123;</span><br><span class="line">    mustRunAfter test1Task</span><br><span class="line">    println(<span class="string">&quot;test3Tasking...&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>为了方便查看，我们把顺序修改了，不让它按照1、2、3的形式输出，现在我们看看上述代码的输出结果：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; Configure <span class="attr">project :</span></span><br><span class="line">test2Tasking...</span><br><span class="line">test1Tasking...</span><br><span class="line">test3Tasking...</span><br></pre></td></tr></table></figure>
+<h3 id="Task类型"><a href="#Task类型" class="headerlink" title="Task类型"></a>Task类型</h3><p>除了定义一个task之外，我们也可以使用task的type属性来直接使用一个已有的 task 类型，比如Gradle自带的Copy、Delete、Sync等等。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本节我们介绍了Task的使用，除了上面介绍的，我们还可以通过gradle官网去查看task相关指令。</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010289802/article/details/105908520">暴力突破 Gradle 自动化项目构建（六）- Gradle 核心之 Task</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">马云飞</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://silencedev.cn/gradle/task/">http://silencedev.cn/gradle/task/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://silencedev.cn" target="_blank">我就是马云飞</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/gradle.jpeg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/images/wechatpay.png" target="_blank"><img class="post-qr-code-img" src="/images/wechatpay.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/images/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/images/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/conclusion/2020/"><img class="prev-cover" src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fdpic.tiankong.com%2F9x%2Fk5%2FQJ9127610324.jpg&amp;refer=http%3A%2F%2Fdpic.tiankong.com&amp;app=2002&amp;size=f9999,10000&amp;q=a80&amp;n=0&amp;g=0n&amp;fmt=jpeg?sec=1614964534&amp;t=b4af3a14c09fb090c3c3d881e75dc66e" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2020年度总结</div></div></a></div><div class="next-post pull-right"><a href="/gradle/project/"><img class="next-cover" src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/gradle.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Gradle核心之Project</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/images/icon.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">马云飞</div><div class="author-info__description">三十年河东，三十年河西，莫欺少年穷。<br> 微信公众号：码农职场</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">43</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sw950729"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/sw950729" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:silencedev@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">Jetpack系列正在更新中...</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Task%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E9%85%8D%E7%BD%AE"><span class="toc-number">2.</span> <span class="toc-text">Task的定义与配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Task%E7%9A%84%E6%89%A7%E8%A1%8C"><span class="toc-number">3.</span> <span class="toc-text">Task的执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Task%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F"><span class="toc-number">4.</span> <span class="toc-text">Task的执行顺序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#dependsOn%E5%BC%BA%E4%BE%9D%E8%B5%96"><span class="toc-number">4.1.</span> <span class="toc-text">dependsOn强依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#API%E6%8C%87%E5%AE%9A%E8%BE%93%E5%87%BA%E9%A1%BA%E5%BA%8F"><span class="toc-number">4.2.</span> <span class="toc-text">API指定输出顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Task%E7%B1%BB%E5%9E%8B"><span class="toc-number">5.</span> <span class="toc-text">Task类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">6.</span> <span class="toc-text">总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-number">7.</span> <span class="toc-text">参考</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/android/okhttp/" title="OkHttp源码分析"><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/20210410175110.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="OkHttp源码分析"/></a><div class="content"><a class="title" href="/android/okhttp/" title="OkHttp源码分析">OkHttp源码分析</a><time datetime="2021-04-10T09:44:48.037Z" title="发表于 2021-04-10 17:44:48">2021-04-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/jetpack/navigation_use/" title="Android Jetpack导航组件——Navigation的使用"><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/20210309234221.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Jetpack导航组件——Navigation的使用"/></a><div class="content"><a class="title" href="/jetpack/navigation_use/" title="Android Jetpack导航组件——Navigation的使用">Android Jetpack导航组件——Navigation的使用</a><time datetime="2021-03-09T15:37:56.088Z" title="发表于 2021-03-09 23:37:56">2021-03-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/jetpack/livedata_theory/" title="Android Jetpack架构组件——LiveData原理篇"><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/20210301233422.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Jetpack架构组件——LiveData原理篇"/></a><div class="content"><a class="title" href="/jetpack/livedata_theory/" title="Android Jetpack架构组件——LiveData原理篇">Android Jetpack架构组件——LiveData原理篇</a><time datetime="2021-03-01T15:30:29.789Z" title="发表于 2021-03-01 23:30:29">2021-03-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/jetpack/livedata_use/" title="Android Jetpack架构组件——LiveData使用篇"><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/20210227122637.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Jetpack架构组件——LiveData使用篇"/></a><div class="content"><a class="title" href="/jetpack/livedata_use/" title="Android Jetpack架构组件——LiveData使用篇">Android Jetpack架构组件——LiveData使用篇</a><time datetime="2021-02-27T04:19:43.508Z" title="发表于 2021-02-27 12:19:43">2021-02-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/jetpack/viewmodel_use_with_theory/" title="Android Jetpack架构组件——一文带你了解ViewModel的使用及原理"><img src="https://cdn.jsdelivr.net/gh/sw950729/img_cdn/img/20210223205046.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android Jetpack架构组件——一文带你了解ViewModel的使用及原理"/></a><div class="content"><a class="title" href="/jetpack/viewmodel_use_with_theory/" title="Android Jetpack架构组件——一文带你了解ViewModel的使用及原理">Android Jetpack架构组件——一文带你了解ViewModel的使用及原理</a><time datetime="2021-02-23T12:38:00.580Z" title="发表于 2021-02-23 20:38:00">2021-02-23</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By 马云飞</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '9kYyla3NziqL57u23F4OM41J-gzGzoHsz',
+      appKey: 'OXiX2KLLTDxOdLGBMwEVID03',
+      placeholder: '记得留下你的昵称和邮箱....可以快速收到回复',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign(initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/click-heart.min.js" async="async" mobile="false"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":true}});</script></body></html>
