@@ -363,13 +363,6 @@
   </url>
   
   <url>
-    <loc>http://silencedev.cn/categories/Jetpack/</loc>
-    <lastmod>2022-06-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://silencedev.cn/categories/Java/</loc>
     <lastmod>2022-06-18</lastmod>
     <changefreq>daily</changefreq>
@@ -377,7 +370,7 @@
   </url>
   
   <url>
-    <loc>http://silencedev.cn/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/</loc>
+    <loc>http://silencedev.cn/categories/Jetpack/</loc>
     <lastmod>2022-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -385,6 +378,13 @@
   
   <url>
     <loc>http://silencedev.cn/categories/JVM/</loc>
+    <lastmod>2022-06-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://silencedev.cn/categories/%E8%BD%AF%E6%8A%80%E8%83%BD/</loc>
     <lastmod>2022-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
