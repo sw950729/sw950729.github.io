@@ -56,42 +56,6 @@
       </categories>
   </entry>
   <entry>
-    <title>2020年度总结</title>
-    <url>/conclusion/2020/</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>不知不觉又到了写年度总结的时候，细翻了下，去年我居然没去写年度总结，想了想，可能当时也的确没什么总结的，可能就算有也不知道咋写吧。当然了这都是借口，不过现在就总结下2020的内容吧。</p>
-<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>今年工作对比19年来说，相对来说轻松一点，19年除了相关业务开发。因为是新项目所以我还负责管理android小组，虽然总共没几个人。不过要对接PMO，PM，QA等等。在这情况下，还需要负责业务开发，往往忙的只有晚上才能开始写代码。而今年除了业务的开发，其他的到没啥，所以我更注重于自我的成长，以及在团队内部推动相关技术，进行落地。</p>
-<p>不过对比上面这些，可能还需要在团队中给自己定位。比如领导对我说的一句话：“你工作很辛苦，也很努力，工时也是团队中最多的，不过做东西都是缩起来，其他同事也不知道你在干嘛。东西做完了，别人认可你做的内容么，有没有和同事讨论你这套东西是不是最实用的，能不能再浓缩一下”。</p>
-<p>后来自己想想，的确之前一个技术方案的确定—落地—实施。好像都是自己一个人去进行的。于是后面我就改变了思路，从草稿—沟通确定方案—落地任务细分到人—实施。对比之前的，相对自己会轻松很多，而且团队成员也知道我要做什么，并且方案确定了，细分到人去完成这个任务。自己反而会有成就感。</p>
-<h3 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h3><p>身为一个技术人，个人成长是绝不能落下的。比如今年疫情放小长假的情况下，我在家自学了flutter了。并用泓洋的开放API开发了一个flutter项目<a href="https://github.com/sw950729/WanAndroid_Flutter">WanAndroid_Flutter</a>。并在团队内部做flutter相关的分享，以及推动使用flutter进行业务开发。</p>
-<p>为了倒逼自己进步，我退掉了一些无关紧要的群，甚至关闭了朋友圈，淡出了朋友们的朋友圈。另外，今年在拉钩教育上买了六门课，完整的看完了三门课，包括一些课反复的看。进行知识点的吸收以及内化。</p>
-<p>对于blog的输出，我发现我上次更新blog还是18年的9月份。目前这家公司是18年11月入职的，也就是入职到这边之后，我几乎没有对外输出过blog。几乎可能证明两点，一个是懒、一个是没有成长所以不好输出blog。所以为了学习的内容不容易忘，也为了忘了可以快速查笔记巩固回来。近期我开始慢慢的同步更新了blog。同步地址是个人博客：silencedev.cn。今年已经更新的blog如下：<br><img src="https://s3.ax1x.com/2021/01/26/sjveoR.jpg" alt="image"></p>
-<p>后面我还会持续输出，尽可能保证一周一篇左右。毕竟，不逼自己一把，你永远不知道你会有多努力。</p>
-<p>如何确定自己是否有成长，当然除了本身技术的上的提升，还有工作上的成长，主要参考如下几个方面：</p>
-<ul>
-<li>是否愿意主要承担更多工作</li>
-<li>是否具备Owner意识</li>
-<li>在团队中其他成员是否认同你做的内容</li>
-<li>是否可以通过技术推进业务发展</li>
-<li>跨部门的沟通、协作</li>
-<li>在团队中的影响力，在部门中的影响力。</li>
-</ul>
-<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>今年后半年发福了，原本体重一直很稳定，今年下半年突然间的就胖了十斤。不过今年体验的时候，发现还好，各个指标都在正常范围内。</p>
-<p>今年外出游玩了两次，去了很久想去但一直没去的黄山，觉得工作太累，出门去厦门度假了一周。</p>
-<p>作息变得越来越晚，前两年基本12点半之前就入睡了，近两年稳定在一点到两点之间，不过相对起的比较晚，所以整体还好，不过晚睡的毛病还是要改。</p>
-<p>剩下的就是一直被催婚，停不下来的那种。于是，我就决定今年过年不回家了。虽然这个想法在去年年初就和父母沟通过了，但是刚好这次疫情回家要做检测，也刚好遂了不回家愿。毕竟也不是第一次不在家过年了。</p>
-<h3 id="2021规划"><a href="#2021规划" class="headerlink" title="2021规划"></a>2021规划</h3><ul>
-<li>减肥</li>
-<li>技术沉淀</li>
-<li>看书（一个月一本）</li>
-<li>出门玩一圈</li>
-<li>找个对象（年年在说，年年放最后一个）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>人生</category>
-      </categories>
-  </entry>
-  <entry>
     <title>算法复杂度</title>
     <url>/data_structure/algorithmic_complexity/</url>
     <content><![CDATA[<p>算法复杂度分为时间复杂度和空间复杂度。其作用：时间复杂度是指执行算法所需要的计算工作量；而空间复杂度是指执行这个算法所需要的内存空间。</p>
@@ -285,6 +249,42 @@
 ]]></content>
       <categories>
         <category>数据结构与算法</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2020年度总结</title>
+    <url>/conclusion/2020/</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>不知不觉又到了写年度总结的时候，细翻了下，去年我居然没去写年度总结，想了想，可能当时也的确没什么总结的，可能就算有也不知道咋写吧。当然了这都是借口，不过现在就总结下2020的内容吧。</p>
+<h3 id="工作"><a href="#工作" class="headerlink" title="工作"></a>工作</h3><p>今年工作对比19年来说，相对来说轻松一点，19年除了相关业务开发。因为是新项目所以我还负责管理android小组，虽然总共没几个人。不过要对接PMO，PM，QA等等。在这情况下，还需要负责业务开发，往往忙的只有晚上才能开始写代码。而今年除了业务的开发，其他的到没啥，所以我更注重于自我的成长，以及在团队内部推动相关技术，进行落地。</p>
+<p>不过对比上面这些，可能还需要在团队中给自己定位。比如领导对我说的一句话：“你工作很辛苦，也很努力，工时也是团队中最多的，不过做东西都是缩起来，其他同事也不知道你在干嘛。东西做完了，别人认可你做的内容么，有没有和同事讨论你这套东西是不是最实用的，能不能再浓缩一下”。</p>
+<p>后来自己想想，的确之前一个技术方案的确定—落地—实施。好像都是自己一个人去进行的。于是后面我就改变了思路，从草稿—沟通确定方案—落地任务细分到人—实施。对比之前的，相对自己会轻松很多，而且团队成员也知道我要做什么，并且方案确定了，细分到人去完成这个任务。自己反而会有成就感。</p>
+<h3 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h3><p>身为一个技术人，个人成长是绝不能落下的。比如今年疫情放小长假的情况下，我在家自学了flutter了。并用泓洋的开放API开发了一个flutter项目<a href="https://github.com/sw950729/WanAndroid_Flutter">WanAndroid_Flutter</a>。并在团队内部做flutter相关的分享，以及推动使用flutter进行业务开发。</p>
+<p>为了倒逼自己进步，我退掉了一些无关紧要的群，甚至关闭了朋友圈，淡出了朋友们的朋友圈。另外，今年在拉钩教育上买了六门课，完整的看完了三门课，包括一些课反复的看。进行知识点的吸收以及内化。</p>
+<p>对于blog的输出，我发现我上次更新blog还是18年的9月份。目前这家公司是18年11月入职的，也就是入职到这边之后，我几乎没有对外输出过blog。几乎可能证明两点，一个是懒、一个是没有成长所以不好输出blog。所以为了学习的内容不容易忘，也为了忘了可以快速查笔记巩固回来。近期我开始慢慢的同步更新了blog。同步地址是个人博客：silencedev.cn。今年已经更新的blog如下：<br><img src="https://s3.ax1x.com/2021/01/26/sjveoR.jpg" alt="image"></p>
+<p>后面我还会持续输出，尽可能保证一周一篇左右。毕竟，不逼自己一把，你永远不知道你会有多努力。</p>
+<p>如何确定自己是否有成长，当然除了本身技术的上的提升，还有工作上的成长，主要参考如下几个方面：</p>
+<ul>
+<li>是否愿意主要承担更多工作</li>
+<li>是否具备Owner意识</li>
+<li>在团队中其他成员是否认同你做的内容</li>
+<li>是否可以通过技术推进业务发展</li>
+<li>跨部门的沟通、协作</li>
+<li>在团队中的影响力，在部门中的影响力。</li>
+</ul>
+<h3 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h3><p>今年后半年发福了，原本体重一直很稳定，今年下半年突然间的就胖了十斤。不过今年体验的时候，发现还好，各个指标都在正常范围内。</p>
+<p>今年外出游玩了两次，去了很久想去但一直没去的黄山，觉得工作太累，出门去厦门度假了一周。</p>
+<p>作息变得越来越晚，前两年基本12点半之前就入睡了，近两年稳定在一点到两点之间，不过相对起的比较晚，所以整体还好，不过晚睡的毛病还是要改。</p>
+<p>剩下的就是一直被催婚，停不下来的那种。于是，我就决定今年过年不回家了。虽然这个想法在去年年初就和父母沟通过了，但是刚好这次疫情回家要做检测，也刚好遂了不回家愿。毕竟也不是第一次不在家过年了。</p>
+<h3 id="2021规划"><a href="#2021规划" class="headerlink" title="2021规划"></a>2021规划</h3><ul>
+<li>减肥</li>
+<li>技术沉淀</li>
+<li>看书（一个月一本）</li>
+<li>出门玩一圈</li>
+<li>找个对象（年年在说，年年放最后一个）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>人生</category>
       </categories>
   </entry>
   <entry>
@@ -872,6 +872,75 @@
       </categories>
   </entry>
   <entry>
+    <title>TCP三次握手与四次挥手</title>
+    <url>/http/tcp/</url>
+    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>在开发中,时不时会听到关于HTTP的三次握手和四次挥手，在面试中也会被问道HTTP的三次握手和四次挥手，很多开发者可能都会有这这种误解，认为三次握手和四次挥手都是HTTP协议的，实际上，这是错误的。正确的来说，三次挥手与四次握手是在TCP中进行的。</p>
+<h3 id="TCP中的三次握手"><a href="#TCP中的三次握手" class="headerlink" title="TCP中的三次握手"></a>TCP中的三次握手</h3><p>首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。Client端接收到ACK报文后也向Server段发生ACK报文，并分配资源，这样TCP连接就建立了。<br>通过下面的图片，我们来详细分析下TCP三次握手</p>
+<p><img src="https://img-blog.csdnimg.cn/2020072223451133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>（1）最初两端的TCP进程都处于CLOSED关闭状态，A（Client）主动打开连接，而B（Server）被动打开连接。（A、B关闭状态CLOSED——B收听状态LISTEN——A同步已发送状态SYN-SENT——B同步收到状态SYN-RCVD——A、B连接已建立状态ESTABLISHED）</p>
+<ul>
+<li>第一次握手：起初两端都处于CLOSED关闭状态，A（Client）将标志位SYN置为1，随机产生一个值seq=x，并将该数据包发送给B（Server），A（Client）进入SYN-SENT状态，等待B（Server）确认；</li>
+<li>第二次握手：B（Server）收到连接请求报文段后，如同意建立连接，则向A（Client）发送确认，在确认报文段中（SYN=1，ACK=1，确认号ack=x+1，初始序号seq=y），B（Server）TCP服务器进程进入SYN-RCVD（同步收到）状态；</li>
+<li>第三次握手：TCP客户进程收到B（Server）的确认后，要向B（Server）给出确认报文段（ACK=1，确认号ack=y+1，序号seq=x+1）（初始为seq=x，第二个报文段所以要+1），ACK报文段可以携带数据，不携带数据则不消耗序号。TCP连接已经建立，A进入ESTABLISHED（已建立连接）。<br>当B收到A的确认后，也进入ESTABLISHED状态。</li>
+</ul>
+<p>（2）总结三次握手过程：</p>
+<ul>
+<li>第一次握手：起初两端都处于CLOSED关闭状态，Client将标志位SYN置为1，随机产生一个值seq=x，并将该数据包发送给Server，Client进入SYN-SENT状态，等待Server确认；</li>
+<li>第二次握手：Server收到数据包后由标志位SYN=1得知Client请求建立连接，Server将标志位SYN和ACK都置为1，ack=x+1，随机产生一个值seq=y，并将该数据包发送给Client以确认连接请求，Server进入SYN-RCVD状态，此时操作系统为该TCP连接分配TCP缓存和变量；</li>
+<li>第三次握手：Client收到确认后，检查ack是否为x+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=y+1，并且此时操作系统为该TCP连接分配TCP缓存和变量，并将该数据包发送给Server，Server检查ack是否为y+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client和Server就可以开始传输数据。</li>
+</ul>
+<p>起初A和B都处于CLOSED状态——B创建TCB，处于LISTEN状态，等待A请求——A创建TCB，发送连接请求（SYN=1，seq=x），进入SYN-SENT状态——B收到连接请求，向A发送确认（SYN=ACK=1，确认号ack=x+1，初始序号seq=y），进入SYN-RCVD状态——A收到B的确认后，给B发出确认（ACK=1，ack=y+1，seq=x+1），A进入ESTABLISHED状态——B收到A的确认后，进入ESTABLISHED状态。<br>TCB传输控制块Transmission Control Block，存储每一个连接中的重要信息，如TCP连接表，到发送和接收缓存的指针，到重传队列的指针，当前的发送和接收序号。<br>（3）为什么A还要发送一次确认呢？可以二次握手吗？</p>
+<ul>
+<li><strong>主要为了防止已失效的连接请求报文段突然又传送到了B，因而产生错误。</strong>如A发出连接请求，但因连接请求报文丢失而未收到确认，于是A再重传一次连接请求。后来收到了确认，建立了连接。数据传输完毕后，就释放了连接，A发出了两个连接请求报文段，其中第一个丢失，第二个到达了B，但是第一个丢失的报文段只是在某些网络结点长时间滞留了，延误到连接释放以后的某个时间才到达B，此时B误认为A又发出一次新的连接请求，于是就向A发出确认报文段，同意建立连接，不采用三次握手，只要B发出确认，就建立新的连接了，此时A不理睬B的确认且不发送数据，则B一致等待A发送数据，浪费资源。</li>
+</ul>
+<p>（4）Server端易受到SYN攻击？</p>
+<ul>
+<li>服务器端的资源分配是在二次握手时分配的，而客户端的资源是在完成三次握手时分配的，所以服务器容易受到SYN洪泛攻击，SYN攻击就是Client在短时间内伪造大量不存在的IP地址，并向Server不断地发送SYN包，Server则回复确认包，并等待Client确认，由于源地址不存在，因此Server需要不断重发直至超时，这些伪造的SYN包将长时间占用未连接队列，导致正常的SYN请求因为队列满而被丢弃，从而引起网络拥塞甚至系统瘫痪。</li>
+</ul>
+<ul>
+<li>防范SYN攻击措施：降低主机的等待时间使主机尽快的释放半连接的占用，短时间受到某IP的重复SYN则丢弃后续请求。</li>
+</ul>
+<h3 id="TCP中的四次挥手"><a href="#TCP中的四次挥手" class="headerlink" title="TCP中的四次挥手"></a>TCP中的四次挥手</h3><p>（1）四次挥手的详述<br>  假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说”我Client端没有数据要发给你了”，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，”告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，”告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，”就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，”就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！<br>  <br>通过下面的图片，我们来详细分析下TCP三次握手</p>
+<p><img src="https://img-blog.csdnimg.cn/202007222345118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
+<p>数据传输结束后，通信的双方都可释放连接，A和B都处于ESTABLISHED状态。（A、B连接建立状态ESTABLISHED——A进入等待1状态FIN-WAIT-1——B关闭等待状态CLOSE-WAIT——A进入等待2状态FIN-WAIT-2——B最后确认状态LAST-ACK——A时间等待状态TIME-WAIT——B、A关闭状态CLOSED）</p>
+<ul>
+<li>A的应用进程先向其TCP发出连接释放报文段（FIN=1，序号seq=u），并停止再发送数据，主动关闭TCP连接，进入FIN-WAIT-1（终止等待1）状态，等待B的确认。</li>
+<li>B收到连接释放报文段后即发出确认报文段，（ACK=1，确认号ack=u+1，序号seq=v），B进入CLOSE-WAIT（关闭等待）状态，此时的TCP处于半关闭状态，A到B的连接释放。</li>
+<li>A收到B的确认后，进入FIN-WAIT-2（终止等待2）状态，等待B发出的连接释放报文段。</li>
+<li>B没有要向A发出的数据，B发出连接释放报文段（FIN=1，ACK=1，序号seq=w，确认号ack=u+1），B进入LAST-ACK（最后确认）状态，等待A的确认。</li>
+<li>A收到B的连接释放报文段后，对此发出确认报文段（ACK=1，seq=u+1，ack=w+1），A进入TIME-WAIT（时间等待）状态。此时TCP未释放掉，需要经过时间等待计时器设置的时间2MSL后，A才进入CLOSED状态。</li>
+</ul>
+<p>（2）总结四次挥手过程：</p>
+<ul>
+<li>起初A和B处于ESTABLISHED状态——A发出连接释放报文段并处于FIN-WAIT-1状态——B发出确认报文段且进入CLOSE-WAIT状态——A收到确认后，进入FIN-WAIT-2状态，等待B的连接释放报文段——B没有要向A发出的数据，B发出连接释放报文段且进入LAST-ACK状态——A发出确认报文段且进入TIME-WAIT状态——B收到确认报文段后进入CLOSED状态——A经过等待计时器时间2MSL后，进入CLOSED状态。</li>
+</ul>
+<p>（3）为什么A在TIME-WAIT状态必须等待2MSL的时间？（MSL最长报文段寿命Maximum Segment Lifetime，MSL=2）</p>
+<ul>
+<li>原因：1）<strong>保证A发送的最后一个ACK报文段能够到达B。</strong>这个ACK报文段有可能丢失，使得处于LAST-ACK状态的B收不到对已发送的FIN+ACK报文段的确认，B超时重传FIN+ACK报文段，而A能在2MSL时间内收到这个重传的FIN+ACK报文段，接着A重传一次确认，重新启动2MSL计时器，最后A和B都进入到CLOSED状态，若A在TIME-WAIT状态不等待一段时间，而是发送完ACK报文段后立即释放连接，则无法收到B重传的FIN+ACK报文段，所以不会再发送一次确认报文段，则B无法正常进入到CLOSED状态。</li>
+</ul>
+<ul>
+<li>原因：2）防止“已失效的连接请求报文段”出现在本连接中。A在发送完最后一个ACK报文段后，再经过2MSL，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失，使下一个新的连接中不会出现这种旧的连接请求报文段。</li>
+</ul>
+<p>（4）为什么连接的时候是三次握手，关闭的时候却是四次握手？</p>
+<ul>
+<li>因为当Server端收到Client端的SYN连接请求报文后，可以直接发送SYN+ACK报文。其中ACK报文是用来应答的，SYN报文是用来同步的。但是关闭连接时，当Server端收到FIN报文时，很可能并不会立即关闭SOCKET，所以只能先回复一个ACK报文，告诉Client端，”你发的FIN报文我收到了”。只有等到我Server端所有的报文都发送完了，我才能发送FIN报文，因此不能一起发送。故需要四步握手。</li>
+</ul>
+<p>（5）为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？</p>
+<ul>
+<li>虽然按道理，四个报文都发送完毕，我们可以直接进入CLOSE状态了，但是我们必须假象网络是不可靠的，有可能最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。</li>
+</ul>
+<p>（6）优化，我们可以通过修改系统参数来优化服务器</p>
+<ul>
+<li>tcp_tw_reuse: 是否重用处于TIME_WAIT状态的TCP链接  （设为true）</li>
+<li>tcp_max_tw_buckets: 处于TIME_WAIT状态的SOCKET最大数目 （调大，这个参数千万不要调小了）</li>
+<li>tcp_fin_timeout: 处于FIN_WAIT_2的时间  （调小）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>http</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ArrayList源码分析</title>
     <url>/java/arraylist/</url>
     <content><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>ArrayList是日常开发中使用最频繁的集合类。首先这边简单介绍一下ArrayList：  </p>
@@ -1039,75 +1108,6 @@
 ]]></content>
       <categories>
         <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>TCP三次握手与四次挥手</title>
-    <url>/http/tcp/</url>
-    <content><![CDATA[<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>在开发中,时不时会听到关于HTTP的三次握手和四次挥手，在面试中也会被问道HTTP的三次握手和四次挥手，很多开发者可能都会有这这种误解，认为三次握手和四次挥手都是HTTP协议的，实际上，这是错误的。正确的来说，三次挥手与四次握手是在TCP中进行的。</p>
-<h3 id="TCP中的三次握手"><a href="#TCP中的三次握手" class="headerlink" title="TCP中的三次握手"></a>TCP中的三次握手</h3><p>首先Client端发送连接请求报文，Server段接受连接后回复ACK报文，并为这次连接分配资源。Client端接收到ACK报文后也向Server段发生ACK报文，并分配资源，这样TCP连接就建立了。<br>通过下面的图片，我们来详细分析下TCP三次握手</p>
-<p><img src="https://img-blog.csdnimg.cn/2020072223451133.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>（1）最初两端的TCP进程都处于CLOSED关闭状态，A（Client）主动打开连接，而B（Server）被动打开连接。（A、B关闭状态CLOSED——B收听状态LISTEN——A同步已发送状态SYN-SENT——B同步收到状态SYN-RCVD——A、B连接已建立状态ESTABLISHED）</p>
-<ul>
-<li>第一次握手：起初两端都处于CLOSED关闭状态，A（Client）将标志位SYN置为1，随机产生一个值seq=x，并将该数据包发送给B（Server），A（Client）进入SYN-SENT状态，等待B（Server）确认；</li>
-<li>第二次握手：B（Server）收到连接请求报文段后，如同意建立连接，则向A（Client）发送确认，在确认报文段中（SYN=1，ACK=1，确认号ack=x+1，初始序号seq=y），B（Server）TCP服务器进程进入SYN-RCVD（同步收到）状态；</li>
-<li>第三次握手：TCP客户进程收到B（Server）的确认后，要向B（Server）给出确认报文段（ACK=1，确认号ack=y+1，序号seq=x+1）（初始为seq=x，第二个报文段所以要+1），ACK报文段可以携带数据，不携带数据则不消耗序号。TCP连接已经建立，A进入ESTABLISHED（已建立连接）。<br>当B收到A的确认后，也进入ESTABLISHED状态。</li>
-</ul>
-<p>（2）总结三次握手过程：</p>
-<ul>
-<li>第一次握手：起初两端都处于CLOSED关闭状态，Client将标志位SYN置为1，随机产生一个值seq=x，并将该数据包发送给Server，Client进入SYN-SENT状态，等待Server确认；</li>
-<li>第二次握手：Server收到数据包后由标志位SYN=1得知Client请求建立连接，Server将标志位SYN和ACK都置为1，ack=x+1，随机产生一个值seq=y，并将该数据包发送给Client以确认连接请求，Server进入SYN-RCVD状态，此时操作系统为该TCP连接分配TCP缓存和变量；</li>
-<li>第三次握手：Client收到确认后，检查ack是否为x+1，ACK是否为1，如果正确则将标志位ACK置为1，ack=y+1，并且此时操作系统为该TCP连接分配TCP缓存和变量，并将该数据包发送给Server，Server检查ack是否为y+1，ACK是否为1，如果正确则连接建立成功，Client和Server进入ESTABLISHED状态，完成三次握手，随后Client和Server就可以开始传输数据。</li>
-</ul>
-<p>起初A和B都处于CLOSED状态——B创建TCB，处于LISTEN状态，等待A请求——A创建TCB，发送连接请求（SYN=1，seq=x），进入SYN-SENT状态——B收到连接请求，向A发送确认（SYN=ACK=1，确认号ack=x+1，初始序号seq=y），进入SYN-RCVD状态——A收到B的确认后，给B发出确认（ACK=1，ack=y+1，seq=x+1），A进入ESTABLISHED状态——B收到A的确认后，进入ESTABLISHED状态。<br>TCB传输控制块Transmission Control Block，存储每一个连接中的重要信息，如TCP连接表，到发送和接收缓存的指针，到重传队列的指针，当前的发送和接收序号。<br>（3）为什么A还要发送一次确认呢？可以二次握手吗？</p>
-<ul>
-<li><strong>主要为了防止已失效的连接请求报文段突然又传送到了B，因而产生错误。</strong>如A发出连接请求，但因连接请求报文丢失而未收到确认，于是A再重传一次连接请求。后来收到了确认，建立了连接。数据传输完毕后，就释放了连接，A发出了两个连接请求报文段，其中第一个丢失，第二个到达了B，但是第一个丢失的报文段只是在某些网络结点长时间滞留了，延误到连接释放以后的某个时间才到达B，此时B误认为A又发出一次新的连接请求，于是就向A发出确认报文段，同意建立连接，不采用三次握手，只要B发出确认，就建立新的连接了，此时A不理睬B的确认且不发送数据，则B一致等待A发送数据，浪费资源。</li>
-</ul>
-<p>（4）Server端易受到SYN攻击？</p>
-<ul>
-<li>服务器端的资源分配是在二次握手时分配的，而客户端的资源是在完成三次握手时分配的，所以服务器容易受到SYN洪泛攻击，SYN攻击就是Client在短时间内伪造大量不存在的IP地址，并向Server不断地发送SYN包，Server则回复确认包，并等待Client确认，由于源地址不存在，因此Server需要不断重发直至超时，这些伪造的SYN包将长时间占用未连接队列，导致正常的SYN请求因为队列满而被丢弃，从而引起网络拥塞甚至系统瘫痪。</li>
-</ul>
-<ul>
-<li>防范SYN攻击措施：降低主机的等待时间使主机尽快的释放半连接的占用，短时间受到某IP的重复SYN则丢弃后续请求。</li>
-</ul>
-<h3 id="TCP中的四次挥手"><a href="#TCP中的四次挥手" class="headerlink" title="TCP中的四次挥手"></a>TCP中的四次挥手</h3><p>（1）四次挥手的详述<br>  假设Client端发起中断连接请求，也就是发送FIN报文。Server端接到FIN报文后，意思是说”我Client端没有数据要发给你了”，但是如果你还有数据没有发送完成，则不必急着关闭Socket，可以继续发送数据。所以你先发送ACK，”告诉Client端，你的请求我收到了，但是我还没准备好，请继续你等我的消息”。这个时候Client端就进入FIN_WAIT状态，继续等待Server端的FIN报文。当Server端确定数据已发送完成，则向Client端发送FIN报文，”告诉Client端，好了，我这边数据发完了，准备好关闭连接了”。Client端收到FIN报文后，”就知道可以关闭连接了，但是他还是不相信网络，怕Server端不知道要关闭，所以发送ACK后进入TIME_WAIT状态，如果Server端没有收到ACK则可以重传。“，Server端收到ACK后，”就知道可以断开连接了”。Client端等待了2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，我Client端也可以关闭连接了。Ok，TCP连接就这样关闭了！<br>  <br>通过下面的图片，我们来详细分析下TCP三次握手</p>
-<p><img src="https://img-blog.csdnimg.cn/202007222345118.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3N3OTUwNzI5,size_16,color_FFFFFF,t_70" alt="image"></p>
-<p>数据传输结束后，通信的双方都可释放连接，A和B都处于ESTABLISHED状态。（A、B连接建立状态ESTABLISHED——A进入等待1状态FIN-WAIT-1——B关闭等待状态CLOSE-WAIT——A进入等待2状态FIN-WAIT-2——B最后确认状态LAST-ACK——A时间等待状态TIME-WAIT——B、A关闭状态CLOSED）</p>
-<ul>
-<li>A的应用进程先向其TCP发出连接释放报文段（FIN=1，序号seq=u），并停止再发送数据，主动关闭TCP连接，进入FIN-WAIT-1（终止等待1）状态，等待B的确认。</li>
-<li>B收到连接释放报文段后即发出确认报文段，（ACK=1，确认号ack=u+1，序号seq=v），B进入CLOSE-WAIT（关闭等待）状态，此时的TCP处于半关闭状态，A到B的连接释放。</li>
-<li>A收到B的确认后，进入FIN-WAIT-2（终止等待2）状态，等待B发出的连接释放报文段。</li>
-<li>B没有要向A发出的数据，B发出连接释放报文段（FIN=1，ACK=1，序号seq=w，确认号ack=u+1），B进入LAST-ACK（最后确认）状态，等待A的确认。</li>
-<li>A收到B的连接释放报文段后，对此发出确认报文段（ACK=1，seq=u+1，ack=w+1），A进入TIME-WAIT（时间等待）状态。此时TCP未释放掉，需要经过时间等待计时器设置的时间2MSL后，A才进入CLOSED状态。</li>
-</ul>
-<p>（2）总结四次挥手过程：</p>
-<ul>
-<li>起初A和B处于ESTABLISHED状态——A发出连接释放报文段并处于FIN-WAIT-1状态——B发出确认报文段且进入CLOSE-WAIT状态——A收到确认后，进入FIN-WAIT-2状态，等待B的连接释放报文段——B没有要向A发出的数据，B发出连接释放报文段且进入LAST-ACK状态——A发出确认报文段且进入TIME-WAIT状态——B收到确认报文段后进入CLOSED状态——A经过等待计时器时间2MSL后，进入CLOSED状态。</li>
-</ul>
-<p>（3）为什么A在TIME-WAIT状态必须等待2MSL的时间？（MSL最长报文段寿命Maximum Segment Lifetime，MSL=2）</p>
-<ul>
-<li>原因：1）<strong>保证A发送的最后一个ACK报文段能够到达B。</strong>这个ACK报文段有可能丢失，使得处于LAST-ACK状态的B收不到对已发送的FIN+ACK报文段的确认，B超时重传FIN+ACK报文段，而A能在2MSL时间内收到这个重传的FIN+ACK报文段，接着A重传一次确认，重新启动2MSL计时器，最后A和B都进入到CLOSED状态，若A在TIME-WAIT状态不等待一段时间，而是发送完ACK报文段后立即释放连接，则无法收到B重传的FIN+ACK报文段，所以不会再发送一次确认报文段，则B无法正常进入到CLOSED状态。</li>
-</ul>
-<ul>
-<li>原因：2）防止“已失效的连接请求报文段”出现在本连接中。A在发送完最后一个ACK报文段后，再经过2MSL，就可以使本连接持续的时间内所产生的所有报文段都从网络中消失，使下一个新的连接中不会出现这种旧的连接请求报文段。</li>
-</ul>
-<p>（4）为什么连接的时候是三次握手，关闭的时候却是四次握手？</p>
-<ul>
-<li>因为当Server端收到Client端的SYN连接请求报文后，可以直接发送SYN+ACK报文。其中ACK报文是用来应答的，SYN报文是用来同步的。但是关闭连接时，当Server端收到FIN报文时，很可能并不会立即关闭SOCKET，所以只能先回复一个ACK报文，告诉Client端，”你发的FIN报文我收到了”。只有等到我Server端所有的报文都发送完了，我才能发送FIN报文，因此不能一起发送。故需要四步握手。</li>
-</ul>
-<p>（5）为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？</p>
-<ul>
-<li>虽然按道理，四个报文都发送完毕，我们可以直接进入CLOSE状态了，但是我们必须假象网络是不可靠的，有可能最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。</li>
-</ul>
-<p>（6）优化，我们可以通过修改系统参数来优化服务器</p>
-<ul>
-<li>tcp_tw_reuse: 是否重用处于TIME_WAIT状态的TCP链接  （设为true）</li>
-<li>tcp_max_tw_buckets: 处于TIME_WAIT状态的SOCKET最大数目 （调大，这个参数千万不要调小了）</li>
-<li>tcp_fin_timeout: 处于FIN_WAIT_2的时间  （调小）</li>
-</ul>
-]]></content>
-      <categories>
-        <category>http</category>
       </categories>
   </entry>
   <entry>
@@ -1788,6 +1788,56 @@
       </categories>
   </entry>
   <entry>
+    <title>Activity生命周期详解</title>
+    <url>/android/activity/lifecycle/</url>
+    <content><![CDATA[<h3 id="Activity是什么？"><a href="#Activity是什么？" class="headerlink" title="Activity是什么？"></a>Activity是什么？</h3><p>Activity是用户和应用程序交互的界面，用户可以在Activity上进行点击、滚动、触摸等操作。一般来说，一个应用是由多个Activity组成，首次进入的Activity称为主Activity。至于如何判断一个Activity是不是主Activity。本篇文章我们先不讨论。后面会讲到。</p>
+<h3 id="Activity的活动状态"><a href="#Activity的活动状态" class="headerlink" title="Activity的活动状态"></a>Activity的活动状态</h3><p>当我查阅关于Activity的官方文档的时候，我发现，官方文档中谈到Activity有三种状态，运行中、暂停、停止。我觉得少了一个销毁。所以这边我简单介绍一下Activity的四种活动状态。</p>
+<ul>
+<li><p>运行中(running)  </p>
+<p>此acitvity位于前台，并且用户可以在activity中执行触摸、点击、滚动等操作。</p>
+</li>
+<li><p>暂停(paused)</p>
+<p>activity可见，但并不可以操作，比如，当一个弹窗弹出来的时候。</p>
+</li>
+<li><p>停止(stopped)</p>
+<p>activity不可见，一般来说当用户按了home键之后。如果系统内存不够的时候，并且其他应用需要内存时，系统会回收已经停止的activity。</p>
+</li>
+<li><p>销毁(destroy)</p>
+<p>activity不可见，一般处于这种状态的activity会被系统回收掉。</p>
+<p>​</p>
+</li>
+</ul>
+<h3 id="Activity的生命周期"><a href="#Activity的生命周期" class="headerlink" title="Activity的生命周期"></a>Activity的生命周期</h3><p>首先我们先看下图解是怎么描述activity的生命周期的。</p>
+<p><img src="https://developer.android.google.cn/images/activity_lifecycle.png"></p>
+<p>在正常情况下，Acitivity的生命周期会先后经历如下的生命周期：</p>
+<p>1）onCreate：表示Activity正在被创建，一般来说，我们会在这个方法中设置布局以及一些数据的初始化。</p>
+<p>2）onStart：表示Activity正在被启动，这个Activity已经可见，但并不是前台，这种情况下，我们无法操作这个Activity。</p>
+<p>3）onResume：表示Activity已经可见并且位于前台了，此时，我们可以对当前的Activity进行操作。</p>
+<p>4）onPasue：表示Activity暂停了，一般来说，执行到了这一步，后续会调用onStop方法。所以，在这边我们尽可能不要去执行耗时操作，因为这会影响新的Activity的显示。</p>
+<p>5）onStop：表示Activity停止了，这边我们可以对一些数据进行回收。同样不能太耗时。</p>
+<p>6）onDestroy：表示Activity即将销毁，这是Activity最后一个生命周期，同样，我们可以对一些数据进行回收。</p>
+<p>7）onRestart：表示Activity正在被重启，这个方法一般只有在重启Activity的时候才被调用，比如，打开一个新的Activity然后在回退到当前的Activity。此方法便会被调用。</p>
+<p>我们可以通过上述介绍以及图片，可以分析出一般Activity会有如下几种情况：</p>
+<p>启动一个Activity：onCreate()–&gt;onStart()–&gt;onResume()。</p>
+<p>按Home键之后或者重新打开一个Activity：onPause()–&gt; onStop()（注：如果新的Activity是透明主题，当前Acitvity不会走onStop方法，例如dialog弹出的时候，当然，dialog关闭当前Activity会走onResume()）。</p>
+<p>重新启动一个Activity：onRestart()–&gt;onStart()–&gt;onResume()。</p>
+<p>销毁一个Activity：onPasue()–&gt;onStop()–&gt;onDestroy()。</p>
+<h3 id="异常情况下Activity的生命周期"><a href="#异常情况下Activity的生命周期" class="headerlink" title="异常情况下Activity的生命周期"></a>异常情况下Activity的生命周期</h3><p>首先，我们需要什么情况算异常情况。最好的例子莫过于横竖屏切换，这种情况Activity会被销毁并且重建，一般来说，系统会调用onSaveInstanceState 方法进行数据的存储。然后通过调用onRestoreInstanceState进行数据的恢复。如果我们想知道当前activity是否被重建了。我们可以在onCreate中判断bundle是否为null或者重写onRestoreInstanceState方法。一般推荐使用后者，因为只有在重建的情况下，此方法才会被调用。</p>
+<p>如果我们希望当系统配置参数发生改变时，当前Activity不会被重建应该怎么做呢？自然是有的，我们可以在Mainfest文件中为Activity配置configChanges属性。比如，我们想当屏幕切换的时候当前Activity不被重启。我们可以这样：</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">android:</span>configChanges=<span class="string">&quot;orientation|screenSize&quot;</span></span><br></pre></td></tr></table></figure>
+<p>configChanges的选项有很多，这里我们常用的只有locale、orentation、keyboardHidden以及screenSize。（需要注意的是：screenSize这个属性比较特殊，minSdkVersion 和targetSdkVersion 低于13时，此选项不会导致activity重启。否则会导致activity重启。）</p>
+<p>此时，我们可以通过重写此方法来进行一些特殊处理：</p>
+<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line">@Override</span><br><span class="line"><span class="keyword">public</span> void onConfigurationChanged(Configuration <span class="keyword">new</span><span class="type">Config</span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>.onConfigurationChanged(<span class="keyword">new</span><span class="type">Config</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h3><p>《Android开发艺术探索》</p>
+<p>Android官方API文档</p>
+]]></content>
+      <categories>
+        <category>android</category>
+      </categories>
+  </entry>
+  <entry>
     <title>View的事件机制分析</title>
     <url>/android/view/touchevent/</url>
     <content><![CDATA[<h3 id="为什么要去分析view的事件"><a href="#为什么要去分析view的事件" class="headerlink" title="为什么要去分析view的事件"></a>为什么要去分析view的事件</h3><p>关于view的事件，百度google一搜。一批又一批。但是能让人理解的少之又少。换句话说，不是那些作者不懂。只是说，他懂了，但他讲解后不一定能让别人看得懂。我记得有人问我当初是怎么接触自定义view这东西的。因为他们觉得自定义view这个东西很难。我就回了如下几句话：自定义view你把paint和canvas。弄懂了基本也就差不多了。我这边说的是差不多，不是完全，你们别曲解哈= =当然前提是数学和物理要好= =。对于View来说，我认为，paint和canvas都不是重点，如何分析他的事件处理才是重点。下面我们一步步的来了解。</p>
@@ -1890,56 +1940,6 @@
 <p>这个篇幅我只是对view做了一个简单的介绍，通过标题“浅析”也知道。不过，如果这篇你们看懂了。对于正常的需求开发已无大碍。后面我尽可能去深入分析一次。</p>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>《android群英传》</p>
 <p> <a href="http://www.gcssloop.com/customview/dispatch-touchevent-theory">事件分发机制原理</a></p>
-]]></content>
-      <categories>
-        <category>android</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Activity生命周期详解</title>
-    <url>/android/activity/lifecycle/</url>
-    <content><![CDATA[<h3 id="Activity是什么？"><a href="#Activity是什么？" class="headerlink" title="Activity是什么？"></a>Activity是什么？</h3><p>Activity是用户和应用程序交互的界面，用户可以在Activity上进行点击、滚动、触摸等操作。一般来说，一个应用是由多个Activity组成，首次进入的Activity称为主Activity。至于如何判断一个Activity是不是主Activity。本篇文章我们先不讨论。后面会讲到。</p>
-<h3 id="Activity的活动状态"><a href="#Activity的活动状态" class="headerlink" title="Activity的活动状态"></a>Activity的活动状态</h3><p>当我查阅关于Activity的官方文档的时候，我发现，官方文档中谈到Activity有三种状态，运行中、暂停、停止。我觉得少了一个销毁。所以这边我简单介绍一下Activity的四种活动状态。</p>
-<ul>
-<li><p>运行中(running)  </p>
-<p>此acitvity位于前台，并且用户可以在activity中执行触摸、点击、滚动等操作。</p>
-</li>
-<li><p>暂停(paused)</p>
-<p>activity可见，但并不可以操作，比如，当一个弹窗弹出来的时候。</p>
-</li>
-<li><p>停止(stopped)</p>
-<p>activity不可见，一般来说当用户按了home键之后。如果系统内存不够的时候，并且其他应用需要内存时，系统会回收已经停止的activity。</p>
-</li>
-<li><p>销毁(destroy)</p>
-<p>activity不可见，一般处于这种状态的activity会被系统回收掉。</p>
-<p>​</p>
-</li>
-</ul>
-<h3 id="Activity的生命周期"><a href="#Activity的生命周期" class="headerlink" title="Activity的生命周期"></a>Activity的生命周期</h3><p>首先我们先看下图解是怎么描述activity的生命周期的。</p>
-<p><img src="https://developer.android.google.cn/images/activity_lifecycle.png"></p>
-<p>在正常情况下，Acitivity的生命周期会先后经历如下的生命周期：</p>
-<p>1）onCreate：表示Activity正在被创建，一般来说，我们会在这个方法中设置布局以及一些数据的初始化。</p>
-<p>2）onStart：表示Activity正在被启动，这个Activity已经可见，但并不是前台，这种情况下，我们无法操作这个Activity。</p>
-<p>3）onResume：表示Activity已经可见并且位于前台了，此时，我们可以对当前的Activity进行操作。</p>
-<p>4）onPasue：表示Activity暂停了，一般来说，执行到了这一步，后续会调用onStop方法。所以，在这边我们尽可能不要去执行耗时操作，因为这会影响新的Activity的显示。</p>
-<p>5）onStop：表示Activity停止了，这边我们可以对一些数据进行回收。同样不能太耗时。</p>
-<p>6）onDestroy：表示Activity即将销毁，这是Activity最后一个生命周期，同样，我们可以对一些数据进行回收。</p>
-<p>7）onRestart：表示Activity正在被重启，这个方法一般只有在重启Activity的时候才被调用，比如，打开一个新的Activity然后在回退到当前的Activity。此方法便会被调用。</p>
-<p>我们可以通过上述介绍以及图片，可以分析出一般Activity会有如下几种情况：</p>
-<p>启动一个Activity：onCreate()–&gt;onStart()–&gt;onResume()。</p>
-<p>按Home键之后或者重新打开一个Activity：onPause()–&gt; onStop()（注：如果新的Activity是透明主题，当前Acitvity不会走onStop方法，例如dialog弹出的时候，当然，dialog关闭当前Activity会走onResume()）。</p>
-<p>重新启动一个Activity：onRestart()–&gt;onStart()–&gt;onResume()。</p>
-<p>销毁一个Activity：onPasue()–&gt;onStop()–&gt;onDestroy()。</p>
-<h3 id="异常情况下Activity的生命周期"><a href="#异常情况下Activity的生命周期" class="headerlink" title="异常情况下Activity的生命周期"></a>异常情况下Activity的生命周期</h3><p>首先，我们需要什么情况算异常情况。最好的例子莫过于横竖屏切换，这种情况Activity会被销毁并且重建，一般来说，系统会调用onSaveInstanceState 方法进行数据的存储。然后通过调用onRestoreInstanceState进行数据的恢复。如果我们想知道当前activity是否被重建了。我们可以在onCreate中判断bundle是否为null或者重写onRestoreInstanceState方法。一般推荐使用后者，因为只有在重建的情况下，此方法才会被调用。</p>
-<p>如果我们希望当系统配置参数发生改变时，当前Activity不会被重建应该怎么做呢？自然是有的，我们可以在Mainfest文件中为Activity配置configChanges属性。比如，我们想当屏幕切换的时候当前Activity不被重启。我们可以这样：</p>
-<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">android:</span>configChanges=<span class="string">&quot;orientation|screenSize&quot;</span></span><br></pre></td></tr></table></figure>
-<p>configChanges的选项有很多，这里我们常用的只有locale、orentation、keyboardHidden以及screenSize。（需要注意的是：screenSize这个属性比较特殊，minSdkVersion 和targetSdkVersion 低于13时，此选项不会导致activity重启。否则会导致activity重启。）</p>
-<p>此时，我们可以通过重写此方法来进行一些特殊处理：</p>
-<figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line">@Override</span><br><span class="line"><span class="keyword">public</span> void onConfigurationChanged(Configuration <span class="keyword">new</span><span class="type">Config</span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>.onConfigurationChanged(<span class="keyword">new</span><span class="type">Config</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Thanks"><a href="#Thanks" class="headerlink" title="Thanks"></a>Thanks</h3><p>《Android开发艺术探索》</p>
-<p>Android官方API文档</p>
 ]]></content>
       <categories>
         <category>android</category>
