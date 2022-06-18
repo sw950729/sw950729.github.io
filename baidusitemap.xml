@@ -1,8 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://silencedev.cn/android/view/viewgroup-event/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
+    <loc>http://silencedev.cn/android/thread_pool/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
+    <loc>http://silencedev.cn/android/activity/launchmode/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
+    <loc>http://silencedev.cn/data_structure/balanced_binary_tree/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
+    <loc>http://silencedev.cn/jvm/memory_allocation/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
+    <loc>http://silencedev.cn/jvm/jmm/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
+    <loc>http://silencedev.cn/jvm/gc/</loc>
+    <lastmod>2022-06-18</lastmod>
+  </url>
+  <url>
     <loc>http://silencedev.cn/jvm/classinit/</loc>
-    <lastmod>2022-03-27</lastmod>
+    <lastmod>2022-06-18</lastmod>
   </url>
   <url>
     <loc>http://silencedev.cn/android/okhttp/</loc>
@@ -85,10 +113,6 @@
     <lastmod>2021-02-03</lastmod>
   </url>
   <url>
-    <loc>http://silencedev.cn/android/view/viewgroup-event/</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
     <loc>http://silencedev.cn/android/view/view-event/</loc>
     <lastmod>2021-02-03</lastmod>
   </url>
@@ -97,19 +121,11 @@
     <lastmod>2021-02-03</lastmod>
   </url>
   <url>
-    <loc>http://silencedev.cn/android/thread_pool/</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
     <loc>http://silencedev.cn/android/handler/</loc>
     <lastmod>2021-02-03</lastmod>
   </url>
   <url>
     <loc>http://silencedev.cn/android/context/</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
-    <loc>http://silencedev.cn/android/activity/launchmode/</loc>
     <lastmod>2021-02-03</lastmod>
   </url>
   <url>
@@ -145,10 +161,6 @@
     <lastmod>2021-02-03</lastmod>
   </url>
   <url>
-    <loc>http://silencedev.cn/data_structure/balanced_binary_tree/</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
     <loc>http://silencedev.cn/data_structure/arrays_and_stack/</loc>
     <lastmod>2021-02-03</lastmod>
   </url>
@@ -158,18 +170,6 @@
   </url>
   <url>
     <loc>http://silencedev.cn/java/hashmap/</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
-    <loc>http://silencedev.cn/jvm/memory_allocation/</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
-    <loc>http://silencedev.cn/jvm/jmm/</loc>
-    <lastmod>2021-02-03</lastmod>
-  </url>
-  <url>
-    <loc>http://silencedev.cn/jvm/gc/</loc>
     <lastmod>2021-02-03</lastmod>
   </url>
 </urlset> 
